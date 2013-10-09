@@ -321,6 +321,65 @@ h2.filter-headline {
 	border-left-color: #91F016;
 }
 /*
+ *********************** Filter Range Styles
+ */
+
+/*Whole Slider*/
+.ui-rangeSlider {
+	width: 100%; !important /*Overwriting the width from the JS*/
+}
+
+/*inner Bar*/
+.ui-rangeSlider .ui-rangeSlider-innerBar {
+	background: #7f7f7f;
+}
+/*Both Handles */
+.ui-rangeSlider .ui-rangeSlider-handle {
+	/*background:#91F016;*/
+	/*background:rgba(100,100,100, 0.3);*/
+	position: relative;
+	}
+/*Triangle for the Handles*/
+.ui-rangeSlider .ui-rangeSlider-handle:after {
+	bottom: 3%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	border-color: rgba(145,240,22,0);
+	border-top-color: #91F016;
+	border-width: 18px;
+	margin: 0 -15px 5px -15px;
+}
+
+/*Bar between the handles */
+.ui-rangeSlider .ui-rangeSlider-bar {
+	/*background:#91F016;*/
+	background: rgba(145,240,22,0.7);
+	}
+
+/*Labels above the handles*/
+.ui-rangeSlider-label {
+	margin: 0 2px 2px -5px;
+	bottom: 35px;
+	padding: 3px 6px 3px;
+	color: #7F7F7F;
+	font-size: 0.8em;!important
+}
+
+/*Width of the default inner-bar*/
+input.ui-editRangeSlider-inputValue {
+	width: 1em;
+	}
+
+/*
+ *********************** Filter Range Styles End
+ */
+
+
+
+/*
  *********************** Filter Styles End
  */
 /*
@@ -342,7 +401,7 @@ h2.filter-headline {
 	background-position: 50% 0;
 }
 /*
- *********************** Slider Tile Styles End
+ *********************** Slider Styles End
  */
 /*
  *********************** Teaser Tile Styles
