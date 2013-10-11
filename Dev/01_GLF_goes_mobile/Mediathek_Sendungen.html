@@ -25,7 +25,7 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="mediathekS" class="page-wrapper">
+		<div id="page_mediathekS" class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
@@ -38,25 +38,40 @@
 						<ul id="navAccordion">
 							<li id="1" class="collapsible nav-btn-wrapper active">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<div class="nav-accordion-content">
-									<a href="Mediathek_Sendungen.html" alt="Sendungen" class="nav-accordion-content-btn visited">Sendungen</a><a href="Mediathek_Beitraege.html" alt="Beiträge" class="nav-accordion-content-btn">Beiträge</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn visited">Sendungen</a>
+									</li>
+									<li>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+									</li>
+								</ul>
 							</li>
 							<li id="2" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<div class="nav-accordion-content">
-									<a href="DeinGLF_Mitmachen.html" alt="Themen" class="nav-accordion-content-btn">Themen</a><a href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="nav-accordion-content-btn">Mitmachen</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
+									</li>
+									<li>
+										<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
+									</li>
+								</ul>
 							</li>
 							<li id="3" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<div class="nav-accordion-content">
-									<a alt="Ziele" class="nav-accordion-content-btn">Ziele</a><a alt="Geschichte" class="nav-accordion-content-btn">Geschichte</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
+									</li>
+									<li>
+										<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
+									</li>
+								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="nav-accordion-content">
+								<div class="subnav">
 									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
@@ -75,15 +90,12 @@
 						<div class="filter-sort-wrapper">
 							<h2 class="filter-headline">Sortierung</h2>
 							<div class="filter-btn filter-newest">
-								<span class="filter-icon"> </span>
 								<span class="filter-text">neueste</span>
 							</div>
 							<div class="filter-btn filter-rated">
-								<span class="filter-icon"> </span>
 								<span class="filter-text">bestbewertet</span>
 							</div>
 							<div class="filter-btn filter-viewed">
-								<span class="filter-icon"> </span>
 								<span class="filter-text">meistgesehen</span>
 							</div>
 						</div>

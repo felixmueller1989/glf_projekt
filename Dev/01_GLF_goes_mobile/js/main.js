@@ -31,12 +31,21 @@ $(document).ready(function() {
 				queue : false
 			});
 		}
-		$(expandItem).animate({
-			width : "379px"
-		}, {
-			duration : 300,
-			queue : false
-		});
+		if ($(expandItem).hasClass('search-btn')) {
+			$(expandItem).animate({
+				width : "326px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		} else {
+			$(expandItem).animate({
+				width : "379px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		}
 		$(activeItem).removeClass('active');
 		activeItem = expandItem;
 		$(activeItem).addClass('active');
@@ -52,27 +61,28 @@ $(document).ready(function() {
 
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
+		expandItem = $('.visited').parents('.nav-btn-wrapper');
 		setTimeout(function() {
-			if ($(activeItem).hasClass('search-btn')) {
-				$(activeItem).animate({
-					width : "73px"
-				}, {
-					duration : 300,
-					queue : false
-				});
-			} else {
-				$(activeItem).animate({
-					width : "126px"
-				}, {
-					duration : 300,
-					queue : false
-				});
-			}
-			/*remove focus of search Input */
-			if ($(activeItem).hasClass('search-btn')) {
-				$(activeItem).find('#searchInput').blur();
-			}
-			$(activeItem).removeClass('active');
+			accordionToggle();
+			/*if ($(activeItem).hasClass('search-btn')) {
+			 $(activeItem).animate({
+			 width : "73px"
+			 }, {
+			 duration : 300,
+			 queue : false
+			 });
+			 /*remove focus of search Input */
+			/*$(activeItem).find('#searchInput').blur();
+			 } else {
+			 $(activeItem).animate({
+			 width : "126px"
+			 }, {
+			 duration : 300,
+			 queue : false
+			 });
+			 }
+			 $(activeItem).removeClass('active');
+			 */
 		}, 400);
 	});
 	/************* Nav Functions End ***********/
@@ -86,7 +96,6 @@ $(document).ready(function() {
 $(window).resize(function() {
 	/*call functions */
 	sliderSize();
-	teaserTileSize();
 });
 /***********************WINDOW RESIZE END ********************/
 
@@ -111,35 +120,3 @@ function sliderSize() {
 }
 
 /****************slider functions end********************/
-
-/****************teaser tile functions ********************/
-function teaserTileSize() {
-	// height equal to relative width (teaser tile )
-	var teaserTile = $('.teaser-tile');
-	var teaserTileWdth = teaserTile.width();
-	teaserTile.css({
-		'height' : teaserTileWdth + 'px'
-	});
-	// height equal to relative width (teaser tile play icon)
-	var teaserTilePlay = $('.teaser-tile-play-icon');
-	var teaserTilePlayWdth = teaserTilePlay.width();
-	teaserTilePlay.css({
-		'height' : teaserTilePlayWdth + 'px'
-	});
-
-	// height equal to relative width (teaser tile big)
-	var teaserTileBig = $('.teaser-tile-big');
-	var teaserTileBigWdth = teaserTileBig.width();
-	teaserTileBig.css({
-		'height' : teaserTileBigWdth + 'px'
-	});
-
-	// height equal to relative width (teaser tile big play icon)
-	var teaserTileBigPlay = $(teaserTileBig).find('.teaser-tile-play-icon');
-	var teaserTileBigPlayWdth = teaserTileBigPlay.width();
-	teaserTileBigPlay.css({
-		'height' : teaserTileBigPlayWdth + 'px'
-	});
-}
-
-/******************teaser tile functions end ********************/

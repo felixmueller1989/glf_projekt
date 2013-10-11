@@ -138,8 +138,8 @@ nav.nav-main {
 .nav-btn-wrapper.active {
 	width: 379px;
 }
-#liveBtn.nav-btn-wrapper.active{
-	width: 126px;	
+#liveBtn.nav-btn-wrapper.active {
+	width: 126px;
 }
 .nav-btn-wrapper {
 	width: 126px;
@@ -167,9 +167,9 @@ nav.nav-main {
 .nav-btn-wrapper#searchBtn {
 	width: 73px;
 }
-#searchBtn .nav-accordion-content {
+#searchBtn .subnav {
 	left: 73px;
-	width: 292px;
+	width: 253px;
 }
 #searchIcon {
 	background-image: url('../img/icons/search_icon_green.png');
@@ -178,12 +178,12 @@ nav.nav-main {
 	border-right: none;
 	width: 73px;
 }
-#searchBtn .nav-accordion-content input {
+#searchBtn .subnav input {
 	margin: 21px 0 0 0;
 	line-height: 1.9em;
 	font-size: 1em;
 	color: #7f7f7f;
-	width: 95%;
+	width: 90%;
 	background-color: #E9E9E9;
 	border: none;
 }
@@ -210,35 +210,45 @@ nav.nav-main {
 	border-radius: 50px;
 	opacity: 0.9;
 }
-.nav-accordion-content {
+.subnav {
 	float: left;
 	width: 252px;
 	position: absolute;
 	left: 128px;
 }
-.nav-accordion-content-btn {
+.subnav {
+	margin: 0;
+	padding: 0;
+}
+.subnav li {
 	width: 50%;
+	float: left;
+	text-align: center;
+	color: #FFFFFF;
+	background:#7F7F7F;
+}
+.subnav-btn {
+	width: 100%;
 	font-size: 0.875em;
 	line-height: 5.6em;
-	text-align: center;
-	display: inline-block;
 	color: #FFFFFF;
 	background-color: #7F7F7F;
+	display: block;
 	cursor: pointer;
 }
-.nav-accordion-content-btn.visited {
+.subnav-btn.visited {
 	background-color: #91F016;
 }
-.nav-accordion-content-btn:first-of-type {
+.subnav li:first-of-type {
 	border-right: 1px dashed #91F016;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.nav-accordion-content-btn:hover, .nav-accordion-content-btn:active {
+.subnav-btn:hover, .subnav-btn:active {
 	color: #91f016;
 }
-.nav-accordion-content-btn.visited:hover, .nav-accordion-content-btn.visited:active {
+.subnav-btn.visited:hover, .subnav-btn.visited:active {
 	color: #7F7F7F;
 }
 /*
@@ -248,7 +258,7 @@ nav.nav-main {
  *********************** Content Styles
  */
 .content-wrapper {
-	width: 80.859375%; /*1035px*/
+	width: 90.859375%; /*1035px*/
 	max-width: 1035px;
 	margin: auto;
 	background: #E9E9E9;
@@ -347,12 +357,15 @@ h2.filter-headline {
 /*
  *********************** Teaser Tile Styles
  */
-
+.teaser-tile-wrapper {
+	width: 80%;
+	margin: 0 0 0 20%;
+}
 .teaser-tile {
-	width: 19.32367149758454%; /*200px*/
+	width: 200px;
+	height: 200px;
 	float: left;
 	margin: 3.5px;
-	min-width: 150px;
 	position: relative;
 	cursor: pointer;
 }
@@ -368,8 +381,9 @@ h2.filter-headline {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 32.5%;
-	margin: -16.26% 0 0 -16.25%;
+	width: 70px;
+	height: 70px;
+	margin: -35px 0 0 -35px;
 	background-image: url('../img/icons/play_white_s.png');
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -685,7 +699,6 @@ h2.filter-headline {
 .clearfix {
 	*zoom: 1;
 }
-
 /* ==========================================================================
  EXAMPLE Media Queries for Responsive Design.
  These examples override the primary ('mobile first') styles.
