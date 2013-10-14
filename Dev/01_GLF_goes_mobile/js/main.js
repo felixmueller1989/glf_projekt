@@ -61,16 +61,38 @@ $(document).ready(function() {
 
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
-		$('.nav-btn-wrapper').each(function(index, elem){
-			if($(elem).hasClass('visited')){
-				expandItem =  elem;
+		$('.nav-btn-wrapper').each(function(index, elem) {
+			if ($(elem).hasClass('visited')) {
+				expandItem = elem;
 			}
-		});	
+		});
 		setTimeout(function() {
 			accordionToggle();
 		}, 400);
 	});
 	/************* Nav Functions End ***********/
+	/************** Only for Testing Functions *****************/
+	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
+	$(mediathekBTiles).click(function() {
+		var url = "Videoplayer_Beitraege.html";
+		$(location).attr('href', url);
+	});
+	/************** Only for Testing Functions End*****************/
+	/*************Video Player Functions *********/
+	projekktor('.video-clip', {
+		volume : 0.8,
+		controls : true,
+		autoplay : false,
+		thereCanBeOnlyOne : true, //stop all other player instances but the one the user clicked play
+		ratio : 16 / 9,
+		leaveFullscreen : true, //player will try to leave fullscreen once the "done" event has been fired
+		disallowSkip : false,
+		showOnStart : true,
+		addplugins : ['controlbar'],
+		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
+		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
+	});
+	/*************Video Player Functions End*********/
 	/*call functions */
 	sliderSize();
 });

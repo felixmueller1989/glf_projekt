@@ -13,19 +13,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css">
-		<link rel="stylesheet" href="video-js/video-js.min.css">
-		<script src="video-js/video.js"></script>
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
+		</script>
+		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_home"class="page-wrapper">
+		<div id="videoplayer_B" class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
@@ -36,14 +39,14 @@
 							<a href="Live.html" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="1" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
 										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn visited">Beiträge</a>
 									</li>
 								</ul>
 							</li>
@@ -81,89 +84,161 @@
 			</header>
 			<div class="content-wrapper">
 				<div class="content clearfix">
-					<div class="slider-wrapper clearfix">
-						<div class="slider"></div>
+					<div class="back-btn-wrapper">
+						<a class="back-btn">zurück</a>
 					</div>
-
-					<div class="teaser-tile-wrapper clearfix">
-
-						<div class="wrapper-six-tiles">
-
-							<div id="video-teaser-0001" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Grillparty</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0002" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0003" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Twike Marathon</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0004" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Sommer-Freizeit-Check</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0005" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Brend Spezial</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0006" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">International</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
+					<a class="cat-link">Hochschule &amp; Studium</a>
+					<div class="video-title">
+						<h1 class="headline">Beitrag xy</h1>
+						<h2 class="subline">vom 08. März 2013</h2>
+					</div>
+					<div class="video-wrapper">
+						<video class="video video-clip" width="821" height="407" poster="video-player/media/intro.png">
+							<source src="video-player/media/intro.mp4" />
+							<source src="video-player/media/intro.webm" />
+							<source src="video-player/media/intro.ogv" />
+						</video>
+					</div>
+					<div class="video-info-wrapper">
+						<h3 class="video-info-headline">Beitrag xy</h3>
+						<p class="video-info-text">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+						<a href="Videoplayer_Sendungen.html" class="link-to-broadcast">Zur Sendung vom 08.März 2013</a>
+					</div>
+					<div class="so-me-btn-wrapper tile call-to-action-tile">
+						<p class="call-to-action-text">
+							Teilen!
+						</p>
+						<span class="share-on-fb"></span>
+						<span class="share-on-twitter"></span>
+					</div>
+					<div class="evaluate-tiles-wrapper">
+						<div class="like-tile tile call-to-action-tile">
+							<p class="call-to-action-text">
+								Gefällt es dir?
+							</p>
+							<a class="like-icon"></a>
 						</div>
-						<div class="wrapper-big-tile">
-							<div id="video-teaser-0007" class="teaser-tile-big">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
+						<div class="dislike-tile tile call-to-action-tile">
+							<p class="call-to-action-text">
+								... oder nicht?
+							</p>
+							<a class="dislike-icon"></a>
 						</div>
 					</div>
+					<div class="related-tile-wrapper clearfix">
+						<div class="tile text-only-tile">
+							<div>
+								<p class="text-only-tile-text">
+									Diese Beiträge könnten dich auch interessieren:
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0002" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0003" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Twike Marathon</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0004" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Sommer-Freizeit-Check</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0005" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Brend Spezial</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0006" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">International</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0007" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0008" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Chris Milla und die Liebe zum Techno</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0009" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Künstler Portrait Hubert Rieber</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0010" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Grillparty</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0011" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+						<div id="video-teaser-0012" class="tile teaser-tile">
+							<span class="teaser-tile-play-icon"></span>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Twike Marathon</h3>
+								<p class="teaser-tile-subline">
+									26. April 2013
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="comments-wrapper"></div>
 				</div>
 			</div>
 		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
-		</script>
-		<script src="js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 	</body>
