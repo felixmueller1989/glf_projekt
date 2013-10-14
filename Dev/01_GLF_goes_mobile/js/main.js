@@ -61,7 +61,11 @@ $(document).ready(function() {
 
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
-		expandItem = $('.subnav-btn').hasClass('visited').parents('.nav-btn-wrapper');
+		$('.nav-btn-wrapper').each(function(index, elem){
+			if($(elem).hasClass('visited')){
+				expandItem =  elem;
+			}
+		});	
 		setTimeout(function() {
 			accordionToggle();
 		}, 400);
@@ -69,7 +73,6 @@ $(document).ready(function() {
 	/************* Nav Functions End ***********/
 	/*call functions */
 	sliderSize();
-	teaserTileSize();
 });
 /*document.ready end */
 
