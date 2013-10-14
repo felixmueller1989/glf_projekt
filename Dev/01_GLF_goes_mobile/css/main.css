@@ -122,6 +122,7 @@ header {
 }
 nav.nav-main {
 	float: right;
+	text-transform:uppercase;
 }
 #navAccordion {
 	list-style: none;
@@ -144,6 +145,9 @@ nav.nav-main {
 .nav-btn-wrapper {
 	width: 126px;
 	position: relative;
+}
+.nav-btn-wrapper.visited .nav-header{
+	color: #91F016;
 }
 .nav-header {
 	float: left;
@@ -307,6 +311,11 @@ h2.filter-headline {
 	color: #7F7F7F;
 	padding: 0 0 0 11px;
 	font-size: 0.8em;
+	-webkit-transition: background-color 0.2s;
+	-moz-transition: background-color 0.2s;
+	-o-transition: background-color 0.2s;
+	-ms-transition: background-color 0.2s;
+	transition: background-color 0.2s;
 }
 /* Right Arrow */
 .filter-text:after {
@@ -322,6 +331,11 @@ h2.filter-headline {
 	border-width: 18px;
 	top: 50%;
 	margin-top: -18px;
+	-webkit-transition: border-left-color 0.2s;
+	-moz-transition: border-left-color 0.2s;
+	-o-transition: border-left-color 0.2s;
+	-ms-transition: border-left-color 0.2s;
+	transition: border-left-color 0.2s;
 }
 .filter-btn:hover .filter-text, .filter-btn:active .filter-text {
 	background-color: #91F016;
@@ -376,6 +390,13 @@ h2.filter-headline {
 	position: absolute;
 	pointer-events: none;
 	background-color: rgba(220,220,220,0.3);
+	 -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
 }
 .teaser-tile-play-icon {
 	position: absolute;
@@ -390,28 +411,44 @@ h2.filter-headline {
 	background-size: 90%;
 	opacity: 0.5;
 	z-index: 50;
+	 -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
 }
 .teaser-tile:hover .teaser-tile-play-icon, .teaser-tile:active .teaser-tile-play-icon {
 	opacity: 0.8;
 }
 .teaser-tile:hover .teaser-tile-text-layer, .teaser-tile:active .teaser-tile-text-layer {
 	background: rgba(145,240,22,0.9);
+	color: #333333;
 }
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
 	background-color: rgba(0,0,0,0);
 }
 .teaser-tile-text-layer {
-	background: rgba(145,240,22,0.8);
-	width: 90%;
+	background: rgba(50,50,50,0.8);
+	color: #FFFFFF;
+	width: 100%;
+	padding: 5px 0 5px 0;
 	position: absolute;
-	bottom: 7px;
+	bottom: 0px;
 	z-index: 50;
+	 -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
 }
 .teaser-tile-headline {
 	font-size: 1em;
-	color: #000000;
 	margin: 0 0 0 7px;
-	padding: 5px 0 5px 0;
+	padding: 0;
 }
 .teaser-tile-subline {
 	font-size: 0.8em;

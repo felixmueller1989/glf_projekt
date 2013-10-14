@@ -61,28 +61,9 @@ $(document).ready(function() {
 
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
-		expandItem = $('.visited').parents('.nav-btn-wrapper');
+		expandItem = $('.subnav-btn').hasClass('visited').parents('.nav-btn-wrapper');
 		setTimeout(function() {
 			accordionToggle();
-			/*if ($(activeItem).hasClass('search-btn')) {
-			 $(activeItem).animate({
-			 width : "73px"
-			 }, {
-			 duration : 300,
-			 queue : false
-			 });
-			 /*remove focus of search Input */
-			/*$(activeItem).find('#searchInput').blur();
-			 } else {
-			 $(activeItem).animate({
-			 width : "126px"
-			 }, {
-			 duration : 300,
-			 queue : false
-			 });
-			 }
-			 $(activeItem).removeClass('active');
-			 */
 		}, 400);
 	});
 	/************* Nav Functions End ***********/
