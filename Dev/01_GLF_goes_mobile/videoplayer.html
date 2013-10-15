@@ -25,45 +25,231 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="mitmachen" class="page-wrapper">
-			<header>
-				<div class="header-content">
-					<div class="nav-home-btn-wrapper">
-						<a href="index.html" class="nav-home-btn"></a>
-					</div>
-					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper">
-							<a href="Live.html" class="nav-header">Live</a>
-						</div>
-						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<div class="nav-accordion-content">
-									<a href="Mediathek_Sendungen.html" alt="Sendungen" class="nav-accordion-content-btn">Sendungen</a><a href="Mediathek_Beitraege.html" alt="Beiträge" class="nav-accordion-content-btn">Beiträge</a>
-								</div>
-							</li>
-							<li id="2" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<div class="nav-accordion-content">
-									<a href="DeinGLF_Mitmachen.html" alt="Themen" class="nav-accordion-content-btn">Themen</a><a href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="nav-accordion-content-btn">Mitmachen</a>
-								</div>
-							</li>
-							<li id="3" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<div class="nav-accordion-content">
-									<a alt="Ziele" class="nav-accordion-content-btn">Ziele</a><a alt="Geschichte" class="nav-accordion-content-btn">Geschichte</a>
-								</div>
-							</li>
-							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="nav-accordion-content">
-									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
-								</div>
-							</li>
-						</ul>
-					</nav>
+		<div class="page-wrapper">
+			<nav class="nav-main">
+				<a href="index.html">Home</a>
+				<a href="video-js/demo.html">Demo</a>
+			</nav>
+
+			<div class="content-wrapper">
+				<h1 class="headline">Video</h1>
+				<div class="video-wrapper">
+					<video id="example_video_1" class="video-js vjs-default-skin"
+					controls preload="auto"
+					poster="http://video-js.zencoder.com/oceans-clip.png"
+					data-setup='{"example_option":true}'>
+						<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+						<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+						<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+					</video>
 				</div>
-			</header>
+
+				<div class="filter-wrapper clearfix">
+					<div class="filter-sort-wrapper">
+						<div class="filter-btn filter-newest">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">neueste</span>
+						</div>
+						<div class="filter-btn filter-rated">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">bestbewertet</span>
+						</div>
+						<div class="filter-btn filter-viewed">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">meistgesehen</span>
+						</div>
+					</div>
+
+					<div class="filter-cat-wrapper">
+						<div class="filter-btn filter-campus">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">Hochschule&amp;Campus</span>
+						</div>
+						<div class="filter-btn filter-studies">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">Studium</span>
+						</div>
+						<div class="filter-btn filter-leisure">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">Freizeit</span>
+						</div>
+						<div class="filter-btn filter-art">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">Musik&amp;Kunst</span>
+						</div>
+						<div class="filter-btn filter-society">
+							<span class="filter-icon"> </span>
+							<span class="filter-text">Umwelt&amp;Gesellschaft</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="content clearfix">
+					<div id="video-teaser-0001" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Grillparty</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0002" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0003" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Twike Marathon</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0004" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Sommer-Freizeit-Check</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0005" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Brend Spezial</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0006" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">International</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0007" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0008" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Chris Milla und die Liebe zum Techno</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0009" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Künstler Portrait Hubert Rieber</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0010" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Grillparty</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0011" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0012" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Twike Marathon</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0013" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Sommer-Freizeit-Check</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0014" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Brend Spezial</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0015" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">International</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0016" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0017" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Chris Milla und die Liebe zum Techno</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+					<div id="video-teaser-0018" class="teaser-tile">
+						<span class="teaser-tile-play-icon"></span>
+						<div class="teaser-tile-text-layer">
+							<h3 class="teaser-tile-headline">Künstler Portrait Hubert Rieber</h3>
+							<p class="teaser-tile-subline">
+								26. April 2013
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script>
