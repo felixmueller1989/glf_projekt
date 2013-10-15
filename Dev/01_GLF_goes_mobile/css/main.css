@@ -122,7 +122,7 @@ header {
 }
 nav.nav-main {
 	float: right;
-	text-transform:uppercase;
+	text-transform: uppercase;
 }
 #navAccordion {
 	list-style: none;
@@ -146,7 +146,7 @@ nav.nav-main {
 	width: 126px;
 	position: relative;
 }
-.nav-btn-wrapper.visited .nav-header{
+.nav-btn-wrapper.visited .nav-header {
 	color: #70ea46;
 }
 .nav-header {
@@ -182,7 +182,7 @@ nav.nav-main {
 	border-right: none;
 	width: 73px;
 }
-#searchBtn:hover #searchIcon{
+#searchBtn:hover #searchIcon {
 	background-image: url('../img/icons/search_icon_green.png');
 }
 #searchBtn .subnav input {
@@ -232,7 +232,7 @@ nav.nav-main {
 	float: left;
 	text-align: center;
 	color: #FFFFFF;
-	background:#7F7F7F;
+	background: #7F7F7F;
 }
 .subnav-btn {
 	width: 100%;
@@ -273,17 +273,17 @@ nav.nav-main {
 .content {
 	width: 100%;
 	margin: 35px 0 0 0;
-	position:relative;
+	position: relative;
 }
-.back-btn-wrapper{
+.back-btn-wrapper {
 	margin: 0 0 40px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
 }
-.back-btn{
-	position:relative;
-	display:block;
+.back-btn {
+	position: relative;
+	display: block;
 }
 /* Left Arrow */
-.back-btn:before{
+.back-btn:before {
 	left: 0;
 	border: solid transparent;
 	content: " ";
@@ -297,84 +297,87 @@ nav.nav-main {
 	top: 50%;
 	margin: -10px 0 0 -10px;
 }
-.back-btn:hover.back-btn:before{
+.back-btn:hover.back-btn:before {
 	border-right-color: #70EA46;
 }
-.back-btn:hover{
-	color:#70EA46;
+.back-btn:hover {
+	color: #70EA46;
 }
-.tile{
+.tile {
 	width: 200px;
 	height: 200px;
 	float: left;
 	margin: 3.5px;
 	position: relative;
 	cursor: pointer;
-	background:#7F7F7F;
+	background: #7F7F7F;
 }
 
 /*
  * ***************************** Videoplayer Page Styles
  */
-.cat-link{
-	color:#9A0758;
+.cat-link {
+	color: #9A0758;
 	font-size: 1.2em;
-	font-weight:bold;
-	text-decoration:underline;
-	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+	display: block;
 	margin: 0 0 0 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
 }
-.video-title .headline{
+.video-title .headline {
 	display: inline-block;
 }
-.subline{
-	display:inline-block;
+.subline {
+	display: inline-block;
 	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
+	font-weight: normal;
+	color: #434343;
 }
-.video-wrapper{
+.video-wrapper {
 	margin: 3.5px;
-	float:left;
+	float: left;
 }
-.video-info-wrapper{
-	width: 407px;
+.info-comments-wrapper {
+	float: left;
+}
+.video-info-wrapper {
+	width: 614px;
 	height: 200px;
-	overflow:overlay;
+	overflow: overlay;
+	float: left;
 	margin: 3.5px;
-	float:left;
 }
-.call-to-action-text{
-	text-align:center;
+.call-to-action-text {
+	text-align: center;
 	font-weight: bold;
 	font-size: 1.3em;
 	margin: 0.6em;
 }
-.evaluate-tiles-wrapper{
-	position:absolute;
-	right:7px;
-	width: 200px;
+.voting-tiles-wrapper {
+	float: left;
 }
-.text-only-tile div{
-	display:table;
+.text-only-tile div {
+	display: table;
 	width: 200px;
 	height: 200px;
 }
-.text-only-tile-text{
-	color:#9A0758;
+.text-only-tile-text {
+	color: #9A0758;
 	padding: 0 10px 0 30px;
-	font-weight:bold;
-	display:table-cell;
-	vertical-align:middle;
+	font-weight: bold;
+	display: table-cell;
+	vertical-align: middle;
 }
-.related-tile-wrapper{
-	display:inline-block;
-	width: 414px;
+.related-tile-wrapper {
+	display: inline-block;
+	width: 207px;
 }
-.comments-wrapper{
+.comments-wrapper {
 	width: 821px;
 	height: 350px;
 	margin: 3.5px;
+	background: #000;
+	float: left;
 }
 /*
  * ***************************** Videoplayer Page Styles End
@@ -384,7 +387,7 @@ nav.nav-main {
  */
 .filter-wrapper {
 	float: left;
-	width: 200px; 
+	width: 200px;
 	margin: 3.5px 3.5px 0 3.5px;
 	min-width: 200px;
 }
@@ -489,32 +492,32 @@ h2.filter-headline {
 	position: absolute;
 	pointer-events: none;
 	background-color: rgba(220,220,220,0.3);
-	 -moz-transition: all 0.2s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.2s ease-in;
-    /* Opera */
-    -o-transition: all 0.2s ease-in;
-    /* Standard */
-    transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
 }
 .teaser-tile-play-icon {
 	position: absolute;
-	top:0;
-	left:0;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background-image: url('../img/icons/play_white_s.png');
-	background-position:center center;
+	background-position: center center;
 	background-repeat: no-repeat;
 	opacity: 0.5;
 	z-index: 50;
-	 -moz-transition: all 0.2s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.2s ease-in;
-    /* Opera */
-    -o-transition: all 0.2s ease-in;
-    /* Standard */
-    transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
 }
 .teaser-tile:hover .teaser-tile-play-icon, .teaser-tile:active .teaser-tile-play-icon {
 	opacity: 0.8;
@@ -534,13 +537,13 @@ h2.filter-headline {
 	position: absolute;
 	bottom: 0px;
 	z-index: 50;
-	 -moz-transition: all 0.2s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.2s ease-in;
-    /* Opera */
-    -o-transition: all 0.2s ease-in;
-    /* Standard */
-    transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
 }
 .teaser-tile-headline {
 	font-size: 1em;
@@ -668,7 +671,7 @@ h2.filter-headline {
 }
 .teaser-tile-big .teaser-tile-headline {
 	font-size: 1.125em;
-	color:#4a4a4a;
+	color: #4a4a4a;
 	margin: 0 0 0 7px;
 	padding: 5.625px 0 5.625px 0;
 }
@@ -838,14 +841,15 @@ h2.filter-headline {
  These examples override the primary ('mobile first') styles.
  Modify as content requires.
  ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+/*
+ @media only screen and (min-width: 35em) {
+ /* Style adjustments for viewports that meet the condition */
 }
-
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
+/*
+ @media print,
+ (-o-min-device-pixel-ratio: 5/4),
+ (-webkit-min-device-pixel-ratio: 1.25),
+ (min-resolution: 120dpi) {
+ /* Style adjustments for high resolution devices */
+/*}
+ */
