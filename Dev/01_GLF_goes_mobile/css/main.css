@@ -86,6 +86,37 @@ h3 {
 	line-height: 1.2em;
 }
 
+/*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
+
+.sub-headline{
+	width:75%;
+	/*margin:7px 160px 7px 0;*/
+	display:block;
+	font-size: 1em;
+	font-weight:normal;
+	color:#434343;
+	
+	
+}
+
+
+.sub-headline-sub{
+	
+	width:75%;
+	margin:7px 0 14px 0;
+	display:block;
+	font-size: 1em;
+	font-weight:normal;
+	color:#434343;
+	
+	
+}
+
+/*Unterüberschrift Ende*/
+
+
+
+
 a {
 	text-decoration: none;
 }
@@ -269,11 +300,13 @@ nav.nav-main {
 	max-width: 1035px;
 	margin: auto;
 	background: #E9E9E9;
+	height: auto;
 }
 .content {
 	width: 100%;
 	margin: 35px 0 0 0;
 	position:relative;
+	height:auto;
 }
 .back-btn-wrapper{
 	margin: 0 0 40px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
@@ -478,9 +511,43 @@ h2.filter-headline {
 /*
  *********************** Teaser Tile Styles
  */
+.info-tile{
+	
+	width: 200px;
+	height: 200px;
+	margin: 3.5px;
+	float:left;
+	background-color: #7F7F7F;
+	
+	
+}
+
+.info-tile .header-tile{
+	
+	margin: 7px 0 0 7px;
+	font-size: 1em;
+	color:white;
+	font-weight: normal;
+}
+
+.info-tile .text-tile{
+	
+	margin: 14px 7px 0 7px;
+	font-size: 0.8em;
+	color:white;
+	font-weight: normal;
+	
+	
+}
+
 .teaser-tile-wrapper {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
 }
+
+.teaser-tile-wrapper.jobs {
+	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
+}
+
 
 .teaser-tile:after {
 	content: " ";
@@ -523,6 +590,13 @@ h2.filter-headline {
 	background: rgba(112,234,70,0.9);
 	color: #333333;
 }
+
+.teaser-tile:hover .teaser-tile-text-layer-jobs, .teaser-tile:active .teaser-tile-text-layer {
+	background: rgba(112,234,70,0.9);
+	color: #333333;
+}
+
+
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
 	background-color: rgba(0,0,0,0);
 }
@@ -542,6 +616,27 @@ h2.filter-headline {
     /* Standard */
     transition: all 0.2s ease-in;
 }
+
+/*jobs*/
+
+
+.teaser-tile-text-layer-jobs {
+	background: rgba(50,50,50,0.8);
+	color: #FFFFFF;
+	width: 100%;
+	padding: 5px 0 5px 0;
+	position: absolute;
+	bottom: 3.5px;
+	z-index: 50;
+	 -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
+}
+
 .teaser-tile-headline {
 	font-size: 1em;
 	margin: 0 0 0 7px;
@@ -596,6 +691,78 @@ h2.filter-headline {
 	background-size: cover;
 	background-position: 50% 0;
 }
+
+
+#video-teaser-1{
+	
+	background-image: url('../img/video_teaser/werbung.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-2{
+	
+	background-image: url('../img/video_teaser/redakteur.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-3{
+	
+	background-image: url('../img/video_teaser/kameramann.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-4{
+	
+	background-image: url('../img/video_teaser/cutter.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-5{
+	
+	background-image: url('../img/video_teaser/moderator.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-6{
+	
+	background-image: url('../img/video_teaser/chef.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-7{
+	
+	background-image: url('../img/video_teaser/bildregie.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-8{
+	
+	background-image: url('../img/video_teaser/tonregie.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+
+
+
+
+
+
 
 /*
  *********************** Home Teaser Tile Styles
