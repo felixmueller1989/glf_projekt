@@ -88,34 +88,26 @@ h3 {
 
 /*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
 
-.sub-headline{
-	width:75%;
+.sub-headline {
+	width: 75%;
 	/*margin:7px 160px 7px 0;*/
-	display:block;
+	display: block;
 	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
-	
-	
+	font-weight: normal;
+	color: #434343;
 }
 
+.sub-headline-sub {
 
-.sub-headline-sub{
-	
-	width:75%;
-	margin:7px 0 14px 0;
-	display:block;
+	width: 75%;
+	margin: 7px 0 14px 0;
+	display: block;
 	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
-	
-	
+	font-weight: normal;
+	color: #434343;
 }
 
 /*Unterüberschrift Ende*/
-
-
-
 
 a {
 	text-decoration: none;
@@ -304,13 +296,10 @@ nav.nav-main {
 }
 .content {
 	width: 100%;
-	margin: 35px 0 0 0;
-<<<<<<< HEAD
-	position:relative;
-	height:auto;
-=======
+	margin: 35px 0 0 0;<<<<<<< HEAD
 	position: relative;
->>>>>>> a7a69465ba6870503a2efe791efafe405275c75a
+	height: auto;=======
+	position: relative;>>>>>>> a7a69465ba6870503a2efe791efafe405275c75a
 }
 .back-btn-wrapper {
 	margin: 0 0 40px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
@@ -518,33 +507,29 @@ h2.filter-headline {
 /*
  *********************** Teaser Tile Styles
  */
-.info-tile{
-	
+.info-tile {
+
 	width: 200px;
 	height: 200px;
 	margin: 3.5px;
-	float:left;
+	float: left;
 	background-color: #7F7F7F;
-	
-	
 }
 
-.info-tile .header-tile{
-	
+.info-tile .header-tile {
+
 	margin: 7px 0 0 7px;
 	font-size: 1em;
-	color:white;
+	color: white;
 	font-weight: normal;
 }
 
-.info-tile .text-tile{
-	
+.info-tile .text-tile {
+
 	margin: 14px 7px 0 7px;
 	font-size: 0.8em;
-	color:white;
+	color: white;
 	font-weight: normal;
-	
-	
 }
 
 .teaser-tile-wrapper {
@@ -554,7 +539,6 @@ h2.filter-headline {
 .teaser-tile-wrapper.jobs {
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
-
 
 .teaser-tile:after {
 	content: " ";
@@ -603,7 +587,6 @@ h2.filter-headline {
 	color: #333333;
 }
 
-
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
 	background-color: rgba(0,0,0,0);
 }
@@ -626,7 +609,6 @@ h2.filter-headline {
 
 /*jobs*/
 
-
 .teaser-tile-text-layer-jobs {
 	background: rgba(50,50,50,0.8);
 	color: #FFFFFF;
@@ -635,13 +617,13 @@ h2.filter-headline {
 	position: absolute;
 	bottom: 3.5px;
 	z-index: 50;
-	 -moz-transition: all 0.2s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.2s ease-in;
-    /* Opera */
-    -o-transition: all 0.2s ease-in;
-    /* Standard */
-    transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
 }
 
 .teaser-tile-headline {
@@ -699,77 +681,61 @@ h2.filter-headline {
 	background-position: 50% 0;
 }
 
+#video-teaser-1 {
 
-#video-teaser-1{
-	
 	background-image: url('../img/video_teaser/werbung.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-2{
-	
+#video-teaser-2 {
+
 	background-image: url('../img/video_teaser/redakteur.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-3{
-	
+#video-teaser-3 {
+
 	background-image: url('../img/video_teaser/kameramann.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-4{
-	
+#video-teaser-4 {
+
 	background-image: url('../img/video_teaser/cutter.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-5{
-	
+#video-teaser-5 {
+
 	background-image: url('../img/video_teaser/moderator.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-6{
-	
+#video-teaser-6 {
+
 	background-image: url('../img/video_teaser/chef.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-7{
-	
+#video-teaser-7 {
+
 	background-image: url('../img/video_teaser/bildregie.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-8{
-	
+#video-teaser-8 {
+
 	background-image: url('../img/video_teaser/tonregie.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
-
-
-
-
-
-
-
 
 /*
  *********************** Home Teaser Tile Styles
@@ -901,9 +867,46 @@ h2.filter-headline {
  *********************** Pagination Styles End
  */
 
+/* ==========================================================================
+ Media Queries
+ ========================================================================== */
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
 }
+/* 4 Columns Grid ----------- */
+@media all and (max-width: 1156px) {
+	.info-comments-wrapper {
+		width: 621px;
+	}
+	.video-info-wrapper {
+		width: 407px;
+	}
+	.comments-wrapper {
+		width: 614px;
+	}
+}
+/* 3 Columns Grid ----------- */
+@media all and (max-width: 929px) {
+	.projekktor {
+		width: 614px !important;
+	}
+	.info-comments-wrapper {
+		width: 621px;
+	}
+	.video-info-wrapper {
+		width: 407px;
+	}
+	.comments-wrapper {
+		width: 614px;
+	}
+	.related-tile-wrapper{
+		width: 621px;
+	}
+}
+
+/* ==========================================================================
+ Media Queries End
+ ========================================================================== */
 
 /* ==========================================================================
  Author's custom styles End
@@ -1007,20 +1010,3 @@ h2.filter-headline {
 .clearfix {
 	*zoom: 1;
 }
-/* ==========================================================================
- EXAMPLE Media Queries for Responsive Design.
- These examples override the primary ('mobile first') styles.
- Modify as content requires.
- ========================================================================== */
-/*
- @media only screen and (min-width: 35em) {
- /* Style adjustments for viewports that meet the condition */
-}
-/*
- @media print,
- (-o-min-device-pixel-ratio: 5/4),
- (-webkit-min-device-pixel-ratio: 1.25),
- (min-resolution: 120dpi) {
- /* Style adjustments for high resolution devices */
-/*}
- */
