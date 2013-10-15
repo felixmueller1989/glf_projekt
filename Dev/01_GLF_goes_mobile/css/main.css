@@ -72,6 +72,9 @@ body {
 	width: 100%;
 	background: #E9E9E9;
 }
+a {
+	cursor: pointer;
+}
 h1 {
 	font-size: 3em;
 	font-weight: normal;
@@ -507,6 +510,9 @@ h2.filter-headline {
 /*
  *********************** Teaser Tile Styles
  */
+.text-only-tile {
+	cursor: default;
+}
 .info-tile {
 
 	width: 200px;
@@ -899,7 +905,7 @@ h2.filter-headline {
 	.comments-wrapper {
 		width: 614px;
 	}
-	.related-tile-wrapper{
+	.related-tile-wrapper {
 		width: 621px;
 	}
 }
