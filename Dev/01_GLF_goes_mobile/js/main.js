@@ -1,89 +1,128 @@
 $(document).ready(function() {
-	// height equal to dynamic width (teaser tile play icon)
-	var teaserTile = $('.teaser-tile');
-	var teaserTileWdth = teaserTile.width();
-	teaserTile.css({
-		'height' : teaserTileWdth + 'px'
-	});
-	// height equal to dynamic width (teaser tile play icon)
-	var teaserTilePlay = $('.teaser-tile-play-icon');
-	var teaserTilePlayWdth = teaserTilePlay.width();
-	teaserTilePlay.css({
-		'height' : teaserTilePlayWdth + 'px'
-	});
-});
 
-$(window).resize(function() {
+	/************ Nav Functions *************/
+	/*Define global vars */
+	var activeItem;
+	var navMain = $('#navMain');
+	var expandItem;
+	var expandTimeout;
 
-	// height equal to dynamic width (teaser tile)
-	var teaserTile = $('.teaser-tile');
-	var teaserTileWdth = teaserTile.width();
-	teaserTile.css({
-		'height' : teaserTileWdth + 'px'
-	});
-	// height equal to dynamic width (teaser tile play icon)
-	var teaserTilePlay = $('.teaser-tile-play-icon');
-	var teaserTilePlayWdth = teaserTilePlay.width();
-	teaserTilePlay.css({
-		'height' : teaserTilePlayWdth + 'px'
-	});
+	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
+	$(navMain).find('ul > .collapsible').hover(function() {
+		expandItem = $(this);
+		expandTimeout = setTimeout(accordionToggle, 300);
+	}, stopAnimation);
 
-});
-
-
-//Slider
-
-$(document).ready(function() {
-	// height equal to dynamic width (teaser tile play icon)
-	var sliderRatio= 16/9;
-	var slider = $('.slider');
-	var sliderWdth = slider.width();
-	var sliderHeight= sliderWdth/sliderRatio;
-	slider.css({
-		'height' : sliderHeight + 'px'
-	});
-	
-});
-
-$(window).resize(function() {
-
-	// height equal to dynamic width (teaser tile)
-	var sliderRatio= 16/9;
-	var slider = $('.slider');
-	var sliderWdth = slider.width();
-	var sliderHeight= sliderWdth/sliderRatio;
-	slider.css({
-		'height' : sliderHeight + 'px'
-	});
-	
-});
-
-
-
-
-
-
-
-
-
-
-// Responsive Videoplayer
-_V_("example_video_1").ready(function() {
-
-	var myPlayer = this;
-	// Store the video object
-	var aspectRatio = 9 / 16;
-	// Make up an aspect ratio
-
-	function resizeVideoJS() {
-		// Get the parent element's actual width
-		var width = document.getElementById(myPlayer.id).parentElement.offsetWidth;
-		// Set width to fill parent element, Set height
-		myPlayer.width(width).height(width * aspectRatio);
+	/* expand hovered Item and collapse former activeItem */
+	function accordionToggle() {
+		activeItem = $(navMain).find('ul > .active');
+		if ($(activeItem).hasClass('search-btn')) {
+			$(activeItem).animate({
+				width : "73px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		} else {
+			$(activeItem).animate({
+				width : "126px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		}
+		if ($(expandItem).hasClass('search-btn')) {
+			$(expandItem).animate({
+				width : "326px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		} else {
+			$(expandItem).animate({
+				width : "379px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		}
+		$(activeItem).removeClass('active');
+		activeItem = expandItem;
+		$(activeItem).addClass('active');
+		/*set focus on search input if search is active element*/
+		if ($(activeItem).hasClass('search-btn')) {
+			$(activeItem).find('#searchInput').focus();
+		}
 	}
 
-	resizeVideoJS();
-	// Initialize the function
-	window.onresize = resizeVideoJS;
-	// Call the function on resize
-}); 
+	function stopAnimation() {
+		clearTimeout(expandTimeout);
+	}
+
+	/* Collapse active Item with some timeout on mouseleave*/
+	$(navMain).mouseleave(function() {
+		$('.nav-btn-wrapper').each(function(index, elem) {
+			if ($(elem).hasClass('visited')) {
+				expandItem = elem;
+			}
+		});
+		setTimeout(function() {
+			accordionToggle();
+		}, 400);
+	});
+	/************* Nav Functions End ***********/
+	/************** Only for Testing Functions *****************/
+	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
+	$(mediathekBTiles).click(function() {
+		var url = "Videoplayer_Beitraege.html";
+		$(location).attr('href', url);
+	});
+	/************** Only for Testing Functions End*****************/
+	/*************Video Player Functions *********/
+	projekktor('.video-clip', {
+		volume : 0.8,
+		controls : true,
+		autoplay : false,
+		thereCanBeOnlyOne : true, //stop all other player instances but the one the user clicked play
+		ratio : 16 / 9,
+		leaveFullscreen : true, //player will try to leave fullscreen once the "done" event has been fired
+		disallowSkip : false,
+		showOnStart : true,
+		addplugins : ['controlbar'],
+		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
+		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
+	});
+	/*************Video Player Functions End*********/
+	/*call functions */
+	sliderSize();
+});
+/*document.ready end */
+
+/**************** WINDOW RESIZE *********************/
+$(window).resize(function() {
+	/*call functions */
+	sliderSize();
+});
+/***********************WINDOW RESIZE END ********************/
+
+/****************slider functions ********************/
+function sliderSize() {
+	// keep slider ratio depending on relative width (slider-wrapper )
+	var sliderWrapper = $('.slider-wrapper');
+	var sliderWrapperWdth = sliderWrapper.width();
+	var ratio = 16 / 9;
+	var sliderWrapperHgt = sliderWrapperWdth / ratio;
+	sliderWrapper.css({
+		'height' : sliderHgt + 'px'
+	});
+
+	// keep slider ratio depending on relative width (slider )
+	var slider = $('.slider');
+	var sliderWdth = slider.width();
+	var sliderHgt = sliderWdth / ratio;
+	slider.css({
+		'height' : sliderHgt + 'px'
+	});
+}
+
+/****************slider functions end********************/

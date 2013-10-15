@@ -25,38 +25,53 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="Live" class="page-wrapper">
+		<div id="page_home"class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
 					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper active">
+						<div id="liveBtn" class="nav-btn-wrapper">
 							<a href="Live.html" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
 							<li id="1" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<div class="nav-accordion-content">
-									<a href="Mediathek_Sendungen.html" alt="Sendungen" class="nav-accordion-content-btn">Sendungen</a><a href="Mediathek_Beitraege.html" alt="Beiträge" class="nav-accordion-content-btn">Beiträge</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
+									</li>
+									<li>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+									</li>
+								</ul>
 							</li>
 							<li id="2" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<div class="nav-accordion-content">
-									<a href="DeinGLF_Mitmachen.html" alt="Themen" class="nav-accordion-content-btn">Themen</a><a href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="nav-accordion-content-btn">Mitmachen</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
+									</li>
+									<li>
+										<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
+									</li>
+								</ul>
 							</li>
 							<li id="3" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<div class="nav-accordion-content">
-									<a alt="Ziele" class="nav-accordion-content-btn">Ziele</a><a alt="Geschichte" class="nav-accordion-content-btn">Geschichte</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
+									</li>
+									<li>
+										<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
+									</li>
+								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="nav-accordion-content">
+								<div class="subnav">
 									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
@@ -64,6 +79,85 @@
 					</nav>
 				</div>
 			</header>
+			<div class="content-wrapper">
+				<div class="content clearfix">
+					<div class="slider-wrapper clearfix">
+						<div class="slider"></div>
+					</div>
+
+					<div class="teaser-tile-wrapper clearfix">
+
+						<div class="wrapper-six-tiles">
+
+							<div id="video-teaser-0001" class="teaser-tile">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">Grillparty</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+							<div id="video-teaser-0002" class="teaser-tile">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+							<div id="video-teaser-0003" class="teaser-tile">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">Twike Marathon</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+							<div id="video-teaser-0004" class="teaser-tile">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">Sommer-Freizeit-Check</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+							<div id="video-teaser-0005" class="teaser-tile">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">Brend Spezial</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+							<div id="video-teaser-0006" class="teaser-tile">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">International</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper-big-tile">
+							<div id="video-teaser-0007" class="teaser-tile-big">
+								<span class="teaser-tile-play-icon"></span>
+								<div class="teaser-tile-text-layer">
+									<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
+									<p class="teaser-tile-subline">
+										26. April 2013
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script>
