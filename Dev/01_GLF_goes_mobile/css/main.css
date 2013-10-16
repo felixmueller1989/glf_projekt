@@ -618,6 +618,10 @@ display:none;
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
 
+.teaser-tile-wrapper.themen {
+	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
+}
+
 .teaser-tile:after {
 	content: " ";
 	height: 100%;
