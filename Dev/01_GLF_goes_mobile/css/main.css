@@ -618,8 +618,7 @@ display:none;
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
 
-.teaser-tile-wrapper.themen {
-	margin: 0 0 0 0px;
+.teaser-tile-0px;
 }
 
 .teaser-tile:after {
@@ -669,6 +668,7 @@ display:none;
 	color: #333333;
 }
 
+
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
 	background-color: rgba(0,0,0,0);
 }
@@ -713,6 +713,9 @@ display:none;
 	margin: 0 0 0 7px;
 	padding: 0;
 }
+
+
+
 .teaser-tile-subline {
 	font-size: 0.8em;
 	margin: 0 0 0 7px;
@@ -956,6 +959,8 @@ display:none;
 }
 
 #add-topic-tile{}
+
+
 
 #add-topic-tile-cross{
 background: #037CA9;
