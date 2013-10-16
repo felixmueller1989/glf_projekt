@@ -619,7 +619,7 @@ display:none;
 }
 
 .teaser-tile-wrapper.themen {
-	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
+	margin: 0 0 0 0px;
 }
 
 .teaser-tile:after {
@@ -819,6 +819,9 @@ display:none;
 	background-position: 50% 0;
 }
 
+
+
+
 /*
  *********************** Home Teaser Tile Styles
  */
@@ -901,6 +904,82 @@ display:none;
 /*
  *********************** Home Teaser Tile Styles
  */
+
+/*
+ *********************** Themen Teaser Tile Styles
+ */
+
+#topic-teaser-0001 {
+	background-image: url('../img/video_teaser/1.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0002 {
+	background-image: url('../img/video_teaser/2.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0003 {
+	background-image: url('../img/video_teaser/3.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0004 {
+	background-image: url('../img/video_teaser/4.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0005 {
+	background-image: url('../img/video_teaser/5.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0006{
+	background-image: url('../img/video_teaser/6.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0007{
+	background-image: url('../img/video_teaser/7.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0008{
+	background-image: url('../img/video_teaser/8.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#topic-teaser-0009{
+	background-image: url('../img/video_teaser/9.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+
+#add-topic-tile{}
+
+#add-topic-tile-cross{
+background: #037CA9;
+width: 20px;
+height: 100px;
+position: relative;
+margin: 50px 0 0 90px;
+transform: rotate(45deg);
+}
+ 
+#add-topic-tile-cross:before{
+background: #037CA9;
+content: "";
+width: 100px;
+height: 20px;
+position: absolute;
+top: 40px;
+left: -40px;
+}
+
+/*
+ *********************** Themen Teaser Tile Styles End
+ */
+
 /*
  *********************** Teaser Tile Styles End
  */
