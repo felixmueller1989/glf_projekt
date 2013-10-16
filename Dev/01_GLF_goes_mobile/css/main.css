@@ -957,8 +957,9 @@ display:none;
 
 #add-topic-tile{}
 
+/*Cross*/
 #add-topic-tile-cross{
-background: #037CA9;
+background: #e9e9e9;
 width: 20px;
 height: 100px;
 position: relative;
@@ -967,7 +968,7 @@ transform: rotate(45deg);
 }
  
 #add-topic-tile-cross:before{
-background: #037CA9;
+background: #e9e9e9;
 content: "";
 width: 100px;
 height: 20px;
@@ -976,6 +977,17 @@ top: 40px;
 left: -40px;
 }
 
+#add-topic-tile .teaser-tile-text-layer{
+	background: none;
+}
+
+/*Hover Styles: cross becomes green if the user hovers over the tile*/
+#add-topic-tile:hover #add-topic-tile-cross{
+background: #70ea46;
+}
+#add-topic-tile:hover #add-topic-tile-cross#add-topic-tile-cross:before{
+background: #70ea46;
+}
 /*
  *********************** Themen Teaser Tile Styles End
  */
