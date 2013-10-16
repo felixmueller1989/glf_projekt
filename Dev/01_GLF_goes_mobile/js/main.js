@@ -94,7 +94,7 @@ $(document).ready(function() {
 	});
 	/*************Video Player Functions End*********/
 	/*************Overlay Functions *****************/
-	 $("#apple div[rel]").overlay({effect: 'apple'});
+	 $("#add_topic_tile[rel]").overlay({effect: 'apple'});
 	 /*************Overlay Functions End*****************/
 	/*call functions */
 	sliderSize();
