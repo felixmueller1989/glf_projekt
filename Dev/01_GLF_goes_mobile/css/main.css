@@ -62,6 +62,72 @@ textarea {
  ========================================================================== */
 
 /*
+********************Jobs-teaser-tile styles
+*/
+
+
+.sub-headline{
+	width:75%;
+	/*margin:7px 160px 7px 0;*/
+	display:block;
+	font-size: 1em;
+	font-weight:normal;
+	color:#434343;
+	
+	
+}
+
+.sub-headline-wrapper{
+	
+	margin:0 0 14px 0;
+	
+	
+}
+
+.sub-headline-sub{
+	
+	width:75%;
+	margin:7px 0 14px 0;
+	display:block;
+	font-size: 1em;
+	font-weight:normal;
+	color:#434343;
+	
+	
+}
+
+.teaser-tile-wrapper.jobs {
+	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
+}
+
+
+
+.teaser-tile:hover .teaser-tile-text-layer-jobs, .teaser-tile:active .teaser-tile-text-layer {
+	background: rgba(112,234,70,0.9);
+	color: #333333;
+}
+
+
+.teaser-tile-text-layer-jobs {
+	background: rgba(50,50,50,0.8);
+	color: #FFFFFF;
+	width: 100%;
+	padding: 5px 0 5px 0;
+	position: absolute;
+	bottom: 3.5px;
+	z-index: 50;
+	 -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
+}
+
+
+
+/*
  *********************** General Styles
  */
 body {
@@ -88,36 +154,9 @@ h3 {
 
 /*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
 
-.sub-headline{
-	width:75%;
-	/*margin:7px 160px 7px 0;*/
-	display:block;
-	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
-	
-	
-}
-
-.sub-headline-wrapper{
-	
-	margin:0 0 14px 0;
-	
-	
-}
 
 
-.sub-headline-sub{
-	
-	width:75%;
-	margin:7px 0 14px 0;
-	display:block;
-	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
-	
-	
-}
+
 
 /*Unterüberschrift Ende*/
 
@@ -558,9 +597,7 @@ h2.filter-headline {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
 }
 
-.teaser-tile-wrapper.jobs {
-	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
-}
+
 
 
 .teaser-tile:after {
@@ -605,10 +642,7 @@ h2.filter-headline {
 	color: #333333;
 }
 
-.teaser-tile:hover .teaser-tile-text-layer-jobs, .teaser-tile:active .teaser-tile-text-layer {
-	background: rgba(112,234,70,0.9);
-	color: #333333;
-}
+
 
 
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
@@ -631,25 +665,8 @@ h2.filter-headline {
 	transition: all 0.2s ease-in;
 }
 
-/*jobs*/
 
 
-.teaser-tile-text-layer-jobs {
-	background: rgba(50,50,50,0.8);
-	color: #FFFFFF;
-	width: 100%;
-	padding: 5px 0 5px 0;
-	position: absolute;
-	bottom: 3.5px;
-	z-index: 50;
-	 -moz-transition: all 0.2s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.2s ease-in;
-    /* Opera */
-    -o-transition: all 0.2s ease-in;
-    /* Standard */
-    transition: all 0.2s ease-in;
-}
 
 .teaser-tile-headline {
 	font-size: 1em;
