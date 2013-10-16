@@ -1,9 +1,9 @@
-	<!DOCTYPE html>
-	<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-	<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-	<!--[if gt IE 8]><!-->
-	<html class="no-js">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
 	<!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
@@ -22,184 +22,161 @@
 		<script>
 			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
 		</script>
+		<script src="js/jquery.tools.min.js"></script>
 		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
 	</head>
 	<body>
-			<!--[if lt IE 7]>
-			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-			<![endif]-->
-			<div id="page_themen" class="page-wrapper">
-				<header>
-					<div class="header-content">
-						<div class="nav-home-btn-wrapper">
-							<a href="index.html" class="nav-home-btn"></a>
-						</div>
-						<nav id="navMain" class="nav-main clearfix">
-							<div id="liveBtn" class="nav-btn-wrapper">
-								<a href="Live.html" class="nav-header">Live</a>
-							</div>
-							<ul id="navAccordion">
-								<li id="1" class="collapsible nav-btn-wrapper active visited">
-									<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-									<ul class="subnav">
-										<li>
-											<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
-										</li>
-										<li>
-											<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn visited">Beiträge</a>
-										</li>
-									</ul>
-								</li>
-								<li id="2" class="collapsible nav-btn-wrapper">
-									<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-									<ul class="subnav">
-										<li>
-											<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
-										</li>
-										<li>
-											<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
-										</li>
-									</ul>
-								</li>
-								<li id="3" class="collapsible nav-btn-wrapper">
-									<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-									<ul class="subnav">
-										<li>
-											<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
-										</li>
-										<li>
-											<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
-										</li>
-									</ul>
-								</li>
-								<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-									<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-									<div class="subnav">
-										<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
-									</div>
-								</li>
-							</ul>
-						</nav>
+		<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div id="page_themen" class="page-wrapper">
+			<header>
+				<div class="header-content">
+					<div class="nav-home-btn-wrapper">
+						<a href="index.html" class="nav-home-btn"></a>
 					</div>
-				</header>
-				<div class="content-wrapper">
-					<div class="content clearfix">
+					<nav id="navMain" class="nav-main clearfix">
+						<div id="liveBtn" class="nav-btn-wrapper">
+							<a href="Live.html" class="nav-header">Live</a>
+						</div>
+						<ul id="navAccordion">
+							<li id="1" class="collapsible nav-btn-wrapper active visited">
+								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
+								<ul class="subnav">
+									<li>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
+									</li>
+									<li>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn visited">Beiträge</a>
+									</li>
+								</ul>
+							</li>
+							<li id="2" class="collapsible nav-btn-wrapper">
+								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
+								<ul class="subnav">
+									<li>
+										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
+									</li>
+									<li>
+										<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
+									</li>
+								</ul>
+							</li>
+							<li id="3" class="collapsible nav-btn-wrapper">
+								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
+								<ul class="subnav">
+									<li>
+										<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
+									</li>
+									<li>
+										<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
+									</li>
+								</ul>
+							</li>
+							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
+								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
+								<div class="subnav">
+									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<div class="content-wrapper">
+				<div class="content clearfix">
 
-						<div>
-							<h1 class="headline">Themen</h1>
+					<div>
+						<h1 class="headline">Themen</h1>
+					</div>
+
+					<div class="sub-headline-wrapper">
+
+						<p class="sub-headline">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+						</p>
+						<p class="sub-headline-sub">
+							invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+						</p>
+
+					</div>
+
+					<div class="teaser-tile-wrapper themen clearfix">
+
+						<div id="add-topic-tile" class="tile add-topic-tile">
+							<!--Deleted class teaser-tile!-->
+							<div id="add-topic-tile-cross"></div>
+							<div class="teaser-tile-text-layer">
+
+								<h3 class="teaser-tile-headline">F&uuml;ge ein neues Thema hinzu!</h3>
+
+							</div>
 						</div>
 
-						<div class="sub-headline-wrapper">
+						<div id="topic-teaser-0001" class="tile teaser-tile">
 
-							<p class="sub-headline">
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-							</p>
-							<p class="sub-headline-sub">
-								invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-							</p>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
 
+							</div>
+						</div>
+						<div id="topic-teaser-0002" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+
+							</div>
+						</div>
+						<div id="topic-teaser-0003" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+
+							</div>
+						</div>
+						<div id="topic-teaser-0004" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic-teaser-0005" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic-teaser-0006" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic-teaser-0007" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic-teaser-0008" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic-teaser-0009" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
 						</div>
 
-						<div class="teaser-tile-wrapper themen clearfix">
-							
-							<div id="add-topic-tile" class="tile add-topic-tile"> <!--Deleted class teaser-tile!-->
-								<div id="add-topic-tile-cross"> </div>
-								<div class="teaser-tile-text-layer">
-									
-									<h3 class="teaser-tile-headline">F&uuml;ge ein neues Thema hinzu!</h3>
-
-								</div>
-							</div>
-
-							<div id="topic-teaser-0001" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-
-								</div>
-							</div>
-							<div id="topic-teaser-0002" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-
-								</div>
-							</div>
-							<div id="topic-teaser-0003" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-
-								</div>
-							</div>
-							<div id="topic-teaser-0004" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-								</div>
-							</div>
-							<div id="topic-teaser-0005" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-								</div>
-							</div>
-							<div id="topic-teaser-0006" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-								</div>
-							</div>
-							<div id="topic-teaser-0007" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-								</div>
-							</div>
-							<div id="topic-teaser-0008" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-								</div>
-							</div>
-							<div id="topic-teaser-0009" class="tile teaser-tile">
-
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="pagination-wrapper clearfix">
-							<p class="pagination-btn page-back">
-								.
-							</p>
-							<p class="pagination-btn page-nr">
-								1
-							</p>
-							<p class="pagination-btn page-nr">
-								2
-							</p>
-							<p class="pagination-btn page-nr">
-								3
-							</p>
-							<p class="pagination-dots">
-								. . .
-							</p>
-							<p class="pagination-btn page-nr page-end">
-								20
-							</p>
-							<p class="pagination-btn page-fwd">
-								.
-							</p>
-						</div>
-						
 					</div>
 				</div>
 			</div>
-			<script src="js/plugins.js"></script>
-			<script src="js/main.js"></script>
-		</body>
-		</html>
+		</div>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
 
