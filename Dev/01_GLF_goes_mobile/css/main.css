@@ -343,6 +343,37 @@ nav.nav-main {
 }
 
 /*
+ * ******************************* Overlay Styles
+ */
+.apple_overlay {
+
+	/* initially overlay is hidden */
+	display: none;
+	/* growing background image */
+	background: #434343;
+	/*
+	 width after the growing animation finishes
+	 height is automatically calculated
+	 */
+	width: 640px;
+	/* some padding to layout nested elements nicely  */
+	padding: 35px;
+}
+
+/* default close button positioned on upper right corner */
+.apple_overlay .close {
+	background-image: url(/media/img/overlay/close.png);
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+	height: 35px;
+	width: 35px;
+}
+/*
+ * ******************************* Overlay Styles End
+ */
+/*
  * ***************************** Videoplayer Page Styles
  */
 .cat-link {

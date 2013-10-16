@@ -93,6 +93,9 @@ $(document).ready(function() {
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
 	/*************Video Player Functions End*********/
+	/*************Overlay Functions *****************/
+	 $("#apple div[rel]").overlay({effect: 'apple'});
+	 /*************Overlay Functions End*****************/
 	/*call functions */
 	sliderSize();
 });
