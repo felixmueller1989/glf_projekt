@@ -618,9 +618,7 @@ display:none;
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
 
-.teaser-tile-wrapper.themen {
-	margin: 0 0 0 0px;
-}
+
 
 .teaser-tile:after {
 	content: " ";
@@ -908,6 +906,10 @@ display:none;
 /*
  *********************** Themen Teaser Tile Styles
  */
+
+.teaser-tile-wrapper.themen {
+	margin: 0 0 0 0px;
+}
 
 #topic-teaser-0001 {
 	background-image: url('../img/video_teaser/1.jpg');
