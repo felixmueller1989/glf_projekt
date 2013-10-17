@@ -94,13 +94,13 @@ $(document).ready(function() {
 	});
 	/*************Video Player Functions End*********/
 	/*************Overlay Functions *****************/
-	var addTopicTile =  $("#add_topic_tile");
+	var addTopicTile = $("#add_topic_tile");
 	var addTopicOverlay = $('#add_topic_overlay');
-	 $(addTopicTile).click(function(){
-	 	console.log('ja');
-	 	$(addTopicOverlay).fadeIn(300);
-	 });
-	 /*************Overlay Functions End*****************/
+	$(addTopicTile).click(function() {
+		overlayToggle(addTopicOverlay);
+	});
+	/*************Overlay Functions End*****************/
+
 	/*call functions */
 	sliderSize();
 });
@@ -113,6 +113,22 @@ $(window).resize(function() {
 });
 /***********************WINDOW RESIZE END ********************/
 
+/***********************overlay functions********************/
+function overlayToggle(overlay) {
+	var overlayContent = overlay.find('.overlay-content');
+	$(overlay).fadeIn(300);
+	$(overlay).addClass('active');
+	$('body').css('overflow', 'hidden');
+
+	$(overlay).click(function() {
+		$(this).fadeOut(200);
+	});
+	$(overlayContent).click(function(event) {
+		event.stopPropagation();
+	});
+}
+
+/***********************overlay functions END ********************/
 /****************slider functions ********************/
 function sliderSize() {
 	// keep slider ratio depending on relative width (slider-wrapper )
