@@ -1031,6 +1031,103 @@ h2.filter-headline {
 .clearfix {
 	*zoom: 1;
 }
+
+
+
+/*
+ * Footer Design
+ */
+.footer-wrapper{
+	
+	margin:14px 400px 14px 400px;
+}
+
+.footer-design{
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-size:0.8em;
+	
+	
+}
+
+.footer_link{
+	
+	color: black;
+	text-decoration: none;
+	
+	
+}
+
+
+.footer_link:hover{
+	
+	color:#70ea46;
+}
+
+.glf_follow_footer_left{
+	
+	text-align:left;
+	float:left;
+	display:block;
+	margin: 0 0 0 20px;
+	color:black;
+}
+
+.glf_follow_footer_right{
+	
+	text-align:right;
+	display:block;
+	margin: 0 20px 0 0;
+	color:black;
+}
+
+
+.footer_img{
+	
+	width:20px;
+	height:20px;
+	
+	
+}
+
+
+
+
+
+.footer_fb{
+	
+	background-image: url('../img/icons/FBFooter.png');
+	background-size: auto;
+	background-position: cover;
+	 background-repeat:no-repeat;
+	
+ 
+ .footer_fb:hover{
+	
+	background-image: url('../img/icons/FBFooterHover.png');
+	background-size: auto;
+	background-position: cover;
+	 background-repeat:no-repeat;
+	
+ 
+ .footer_twitter{
+	
+	background-image: url('../img/icons/Twitter Footer.png');
+	background-size: auto;
+	background-position: cover;
+	 background-repeat:no-repeat;
+	}
+	
+	
+.footer_twitter:hover{
+	
+	background-image: url('../img/icons/Twitter Footer Hover.png');
+	background-size: auto;
+	background-position: cover;
+	 background-repeat:no-repeat;
+	
+}
+
 /* ==========================================================================
  EXAMPLE Media Queries for Responsive Design.
  These examples override the primary ('mobile first') styles.
