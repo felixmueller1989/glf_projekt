@@ -93,6 +93,14 @@ $(document).ready(function() {
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
 	/*************Video Player Functions End*********/
+	/*************Overlay Functions *****************/
+	var addTopicTile =  $("#add_topic_tile");
+	var addTopicOverlay = $('#add_topic_overlay');
+	 $(addTopicTile).click(function(){
+	 	console.log('ja');
+	 	$(addTopicOverlay).fadeIn(300);
+	 });
+	 /*************Overlay Functions End*****************/
 	/*call functions */
 	sliderSize();
 });
