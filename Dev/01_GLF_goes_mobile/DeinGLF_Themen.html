@@ -23,7 +23,6 @@
 			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
 		</script>
 		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
-		<script src="js/jquery.tools.min.js"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -97,7 +96,7 @@
 						</p>
 					</div>
 					<div class="teaser-tile-wrapper themen clearfix">
-						<div id="add_topic_tile" class="tile add-topic-tile" rel="add_topic_overlay">
+						<div id="add_topic_tile" class="tile add-topic-tile">
 							<div id="add-topic-tile-cross"></div>
 							<div class="teaser-tile-text-layer">
 								<h3 class="teaser-tile-headline">F&uuml;ge ein neues Thema hinzu!</h3>
@@ -160,9 +159,9 @@
 							</div>
 						</div>
 					</div>
-
-					<div id="add_topic_overlay" class="add-topic-overlay"></div>
-
+					<div id="add_topic_overlay" class="add-topic-overlay overlay">
+						<div class="overlay-content add-topic-overlay-content"></div>
+					</div>
 					<div class="pagination-wrapper clearfix">
 						<p class="pagination-btn page-back">
 							.

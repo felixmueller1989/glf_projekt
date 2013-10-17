@@ -94,7 +94,12 @@ $(document).ready(function() {
 	});
 	/*************Video Player Functions End*********/
 	/*************Overlay Functions *****************/
-	 $("#add_topic_tile[rel]").overlay({effect: 'apple'});
+	var addTopicTile =  $("#add_topic_tile");
+	var addTopicOverlay = $('#add_topic_overlay');
+	 $(addTopicTile).click(function(){
+	 	console.log('ja');
+	 	$(addTopicOverlay).fadeIn(300);
+	 });
 	 /*************Overlay Functions End*****************/
 	/*call functions */
 	sliderSize();
