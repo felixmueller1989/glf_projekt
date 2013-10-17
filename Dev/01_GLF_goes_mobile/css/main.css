@@ -343,6 +343,32 @@ nav.nav-main {
 }
 
 /*
+ * ******************************* Overlay Styles
+ */
+.overlay {
+
+	/* initially overlay is hidden */
+	display: none;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: rgba(200,200,200,0.8);
+	overflow:hidden;
+}
+.overlay-content {
+	background: #434343;
+	width: 640px;
+	height: 350px;
+	padding: 35px;
+	margin: 140px auto 0 auto;
+}
+/*
+ * ******************************* Overlay Styles End
+ */
+/*
  * ***************************** Videoplayer Page Styles
  */
 .cat-link {
@@ -353,7 +379,7 @@ nav.nav-main {
 	display: block;
 	margin: 0 0 0 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
 }
-.video-title .headline {
+.headline-wrapper .headline {
 	display: inline-block;
 }
 .subline {
@@ -369,7 +395,7 @@ nav.nav-main {
 .info-comments-wrapper {
 	float: left;
 }
-.video-info-wrapper {
+.info-wrapper {
 	width: 614px;
 	height: 200px;
 	overflow: overlay;
@@ -945,7 +971,6 @@ h2.filter-headline {
  *********************** Themen Teaser Tile Styles End
  */
 
- 
 /*
  *********************** Teaser Tile Styles End
  */
@@ -1005,7 +1030,7 @@ h2.filter-headline {
 	.info-comments-wrapper {
 		width: 621px;
 	}
-	.video-info-wrapper {
+	.info-wrapper {
 		width: 407px;
 	}
 	.comments-wrapper {
@@ -1020,7 +1045,7 @@ h2.filter-headline {
 	.info-comments-wrapper {
 		width: 621px;
 	}
-	.video-info-wrapper {
+	.info-wrapper {
 		width: 407px;
 	}
 	.comments-wrapper {
