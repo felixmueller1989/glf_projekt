@@ -1034,21 +1034,56 @@ h2.filter-headline {
 
 
 
-/*
- * Footer Design
+/********************************************************************************************************
+ * Footer Design ****************************************************************************************
  */
-.footer-wrapper{
+footer{
 	
-	margin:14px 400px 14px 400px;
+	
+	width:58.203125%;;
+	max-width:745px;
+	display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+	
+	/* margin:14px 419px 0 419px;*/
 }
 
-.footer-design{
+
+
+.footer_text{
+	width: 100%;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.8em;
+	font-size:0.9em;
+	color:black;
 	
 	
 }
+
+
+.footer_text_left{
+	
+	
+	text-align:left;
+	font-family: 'Raleway', sans-serif;
+	font-size:0.8em;
+	color:black;
+	
+}
+
+
+.footer_text_right{
+	
+	margin:0 0 0 0;
+	float:right;
+	font-family: 'Raleway', sans-serif;
+	font-size:0.8em;
+	color:black;
+	
+}
+
 
 .footer_link{
 	
@@ -1064,6 +1099,102 @@ h2.filter-headline {
 	color:#70ea46;
 }
 
+
+
+.footer_sub_footer{
+	
+	
+	text-align:left;
+	width:100%;
+	
+	
+	
+}
+
+
+
+
+
+.footer_wrapper_follow{
+	
+	width:100%;
+	
+}
+
+.footer_text_follow{
+	
+	width:100%;
+	
+}
+
+.footer_icon_follow{
+	
+	width:52px;
+	
+}
+
+.follow_icons{
+	
+	width:21px;
+	height:17px;
+	
+}
+
+
+
+
+img{
+	
+	height:17px;
+	width:17px;
+	
+	
+}
+
+.footer_copy_text{
+	
+	
+	
+}
+
+
+
+
+
+
+@media screen and (max-width: 602px){
+	
+	.footer_text_left{
+	
+	
+	text-align:center;
+	font-family: 'Raleway', sans-serif;
+	font-size:0.8em;
+	color:black;
+	
+}
+
+
+.footer_text_right{
+	
+	margin:0 0 0 0;
+	text-align:center;
+	font-family: 'Raleway', sans-serif;
+	font-size:0.8em;
+	color:black;
+	
+}
+
+	
+	
+}
+
+/*
+
+
+
+
+
 .glf_follow_footer_left{
 	
 	text-align:left;
@@ -1075,58 +1206,38 @@ h2.filter-headline {
 
 .glf_follow_footer_right{
 	
+	width: 120px;
 	text-align:right;
 	display:block;
 	margin: 0 20px 0 0;
 	color:black;
 }
 
-
-.footer_img{
+img{
 	
-	width:20px;
-	height:20px;
+	width:21px;
+	height:17px;
 	
 	
 }
 
 
 
-
-
-.footer_fb{
-	
-	background-image: url('../img/icons/FBFooter.png');
-	background-size: auto;
-	background-position: cover;
-	 background-repeat:no-repeat;
-	
- 
- .footer_fb:hover{
-	
-	background-image: url('../img/icons/FBFooterHover.png');
-	background-size: auto;
-	background-position: cover;
-	 background-repeat:no-repeat;
-	
- 
- .footer_twitter{
-	
-	background-image: url('../img/icons/Twitter Footer.png');
-	background-size: auto;
-	background-position: cover;
-	 background-repeat:no-repeat;
-	}
-	
-	
-.footer_twitter:hover{
-	
-	background-image: url('../img/icons/Twitter Footer Hover.png');
-	background-size: auto;
-	background-position: cover;
-	 background-repeat:no-repeat;
 	
 }
+
+.footer_img_wrapper{
+	
+	width:21px;
+	height:17px;
+	
+}
+
+
+
+
+*/
+
 
 /* ==========================================================================
  EXAMPLE Media Queries for Responsive Design.
