@@ -1040,10 +1040,11 @@ h2.filter-headline {
 footer{
 	
 	
-	width:58.203125%;;
+	width:58.203125%;
 	max-width:745px;
 	display: table;
     text-align: center;
+    margin-top:50px;
     margin-left: auto;
     margin-right: auto;
 	
@@ -1053,6 +1054,9 @@ footer{
 
 
 .footer_text{
+	
+	
+	margin-bottom:8px;
 	width: 100%;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -1079,7 +1083,7 @@ footer{
 	margin:0 0 0 0;
 	float:right;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.8em;
+	font-size:0.6em;
 	color:black;
 	
 }
@@ -1120,49 +1124,76 @@ footer{
 	width:100%;
 	
 }
-
+/*
 .footer_text_follow{
 	
 	width:100%;
 	
 }
-
+*/
 .footer_icon_follow{
 	
-	width:52px;
+	width:21px;
+	height:21px;
 	
 }
 
-.follow_icons{
-	
-	width:21px;
-	height:17px;
-	
-}
 
 
 
 
 img{
 	
-	height:17px;
-	width:17px;
-	
-	
-}
-
-.footer_copy_text{
-	
+	height:21px;
+	width:21px;
 	
 	
 }
 
 
 
+#footer_fb{
+	
+	width:21px;
+	height:21px;
+	background-image: url('../img/icons/facebook_grey.png');
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: 50% 0;
+}
+
+
+#footer_twitter{
+	
+	width:21px;
+	height:21px;
+	background-image: url('../img/icons/twitter_grey.png');
+	background-size: cover;
+	background-position: 50% 0;
+}
+
+#footer_fb:hover{
+	
+	width:21px;
+	height:21px;
+	background-image: url('../img/icons/fb_icon.png');
+	background-size: cover;
+	background-position: 50% 0;
+}
+
+
+#footer_twitter:hover{
+	
+	width:21px;
+	height:21px;
+	background-image: url('../img/icons/twitter.png');
+	background-size: cover;
+	background-position: 50% 0;
+}
 
 
 
-@media screen and (max-width: 602px){
+@media only screen and (max-width: 602px){
 	
 	.footer_text_left{
 	
@@ -1191,6 +1222,13 @@ img{
 
 /*
 
+#video-teaser-4{
+	
+	background-image: url('../img/video_teaser/cutter.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
 
 
 
