@@ -1041,8 +1041,8 @@ h2.filter-headline {
 footer{
 	
 	
-	width:58.203125%;
-	max-width:745px;
+	width:67.5%;
+	max-width:864px;
 	display: table;
     text-align: center;
     margin-top:7.578125%;
@@ -1058,11 +1058,12 @@ footer{
 .footer_text{
 	
 	
+	
 	margin-bottom:8px;
 	width: 100%;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.9em;
+	font-size:12px;
 	color:black;
 	
 	
@@ -1071,10 +1072,10 @@ footer{
 
 .footer_text_left{
 	
-	
+	margin-left:7.0601851851851851851851851851852%;
 	text-align:left;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.8em;
+	font-size:12px;
 	color:black;
 	
 }
@@ -1082,10 +1083,11 @@ footer{
 
 .footer_text_right{
 	
-	margin:0 0 0 0;
+	
+	margin:0 7.0601851851851851851851851851852% 0 0;
 	float:right;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.6em;
+	font-size:9px;
 	color:black;
 	
 }
@@ -1112,6 +1114,7 @@ footer{
 	
 	text-align:left;
 	width:100%;
+	margin-bottom:20px;
 	
 	
 	
@@ -1197,18 +1200,21 @@ img{
 	
 	text-align:center;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.8em;
+	font-size:12px;
 	color:black;
+	margin-left:auto;
+	margin-right:auto;
 	
 }
 
 
+
 .footer_text_right{
 	
-	margin:0 0 0 0;
+	margin:0 auto 0 auto;
 	text-align:center;
 	font-family: 'Raleway', sans-serif;
-	font-size:0.8em;
+	font-size:9px;
 	color:black;
 	
 }
