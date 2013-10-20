@@ -1036,7 +1036,8 @@ h2.filter-headline {
 
 /********************************************************************************************************
  * Footer Design ****************************************************************************************
- */
+ ********************************************************************************************************
+ * */
 footer{
 	
 	
@@ -1124,13 +1125,8 @@ footer{
 	width:100%;
 	
 }
-/*
-.footer_text_follow{
-	
-	width:100%;
-	
-}
-*/
+
+
 .footer_icon_follow{
 	
 	width:21px;
@@ -1220,61 +1216,11 @@ img{
 	
 }
 
-/*
-
-#video-teaser-4{
-	
-	background-image: url('../img/video_teaser/cutter.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-	
-}
 
 
 
 
-.glf_follow_footer_left{
-	
-	text-align:left;
-	float:left;
-	display:block;
-	margin: 0 0 0 20px;
-	color:black;
-}
 
-.glf_follow_footer_right{
-	
-	width: 120px;
-	text-align:right;
-	display:block;
-	margin: 0 20px 0 0;
-	color:black;
-}
-
-img{
-	
-	width:21px;
-	height:17px;
-	
-	
-}
-
-
-
-	
-}
-
-.footer_img_wrapper{
-	
-	width:21px;
-	height:17px;
-	
-}
-
-
-
-
-*/
 
 
 /* ==========================================================================
