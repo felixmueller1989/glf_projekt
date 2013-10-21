@@ -122,6 +122,7 @@ function overlayToggle(overlay) {
 
 	$(overlay).click(function() {
 		$(this).fadeOut(200);
+		$('body').css('overflow', 'auto');
 	});
 	$(overlayContent).click(function(event) {
 		event.stopPropagation();

@@ -1060,7 +1060,6 @@ input:focus, textarea:focus {
 	outline: none;
 	border: 2px solid #70EA46;
 }
-
 .focused {
 	color: #434343;
 	border: 2px solid #70EA46;
@@ -1081,23 +1080,42 @@ textarea.topic-description {
 }
 .file-upload-field {
 	width: 24.2%;
+	height: 150px;
 	margin: 2px 0 0 0.8%;
 	display: inline-block;
 	background: #E9E9E9;
+	position: relative;
 }
-.file-upload-field .file-upload {
+.file-upload-content {
 	width: 100%;
 	height: 150px;
 	float: left;
 	background-color: rgba(0,0,0,0);
 	z-index: 150;
 	margin: 0;
+	position: absolute;
 }
-
+.file-upload-field .file-upload {
+	width: 100%;
+	height: 150px;
+	background-color: rgba(0,0,0,0);
+	z-index: 150;
+	margin: 0;
+	position: absolute;
+}
+/*Hide "Datei auswählen" Button */
 input[type="file"]::-webkit-file-upload-button {
 	visibility: hidden;
 }
-
+.file-upload-text {
+	margin: 3px;
+	text-align: center;
+}
+.file-upload-text-s{
+	font-size: 0.8em;
+	margin:0;
+	text-align:center;
+}
 /*Cross*/
 .file-upload-cross {
 	z-index: 100;
@@ -1106,7 +1124,7 @@ input[type="file"]::-webkit-file-upload-button {
 	width: 2px;
 	height: 100px;
 	position: relative;
-	margin: 16% 0 0 48%;
+	margin: 0% 0 0 48%;
 	transform: rotate(45deg);
 	-moz-transition: all 0.2s ease-in;
 	/* WebKit */
@@ -1162,7 +1180,6 @@ input[type="file"]::-webkit-file-upload-button {
 	width: 24%;
 	margin: 35px 0 0 1%;
 	line-height: 2em;
-	
 }
 /*
  *************************Form Styles End

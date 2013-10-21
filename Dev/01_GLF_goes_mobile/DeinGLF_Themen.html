@@ -177,21 +177,28 @@
 								<fieldset class="topic-data-field">
 									<textarea placeholder="Dein Thema und deine Idee" class="topic-description req" name="message" required></textarea>
 									<div class="file-upload-field">
+										<div class="file-upload-content">
+											<p class="file-upload-text">
+												Füge ein Bild hinzu
+											</p><span class="file-upload-cross"></span>
+											<p class="file-upload-text-s">
+												vorzugsweise Querformat
+											</p>
+										</div>
 										<input id="file-upload" class="file-upload" type="file" multiple="multiple" name="file-upload" />
-										<span class="file-upload-cross"></span>
 									</div>
 								</fieldset>
 								<fieldset class="check-field">
-									<input type="checkbox" name="opt[]" value="dontPublishTopic">
-									Ich bin damit einverstanden, dass mein Vorschlag auf der Website veröffentlich wird.
+									<input id="publishTopic" type="checkbox" name="publishTopic" value="dontPublishTopic" checked>
+									<label for="publishTopic">Ich bin damit einverstanden, dass mein Vorschlag auf der Website veröffentlich wird.</label>
 									<br/>
-									<input type="checkbox" name="opt[]" value="dontPublishName">
-									Ich möchte nicht, dass mein Name veröffentlich wird.
+									<input id="publishName" type="checkbox" name="publishName" value="dontPublishName">
+									<label for="publishName">Ich möchte nicht, dass mein Name veröffentlich wird.</label>
 								</fieldset>
 
 								<div id="math" class="math-task-wrapper">
 									<p class="math-info">
-										Damit wir wissen, dass du keine Maschine bist, löse bitte Folgende Aufgabe:
+										Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
 									</p>
 									<p class="math-task">
 										4 + 5 =
