@@ -1,5 +1,5 @@
 html {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Pontano Sans', sans-serif;
 	font-size: 1em; /*16px*/
 	line-height: 1.4;
 }
@@ -76,13 +76,18 @@ a {
 	cursor: pointer;
 }
 h1 {
+	font-family: 'Asap', sans-serif;
 	font-size: 3em;
 	font-weight: normal;
 	text-transform: uppercase;
 	color: #4a4a4a;
 	margin: 5px 0 22px 3.5px; /*  >> To align with teaser tiles which also have margin-left 3.5px */
 }
+h2 {
+	font-family: 'Asap', sans-serif;
+}
 h3 {
+	font-family: 'Asap', sans-serif;
 	font-size: 1.125em;
 	font-weight: normal;
 	margin: 0;
@@ -114,6 +119,9 @@ h3 {
 
 a {
 	text-decoration: none;
+}
+p, span, h2, h3 {
+	color: #434343;
 }
 /*
  *********************** General Styles End
@@ -299,18 +307,16 @@ nav.nav-main {
 }
 .content {
 	width: 100%;
-	margin: 35px 0 0 0;<<<<<<< HEAD
+	margin: 35px 0 0 0;
 	position: relative;
-	height: auto;=======
-	position: relative;>>>>>>> a7a69465ba6870503a2efe791efafe405275c75a
+	height: auto;
+	position: relative;
 }
 .back-btn-wrapper {
+	position: relative;
 	margin: 0 0 40px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
 }
-.back-btn {
-	position: relative;
-	display: block;
-}
+
 /* Left Arrow */
 .back-btn:before {
 	left: 0;
@@ -341,7 +347,25 @@ nav.nav-main {
 	cursor: pointer;
 	background: #7F7F7F;
 }
-
+.text-link {
+	position: relative;
+	padding: 0 0 0 20px;
+	color: #434343;
+}
+.text-link:before {
+	left: 0;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0,0,0, 0);
+	border-left-color: #7F7F7F;
+	border-width: 10px;
+	top: 50%;
+	margin: -10px 0 0 0px;
+}
 /*
  * ******************************* Overlay Styles
  */
@@ -529,6 +553,33 @@ input[type="file"]::-webkit-file-upload-button {
 	width: 24%;
 	margin: 35px 0 0 1%;
 	line-height: 2em;
+	border: 0px;
+	padding: 6px;
+	/*Gradient*/
+	background: #8be567; /* Old browsers */
+	background: -moz-linear-gradient(top, #8be567 0%, #79e851 24%, #70ea46 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8be567), color-stop(24%,#79e851), color-stop(100%,#70ea46)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #8be567 0%,#79e851 24%,#70ea46 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #8be567 0%,#79e851 24%,#70ea46 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #8be567 0%,#79e851 24%,#70ea46 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #8be567 0%,#79e851 24%,#70ea46 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8be567', endColorstr='#70ea46',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 1px 1px 1px 1px #222222;
+	box-shadow: 1px 1px 1px 1px #222222;
+}
+.submit-btn:hover {
+	background: #70ea46; /* Old browsers */
+	background: -moz-linear-gradient(top, #70ea46 2%, #69d334 71%, #61d62f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#70ea46), color-stop(71%,#69d334), color-stop(100%,#61d62f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #70ea46 2%,#69d334 71%,#61d62f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #70ea46 2%,#69d334 71%,#61d62f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #70ea46 2%,#69d334 71%,#61d62f 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #70ea46 2%,#69d334 71%,#61d62f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70ea46', endColorstr='#61d62f',GradientType=0 ); /* IE6-9 */
+}
+.submit-btn:focus {
+	border: none;
+	background: #70ea46; /* Old browsers */
 }
 /*
  *************************Form Styles End
@@ -557,15 +608,23 @@ input[type="file"]::-webkit-file-upload-button {
 	margin: 3.5px;
 	float: left;
 }
-.info-comments-wrapper {
-	float: left;
-}
 .info-wrapper {
-	width: 614px;
+	width: 821px;
 	height: 200px;
 	overflow: overlay;
 	float: left;
 	margin: 3.5px;
+	font-size: 0.9em;
+}
+.info-headline{
+	font-size: 1.2em;
+	margin: 0 0 15px 0;
+}
+.info-text{
+	margin:0;
+}
+.info-wrapper .link-to-broadcast{
+	margin: 10px 0 0 0;
 }
 .call-to-action-text {
 	text-align: center;
