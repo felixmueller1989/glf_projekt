@@ -39,22 +39,22 @@
 							<a href="Live.html" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper active visited">
+							<li id="1" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
 										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn visited">Beiträge</a>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper">
+							<li id="2" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
+										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn visited">Themen</a>
 									</li>
 									<li>
 										<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
@@ -75,7 +75,7 @@
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
 								<div class="subnav">
-									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
 						</ul>
@@ -160,7 +160,54 @@
 						</div>
 					</div>
 					<div id="add_topic_overlay" class="add-topic-overlay overlay">
-						<div class="overlay-content add-topic-overlay-content"></div>
+						<div class="overlay-content add-topic-overlay-content">
+							<h3 class="overlay-headline">Thema hinzufügen - Was beschäftigt dich?</h3>
+							<div class="overlay-close-btn">
+								<span class="overlay-close-icon"></span>
+							</div>
+							<form id="addTopicForm" class="overlay-form add-topic-form clearfix" method="post" action="submit.action" autocomplete="on">
+								<fieldset class="identification-field left-section">
+									<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+									<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+								</fieldset>
+								<fieldset class="identification-field right-section">
+									<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+									<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
+								</fieldset>
+								<fieldset class="topic-data-field">
+									<textarea placeholder="Dein Thema und deine Idee" class="topic-description req" name="message" required></textarea>
+									<div class="file-upload-field">
+										<div class="file-upload-content">
+											<p class="file-upload-text">
+												Füge ein Bild hinzu
+											</p><span class="file-upload-cross"></span>
+											<p class="file-upload-text-s">
+												vorzugsweise Querformat
+											</p>
+										</div>
+										<input id="file-upload" class="file-upload" type="file" multiple="multiple" name="file-upload" />
+									</div>
+								</fieldset>
+								<fieldset class="check-field">
+									<input id="publishTopic" type="checkbox" name="publishTopic" value="dontPublishTopic" checked>
+									<label for="publishTopic">Ich bin damit einverstanden, dass mein Vorschlag auf der Website veröffentlich wird.</label>
+									<br/>
+									<input id="publishName" type="checkbox" name="publishName" value="dontPublishName">
+									<label for="publishName">Ich möchte nicht, dass mein Name veröffentlich wird.</label>
+								</fieldset>
+
+								<div id="math" class="math-task-wrapper">
+									<p class="math-info">
+										Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+									</p>
+									<p class="math-task">
+										4 + 5 =
+									</p>
+									<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+								</div>
+								<input type="submit" value="Abschicken" class="submit-btn"/>
+							</form>
+						</div>
 					</div>
 					<div class="pagination-wrapper clearfix">
 						<p class="pagination-btn page-back">
