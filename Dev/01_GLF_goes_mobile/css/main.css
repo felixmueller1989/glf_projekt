@@ -1250,18 +1250,19 @@ h2.filter-headline {
 .search-headline-wrapper {
 
 }
-.search-headline {
+
+h1.search-headline {
 	display: inline-block;
 	text-transform: none !important;
-	line-height: 0.4em;
 	color: #F04D41;
+	font-size: 2em;
 }
-.search-item-headline {
+h1.search-item-headline {
 	display: inline-block;
 	text-transform: none !important;
-	line-height: 0.4em;
 	font-weight: bold;
 	color: #F04D41;
+	font-size: 2em;
 }
 
 .search-suggestion-wrapper {
@@ -1270,10 +1271,21 @@ h2.filter-headline {
 
 .search-suggestion-text {
 	margin: 20px 0 0 0;
+	display: inline-block;
 }
 .search-suggestion-list {
 	list-style: none;
+	display: inline-block;
 }
+
+
+.search-suggestion-list li:before{
+	content:"-";
+	position:relative;
+	margin-left: -10px; /* optional, for multiline li element */
+	left: -5px;
+}
+
 
 .search-field-wrapper {
 	margin: 0 0 0 3.5px;
