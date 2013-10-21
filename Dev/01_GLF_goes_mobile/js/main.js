@@ -77,6 +77,11 @@ $(document).ready(function() {
 		var url = "Videoplayer_Beitraege.html";
 		$(location).attr('href', url);
 	});
+	var mediathekSTiles = $('#page_mediathekS').find('.teaser-tile');
+	$(mediathekSTiles).click(function() {
+		var url = "Videoplayer_Sendungen.html";
+		$(location).attr('href', url);
+	});
 	/************** Only for Testing Functions End*****************/
 	/*************Video Player Functions *********/
 	projekktor('.video-clip', {
