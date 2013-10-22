@@ -1311,55 +1311,56 @@ h2.filter-headline {
  *********************** Live page Styles
  */
 
-#clip_topic_teaser_0001 {
-	background-image: url('../img/video_teaser/1.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0002 {
-	background-image: url('../img/video_teaser/2.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0003 {
-	background-image: url('../img/video_teaser/3.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0004 {
-	background-image: url('../img/video_teaser/4.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0005 {
-	background-image: url('../img/video_teaser/5.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0006 {
-	background-image: url('../img/video_teaser/6.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0007 {
-	background-image: url('../img/video_teaser/7.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-.teaser-tile-cat {
-	font-size: 1em;
-	margin: 0 0 0 7px;
-	padding: 0;
-}
+ #clip_topic_teaser_0001 {
+ 	background-image: url('../img/video_teaser/1.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
+ #clip_topic_teaser_0002 {
+ 	background-image: url('../img/video_teaser/2.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
+ #clip_topic_teaser_0003 {
+ 	background-image: url('../img/video_teaser/3.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
+ #clip_topic_teaser_0004 {
+ 	background-image: url('../img/video_teaser/4.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
+ #clip_topic_teaser_0005 {
+ 	background-image: url('../img/video_teaser/5.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
+ #clip_topic_teaser_0006 {
+ 	background-image: url('../img/video_teaser/6.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
+ #clip_topic_teaser_0007 {
+ 	background-image: url('../img/video_teaser/7.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
+ }
 
-.teaser-tile-cat {
-	font-size: 1em;
-	margin: 0 0 0 7px;
-	padding: 0;
-}
-.teaser-tile-cat-link {
-	color: #9A0758;
-}
+ .live-chat-wrapper{
+ 	width: 821px;
+ 	height: 350px;
+ 	margin: 3.5px;
+ 	background: #7f7f7f;
+ 	float: left;
+ }
+
+ .teaser-tile-cat-link {
+ 	font-size: 0.8em;
+ 	margin: 0 0 0 7px;
+ 	padding: 0;
+ 	color:#fff;
+ }
 
 /*
  *********************** Live page Styles End
