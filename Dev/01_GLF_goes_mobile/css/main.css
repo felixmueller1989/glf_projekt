@@ -62,51 +62,41 @@ textarea {
  ========================================================================== */
 
 /*
-********************Jobs-teaser-tile styles
-*/
+ ********************Jobs-teaser-tile styles
+ */
 
-
-.sub-headline{
-	width:75%;
+.sub-headline {
+	width: 75%;
 	/*margin:7px 160px 7px 0;*/
-	display:block;
+	display: block;
 	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
-	
-	
+	font-weight: normal;
+	color: #434343;
 }
 
-.sub-headline-wrapper{
-	
-	margin:0 0 14px 0;
-	
-	
+.sub-headline-wrapper {
+
+	margin: 0 0 14px 0;
 }
 
-.sub-headline-sub{
-	
-	width:75%;
-	margin:7px 0 14px 0;
-	display:block;
+.sub-headline-sub {
+
+	width: 75%;
+	margin: 7px 0 14px 0;
+	display: block;
 	font-size: 1em;
-	font-weight:normal;
-	color:#434343;
-	
-	
+	font-weight: normal;
+	color: #434343;
 }
 
 .teaser-tile-wrapper.jobs {
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
 
-
-
 .teaser-tile:hover .teaser-tile-text-layer-jobs, .teaser-tile:active .teaser-tile-text-layer {
 	background: rgba(112,234,70,0.9);
 	color: #333333;
 }
-
 
 .teaser-tile-text-layer-jobs {
 	background: rgba(50,50,50,0.8);
@@ -116,16 +106,14 @@ textarea {
 	position: absolute;
 	bottom: 3.5px;
 	z-index: 50;
-	 -moz-transition: all 0.2s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.2s ease-in;
-    /* Opera */
-    -o-transition: all 0.2s ease-in;
-    /* Standard */
-    transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
 }
-
-
 
 /*
  *********************** General Styles
@@ -154,14 +142,7 @@ h3 {
 
 /*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
 
-
-
-
-
 /*Unterüberschrift Ende*/
-
-
-
 
 a {
 	text-decoration: none;
@@ -350,13 +331,10 @@ nav.nav-main {
 }
 .content {
 	width: 100%;
-	margin: 35px 0 0 0;
-<<<<<<< HEAD
-	position:relative;
-	height:auto;
-=======
+	margin: 35px 0 0 0;<<<<<<< HEAD
 	position: relative;
->>>>>>> a7a69465ba6870503a2efe791efafe405275c75a
+	height: auto;=======
+	position: relative;>>>>>>> a7a69465ba6870503a2efe791efafe405275c75a
 }
 .back-btn-wrapper {
 	margin: 0 0 40px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
@@ -564,41 +542,34 @@ h2.filter-headline {
 /*
  *********************** Teaser Tile Styles
  */
-.info-tile{
-	
+.info-tile {
+
 	width: 200px;
 	height: 200px;
 	margin: 3.5px;
-	float:left;
+	float: left;
 	background-color: #7F7F7F;
-	
-	
 }
 
-.info-tile .header-tile{
-	
+.info-tile .header-tile {
+
 	margin: 7px 0 0 7px;
 	font-size: 1em;
-	color:white;
+	color: white;
 	font-weight: normal;
 }
 
-.info-tile .text-tile{
-	
+.info-tile .text-tile {
+
 	margin: 14px 7px 0 7px;
 	font-size: 0.8em;
-	color:white;
+	color: white;
 	font-weight: normal;
-	
-	
 }
 
 .teaser-tile-wrapper {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
 }
-
-
-
 
 .teaser-tile:after {
 	content: " ";
@@ -642,9 +613,6 @@ h2.filter-headline {
 	color: #333333;
 }
 
-
-
-
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
 	background-color: rgba(0,0,0,0);
 }
@@ -664,9 +632,6 @@ h2.filter-headline {
 	/* Standard */
 	transition: all 0.2s ease-in;
 }
-
-
-
 
 .teaser-tile-headline {
 	font-size: 1em;
@@ -723,77 +688,61 @@ h2.filter-headline {
 	background-position: 50% 0;
 }
 
+#video-teaser-1 {
 
-#video-teaser-1{
-	
 	background-image: url('../img/video_teaser/werbung.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-2{
-	
+#video-teaser-2 {
+
 	background-image: url('../img/video_teaser/redakteur.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-3{
-	
+#video-teaser-3 {
+
 	background-image: url('../img/video_teaser/kameramann.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-4{
-	
+#video-teaser-4 {
+
 	background-image: url('../img/video_teaser/cutter.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-5{
-	
+#video-teaser-5 {
+
 	background-image: url('../img/video_teaser/moderator.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-6{
-	
+#video-teaser-6 {
+
 	background-image: url('../img/video_teaser/chef.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-7{
-	
+#video-teaser-7 {
+
 	background-image: url('../img/video_teaser/bildregie.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
 
-#video-teaser-8{
-	
+#video-teaser-8 {
+
 	background-image: url('../img/video_teaser/tonregie.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-	
 }
-
-
-
-
-
-
-
 
 /*
  *********************** Home Teaser Tile Styles
@@ -1032,203 +981,214 @@ h2.filter-headline {
 	*zoom: 1;
 }
 
-
-
 /********************************************************************************************************
  * Footer Design ****************************************************************************************
  ********************************************************************************************************
  * */
-footer{
-	
-	
-	width:67.5%;
-	max-width:864px;
-	display: table;
-    text-align: center;
-    margin-top:7.578125%;
-    margin-left: auto;
-    margin-right: auto;
-    
-	
+footer {
+
+	width: 60.234375%;
+	max-width: 771px;
+	display: block;
+	text-align: center;
+	margin-top: 7.578125%;
+	margin-left: auto;
+	margin-right: auto;
 	/* margin:14px 419px 0 419px;*/
 }
 
+/* Obere Footer Hälfte*/
+.footer-text-wrapper {
 
-
-.footer_text{
-	
-	
-	
-	margin-bottom:8px;
+	/*margin-bottom:8px;*/
 	width: 100%;
 	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size:12px;
-	color:black;
-	
-	
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12px;
+	color: black;
 }
 
 
-.footer_text_left{
-	
-	margin-left:7.0601851851851851851851851851852%;
-	text-align:left;
-	font-family: 'Raleway', sans-serif;
-	font-size:12px;
-	color:black;
-	
-}
 
 
-.footer_text_right{
-	
-	
-	margin:0 7.0601851851851851851851851851852% 0 0;
-	float:right;
-	font-family: 'Raleway', sans-serif;
-	font-size:9px;
-	color:black;
-	
-}
+.footer-link {
 
-
-.footer_link{
-	
 	color: black;
 	text-decoration: none;
-	
-	
+}
+
+.footer-link:hover {
+
+	color: #70ea46;
 }
 
 
-.footer_link:hover{
+.footer-words-center {
+
+	margin: 0 0.98765432098765432098765432098765% 0 0.98765432098765432098765432098765%;
 	
-	color:#70ea46;
+
 }
 
 
+.footer-words-left{
+	
+	margin:0 0.98765432098765432098765432098765% 0 0;
+}
 
-.footer_sub_footer{
+.footer-words-right{
 	
+	margin:0 0 0 0.98765432098765432098765432098765%;
+}
+
+/* Obere Footer Hälfte Ende
+
+ *
+ *
+ *
+ * */
+
+/*Untere Footer Häfte*/
+
+.footer-sub-wrapper {
+
+	width: 100%;
+	display:-webkit-inline-box;
+	/*padding-left:0.98765432098765432098765432098765%;
+	padding-right:0.98765432098765432098765432098765%;*/
+	margin-top: 1.484375%;
+	text-align: left;
+	margin-bottom: 20px;
+	position:relative;
+}
+
+.footer-sub-wrapper-left{
 	
-	text-align:left;
-	width:100%;
-	margin-bottom:20px;
-	
-	
+	/*margin-top:2.308626974483596597812879708384%;*/
+	position:absolute;
+	left:0;
+	width:170px;
 	
 }
 
+/*GLFTV Folgen*/
+.footer-text-left {
 
-
-
-
-.footer_wrapper_follow{
 	
-	width:100%;
 	
+	text-align: left;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12px;
+	color: black;
 }
 
+.footer-wrapper-follow {
 
-.footer_icon_follow{
-	
-	width:21px;
-	height:21px;
-	
+	width: 100%;
 }
 
+.footer-icon-follow {
 
-
-
-
-img{
-	
-	height:21px;
-	width:21px;
-	
-	
+	width: 21px;
+	height: 21px;
 }
 
+/*
+ .footer-icon-follow-twitter{
 
+ margin-top:1.171875%;
+ margin-left:1.328125%;
+ width:21px;
+ height:21px;
 
-#footer_fb{
-	
-	width:21px;
-	height:21px;
+ }
+ */
+
+img {
+
+	height: 21px;
+	width: 21px;
+}
+
+#footer_fb {
+
+	margin-left: 3%;
+	width: 21px;
+	height: 21px;
 	background-image: url('../img/icons/facebook_grey.png');
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 0;
 }
 
+#footer_twitter {
 
-#footer_twitter{
-	
-	width:21px;
-	height:21px;
+	margin-left: 4%;
+	width: 21px;
+	height: 21px;
 	background-image: url('../img/icons/twitter_grey.png');
 	background-size: cover;
 	background-position: 50% 0;
 }
 
-#footer_fb:hover{
-	
-	width:21px;
-	height:21px;
+#footer_fb:hover {
+
+	margin-left: 3%;
+	width: 21px;
+	height: 21px;
 	background-image: url('../img/icons/fb_icon.png');
 	background-size: cover;
 	background-position: 50% 0;
 }
 
+#footer_twitter:hover {
 
-#footer_twitter:hover{
-	
-	width:21px;
-	height:21px;
+	margin-left: 4%;
+	width: 21px;
+	height: 21px;
 	background-image: url('../img/icons/twitter.png');
 	background-size: cover;
 	background-position: 50% 0;
 }
 
+/*Copyright*/
 
+.footer-text-right {
 
-@media only screen and (max-width: 602px){
-	
-	.footer_text_left{
-	
-	
-	text-align:center;
-	font-family: 'Raleway', sans-serif;
-	font-size:12px;
-	color:black;
-	margin-left:auto;
-	margin-right:auto;
-	
-}
-
-
-
-.footer_text_right{
-	
-	margin:0 auto 0 auto;
-	text-align:center;
-	font-family: 'Raleway', sans-serif;
-	font-size:9px;
-	color:black;
-	
-}
-
-	
-	
+ 	text-align:right;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 9px;
+	color: black;
+	position:absolute;
+	right:0;
 }
 
 
 
 
+@media only screen and (max-width: 602px) {
 
+	.footer-text-left {
 
+		center:0;
+		text-align: center;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 12px;
+		color: black;
+		
+	}
 
+	.footer-text-right {
+
+		center:0;
+		
+		text-align: center;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 9px;
+		color: black;
+	}
+
+}
 
 /* ==========================================================================
  EXAMPLE Media Queries for Responsive Design.
