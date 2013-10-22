@@ -4,32 +4,31 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/main.css">
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script>
-		window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
-	</script>
-	<script src="js/jquery.tools.min.js"></script>
-	<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
-</head>
-<body>
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link href='http://fonts.googleapis.com/css?family=Asap|Varela|Pontano+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
+		</script>
+		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
+	</head>
+	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="suchergebnis" class="page-wrapper">
+		<div id="page_search" class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
@@ -40,14 +39,14 @@
 							<a href="Live.html" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper active visited">
+							<li id="1" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
 										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn visited">Beiträge</a>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
@@ -55,10 +54,10 @@
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
+										<a id="themen" href="DeinGLF_Themen.html" alt="Themen" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
+										<a id="jobs" href="DeinGLF_Jobs.html" alt="Jobs" class="subnav-btn">Jobs</a>
 									</li>
 								</ul>
 							</li>
@@ -66,17 +65,17 @@
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
+										<a id="team" alt="Team" class="subnav-btn">Team</a>
 									</li>
 									<li>
-										<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
+										<a id="infos" alt="Geschichte" class="subnav-btn">Infos</a>
 									</li>
 								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
 								<div class="subnav">
-									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
 						</ul>
@@ -86,59 +85,82 @@
 			<div class="content-wrapper">
 				<div class="content clearfix">
 					<div class="back-btn-wrapper">
-						<a class="back-btn">zur&uuml;ck</a>
+						<a class="back-btn"><span class="back-btn-arrow"></span><span class="back-btn-text">zurück</span></a>
 					</div>
-						<div class="headline-wrapper search-headline-wrapper">
+					<div class="headline-wrapper search-headline-wrapper">
 						<h1 class="headline search-headline">Deine Suche nach </h1>
-						<h1 class="search-item-headline"> &quot;Suchbegriff&quot;</h1> 
+						<h1 class="search-item-headline"> &quot;Suchbegriff&quot;</h1>
 						<h1 class="headline search-headline">ergab leider keine Treffer. </h1>
 					</div>
-					<div class="search-suggestion-wrapper"> 
+					<div class="search-suggestion-wrapper">
 						<h3 class="search-suggestion-text">Probier doch mal</h3>
-						<ul class="search-suggestion-list"> <li>deine Anfrage allgemeiner zu formulieren</li><li>deine Eingabe auf Tippfehler zu pr&uuml;fen</li>
-							<li>deinen Ellenbogen mit der Zunge zu ber&uuml;hren</li></ul></div>
 
-							<div class="search-field-wrapper clearfix">
-								<input id="searchInput_2" type="text" placeholder="Neue Suche starten" alt="Neue Suche starten"/>
-								<div id="searchBtn_2" class="search-btn-onpage"> </div>
-							</div>
-							<div class="related-tile-wrapper search-related-tile-wrapper clearfix">
-								<h2 class="related-tile-headline search-related-tile-headline">Empfehlungen, die dich auch interessieren könnten</h2>
-								<div id="clip_search_teaser_0001" class="tile teaser-tile">
+						<ul class="search-suggestion-list">
+							<li>
+								deine Anfrage allgemeiner zu formulieren
+							</li>
+							<li>
+								deine Eingabe auf Tippfehler zu pr&uuml;fen
+							</li>
+							<li>
+								deinen Ellenbogen mit der Zunge zu ber&uuml;hren
+							</li>
+						</ul>
+					</div>
 
-									<div class="teaser-tile-text-layer">
-										<h3 class="teaser-tile-headline">Lorem ipsum dolor sit</h3>
-										<p class="teaser-tile-cat">in <a class="teaser-tile-cat-link" href="" > Hochschule &amp; Studium </a></p>
+					<div class="search-field-wrapper clearfix">
+						<input id="searchInput_2" type="text" placeholder="Neue Suche starten" alt="Neue Suche starten"/>
+						<div id="searchBtn_2" class="search-btn-onpage"></div>
+					</div>
+					<div class="related-tile-wrapper search-related-tile-wrapper clearfix">
+						<h2 class="related-tile-headline search-related-tile-headline">Empfehlungen, die dich auch interessieren könnten</h2>
+						<div id="clip_search_teaser_0001" class="tile teaser-tile">
 
-									</div>
-								</div>
-								<div id="clip_search_teaser_0002" class="tile teaser-tile">
-
-									<div class="teaser-tile-text-layer">
-										<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-										<p class="teaser-tile-cat">in <a class="teaser-tile-cat-link" href="" > Hochschule &amp; Studium </a></p>
-									</div>
-								</div>
-								<div id="clip_search_teaser_0003" class="tile teaser-tile">
-									<div class="teaser-tile-text-layer">
-										<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
-										<p class="teaser-tile-cat">in <a class="teaser-tile-cat-link" href="" > Hochschule &amp; Studium </a></p>
-									</div>
-								</div>
-								
-							</div>
-
-							<div class="mediathek-link-wrapper"> 
-								<h3 class="mediathek-link-text">Oder durchstöbere unsere Mediathek</h3>
-								<ul class="mediathek-link-list"> <li><a href="Mediathek_Beitraege.html"> Zu den Beitr&auml;gen</a></li>
-									<li><a href="Mediathek_Beitraege.html"> Zu den Sendungen</a></li></ul>
-								</div>
-
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit</h3>
+								<p class="teaser-tile-cat">
+									in <a class="teaser-tile-cat-link" href="" > Hochschule &amp; Studium </a>
+								</p>
 
 							</div>
 						</div>
+						<div id="clip_search_teaser_0002" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+								<p class="teaser-tile-cat">
+									in <a class="teaser-tile-cat-link" href="" > Hochschule &amp; Studium </a>
+								</p>
+							</div>
+						</div>
+						<div id="clip_search_teaser_0003" class="tile teaser-tile">
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+								<p class="teaser-tile-cat">
+									in <a class="teaser-tile-cat-link" href="" > Hochschule &amp; Studium </a>
+								</p>
+							</div>
+						</div>
 					</div>
-					<script src="js/plugins.js"></script>
-					<script src="js/main.js"></script>
-				</body>
-				</html>
+
+					<div class="mediathek-link-wrapper">
+						<h3 class="mediathek-link-text">Oder durchstöbere unsere Mediathek</h3>
+						<ul class="mediathek-link-list">
+							<li>
+								<a href="Mediathek_Beitraege.html"> Zu den Beitr&auml;gen</a>
+							</li>
+							<li>
+								<a href="Mediathek_Beitraege.html"> Zu den Sendungen</a>
+							</li>
+						</ul>
+					</div>
+					<div class="back-btn-wrapper">
+						<a class="back-btn"><span class="back-btn-arrow"></span><span class="back-btn-text">zurück</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
