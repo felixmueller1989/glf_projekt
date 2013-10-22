@@ -1367,6 +1367,81 @@ html {
  */
 
 /*
+ *********************** No Live page Styles
+ */
+ .glf-live-banner-wrapper{
+ 	width:100%;
+ 	height: 200px;
+ 	margin: 50px 0 7px 3.5px;
+ 	background: #7F7F7F;
+ }
+ .live-broadcast-headline-wrapper{
+ 	width: 59.32367149758454%;
+ 	height: 200px;
+ 	padding: 0 20.33816425120773% 0 20.33816425120773%;
+ 	margin: 0 0 37px 3.5px;
+ 	text-align:center;
+ }
+ .live-broadcast-headline{
+ 	padding: auto;
+ 	display: block;
+ 	font-size: 1.875em;
+ 	line-height: 2.5em;
+ }
+ .live-broadcast-subline{
+ 	margin: auto;
+ 	display: block;
+ 	font-size: 1.125em;
+ 	line-height: 2.5em;
+ }
+ .date-live-broadcast-subline{
+ 	margin: auto;
+ 	display: block;
+ 	color: #9a0758;
+ 	font-size: 1.875em;
+ 	line-height: 2.5em;
+ }
+
+ .clip-related-tile-wrapper {
+ 	margin: 0 0 0 0px;
+ 	display: block;
+ 	width: 100%;
+ 	padding: 0 0 27px 0;
+ }
+ .clip-related-tile-headline{
+ 	font-size: 1.125em;
+ 	color: #9a0758;
+
+ }
+ .broadcast-related-tile-wrapper {
+ 	margin: 0 0 0 0px;
+ 	display: block;
+ 	width: 100%;
+ 	border-bottom: 1px solid #7f7f7f;
+ 	padding: 0 0 33px 0;
+ }
+
+ .broadcast-related-tile-headline{
+ 	font-size: 1.125em;
+ 	color: #9a0758;
+
+ }
+ .clip-related-link{
+ 	display: block;
+ 	
+ }
+ .broadcast-related-link{
+ 	display: block;
+ 	
+ }
+
+ /*
+ *********************** No Live page Styles End
+ */
+
+
+
+/*
  *********************** Search page Styles
  */
 
@@ -1512,10 +1587,10 @@ html {
  }
 
  .mediathek-link-beitraege{
- 	display:block;
+ 	
  }
  .mediathek-link-sendungen{
- 	display:block;
+
  }
 
 /*
