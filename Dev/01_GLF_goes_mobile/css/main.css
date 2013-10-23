@@ -401,6 +401,17 @@ nav.nav-main {
 	width: 50%;
 	padding: 25px;
 	margin: 78px auto 0 auto;
+	color: #E9E9E9;
+	position: relative;
+}
+.overlay-content .text {
+	color: #e9e9e9;
+}
+.overlay-content .text-link {
+	color: #e9e9e9;
+}
+.overlay-content .text-link:before {
+	border-left-color: #e9e9e9;
 }
 /*
  * ******************************* Overlay Styles End
@@ -602,6 +613,21 @@ input[type="file"]::-webkit-file-upload-button {
 .submit-btn:focus {
 	border: none;
 	background: #70ea46; /* Old browsers */
+}
+.overlay-form-action-wrapper {
+	float: right;
+	display: table;
+}
+.overlay-form-action-wrapper .text-link {
+	vertical-align: bottom;
+}
+.overlay-form-action-wrapper .text-link:hover {
+	color: #70EA46;
+}
+.overlay-form-action-wrapper .submit-btn {
+	min-width: 170px;
+	max-width: 250px;
+	margin: 35px 0 0 17px;
 }
 /*
  *************************Form Styles End
@@ -1038,7 +1064,6 @@ footer {
 	margin-top: 7.578125%;
 	margin-left: auto;
 	margin-right: auto;
-	/* margin:14px 419px 0 419px;*/
 }
 /* Obere Footer Hälfte*/
 .footer-text-wrapper {
@@ -1050,7 +1075,7 @@ footer {
 	color: black;
 }
 .footer-link {
-	color: black;
+	color: black; /*change to #7f7f7f*/
 	text-decoration: none;
 }
 .footer-link:hover {
@@ -1071,10 +1096,8 @@ footer {
  /*Untere Footer Häfte*/
 .footer-sub-wrapper {
 	width: 100%;
-	display: -webkit-inline-box;
-	/*padding-left:0.98765432098765432098765432098765%;
-	 padding-right:0.98765432098765432098765432098765%;*/
-	margin-top: 1.484375%;
+	display: -webkit-inline-box; /*display:inline-block; -webkit is a prefix only for certain browsers!*/
+	margin-top: 1.484375%; /*top-margins can be written in absolute values*/
 	text-align: left;
 	margin-bottom: 20px;
 	position: relative;
@@ -1883,6 +1906,9 @@ h1.search-item-headline {
 	}
 	.related-tile-wrapper {
 		width: 621px;
+	}
+	.topic-img {
+		width: 407px;
 	}
 }
 
