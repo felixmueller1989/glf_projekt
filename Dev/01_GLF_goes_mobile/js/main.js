@@ -82,6 +82,24 @@ $(document).ready(function() {
 		var url = "Videoplayer_Sendungen.html";
 		$(location).attr('href', url);
 	});
+	var themenTiles = $('#page_themen').find('.teaser-tile');
+	$(themenTiles).click(function() {
+		var url = "DeinGLF_Themen_Detail.html";
+		$(location).attr('href', url);
+	});
+
+	var submitBtn = [];
+	var overlayForm = $('.overlay-form-content');
+	var overlaySubmitContent = $('.overlay-form-submitted-content');
+	submitBtn.push($('input[type="submit"]'));
+	submitBtn.push($('.reload-form'));
+	$(submitBtn).each(function() {
+		$(this).click(function() {
+			$(overlayForm).toggleClass('visible').toggleClass('hidden');
+			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+
+		});
+	});
 	/************** Only for Testing Functions End*****************/
 	/*************Video Player Functions *********/
 	projekktor('.video-clip', {
@@ -98,6 +116,15 @@ $(document).ready(function() {
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
 	/*************Video Player Functions End*********/
+	/*************Detail Pages Info-Wrapper Functions*********/
+	var infoWrapper = $('.info-wrapper');
+	var infoContent = $(infoWrapper).find('.info-content');
+	var infoWrapperH = $(infoWrapper).height();
+	var infoContentH = $(infoContent).height();
+	if (infoWrapperH < infoContentH) {
+		infoWrapper.css('height', '407px');
+	}
+	/*************Detail Pages Info-Wrapper Functions End*********/
 	/*************Overlay Functions *****************/
 	var addTopicTile = $("#add_topic_tile");
 	var addTopicOverlay = $('#add_topic_overlay');
@@ -108,6 +135,7 @@ $(document).ready(function() {
 
 	/*call functions */
 	sliderSize();
+	resizeInfoWrapper();
 });
 /*document.ready end */
 
@@ -115,19 +143,27 @@ $(document).ready(function() {
 $(window).resize(function() {
 	/*call functions */
 	sliderSize();
+	resizeInfoWrapper();
 });
 /***********************WINDOW RESIZE END ********************/
 
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
 	var overlayContent = overlay.find('.overlay-content');
+	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
+	var overlayCloseBtn = overlayContent.find('.close-overlay-btn');
+	var closeOverlay = [];
+	closeOverlay.push($(overlay));
+	closeOverlay.push($(overlayCloseIcon));
+	closeOverlay.push($(overlayCloseBtn));
 	$(overlay).fadeIn(300);
 	$(overlay).addClass('active');
 	$('body').css('overflow', 'hidden');
-
-	$(overlay).click(function() {
-		$(this).fadeOut(200);
-		$('body').css('overflow', 'auto');
+	$(closeOverlay).each(function() {
+		$(this).click(function() {
+			$(overlay).fadeOut(200);
+			$('body').css('overflow', 'auto');
+		});
 	});
 	$(overlayContent).click(function(event) {
 		event.stopPropagation();
@@ -135,6 +171,20 @@ function overlayToggle(overlay) {
 }
 
 /***********************overlay functions END ********************/
+/*************Detail Pages Info-Wrapper Functions*********/
+function resizeInfoWrapper() {
+	var infoWrapper = $('.info-wrapper');
+	var infoContent = $(infoWrapper).find('.info-content');
+	var infoWrapperH = $(infoWrapper).height();
+	var infoContentH = $(infoContent).height();
+	if (infoWrapperH < infoContentH) {
+		infoWrapper.css('height', '407px');
+	} else if (infoContentH < '200') {
+		infoWrapper.css('height', '200px');
+	}
+}
+
+/*************Detail Pages Info-Wrapper Functions End*********/
 /****************slider functions ********************/
 function sliderSize() {
 	// keep slider ratio depending on relative width (slider-wrapper )
