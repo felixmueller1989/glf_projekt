@@ -4,11 +4,11 @@ html {
 	line-height: 1.4;
 }
 ::-moz-selection {
-	background: #9a0758;
+	background: #0000ff;
 	text-shadow: none;
 }
 ::selection {
-	background: #9a0758;
+	background: #0000ff;
 	text-shadow: none;
 }
 /*
@@ -329,7 +329,6 @@ nav.nav-main {
 	height: 0;
 	width: 0;
 	position: absolute;
-	pointer-events: none;
 	border-color: rgba(0,0,0, 0);
 	border-right-color: #7F7F7F;
 	border-width: 7px;
@@ -367,7 +366,6 @@ nav.nav-main {
 	height: 0;
 	width: 0;
 	position: absolute;
-	pointer-events: none;
 	border-color: rgba(0,0,0, 0);
 	border-left-color: #7F7F7F;
 	border-width: 7px;
@@ -460,7 +458,7 @@ input, textarea {
 
 input:focus, textarea:focus {
 	background: #fff;
-	box-shadow: 0;
+	box-shadow: 0px;
 	color: #434343;
 	outline: none;
 	border: 2px solid #70EA46;
@@ -686,7 +684,7 @@ h2.filter-headline {
 	height: 0;
 	width: 0;
 	position: absolute;
-	pointer-events: none;
+	
 	border-color: rgba(136, 183, 213, 0);
 	border-left-color: #e9e9e9;
 	border-width: 18px;
@@ -773,7 +771,7 @@ h2.filter-headline {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	pointer-events: none;
+	
 	background-color: rgba(220,220,220,0.3);
 	-moz-transition: all 0.2s ease-in;
 	/* WebKit */
@@ -930,8 +928,7 @@ h2.filter-headline {
 
 #video-teaser-3 {
 
-	background-image: url('../img/video_teaser/ka
-	meramann.jpg');
+	background-image: url('../img/video_teaser/kameramann.jpg');
 	background-size: cover;
 	background-position: 50% 0;
 }
@@ -1007,7 +1004,7 @@ h2.filter-headline {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	pointer-events: none;
+	
 	background-color: rgba(220,220,220,0.3);
 }
 
@@ -1037,7 +1034,7 @@ h2.filter-headline {
 	background: rgba(112,234,70,0.8);
 	width: 90%;
 	position: absolute;
-	bottom: 7, 875px;
+	bottom: 7.875px;
 	z-index: 50;
 }
 .teaser-tile-big .teaser-tile-headline {
@@ -1290,6 +1287,48 @@ footer {
 /*
  *********************** Themen Teaser Tile Styles End
  */
+
+/*
+ *********************** #page_themenDetail Styles
+ */
+.topic-img-fb-wrapper {
+	text-align: center;
+}
+.topic-img {
+	width: 612px;
+	height: 200px;
+	margin: 3.5px;
+	float: left;
+	background-image: url('../img/video_teaser/11.jpg');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+.topic-fb-tile {
+	background-color: #dfdfdf;
+}
+.fb-likes-counter-wrapper {
+	margin: 15px 0px;
+}
+.fb-likes-text {
+	margin: 0;
+}
+.topic-fb-tile-text {
+	margin: 0 10px;
+}
+.topic-fb-tile .fb-likes {
+	margin: 15px auto 0px auto;
+	float: none;
+}
+#fb_likes_count {
+	font-size: 1.3em;
+}
+/*
+ *********************** #page_themenDetail Styles End
+ */
+/*
+ *********************** #page_themen Styles End
+ */
 /*
  * ***************************** Videoplayer Page Styles
  */
@@ -1318,7 +1357,7 @@ footer {
 .info-wrapper {
 	width: 821px;
 	height: 200px;
-	overflow: overlay;
+	overflow: auto;
 	float: left;
 	margin: 3.5px;
 	font-size: 0.9em;
@@ -1413,48 +1452,6 @@ footer {
  * ***************************** Videoplayer Page Styles End
  */
 /*
- *********************** #page_themenDetail Styles
- */
-.topic-img-fb-wrapper {
-	text-align: center;
-}
-.topic-img {
-	width: 612px;
-	height: 200px;
-	margin: 3.5px;
-	float: left;
-	background-image: url('../img/video_teaser/11.jpg');
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-}
-.topic-fb-tile {
-	background-color: #dfdfdf;
-}
-.fb-likes-counter-wrapper {
-	margin: 15px 0px;
-}
-.fb-likes-text {
-	margin: 0;
-}
-.topic-fb-tile-text {
-	margin: 0 10px;
-}
-.topic-fb-tile .fb-likes {
-	margin: 15px auto 0px auto;
-	float: none;
-}
-#fb_likes_count {
-	font-size: 1.3em;
-}
-/*
- *********************** #page_themenDetail Styles End
- */
-/*
- *********************** #page_themen Styles End
- */
-
-/*
  *********************** Live page Styles
  */
 
@@ -1528,7 +1525,6 @@ footer {
  	text-align:center;
  }
  .live-broadcast-headline{
- 	padding: auto;
  	display: block;
  	font-size: 1.875em;
  	line-height: 2.5em;
@@ -1667,7 +1663,7 @@ h1.search-item-headline {
 
 #searchInput_2:focus {
 	background: #fff;
-	box-shadow: 0;
+	box-shadow: 0px;
 	color: #434343;
 	outline: none;
 	border: 2px solid #70EA46;
@@ -1779,7 +1775,7 @@ h1.search-item-headline {
 	height: 0;
 	width: 0;
 	position: absolute;
-	pointer-events: none;
+	
 	border-color: rgba(136, 183, 213, 0);
 	border-width: 6.5px;
 	top: 50%;
