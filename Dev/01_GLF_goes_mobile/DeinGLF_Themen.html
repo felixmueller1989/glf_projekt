@@ -13,19 +13,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Asap|Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css">
-		<link rel="stylesheet" href="video-js/video-js.min.css">
-		<script src="video-js/video.js"></script>
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
+		</script>
+		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="themen" class="page-wrapper">
+		<div id="page_themen" class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
@@ -38,39 +41,221 @@
 						<ul id="navAccordion">
 							<li id="1" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<div class="nav-accordion-content">
-									<a href="Mediathek_Sendungen.html" alt="Sendungen" class="nav-accordion-content-btn">Sendungen</a><a href="Mediathek_Beitraege.html" alt="Beiträge" class="nav-accordion-content-btn">Beiträge</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
+									</li>
+									<li>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+									</li>
+								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper active">
+							<li id="2" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<div class="nav-accordion-content">
-									<a href="DeinGLF_Mitmachen.html" alt="Themen" class="nav-accordion-content-btn">Themen</a><a href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="nav-accordion-content-btn visited">Mitmachen</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="themen" href="DeinGLF_Themen.html" alt="Themen" class="subnav-btn visited">Themen</a>
+									</li>
+									<li>
+										<a id="jobs" href="DeinGLF_Jobs.html" alt="Jobs" class="subnav-btn">Jobs</a>
+									</li>
+								</ul>
 							</li>
 							<li id="3" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<div class="nav-accordion-content">
-									<a alt="Ziele" class="nav-accordion-content-btn">Ziele</a><a alt="Geschichte" class="nav-accordion-content-btn">Geschichte</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="team" alt="Team" class="subnav-btn">Team</a>
+									</li>
+									<li>
+										<a id="infos" alt="Geschichte" class="subnav-btn">Infos</a>
+									</li>
+								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="nav-accordion-content">
-									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+								<div class="subnav">
+									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
 						</ul>
 					</nav>
 				</div>
 			</header>
+			<div class="content-wrapper">
+				<div class="content clearfix">
+					<div>
+						<h1 class="headline">Themen</h1>
+					</div>
+					<div class="sub-headline-wrapper">
+						<p class="sub-headline">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+						</p>
+						<p class="sub-headline-sub">
+							invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+						</p>
+					</div>
+					<div class="teaser-tile-wrapper topic-teaser-tile-wrapper clearfix">
+						<div id="add_topic_tile" class="tile add-topic-tile">
+							<div id="add-topic-tile-cross"></div>
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">F&uuml;ge ein neues Thema hinzu!</h3>
+							</div>
+						</div>
+						<div id="topic_teaser_0001" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+
+							</div>
+						</div>
+						<div id="topic_teaser_0002" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+
+							</div>
+						</div>
+						<div id="topic_teaser_0003" class="tile teaser-tile">
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+
+							</div>
+						</div>
+						<div id="topic_teaser_0004" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic_teaser_0005" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic_teaser_0006" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic_teaser_0007" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic_teaser_0008" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+						<div id="topic_teaser_0009" class="tile teaser-tile">
+
+							<div class="teaser-tile-text-layer">
+								<h3 class="teaser-tile-headline">Lorem ipsum dolor sit amet</h3>
+							</div>
+						</div>
+					</div>
+					<div id="add_topic_overlay" class="add-topic-overlay overlay">
+						<div class="overlay-content add-topic-overlay-content">
+							<div class="overlay-form-content visible">
+								<h3 class="overlay-headline">Thema hinzufügen - Was beschäftigt dich?</h3>
+								<div class="overlay-close-btn">
+									<span class="overlay-close-icon"></span>
+								</div>
+								<form id="addTopicForm" class="overlay-form add-topic-form clearfix" method="post" action="" autocomplete="on">
+									<fieldset class="identification-field left-section">
+										<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+										<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+									</fieldset>
+									<fieldset class="identification-field right-section">
+										<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+										<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
+									</fieldset>
+									<fieldset class="topic-data-field">
+										<textarea placeholder="Dein Thema und deine Idee" class="topic-description req" name="message" required></textarea>
+										<div class="file-upload-field">
+											<div class="file-upload-content">
+												<p class="file-upload-text">
+													Füge ein Bild hinzu
+												</p><span class="file-upload-cross"></span>
+												<p class="file-upload-text-s">
+													vorzugsweise Querformat
+												</p>
+											</div>
+											<input id="file-upload" class="file-upload" type="file" multiple="multiple" name="file-upload" />
+										</div>
+									</fieldset>
+									<fieldset class="check-field">
+										<input id="publishTopic" type="checkbox" name="publishTopic" value="dontPublishTopic" checked>
+										<label for="publishTopic">Ich bin damit einverstanden, dass mein Vorschlag auf der Website veröffentlich wird.</label>
+										<br/>
+										<input id="publishName" type="checkbox" name="publishName" value="dontPublishName">
+										<label for="publishName">Ich möchte nicht, dass mein Name veröffentlich wird.</label>
+									</fieldset>
+
+									<div id="math" class="math-task-wrapper">
+										<p class="math-info">
+											Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+										</p>
+										<p class="math-task">
+											4 + 5 =
+										</p>
+										<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+									</div>
+									<input type="submit" value="Abschicken" class="submit-btn"/>
+								</form>
+							</div>
+							<div class="overlay-form-submitted-content hidden">
+								<h3 class="overlay-headline">Dein Thema wurde erfolgreich verschickt</h3>
+								<div class="overlay-close-btn">
+									<span class="overlay-close-icon"></span>
+								</div>
+								<div class="overlay-check-btn">
+									<span class="overlay-check-icon"></span>
+								</div>
+								<p class="text">
+									Danke für deine Nachricht.
+								</p>
+								<p class="text">
+									Die Redaktion prüft deinen Vorschlag und wird ihn dann in die Themengalerie aufnehmen. Du bekommst eine E-Mail sobald dein Thema geprüft wurde.
+								</p>
+								<a class="text-link reload-form">mache einen weiteren Themenvorschlag</a>
+								<input type="button" value="zurück zu den Themen" class="submit-btn close-overlay-btn"/>
+							</div>
+						</div>
+					</div>
+					<div class="pagination-wrapper clearfix">
+						<p class="pagination-btn page-back">
+							.
+						</p>
+						<p class="pagination-btn page-nr">
+							1
+						</p>
+						<p class="pagination-btn page-nr">
+							2
+						</p>
+						<p class="pagination-btn page-nr">
+							3
+						</p>
+						<p class="pagination-dots">
+							. . .
+						</p>
+						<p class="pagination-btn page-nr page-end">
+							20
+						</p>
+						<p class="pagination-btn page-fwd">
+							.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
-		</script>
-		<script src="js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
+
