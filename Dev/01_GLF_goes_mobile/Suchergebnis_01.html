@@ -28,7 +28,7 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_mediathekS" class="page-wrapper">
+		<div id="page_search" class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
@@ -39,11 +39,11 @@
 							<a href="Live.html" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper active visited">
+							<li id="1" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn visited">Sendungen</a>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
 										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
@@ -65,17 +65,17 @@
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" alt="Team" class="subnav-btn">Team</a>
+										<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
 									</li>
 									<li>
-										<a id="infos" alt="Infos" class="subnav-btn">Infos</a>
+										<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
 									</li>
 								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
 								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
 						</ul>
@@ -84,25 +84,74 @@
 			</header>
 			<div class="content-wrapper">
 				<div class="content clearfix">
-					<h1 class="headline">Sendungen</h1>
+					<div class="headline-wrapper search-headline-wrapper">
+						<h1 class="headline search-headline">Suchergebnisse für</h1>
+						<h1 id="search_item" class="headline search-headline search-item-headline">&quot;Suchbegriff&quot;</h1>
+					</div>
 
 					<div class="filter-wrapper">
-						<h2 class="filter-headline">Zeitspanne</h2>
-						<div class="filter-range-wrapper">
+						<div class="filter-type-wrapper">
+							<div id="filter_all_btn"  class="filter-btn filter-all">
+								<span class="filter-text">Alle</span>
+							</div>
+							<div id="filter_broadcasts_btn" class="filter-btn filter-broadcasts">
+								<span class="filter-text">Sendungen</span>
+							</div>
+							<div id="filter_clips_btn" class="filter-btn filter-clips">
+								<span class="filter-text">Beiträge</span>
+							</div>
+						</div>
+						<div id="filter_clips_wrapper" class="filter-for-clips-wrapper filter-toggle hidden">
+							<div class="filter-cat-wrapper">
+								<h2 class="filter-headline">Kategorien</h2>
+								<div class="filter-btn filter-studies">
+									<span class="filter-text">Hochschule&amp;Studium</span>
+								</div>
+								<div class="filter-btn filter-science">
+									<span class="filter-text">Wissenschaft</span>
+								</div>
+								<div class="filter-btn filter-leisure">
+									<span class="filter-text">Freizeit&amp;Livestyle</span>
+								</div>
+								<div class="filter-btn filter-entertain">
+									<span class="filter-text">Unterhaltung</span>
+								</div>
+								<div class="filter-btn filter-society">
+									<span class="filter-text">Kultur</span>
+								</div>
+							</div>
+							<div class="filter-sort-wrapper">
+								<h2 class="filter-headline">Sortierung</h2>
+								<div class="filter-btn filter-newest">
+									<span class="filter-text">neueste</span>
+								</div>
+								<div class="filter-btn filter-rated">
+									<span class="filter-text">bestbewertet</span>
+								</div>
+								<div class="filter-btn filter-viewed">
+									<span class="filter-text">meistgesehen</span>
+								</div>
+							</div>
+						</div>
+						<div id="filter_broadcasts_wrapper" class="filter-for-broadcasts-wrapper filter-toggle hidden">
+							<div class="filter-cat-wrapper">
+								<h2 class="filter-headline">Zeitspanne</h2>
+								<div class="filter-range-wrapper"></div>
+							</div>
+							<div class="filter-sort-wrapper">
+								<h2 class="filter-headline">Sortierung</h2>
+								<div class="filter-btn filter-newest">
+									<span class="filter-text">neueste</span>
+								</div>
+								<div class="filter-btn filter-rated">
+									<span class="filter-text">bestbewertet</span>
+								</div>
+								<div class="filter-btn filter-viewed">
+									<span class="filter-text">meistgesehen</span>
+								</div>
+							</div>
+						</div>
 
-						</div>
-						<div class="filter-sort-wrapper">
-							<h2 class="filter-headline">Sortierung</h2>
-							<div class="filter-btn filter-newest">
-								<span class="filter-text">neueste</span>
-							</div>
-							<div class="filter-btn filter-rated">
-								<span class="filter-text">bestbewertet</span>
-							</div>
-							<div class="filter-btn filter-viewed">
-								<span class="filter-text">meistgesehen</span>
-							</div>
-						</div>
 					</div>
 					<div class="teaser-tile-wrapper clearfix">
 						<div id="video-teaser-0001" class="tile teaser-tile">
@@ -214,7 +263,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="pagination-wrapper">
+					<div class="pagination-wrapper clearfix">
 						<p class="pagination-btn page-back">
 							.
 						</p>

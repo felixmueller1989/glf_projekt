@@ -132,7 +132,16 @@ $(document).ready(function() {
 		overlayToggle(addTopicOverlay);
 	});
 	/*************Overlay Functions End*****************/
-
+	/*************Search Page Functions *****************/
+	var filterBtn = [];
+	filterBtn.push($('#filter_clips_btn'));
+	filterBtn.push($('#filter_broadcasts_btn'));
+	$(filterBtn).each(function() {
+		$(this).click(function() {
+			toggleSearchFilters(this);
+		});
+	});
+	/*************Search Page Functions End*****************/
 	/*call functions */
 	sliderSize();
 	resizeInfoWrapper();
@@ -146,7 +155,14 @@ $(window).resize(function() {
 	resizeInfoWrapper();
 });
 /***********************WINDOW RESIZE END ********************/
+/*************Search Page Functions *****************/
+function toggleSearchFilters(filterBtn) {
+	var filterType = $(filterBtn).attr('id');
+	filterType = filterType.split('_');
+	console.log(filterType);
+}
 
+/*************Search Page Functions End*****************/
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
 	var overlayContent = overlay.find('.overlay-content');
