@@ -1198,7 +1198,7 @@ footer {
  /*Untere Footer Häfte*/
 .footer-sub-wrapper {
 	width: 100%;
-	display: -webkit-inline-box;
+	display: inline-block;
 	/*padding-left:0.98765432098765432098765432098765%;
 	 padding-right:0.98765432098765432098765432098765%;*/
 	margin-top: 1.484375%;
