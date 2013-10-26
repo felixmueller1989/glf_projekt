@@ -1343,17 +1343,19 @@ margin-top:60px;
 
 
 
+
 /*
  *********************** Footer Styles
  */
 footer {
-	width: 60.234375%;
-	max-width: 771px;
+	width: 57.421875%;
+	max-width: 735px;
 	display: block;
 	text-align: center;
 	margin-top: 7.578125%;
 	margin-left: auto;
 	margin-right: auto;
+	/* margin:14px 419px 0 419px;*/
 }
 /* Obere Footer Hälfte*/
 .footer-text-wrapper {
@@ -1365,7 +1367,7 @@ footer {
 	color: black;
 }
 .footer-link {
-	color: black; /*change to #7f7f7f*/
+	color: #7f7f7f;
 	text-decoration: none;
 }
 .footer-link:hover {
@@ -1381,19 +1383,22 @@ footer {
 	margin: 0 0 0 0.98765432098765432098765432098765%;
 }
 
-/* Obere Footer Hälfte Ende*/
+/* Obere Footer Hälfte Ende
 
  /*Untere Footer Häfte*/
 .footer-sub-wrapper {
 	width: 100%;
-	display: inline-block; /*display:inline-block; -webkit is a prefix only for certain browsers!*/
-	margin-top: 1.484375%; /*top-margins can be written in absolute values*/
-	text-align: left;
+	display: -webkit-inline-box;
+	/*padding-left:0.98765432098765432098765432098765%;
+	 padding-right:0.98765432098765432098765432098765%;*/
+	margin-top: 1.484375%;
+	/*text-align: left;*/
 	margin-bottom: 20px;
 	position: relative;
 }
 .footer-sub-wrapper-left {
 	/*margin-top:2.308626974483596597812879708384%;*/
+	text-align: left;
 	position: absolute;
 	left: 0;
 	width: 170px;
@@ -1403,7 +1408,7 @@ footer {
 	text-align: left;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 12px;
-	color: black;
+	color: #7f7f7f;
 }
 .footer-wrapper-follow {
 	width: 100%;
@@ -1412,45 +1417,55 @@ footer {
 	width: 21px;
 	height: 21px;
 }
+
+
+img{
+	
+	width:17px;
+	height:15px;
+	
+}
 #footer_fb {
+	
+	
 	margin-left: 3%;
-	width: 21px;
-	height: 21px;
-	background-image: url('../img/icons/facebook_grey.png');
+	width: 9px;
+	height: 17px;
+	background-image: url('../img/icons/FBFooter.png');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 50% 0;
+	background-position: 50% 50%;
 }
 #footer_twitter {
 	margin-left: 4%;
 	width: 21px;
-	height: 21px;
-	background-image: url('../img/icons/twitter_grey.png');
+	height: 17px;
+	background-image: url('../img/icons/Twitter_Footer.png');
 	background-size: cover;
-	background-position: 50% 0;
+	background-position: 50% 50%;
 }
 #footer_fb:hover {
 	margin-left: 3%;
-	width: 21px;
-	height: 21px;
-	background-image: url('../img/icons/fb_icon.png');
+	width: 9px;
+	height: 17px;
+	background-image: url('../img/icons/FBFooterHover.png');
 	background-size: cover;
-	background-position: 50% 0;
+	background-position: 50% 50%;
 }
 #footer_twitter:hover {
 	margin-left: 4%;
 	width: 21px;
-	height: 21px;
-	background-image: url('../img/icons/twitter.png');
+	height: 17px;
+	background-image: url('../img/icons/Twitter_Footer_Hover.png');
 	background-size: cover;
-	background-position: 50% 0;
+	background-position: 50% 50%;
 }
 /*Copyright*/
 .footer-text-right {
 	text-align: right;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 9px;
-	color: black;
+	color: #7f7f7f;
 	position: absolute;
 	right: 0;
 }
