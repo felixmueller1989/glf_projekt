@@ -125,6 +125,7 @@ $(document).ready(function() {
 		infoWrapper.css('height', '407px');
 	}
 	/*************Detail Pages Info-Wrapper Functions End*********/
+	/*************Topic Page Functions *****************/
 	/*************Overlay Functions *****************/
 	var addTopicTile = $("#add_topic_tile");
 	var addTopicOverlay = $('#add_topic_overlay');
@@ -132,6 +133,19 @@ $(document).ready(function() {
 		overlayToggle(addTopicOverlay);
 	});
 	/*************Overlay Functions End*****************/
+	/*************Topic Page Functions End*****************/
+	/*************Live Page Functions*****************/
+	/*************Overlay Functions *****************/
+	var pageLive = $('#live');
+	var showTopicTiles = $(".rel-teaser-tile");
+	var topicOverlay = $('#live_topic_overlay');
+	$(showTopicTiles).each(function() {
+		$(this).click(function() {
+			overlayToggle(topicOverlay);
+		});
+	});
+	/*************Overlay Functions End*****************/
+	/*************Live Page Functions End*****************/
 	/*************Search Page Functions *****************/
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
