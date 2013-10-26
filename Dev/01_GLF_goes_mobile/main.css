@@ -1,0 +1,1033 @@
+html {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1em; /*16px*/
+	line-height: 1.4;
+}
+::-moz-selection {
+	background: #9a0758;
+	text-shadow: none;
+}
+::selection {
+	background: #9a0758;
+	text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio, canvas, img, video {
+	vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+ Browse Happy prompt
+ ========================================================================== */
+
+.browsehappy {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+
+/* ==========================================================================
+ Author's custom styles
+ ========================================================================== */
+
+/*
+ *********************** General Styles
+ */
+body {
+	background-color: #000;
+}
+
+.page-wrapper {
+	width: 100%;
+	background: #E9E9E9;
+}
+h1 {
+	font-size: 3em;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #4a4a4a;
+	margin: 5px 0 22px 3.5px; /*  >> To align with teaser tiles which also have margin-left 3.5px */
+}
+h3 {
+	font-size: 1.125em;
+	font-weight: normal;
+	margin: 0;
+	line-height: 1.2em;
+}
+
+/*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
+
+.sub-headline{
+	width:75%;
+	/*margin:7px 160px 7px 0;*/
+	display:block;
+	font-size: 1em;
+	font-weight:normal;
+	color:#434343;
+	
+	
+}
+
+.sub-headline-wrapper{
+	
+	margin:0 0 14px 0;
+	
+	
+}
+
+
+.sub-headline-sub{
+	
+	width:75%;
+	margin:7px 0 14px 0;
+	display:block;
+	font-size: 1em;
+	font-weight:normal;
+	color:#434343;
+	
+	
+}
+
+/*Unterüberschrift Ende*/
+
+
+
+
+a {
+	text-decoration: none;
+}
+/*
+ *********************** General Styles End
+ */
+/*
+ *********************** Header Styles
+ */
+header {
+	width: 100%;
+	height: 78px;
+	background-color: #434343;
+	border-bottom: 5px solid #70ea46;
+}
+.header-content {
+	max-width: 1280px;
+	margin: auto;
+}
+.nav-home-btn-wrapper {
+	width: 150px;
+	height: 120px;
+	float: left;
+	position: relative;
+}
+
+.nav-home-btn {
+	position: absolute;
+	background-image: url('../img/icons/GLF_Typo.png');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 78px;
+}
+nav.nav-main {
+	float: right;
+	text-transform: uppercase;
+}
+#navAccordion {
+	list-style: none;
+	padding: 0;
+	height: 78px;
+	overflow: hidden;
+	margin: 0;
+	float: left;
+}
+.nav-btn-wrapper {
+	float: left;
+	overflow: hidden;
+}
+.nav-btn-wrapper.active {
+	width: 379px;
+}
+#liveBtn.nav-btn-wrapper.active {
+	width: 126px;
+}
+.nav-btn-wrapper {
+	width: 126px;
+	position: relative;
+}
+.nav-btn-wrapper.visited .nav-header {
+	color: #70ea46;
+}
+.nav-header {
+	float: left;
+	display: block;
+	height: 78px;
+	overflow: hidden;
+	color: #fff;
+	text-decoration: none;
+	border-left: 1px dashed #7F7F7F;
+	font-size: 0.875em;
+	line-height: 5.6em;
+	width: 126px;
+	text-align: center;
+}
+.nav-accordion-header {
+	border-right: 1px dashed #7F7F7F;
+}
+#searchBtn {
+	border-right: 1px dashed #7F7F7F;
+}
+.nav-btn-wrapper#searchBtn {
+	width: 73px;
+}
+#searchBtn .subnav {
+	left: 73px;
+	width: 253px;
+}
+#searchIcon {
+	background-image: url('../img/icons/search_icon_grey.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border-right: none;
+	width: 73px;
+}
+#searchBtn:hover #searchIcon {
+	background-image: url('../img/icons/search_icon_green.png');
+}
+#searchBtn .subnav input {
+	margin: 21px 0 0 0;
+	line-height: 1.9em;
+	font-size: 1em;
+	color: #4a4a4a;
+	width: 90%;
+	background-color: #E9E9E9;
+	border: none;
+}
+#liveBtn {
+	position: relative;
+	cursor: pointer;
+}
+#liveBtn:before {
+	content: "";
+	position: absolute;
+	top: 21px;
+	left: 27px;
+	background: #ff0000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#BD0000));
+	background-image: -webkit-linear-gradient(top, #FF0000, #BD0000);
+	background-image: -moz-linear-gradient(top, #FF0000, #bd0000);
+	background-image: -ms-linear-gradient(top, #FF0000, #bd0000);
+	background-image: -o-linear-gradient(top, #FF0000, #bd0000);
+	border: 5px solid #BD0000;
+	width: 7px;
+	height: 7px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	opacity: 0.9;
+}
+.subnav {
+	float: left;
+	width: 252px;
+	position: absolute;
+	left: 128px;
+}
+.subnav {
+	margin: 0;
+	padding: 0;
+}
+.subnav li {
+	width: 50%;
+	float: left;
+	text-align: center;
+	color: #FFFFFF;
+	background: #7F7F7F;
+}
+.subnav-btn {
+	width: 100%;
+	font-size: 0.875em;
+	line-height: 5.6em;
+	color: #FFFFFF;
+	background-color: #7F7F7F;
+	display: block;
+	cursor: pointer;
+}
+.subnav-btn.visited {
+	background-color: #70ea46;
+}
+.subnav li:first-of-type {
+	border-right: 1px dashed #70ea46;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.subnav-btn:hover, .subnav-btn:active {
+	color: #70ea46;
+}
+.subnav-btn.visited:hover, .subnav-btn.visited:active {
+	color: #4a4a4a;
+}
+/*
+ *********************** Header Styles End
+ */
+/*
+ *********************** Content Styles
+ */
+.content-wrapper {
+	width: 90.859375%; /*1035px*/
+	max-width: 1035px;
+	margin: auto;
+	background: #E9E9E9;
+	height: auto;
+}
+.content {
+	width: 100%;
+	margin: 35px 0 0 0;
+<<<<<<< HEAD
+	position:relative;
+	height:auto;
+=======
+	position: relative;
+>>>>>>> a7a69465ba6870503a2efe791efafe405275c75a
+}
+.back-btn-wrapper {
+	margin: 0 0 40px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
+}
+.back-btn {
+	position: relative;
+	display: block;
+}
+/* Left Arrow */
+.back-btn:before {
+	left: 0;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0,0,0, 0);
+	border-right-color: #7F7F7F;
+	border-width: 10px;
+	top: 50%;
+	margin: -10px 0 0 -10px;
+}
+.back-btn:hover.back-btn:before {
+	border-right-color: #70EA46;
+}
+.back-btn:hover {
+	color: #70EA46;
+}
+.tile {
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 3.5px;
+	position: relative;
+	cursor: pointer;
+	background: #7F7F7F;
+}
+
+/*
+ * ***************************** Videoplayer Page Styles
+ */
+.cat-link {
+	color: #9A0758;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: underline;
+	display: block;
+	margin: 0 0 0 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
+}
+.video-title .headline {
+	display: inline-block;
+}
+.subline {
+	display: inline-block;
+	font-size: 1em;
+	font-weight: normal;
+	color: #434343;
+}
+.video-wrapper {
+	margin: 3.5px;
+	float: left;
+}
+.info-comments-wrapper {
+	float: left;
+}
+.video-info-wrapper {
+	width: 614px;
+	height: 200px;
+	overflow: overlay;
+	float: left;
+	margin: 3.5px;
+}
+.call-to-action-text {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.3em;
+	margin: 0.6em;
+}
+.voting-tiles-wrapper {
+	float: left;
+}
+.text-only-tile div {
+	display: table;
+	width: 200px;
+	height: 200px;
+}
+.text-only-tile-text {
+	color: #9A0758;
+	padding: 0 10px 0 30px;
+	font-weight: bold;
+	display: table-cell;
+	vertical-align: middle;
+}
+.related-tile-wrapper {
+	display: inline-block;
+	width: 207px;
+}
+.comments-wrapper {
+	width: 821px;
+	height: 350px;
+	margin: 3.5px;
+	background: #000;
+	float: left;
+}
+/*
+ * ***************************** Videoplayer Page Styles End
+ */
+/*
+ *********************** Filter Styles
+ */
+.filter-wrapper {
+	float: left;
+	width: 200px;
+	margin: 3.5px 3.5px 0 3.5px;
+	min-width: 200px;
+}
+h2.filter-headline {
+	color: #4a4a4a;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	line-height: 1em;
+}
+.filter-cat-wrapper {
+	width: 100%;
+	margin: 0 0 31px 0;
+}
+
+.filter-range-wrapper {
+	width: 100%;
+	margin: 0 0 31px 0;
+}
+
+.filter-btn {
+	width: 100%;
+	cursor: pointer;
+}
+.filter-text {
+	position: relative;
+	width: 75.5%; /*151px*/
+	background-color: #e9e9e9;
+	line-height: 36px;
+	display: block;
+	color: #4a4a4a;
+	padding: 0 0 0 11px;
+	font-size: 0.8em;
+	-webkit-transition: background-color 0.2s;
+	-moz-transition: background-color 0.2s;
+	-o-transition: background-color 0.2s;
+	-ms-transition: background-color 0.2s;
+	transition: background-color 0.2s;
+}
+/* Right Arrow */
+.filter-text:after {
+	left: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #e9e9e9;
+	border-width: 18px;
+	top: 50%;
+	margin-top: -18px;
+	-webkit-transition: border-left-color 0.2s;
+	-moz-transition: border-left-color 0.2s;
+	-o-transition: border-left-color 0.2s;
+	-ms-transition: border-left-color 0.2s;
+	transition: border-left-color 0.2s;
+}
+.filter-btn:hover .filter-text, .filter-btn:active .filter-text {
+	background-color: #70ea46;
+}
+.filter-btn:hover .filter-text.filter-text:after, .filter-btn:active .filter-text.filter-text:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #70ea46;
+}
+/*
+ *********************** Filter Styles End
+ */
+/*
+ *********************** Slider Styles
+ */
+.slider-wrapper {
+	width: 100%; /*1035px*/
+	max-height: 422px;
+	margin: 20px 0 0 0;
+}
+.slider {
+	width: 99.32367149758454%; /*1028px*/
+	max-height: 422px;
+	float: left;
+	margin: 0 5.5px 3.5px 3.5px;
+	position: relative;
+	background-image: url('../img/video_teaser/1.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+/*
+ *********************** Slider Tile Styles End
+ */
+/*
+ *********************** Teaser Tile Styles
+ */
+.info-tile{
+	
+	width: 200px;
+	height: 200px;
+	margin: 3.5px;
+	float:left;
+	background-color: #7F7F7F;
+	
+	
+}
+
+.info-tile .header-tile{
+	
+	margin: 7px 0 0 7px;
+	font-size: 1em;
+	color:white;
+	font-weight: normal;
+}
+
+.info-tile .text-tile{
+	
+	margin: 14px 7px 0 7px;
+	font-size: 0.8em;
+	color:white;
+	font-weight: normal;
+	
+	
+}
+
+.teaser-tile-wrapper {
+	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
+}
+
+.teaser-tile-wrapper.jobs {
+	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
+}
+
+
+.teaser-tile:after {
+	content: " ";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	pointer-events: none;
+	background-color: rgba(220,220,220,0.3);
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
+}
+.teaser-tile-play-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/icons/play_white_s.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	z-index: 50;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
+}
+.teaser-tile:hover .teaser-tile-play-icon, .teaser-tile:active .teaser-tile-play-icon {
+	opacity: 0.8;
+}
+.teaser-tile:hover .teaser-tile-text-layer, .teaser-tile:active .teaser-tile-text-layer {
+	background: rgba(112,234,70,0.9);
+	color: #333333;
+}
+
+.teaser-tile:hover .teaser-tile-text-layer-jobs, .teaser-tile:active .teaser-tile-text-layer {
+	background: rgba(112,234,70,0.9);
+	color: #333333;
+}
+
+
+.teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
+	background-color: rgba(0,0,0,0);
+}
+.teaser-tile-text-layer {
+	background: rgba(50,50,50,0.8);
+	color: #FFFFFF;
+	width: 100%;
+	padding: 5px 0 5px 0;
+	position: absolute;
+	bottom: 0px;
+	z-index: 50;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
+}
+
+/*jobs*/
+
+
+.teaser-tile-text-layer-jobs {
+	background: rgba(50,50,50,0.8);
+	color: #FFFFFF;
+	width: 100%;
+	padding: 5px 0 5px 0;
+	position: absolute;
+	bottom: 3.5px;
+	z-index: 50;
+	 -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2s ease-in;
+}
+
+.teaser-tile-headline {
+	font-size: 1em;
+	margin: 0 0 0 7px;
+	padding: 0;
+}
+.teaser-tile-subline {
+	font-size: 0.8em;
+	margin: 0 0 0 7px;
+}
+#video-teaser-0001 {
+	background-image: url('../img/video_teaser/1.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0002 {
+	background-image: url('../img/video_teaser/2.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0003 {
+	background-image: url('../img/video_teaser/3.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0004 {
+	background-image: url('../img/video_teaser/4.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0005 {
+	background-image: url('../img/video_teaser/5.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0006, #video-teaser-0011 {
+	background-image: url('../img/video_teaser/6.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0007, #video-teaser-0012 {
+	background-image: url('../img/video_teaser/7.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0008, #video-teaser-0010 {
+	background-image: url('../img/video_teaser/8.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+#video-teaser-0009 {
+	background-image: url('../img/video_teaser/9.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+}
+
+
+#video-teaser-1{
+	
+	background-image: url('../img/video_teaser/werbung.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-2{
+	
+	background-image: url('../img/video_teaser/redakteur.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-3{
+	
+	background-image: url('../img/video_teaser/kameramann.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-4{
+	
+	background-image: url('../img/video_teaser/cutter.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-5{
+	
+	background-image: url('../img/video_teaser/moderator.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-6{
+	
+	background-image: url('../img/video_teaser/chef.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-7{
+	
+	background-image: url('../img/video_teaser/bildregie.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+#video-teaser-8{
+	
+	background-image: url('../img/video_teaser/tonregie.jpg');
+	background-size: cover;
+	background-position: 50% 0;
+	
+}
+
+
+
+
+
+
+
+
+/*
+ *********************** Home Teaser Tile Styles
+ */
+.wrapper-six-tiles {
+	width: 60%; /*621px*/
+	float: left;
+}
+
+.wrapper-big-tile {
+
+	width: 40%; /*414*/
+	max-width: 414px;
+	height: 414px;
+	float: left;
+}
+
+#home .teaser-tile {
+	width: 32.2061191626409%; /*200px*/
+	float: left;
+	margin: 3.5px;
+	min-width: 150px;
+	position: relative;
+}
+
+.teaser-tile-big {
+	width: 98.30917874396135%; /*407px*/
+	float: left;
+	margin: 3.5px;
+	position: relative;
+}
+
+.teaser-tile-big:after {
+	content: " ";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	pointer-events: none;
+	background-color: rgba(220,220,220,0.3);
+}
+
+.teaser-tile-big .teaser-tile-play-icon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 31.94103194103194%;
+	margin: -15.97051597051597% 0 0 -15.97051597051597%;
+	background-image: url('../img/icons/play_white_s.png');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	opacity: 0.5;
+	z-index: 50;
+}
+.teaser-tile-big:hover .teaser-tile-play-icon, .teaser-tile-big:active .teaser-tile-play-icon {
+	opacity: 0.8;
+}
+.teaser-tile-big:hover .teaser-tile-text-layer, .teaser-tile-big:active .teaser-tile-text-layer {
+	background: rgba(112,234,70,0.9);
+}
+.teaser-tile-big:hover.teaser-tile-big:after, .teaser-tile-big:active.teaser-tile-big:after {
+	background-color: rgba(0,0,0,0);
+}
+.teaser-tile-big .teaser-tile-text-layer {
+	background: rgba(112,234,70,0.8);
+	width: 90%;
+	position: absolute;
+	bottom: 7, 875px;
+	z-index: 50;
+}
+.teaser-tile-big .teaser-tile-headline {
+	font-size: 1.125em;
+	color: #4a4a4a;
+	margin: 0 0 0 7px;
+	padding: 5.625px 0 5.625px 0;
+}
+.teaser-tile-big .teaser-tile-subline {
+	font-size: 0.9em;
+	margin: 0 0 0 7.875px;
+}
+/*
+ *********************** Home Teaser Tile Styles
+ */
+/*
+ *********************** Teaser Tile Styles End
+ */
+/*
+ *********************** Pagination Styles
+ */
+.pagination-wrapper {
+	float: right;
+	margin: 10px 3.5px 0 0;
+}
+.pagination-wrapper p {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	display: inline-block;
+	margin: 0 0 0 7px;
+	color: #FFFFFF;
+	line-height: 20px;
+	font-size: 0.7em;
+	background: #4a4a4a;
+}
+.page-back, .page-fwd {
+	position: relative;
+}
+.page-back:after, .page-fwd:after {
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-width: 6.5px;
+	top: 50%;
+	left: 50%;
+}
+.page-back:after {
+	border-right-color: #fff;
+	margin: -6px 0 0 -10px;
+}
+.page-fwd:after {
+	border-left-color: #fff;
+	margin: -6px 0 0 -2px;
+}
+/*
+ *********************** Pagination Styles End
+ */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+/* ==========================================================================
+ Author's custom styles End
+ ========================================================================== */
+
+/* ==========================================================================
+ Helper classes
+ ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
+}
+
+.ir:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+	visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before, .clearfix:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+	*zoom: 1;
+}
+/* ==========================================================================
+ EXAMPLE Media Queries for Responsive Design.
+ These examples override the primary ('mobile first') styles.
+ Modify as content requires.
+ ========================================================================== */
+/*
+ @media only screen and (min-width: 35em) {
+ /* Style adjustments for viewports that meet the condition */
+}
+/*
+ @media print,
+ (-o-min-device-pixel-ratio: 5/4),
+ (-webkit-min-device-pixel-ratio: 1.25),
+ (min-resolution: 120dpi) {
+ /* Style adjustments for high resolution devices */
+/*}
+ */

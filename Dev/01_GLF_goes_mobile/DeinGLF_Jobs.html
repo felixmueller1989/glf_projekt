@@ -43,10 +43,10 @@
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
@@ -54,10 +54,10 @@
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Themen.html" alt="Themen" class="subnav-btn">Themen</a>
+										<a id="themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="jobs" href="DeinGLF_Jobs.html" alt="Jobs" class="subnav-btn  visited">Jobs</a>
+										<a id="jobs" href="DeinGLF_Jobs.html" class="subnav-btn  visited">Jobs</a>
 									</li>
 								</ul>
 							</li>
@@ -65,17 +65,17 @@
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" alt="Team" class="subnav-btn">Team</a>
+										<a id="team" class="subnav-btn">Team</a>
 									</li>
 									<li>
-										<a id="infos" alt="Geschichte" class="subnav-btn">Infos</a>
+										<a id="infos" class="subnav-btn">Infos</a>
 									</li>
 								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
 								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..."/>
 								</div>
 							</li>
 						</ul>
@@ -160,25 +160,19 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<footer>
+			<div class="footer-text-wrapper">
+				<!-- delete span wrapper!--><span><span class="footer-text footer-words-left">Mediathek:</span> <a class="footer-text footer-link footer-words-center" href="Mediathek_Sendungen.html">Sendungen</a> <a class="footer-text footer-link footer-words-center" href="Mediathek_Beitraege.html">Beiträge</a> <span class="footer-words-center">|</span> <span class="footer-words-center">Dein GLF:</span> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Themen.html">Themen</a> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Mitmachen.html">Jobs</a> <span class="footer-words-center">|</span> <span class="footer-text footer-words-center">Über GLF:</span> <a class="footer-text footer-link footer-words-center" href="">Team</a> <a class="footer-text footer-link footer-words-center" href="">Information</a> <span class="footer-words-center">|</span> <a class="footer-text footer-link footer-words-center" href="">Kontakt</a> <a class="footer-text footer-link footer-words-right" href="">Impressum</a> </span>
+			</div>
+			<div class="footer-sub-wrapper clearfix">
+				<span class="footer-sub-wrapper-left"> <span class="footer-text-left">GLFtv folgen:</span> <span class="footer-icon-follow"><!--add a class, alt and title attribute to a tag and change url to glf fb page !--> <a href="https://www.facebook.com/"><!--delete img tag and add img as background-image to the a tag!--> <img id="footer_fb"></a> </span> <span class="footer-icon-follow"> <a href="https://twitter.com"><img id="footer_twitter"></a> </span> </span>
+				<span class="footer-text-right">&copy; GLFtv Alle Rechte vorbehalten</span>
+			</div>
+		</footer>
 
-			<footer>
-				<div class="footer-text-wrapper">
-					<!-- Text hier-->
-					<span><span class="footer-text footer-words-left">Mediathek:</span> <a class="footer-text footer-link footer-words-center" href="Mediathek_Sendungen.html">Sendungen</a> <a class="footer-text footer-link footer-words-center" href="Mediathek_Beitraege.html">Beiträge</a> <span class="footer-words-center">|</span> <span class="footer-words-center">Dein GLF:</span> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Themen.html">Themen</a> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Mitmachen.html">Jobs</a> <span class="footer-words-center">|</span> <span class="footer-text footer-words-center">Über GLF:</span> <a class="footer-text footer-link footer-words-center" href="">Team</a> <a class="footer-text footer-link footer-words-center" href="">Information</a> <span class="footer-words-center">|</span> <a class="footer-text footer-link footer-words-center" href="">Kontakt</a> <a class="footer-text footer-link footer-words-right" href="">Impressum</a> </span>
-					<!-- Text hier-->
-				</div>
-
-				<div class="footer-sub-wrapper clearfix">
-
-					<span class="footer-sub-wrapper-left"> <span class="footer-text-left">GLFtv folgen:</span> <span class="footer-icon-follow"> <a href="https://www.facebook.com/"><img id="footer_fb"></a> </span> <span class="footer-icon-follow"> <a href="https://twitter.com"><img id="footer_twitter"></a> </span> </span>
-
-					<span class="footer-text-right">&copy; GLFtv Alle Rechte vorbehalten</span>
-
-				</div>
-			</footer>
-
-			<script src="js/plugins.js"></script>
-			<script src="js/main.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
 
