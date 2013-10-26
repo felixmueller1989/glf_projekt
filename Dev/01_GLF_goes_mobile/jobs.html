@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link href='http://fonts.googleapis.com/css?family=Asap|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="css/main.css">
@@ -28,7 +28,7 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_themenDetail" class="page-wrapper">
+		<div id="page_mediathekB" class="page-wrapper">
 			<header>
 				<div class="header-content">
 					<div class="nav-home-btn-wrapper">
@@ -39,25 +39,25 @@
 							<a href="Live.html" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="1" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
+										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn visited">Beiträge</a>
 									</li>
 								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper active visited">
+							<li id="2" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+										<a id="themen" href="DeinGLF_Mitmachen.html" alt="Themen" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="jobs" href="DeinGLF_Jobs.html" class="subnav-btn  visited">Jobs</a>
+										<a id="mitmachen" href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="subnav-btn">Mitmachen</a>
 									</li>
 								</ul>
 							</li>
@@ -65,17 +65,17 @@
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" class="subnav-btn">Team</a>
+										<a id="ziele" alt="Ziele" class="subnav-btn">Ziele</a>
 									</li>
 									<li>
-										<a id="infos" class="subnav-btn">Infos</a>
+										<a id="geschichte" alt="Geschichte" class="subnav-btn">Geschichte</a>
 									</li>
 								</ul>
 							</li>
 							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
 								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
 								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..."/>
+									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
 								</div>
 							</li>
 						</ul>
@@ -85,26 +85,22 @@
 			<div class="content-wrapper">
 				<div class="content clearfix">
 
-					<h1 class="headline">Jobs</h1>
+					<div>
+						<h1 class="headline">Jobs</h1>
+					</div>
 
 					<div class="sub-headline-wrapper">
 
 						<p class="sub-headline">
-							Du willst selbst aktiv bei GLF TV mitmachen? Herzlich Willkommen! Wir suchen zu jedem </br> Semesterbeginn wieder neue MItarbeiter. Informiere dich hier über unsere Stellen.
+							Informiere dich hier über die verschiedenen Jobs und Aufgaben beim GLF.
+						</p>
+						<p class="sub-headline-sub">
+							Suche dir einen aus und melde dich an!
 						</p>
 
 					</div>
 
 					<div class="teaser-tile-wrapper jobs clearfix">
-
-						<div class="tile teaser-tile-info-jobs">
-
-							<div>
-								Mehr Infos </br> zu den Jobs von </br>GLF TV
-							</div>
-
-						</div>
-
 						<div id="video-teaser-1" class="tile teaser-tile">
 
 							<div class="teaser-tile-text-layer-jobs">
@@ -161,16 +157,6 @@
 				</div>
 			</div>
 		</div>
-		<footer>
-			<div class="footer-text-wrapper">
-				<!-- delete span wrapper!--><span><span class="footer-text footer-words-left">Mediathek:</span> <a class="footer-text footer-link footer-words-center" href="Mediathek_Sendungen.html">Sendungen</a> <a class="footer-text footer-link footer-words-center" href="Mediathek_Beitraege.html">Beiträge</a> <span class="footer-words-center">|</span> <span class="footer-words-center">Dein GLF:</span> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Themen.html">Themen</a> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Mitmachen.html">Jobs</a> <span class="footer-words-center">|</span> <span class="footer-text footer-words-center">Über GLF:</span> <a class="footer-text footer-link footer-words-center" href="">Team</a> <a class="footer-text footer-link footer-words-center" href="">Information</a> <span class="footer-words-center">|</span> <a class="footer-text footer-link footer-words-center" href="">Kontakt</a> <a class="footer-text footer-link footer-words-right" href="">Impressum</a> </span>
-			</div>
-			<div class="footer-sub-wrapper clearfix">
-				<span class="footer-sub-wrapper-left"> <span class="footer-text-left">GLFtv folgen:</span> <span class="footer-icon-follow"><!--add a class, alt and title attribute to a tag and change url to glf fb page !--> <a href="https://www.facebook.com/"><!--delete img tag and add img as background-image to the a tag!--> <img id="footer_fb"></a> </span> <span class="footer-icon-follow"> <a href="https://twitter.com"><img id="footer_twitter"></a> </span> </span>
-				<span class="footer-text-right">&copy; GLFtv Alle Rechte vorbehalten</span>
-			</div>
-		</footer>
-
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 	</body>

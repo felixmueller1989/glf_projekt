@@ -136,6 +136,7 @@ $(document).ready(function() {
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
 	filterBtn.push($('#filter_broadcasts_btn'));
+	filterBtn.push($('#filter_all_btn'));
 	$(filterBtn).each(function() {
 		$(this).click(function() {
 			toggleSearchFilters(this);
@@ -159,7 +160,14 @@ $(window).resize(function() {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
-	console.log(filterType);
+	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
+	if ($(filterWrapperId)) {
+		var filterWrapper = $(filterWrapperId);
+		$('.filter-toggle').addClass('hidden');
+		$(filterWrapper).removeClass('hidden');
+	}
+	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterBtn).addClass('active');
 }
 
 /*************Search Page Functions End*****************/
