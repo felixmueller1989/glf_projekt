@@ -136,16 +136,37 @@ $(document).ready(function() {
 	/*************Topic Page Functions End*****************/
 	/*************Live Page Functions*****************/
 	/*************Overlay Functions *****************/
-	var pageLive = $('#live');
-	var showTopicTiles = $(".rel-teaser-tile");
-	var topicOverlay = $('#live_topic_overlay');
-	$(showTopicTiles).each(function() {
+	var pageLive = $('#page_live');
+	var showClipTeaserTiles = $(pageLive).find(".rel-teaser-tile");
+	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
+	$(showClipTeaserTiles).each(function() {
 		$(this).click(function() {
-			overlayToggle(topicOverlay);
+			var topicId = $(this).attr('id');
+			var clipTeaserOverlay = $('#' + topicId + '_overlay');
+			overlayToggle(clipTeaserOverlay);
 		});
 	});
 	/*************Overlay Functions End*****************/
 	/*************Live Page Functions End*****************/
+	/*************Jobs Page Functions*****************/
+	/*************Overlay Functions *****************/
+	var showInfoTile = $("#show_jobs_info");
+	var jobsInfoOverlay = $('#jobs_info_overlay');
+	$(showInfoTile).click(function() {
+		overlayToggle(jobsInfoOverlay);
+	});
+	var jobTiles = $('.job-teaser-tile');
+	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
+	$(jobTiles).each(function() {
+		$(this).click(function() {
+			var jobId = $(this).attr('id');
+			var jobApplyOverlay = $('#' + jobId + '_overlay');
+			console.log(jobApplyOverlay);
+			overlayToggle(jobApplyOverlay);
+		});
+	});
+	/*************Overlay Functions End*****************/
+	/*************Jobs Page Functions End*****************/
 	/*************Search Page Functions *****************/
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
@@ -173,19 +194,20 @@ $(window).resize(function() {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
-	console.log(filterType);
 }
 
 /*************Search Page Functions End*****************/
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
+	var closeOverlay = [];
 	var overlayContent = overlay.find('.overlay-content');
 	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
-	var overlayCloseBtn = overlayContent.find('.close-overlay-btn');
-	var closeOverlay = [];
+	if (overlayContent.find('.close-overlay-btn')) {
+		var overlayCloseBtn = overlayContent.find('.close-overlay-btn');
+		closeOverlay.push($(overlayCloseBtn));
+	}
 	closeOverlay.push($(overlay));
 	closeOverlay.push($(overlayCloseIcon));
-	closeOverlay.push($(overlayCloseBtn));
 	$(overlay).fadeIn(300);
 	$(overlay).addClass('active');
 	$('body').css('overflow', 'hidden');

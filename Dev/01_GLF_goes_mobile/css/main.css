@@ -411,6 +411,31 @@ nav.nav-main {
 .overlay-content .text-link:before {
 	border-left-color: #e9e9e9;
 }
+.overlay-close-btn {
+	position: absolute;
+	width: 34px;
+	height: 34px;
+	top: 25px;
+	right: 25px;
+}
+.overlay-close-icon {
+	position: absolute;
+	background-image: url('../img/icons/close.png');
+	background-size: 50% 50%;
+	width: 100%;
+	height: 100%;
+}
+h3.overlay-headline {
+	font-size: 1.5em;
+	line-height: 1.6em;
+	color: #70EA46;
+	display: inline-block;
+	padding: 0 10px 0 0;
+}
+.overlay-subheadline {
+	display: inline-block;
+	color: #70EA46;
+}
 /*
  * ******************************* Overlay Styles End
  */
@@ -426,11 +451,9 @@ nav.nav-main {
 form.overlay-form {
 	margin: 10px 0 0 0;
 }
-h3.overlay-headline {
-	font-size: 1.5em;
-	font-weight: bold;
-	line-height: 1.6em;
-	color: #70EA46;
+.form-title {
+	font-size: 1.2em;
+	margin: 10px 0;
 }
 fieldset {
 	width: 50%;
@@ -470,7 +493,7 @@ input:focus, textarea:focus {
 .identification-field, .topic-data-field textarea {
 	float: left;
 }
-.topic-data-field, .check-field {
+.topic-data-field, .check-field, .job-applic-motiv-field {
 	width: 100%;
 }
 textarea.topic-description {
@@ -643,7 +666,6 @@ input[type="file"]::-webkit-file-upload-button {
 h2.filter-headline {
 	color: #4a4a4a;
 	font-size: 1em;
-	font-weight: bold;
 	margin: 0 0 10px 0;
 	line-height: 1em;
 }
@@ -684,7 +706,6 @@ h2.filter-headline {
 	height: 0;
 	width: 0;
 	position: absolute;
-	
 	border-color: rgba(136, 183, 213, 0);
 	border-left-color: #e9e9e9;
 	border-width: 18px;
@@ -733,45 +754,18 @@ h2.filter-headline {
 .text-only-tile {
 	cursor: default;
 }
-.info-tile {
-
-	width: 200px;
-	height: 200px;
-	margin: 3.5px;
-	float: left;
-	background-color: #7F7F7F;
-}
-
-.info-tile .header-tile {
-
-	margin: 7px 0 0 7px;
-	font-size: 1em;
-	color: white;
-	font-weight: normal;
-}
-
-.info-tile .text-tile {
-
-	margin: 14px 7px 0 7px;
-	font-size: 0.8em;
-	color: white;
-	font-weight: normal;
-}
-
 .teaser-tile-wrapper {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
 }
 
-.teaser-tile-wrapper.jobs {
+.jobs-teaser-tile-wrapper {
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
-
 .teaser-tile:after {
 	content: " ";
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	
 	background-color: rgba(220,220,220,0.3);
 	-moz-transition: all 0.2s ease-in;
 	/* WebKit */
@@ -831,6 +825,17 @@ h2.filter-headline {
 	-o-transition: all 0.2s ease-in;
 	/* Standard */
 	transition: all 0.2s ease-in;
+}
+.teaser-tile-headline {
+	font-size: 1em;
+	margin: 0 0 0 7px;
+	padding: 0;
+	color: #E9E9E9;
+}
+.teaser-tile-subline {
+	font-size: 0.8em;
+	margin: 0 0 0 7px;
+	color: #E9E9E9;
 }
 
 /*
@@ -1000,7 +1005,9 @@ h2.filter-headline {
 /*
  *********************** #page_themen Styles End
  */
-/*jobs*/
+/*
+ *********************** #page_jobs Styles
+ */
 
 .teaser-tile-text-layer-jobs {
 	background: rgba(50,50,50,0.8);
@@ -1018,120 +1025,14 @@ h2.filter-headline {
 	/* Standard */
 	transition: all 0.2s ease-in;
 }
-
-.teaser-tile-headline {
-	font-size: 1em;
-	margin: 0 0 0 7px;
-	padding: 0;
-	color: #E9E9E9;
+.jobs-info-tile div {
+	display: table;
+	width: 200px;
+	height: 200px;
 }
-.teaser-tile-subline {
-	font-size: 0.8em;
-	margin: 0 0 0 7px;
-	color: #E9E9E9;
-}
-#video-teaser-0001 {
-	background-image: url('../img/video_teaser/1.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0002 {
-	background-image: url('../img/video_teaser/2.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0003 {
-	background-image: url('../img/video_teaser/3.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0004 {
-	background-image: url('../img/video_teaser/4.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0005 {
-	background-image: url('../img/video_teaser/5.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0006, #video-teaser-0011 {
-	background-image: url('../img/video_teaser/6.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0007, #video-teaser-0012 {
-	background-image: url('../img/video_teaser/7.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0008, #video-teaser-0010 {
-	background-image: url('../img/video_teaser/8.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#video-teaser-0009 {
-	background-image: url('../img/video_teaser/9.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-1 {
-
-	background-image: url('../img/video_teaser/werbung.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-2 {
-
-	background-image: url('../img/video_teaser/redakteur.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-3 {
-
-	background-image: url('../img/video_teaser/kameramann.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-4 {
-
-	background-image: url('../img/video_teaser/cutter.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-5 {
-
-	background-image: url('../img/video_teaser/moderator.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-6 {
-
-	background-image: url('../img/video_teaser/chef.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-7 {
-
-	background-image: url('../img/video_teaser/bildregie.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
-#video-teaser-8 {
-
-	background-image: url('../img/video_teaser/tonregie.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-
+/*
+ *********************** #page_jobs Styles End
+ */
 /*
  *********************** Home Teaser Tile Styles
  */
@@ -1168,7 +1069,6 @@ h2.filter-headline {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	
 	background-color: rgba(220,220,220,0.3);
 }
 
@@ -1212,12 +1112,9 @@ h2.filter-headline {
 	margin: 0 0 0 7.875px;
 }
 
-
-
 /*
  *********************** Home Teaser Tile Styles End
  */
-
 
 /*
  * ***********************Impressum page style
@@ -1233,75 +1130,59 @@ h2.filter-headline {
 	color: #7f7f7f;
 }
 
+.tiles-impressum-wrapper {
 
-.tiles-impressum-wrapper{
-	
-	
 	margin: 60px 0 60px 0;
-	
-	
 }
 
+.tiles-impressum-left {
 
-
-.tiles-impressum-left{
-	
-	margin-right:20px;
+	margin-right: 20px;
 }
 
-.tiles-impressum-right{
-	
-	margin-left:20px;
+.tiles-impressum-right {
+
+	margin-left: 20px;
 }
 
+.info-general-impressum {
 
-.info-general-impressum{
-	
-	float:right;
-	width:100%;
-	margin:20px 0 60px 0;
-	
+	float: right;
+	width: 100%;
+	margin: 20px 0 60px 0;
 }
 
+.sub-headline-wrapper {
 
-
-.sub-headline-wrapper{
-
-margin-top:60px;
-	
+	margin-top: 60px;
 }
 
-.table-impressum-wrapper{
-	
-	color:#7f7f7f;
-	margin-top:40px;	
-	
+.table-impressum-wrapper {
+
+	color: #7f7f7f;
+	margin-top: 40px;
 }
 
+.name-impressum {
 
-.name-impressum{
-	
 	margin: 30px 0 10px 0;
 }
 
-.tile-impressum.leute{
-	
-	position:relative;
-	
-	
+.tile-impressum.leute {
+
+	position: relative;
 }
 
-.phone-impressum.leute{
-	
+.phone-impressum.leute {
+
 	position: absolute;
 	bottom: 3pc;
 }
 
-.email-impressum.leute{
-	position:absolute;
+.email-impressum.leute {
+	position: absolute;
 	bottom: 6px;
 }
-
 
 #impressum-tile-ada {
 
@@ -1309,40 +1190,26 @@ margin-top:60px;
 	background-size: cover;
 	background-position: 50% 0;
 }
-	
-	
+
 #impressum-tile-leute {
 
 	background-image: url('../img/team/SCH-SCH_01.jpg');
 	background-size: cover;
 	background-position: 50% 0;
-}	
-
-@media only all and (max-width: 930px){
-
-
-	
-	
-.tiles-impressum-wrapper{
-	
-	width:420px;
-	
-	
 }
 
+@media only all and (max-width: 930px) {
 
-	
+	.tiles-impressum-wrapper {
 
-	
+		width: 420px;
+	}
+
 }
 
 /*
  *********************** Impressum page styles end
  */
-
-
-
-
 
 /*
  *********************** Footer Styles
@@ -1418,16 +1285,13 @@ footer {
 	height: 21px;
 }
 
+img {
 
-img{
-	
-	width:17px;
-	height:15px;
-	
+	width: 17px;
+	height: 15px;
 }
 #footer_fb {
-	
-	
+
 	margin-left: 3%;
 	width: 9px;
 	height: 17px;
@@ -1643,7 +1507,6 @@ img{
 .cat-link {
 	color: #9A0758;
 	font-size: 1.2em;
-	font-weight: bold;
 	text-decoration: underline;
 	display: block;
 	margin: 0 0 0 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
@@ -1725,7 +1588,6 @@ img{
 }
 .call-to-action-text {
 	text-align: center;
-	font-weight: bold;
 	font-size: 1.3em;
 	margin: 0.6em;
 }
@@ -1740,7 +1602,6 @@ img{
 .text-only-tile-text {
 	color: #9A0758;
 	padding: 0 13px 0 13px;
-	font-weight: bold;
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
@@ -1760,7 +1621,7 @@ img{
  * ***************************** Videoplayer Page Styles End
  */
 /*
- *********************** Live page Styles
+ *********************** #page_live Styles
  */
 
 #clip_topic_teaser_0001 {
@@ -1806,103 +1667,115 @@ img{
 	background: #7f7f7f;
 	float: left;
 }
-
+.teaser-tile-cat {
+	font-size: 1em;
+	margin: 0 0 0 7px;
+	padding: 0;
+}
 .teaser-tile-cat-link {
 	font-size: 0.8em;
 	margin: 0 0 0 7px;
 	padding: 0;
-	color: #fff;
+	color: #9A0758;
 }
-
 /*
- *********************** Live page Styles End
+ *********************** #page_live Overlay Styles End
+ */
+.overlay-tile {
+	margin: 3.5px 10px 10px 3.5px;
+}
+.overlay .cat-link {
+	color: #e9e9e9;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+/*
+ *********************** #page_live Overlay Styles End
+ */
+/*
+ *********************** #page_live Styles End
  */
 /*
  *********************** No Live page Styles
  */
- .glf-live-banner-wrapper{
- 	width:100%;
- 	height: 200px;
- 	margin: 50px 0 7px 0;
- 	background: #7F7F7F;
- }
- .live-broadcast-headline-wrapper{
- 	width: 59.32367149758454%;
- 	height: 200px;
- 	padding: 0 20.33816425120773% 0 20.33816425120773%;
- 	text-align:center;
- }
- .live-broadcast-headline{
- 	display: block;
- 	font-size: 1.875em;
- 	line-height: 2.5em;
- 	text-transform: none;
+.glf-live-banner-wrapper {
+	width: 100%;
+	height: 200px;
+	margin: 50px 0 7px 0;
+	background: #7F7F7F;
+}
+.live-broadcast-headline-wrapper {
+	width: 59.32367149758454%;
+	height: 200px;
+	padding: 0 20.33816425120773% 0 20.33816425120773%;
+	text-align: center;
+}
+.live-broadcast-headline {
+	display: block;
+	font-size: 1.875em;
+	line-height: 2.5em;
+	text-transform: none;
+}
+.live-broadcast-subline {
+	margin: auto;
+	display: block;
+	font-size: 1.125em;
+	line-height: 2.5em;
+}
+.date-live-broadcast-subline {
+	margin: auto;
+	display: block;
+	color: #9a0758;
+	font-size: 1.875em;
+	line-height: 2.5em;
+}
 
- }
- .live-broadcast-subline{
- 	margin: auto;
- 	display: block;
- 	font-size: 1.125em;
- 	line-height: 2.5em;
- }
- .date-live-broadcast-subline{
- 	margin: auto;
- 	display: block;
- 	color: #9a0758;
- 	font-size: 1.875em;
- 	line-height: 2.5em;
- }
+.broadcast-related-tile-wrapper {
+	margin: 0 0 0 0px;
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #7f7f7f;
+	padding: 37px 0 33px 0;
+}
 
- .broadcast-related-tile-wrapper {
- 	margin: 0 0 0 0px;
- 	display: block;
- 	width: 100%;
- 	border-bottom: 1px solid #7f7f7f;
- 	padding: 37px 0 33px 0;
- }
+.broadcast-related-tile-headline {
+	font-size: 1.125em;
+	color: #9a0758;
+	margin: 0 0 26px 3.5px;
+}
 
- .broadcast-related-tile-headline{
- 	font-size: 1.125em;
- 	color: #9a0758;
- 	margin: 0 0 26px 3.5px;
+.broadcast-inner-tiles-wrapper {
 
- }
+	margin: 0 0 15px 0;
+}
 
- .broadcast-inner-tiles-wrapper{
+.broadcast-related-link {
+	display: block;
+	margin: 0 0 0 3.5px;
+}
 
- 	margin: 0 0 15px 0;
- }
+.clip-related-tile-wrapper {
+	margin: 0 0 0 0px;
+	display: block;
+	width: 100%;
+	padding: 14px 0 27px 0;
+}
+.clip-related-tile-headline {
+	font-size: 1.125em;
+	color: #9a0758;
+	margin: 0 0 26px 3.5px;
+}
 
- .broadcast-related-link{
- 	display: block;
- 	margin: 0 0 0 3.5px;
- 	
- }
+.clip-inner-tiles-wrapper {
 
-  .clip-related-tile-wrapper {
- 	margin: 0 0 0 0px;
- 	display: block;
- 	width: 100%;
- 	padding: 14px 0 27px 0;
- }
- .clip-related-tile-headline{
- 	font-size: 1.125em;
- 	color: #9a0758;
- 	margin: 0 0 26px 3.5px;
+	margin: 0 0 15px 0;
+}
+.clip-related-link {
+	display: block;
+	margin: 0 0 0 3.5px;
+}
 
- }
-
- .clip-inner-tiles-wrapper{
-
- 	margin: 0 0 15px 0;
- }
- .clip-related-link{
- 	display: block;
- 	margin: 0 0 0 3.5px;
- 	
- }
-
- /*
+/*
  *********************** No Live page Styles End
  */
 /*
@@ -1925,7 +1798,6 @@ h1.search-headline {
 	margin: 0 0 0 3.5px;
 }
 h1.search-item-headline {
-	font-weight: bold;
 	margin: 0px 0px 0px 0px;
 }
 
@@ -2083,7 +1955,6 @@ h1.search-item-headline {
 	height: 0;
 	width: 0;
 	position: absolute;
-	
 	border-color: rgba(136, 183, 213, 0);
 	border-width: 6.5px;
 	top: 50%;
@@ -2100,65 +1971,6 @@ h1.search-item-headline {
 /*
  *********************** Pagination Styles End
  */
-
-/*
- *********************** Live page Styles
- */
-
-#clip_topic_teaser_0001 {
-	background-image: url('../img/video_teaser/1.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0002 {
-	background-image: url('../img/video_teaser/2.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0003 {
-	background-image: url('../img/video_teaser/3.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0004 {
-	background-image: url('../img/video_teaser/4.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0005 {
-	background-image: url('../img/video_teaser/5.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0006 {
-	background-image: url('../img/video_teaser/6.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-#clip_topic_teaser_0007 {
-	background-image: url('../img/video_teaser/7.jpg');
-	background-size: cover;
-	background-position: 50% 0;
-}
-.teaser-tile-cat {
-	font-size: 1em;
-	margin: 0 0 0 7px;
-	padding: 0;
-}
-
-.teaser-tile-cat {
-	font-size: 1em;
-	margin: 0 0 0 7px;
-	padding: 0;
-}
-.teaser-tile-cat-link {
-	color: #9A0758;
-}
-
-/*
- *********************** Live page Styles End
- */
-
 
 /* ==========================================================================
  Media Queries
