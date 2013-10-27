@@ -889,9 +889,12 @@ h2.filter-headline {
  ******Slider Styles
  */
 .slider-wrapper {
-	width: 100%; /*1035px*/
+	width: 100%;
 	max-height: 422px;
 	margin: 20px 0 0 0;
+	position: relative;
+	padding: 3.5px;
+	box-sizing: border-box;
 }
 .teaser-slider img {
 	height: auto !important;
@@ -900,7 +903,47 @@ h2.filter-headline {
 	height: 407px;
 	overflow: hidden;
 }
-
+.nivo-controlNav {
+	text-align: center;
+	padding: 15px 0;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	z-index: 100;
+	margin: 0 0 0 -50px;
+}
+.nivo-directionNav a {
+	width: 54px;
+	height: 53px;
+	background-image: url('../img/icons/slider_icons.png');
+	background-repeat: no-repeat;
+}
+.nivo-nextNav {
+	background-position: -147px -1px;
+	right: 15px;
+}
+.nivo-nextNav:hover {
+	background-position: -203px -1px;
+}
+.nivo-prevNav {
+	background-position: -35px -1px;
+	left: 15px;
+}
+.nivo-prevNav:hover {
+	background-position: -91px -1px;
+}
+.nivo-controlNav a {
+	background-image: url('../img/icons/slider_icons.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	margin: 0 4px;
+}
+.nivo-controlNav a.active, .nivo-controlNav a:hover {
+	background-position: -18px 0;
+}
 /*
  ******Slider Styles End
  /*
@@ -2004,23 +2047,23 @@ h1.search-item-headline {
 /*
  *********************** #page_landing Styles
  */
-.landingpage_content .sub-headline-wrapper {
+.landingpage-content .sub-headline-wrapper {
 	display: inline-table;
 	margin: 3.5px;
 }
-.landingpage_content .sub-headline {
+.landingpage-content .sub-headline {
 	display: inline;
 	font-size: 1.3em;
 }
-.landingpage_content .share-wrapper {
+.landingpage-content .share-wrapper {
 	float: right;
 	margin: 3.5px;
 }
-.landingpage_content .text-wrapper {
+.landingpage-content .text-wrapper {
 	margin: 3.5px;
 	padding: 0 0 40px 0;
 }
-.landingpage_content .video-wrapper, .landingpage_content .img-wrapper {
+.landingpage-content .video-wrapper, .landingpage-content .img-wrapper {
 	margin: 3.5px 3.5px 20px 3.5px;
 }
 .full-size-img {

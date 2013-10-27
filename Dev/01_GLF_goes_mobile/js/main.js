@@ -8,16 +8,16 @@ var expandTimeout;
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
 		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
-		animSpeed : 500, // Slide transition speed
-		pauseTime : 3000, // How long each slide will show
+		animSpeed : 200, // Slide transition speed
+		pauseTime : 3500, // How long each slide will show
 		startSlide : 0, // Set starting Slide (0 index)
 		directionNav : true, // Next & Prev navigation
 		controlNav : true, // 1,2,3... navigation
 		controlNavThumbs : false, // Use thumbnails for Control Nav
 		pauseOnHover : true, // Stop animation while hovering
 		manualAdvance : false, // Force manual transitions
-		prevText : 'Prev', // Prev directionNav text
-		nextText : 'Next', // Next directionNav text
+		prevText : '', // Prev directionNav text
+		nextText : '', // Next directionNav text
 		randomStart : false, // Start on a random slide
 		beforeChange : function() {
 		}, // Triggers before a slide transition
@@ -97,6 +97,14 @@ $(document).ready(function() {
 		});
 	});
 	/************** Only for Testing Functions End*****************/
+	/*************Home Page Functions*********/
+	var slider = $('.teaser-slider');
+	setTimeout(function(){
+	var contrlElem = $('.nivo-control');
+	$(contrlElem).text('');	
+	}, 400);
+	
+	/*************Home Page Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
@@ -158,7 +166,6 @@ $(document).ready(function() {
 	});
 	/*************Search Page Functions End*****************/
 	/*call functions */
-	sliderSize();
 	resizeInfoWrapper();
 });
 /*document.ready end */
@@ -169,7 +176,6 @@ $(window).resize(function() {
 	var contentWdth = $('.content').width();
 	$('.projekktor').css('width', contentWdth + 'px');
 	/*call functions */
-	sliderSize();
 	resizeInfoWrapper();
 });
 /***********************WINDOW RESIZE END ********************/
@@ -299,24 +305,3 @@ function resizeInfoWrapper() {
 }
 
 /*************Detail Pages Info-Wrapper Functions End*********/
-/****************slider functions ********************/
-function sliderSize() {
-	// keep slider ratio depending on relative width (slider-wrapper )
-	var sliderWrapper = $('.slider-wrapper');
-	var sliderWrapperWdth = sliderWrapper.width();
-	var ratio = 16 / 9;
-	var sliderWrapperHgt = sliderWrapperWdth / ratio;
-	sliderWrapper.css({
-		'height' : sliderHgt + 'px'
-	});
-
-	// keep slider ratio depending on relative width (slider )
-	var slider = $('.slider');
-	var sliderWdth = slider.width();
-	var sliderHgt = sliderWdth / ratio;
-	slider.css({
-		'height' : sliderHgt + 'px'
-	});
-}
-
-/****************slider functions end********************/
