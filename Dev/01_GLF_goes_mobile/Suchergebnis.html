@@ -4,79 +4,110 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link href='http://fonts.googleapis.com/css?family=Asap|Source+Sans+Pro' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/main.css">
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script>
-		window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
-	</script>
-	<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
-</head>
-<body>
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link href='http://fonts.googleapis.com/css?family=Asap|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
+		</script>
+		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
+	</head>
+	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_search" class="page-wrapper">
+		<div id="page_search_no_res" class="page-wrapper">
 			<header>
-				<div class="header-content">
+				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
 					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper">
-							<a href="Live.html" class="nav-header">Live</a>
+						<div id="live_btn" class="nav-btn-wrapper">
+							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
+										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Themen.html" alt="Themen" class="subnav-btn">Themen</a>
+										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="jobs" href="DeinGLF_Jobs.html" alt="Jobs" class="subnav-btn">Jobs</a>
+										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
 									</li>
 								</ul>
 							</li>
-							<li id="3" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" alt="Team" class="subnav-btn">Team</a>
+										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
 									</li>
 									<li>
-										<a id="infos" alt="Geschichte" class="subnav-btn">Infos</a>
+										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
 									</li>
 								</ul>
 							</li>
-							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
+								<div class="search-input-wrapper clearfix">
+									<span id="searchIcon" class="nav-header nav-accordion-header"></span>
+									<div class="subnav">
+										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
+									</div>
 								</div>
+								<ul id="search_results_layer" class="search-results-layer no-results">
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</nav>
@@ -87,13 +118,15 @@
 					<div class="back-btn-wrapper">
 						<a class="back-btn"><span class="back-btn-arrow"></span><span class="back-btn-text">zurück</span></a>
 					</div>
-					<div class="headline-wrapper search-headline-wrapper">
+					<div class="headline-wrapper search-headline-wrapper search-nores-headline-wrapper">
 						<h1 class="headline search-headline">Deine Suche nach </h1>
-						<h1 class="search-item-headline"> &quot;Suchbegriff&quot;</h1>
+						<h1 class="headline search-headline search-item-headline"> &quot;Suchbegriff&quot;</h1>
 						<h1 class="headline search-headline">ergab leider keine Treffer. </h1>
 					</div>
 					<div class="search-suggestion-wrapper">
-						<p class="search-suggestion-text">Probier doch mal</p>
+						<p class="search-suggestion-text">
+							Probier doch mal
+						</p>
 
 						<ul class="search-suggestion-list">
 							<li>
@@ -114,7 +147,7 @@
 					</div>
 					<div class="related-tile-wrapper search-related-tile-wrapper clearfix">
 
-						<h2 class="related-tile-headline search-related-tile-headline">Empfehlungen, die dich auch interessieren könnten</h2> 
+						<h2 class="related-tile-headline search-related-tile-headline">Empfehlungen, die dich auch interessieren könnten</h2>
 						<div id="clip_search_teaser_0001" class="tile teaser-tile">
 
 							<div class="teaser-tile-text-layer">
@@ -145,21 +178,23 @@
 					</div>
 
 					<div class="mediathek-link-wrapper">
-						<p class="mediathek-link-text">Durchstöbere doch unsere Mediathek</p>
+						<p class="mediathek-link-text">
+							Durchstöbere doch unsere Mediathek
+						</p>
 						<div class="mediathek-link-links">
-						<a href="Mediathek_Beitraege.html" class="text-link mediathek-link-beitraege">Zu den Beiträgen</a>
+							<a href="Mediathek_Beitraege.html" class="text-link mediathek-link-beitraege">Zu den Beiträgen</a>
 
-						<a href="Mediathek_Sendungen.html"class="text-link mediathek-link-sendungen">Zu den Sendungen</a>
+							<a href="Mediathek_Sendungen.html"class="text-link mediathek-link-sendungen">Zu den Sendungen</a>
 						</div>
 					</div>
 
 					<div class="back-btn-wrapper">
 						<a class="back-btn"><span class="back-btn-arrow"></span><span class="back-btn-text">zurück</span></a>
 					</div>
-					
+
 				</div>
 			</div>
 			<script src="js/plugins.js"></script>
 			<script src="js/main.js"></script>
-		</body>
-		</html>
+	</body>
+</html>

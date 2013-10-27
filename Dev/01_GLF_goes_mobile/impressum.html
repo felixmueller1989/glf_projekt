@@ -28,55 +28,86 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_themenDetail" class="page-wrapper">
+		<div id="page_imprint" class="page-wrapper">
 			<header>
-				<div class="header-content">
+				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
 					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper">
-							<a href="Live.html" class="nav-header">Live</a>
+						<div id="live_btn" class="nav-btn-wrapper">
+							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" alt="Sendungen" class="subnav-btn">Sendungen</a>
+										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" alt="Beiträge" class="subnav-btn">Beiträge</a>
+										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Themen.html" alt="Themen" class="subnav-btn">Themen</a>
+										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="jobs" href="DeinGLF_Jobs.html" alt="Jobs" class="subnav-btn">Jobs</a>
+										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
 									</li>
 								</ul>
 							</li>
-							<li id="3" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" alt="Team" class="subnav-btn">Team</a>
+										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
 									</li>
 									<li>
-										<a id="infos" alt="Geschichte" class="subnav-btn">Infos</a>
+										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
 									</li>
 								</ul>
 							</li>
-							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
+								<div class="search-input-wrapper clearfix">
+									<span id="searchIcon" class="nav-header nav-accordion-header"></span>
+									<div class="subnav">
+										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
+									</div>
 								</div>
+								<ul id="search_results_layer" class="search-results-layer no-results">
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</nav>
@@ -85,95 +116,175 @@
 			<div class="content-wrapper">
 				<div class="content clearfix">
 
-					<h1 class="headline">Jobs</h1>
+					<div class="headline-impressum">
+						<h1 class="headline">Impressum</h1>
+					</div>
 
 					<div class="sub-headline-wrapper">
 
+						<h2 class="sub-headline">GLF Campus TV - Gute Laune Furtwangen</h2>
+
 						<p class="sub-headline">
-							Du willst selbst aktiv bei GLF TV mitmachen? Herzlich Willkommen! Wir suchen zu jedem </br> Semesterbeginn wieder neue MItarbeiter. Informiere dich hier über unsere Stellen.
+							ist eine Lehrveranstaltung der Fakultät Digitale Medien der HFU Hochschule Furtwangen University. </br>
+							Die Wahlpflichtveranstaltung GLF Campus TV wird geleitet von Prof. Albrecht Schäfer-Schönthal.
 						</p>
 
 					</div>
 
-					<div class="teaser-tile-wrapper jobs clearfix">
+					<div class="table-impressum-wrapper">
 
-						<div class="tile teaser-tile-info-jobs">
+						<table border="0" cellspacing="10" cellpadding="3" frame="void">
 
-							<div>
-								Mehr Infos </br> zu den Jobs von </br>GLF TV
-							</div>
+							<tr>
+								<td><b>Postanschrift</b></td>
+								<td>Robert-Gerwig-Platz 1, 78120 Furtwangen</td>
 
-						</div>
+							</tr>
+							<tr>
+								<td><b>Sendestudio</b></td>
+								<td>I-Bau, Unterallmendstraße, 78120 Furtwangen</td>
 
-						<div id="video-teaser-1" class="tile teaser-tile">
+							</tr>
+							<tr>
+								<td><b>Telefon</b></td>
+								<td>+49 07723 920-2571</td>
 
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Werbung</h3>
+							</tr>
+							<tr>
+								<td><b>E-Mail</b></td>
+								<td>GLF E-Mail Adresse</td>
 
-							</div>
-						</div>
-						<div id="video-teaser-2" class="tile teaser-tile">
+							</tr>
+							<tr>
+								<td><b>Internet</b></td>
+								<td>www.glftv.de</td>
 
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Redakteur/-in</h3>
+							</tr>
+							<tr>
+								<td><b>UST-IdNr.</b></td>
+								<td>DE 141908415</td>
 
-							</div>
-						</div>
-						<div id="video-teaser-3" class="tile teaser-tile">
-
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Kameramann/-frau</h3>
-
-							</div>
-						</div>
-						<div id="video-teaser-4" class="tile teaser-tile">
-
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Cutter</h3>
-							</div>
-						</div>
-						<div id="video-teaser-5" class="tile teaser-tile">
-
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Moderator/ Reporter</h3>
-							</div>
-						</div>
-						<div id="video-teaser-6" class="tile teaser-tile">
-
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Chef vom Dienst</h3>
-							</div>
-						</div>
-						<div id="video-teaser-7" class="tile teaser-tile">
-
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Bildregie</h3>
-							</div>
-						</div>
-						<div id="video-teaser-8" class="tile teaser-tile">
-
-							<div class="teaser-tile-text-layer-jobs">
-								<h3 class="teaser-tile-headline">Tonregie</h3>
-							</div>
-						</div>
+							</tr>
+						</table>
 
 					</div>
+
+					<div class="tiles-impressum-wrapper clearfix">
+						<h2 class="sub-headline">GLF TV Ansprechpartner</h2>
+
+						
+
+							<div id="impressum-tile-ada" class="tile-impressum ">
+
+							</div>
+
+							<div  class="tile-impressum ">
+							
+							
+							<div class="name-impressum"><b>Ada Rhode</b></div>
+							
+							<div class="tasks-impressum">Akademische</br> Mitarbeiterin,</br>Chefredaktion</div>
+							<div class="phone-impressum">07723-920-2560 oder </br>0179-5117527</div>
+							<div class="email-impressum">rhode@hs-furtwangen.de</div>
+							
+							
+							</div>
+
+					
+						
+							<div id="impressum-tile-leute" class="tile-impressum ">
+
+							</div>
+
+							<div  class="tile-impressum ">
+
+							<div class="name-impressum"><b>Prof.Schäfer-Schönthal</b></div>
+							<div class="tasks-impressum">Verantwortlicher Professor</div>
+							<div class="phone-impressum">07723 920-2575</div>
+							<div class="email-impressum">schaefer@hs-furtwangen.de</div>
+							
+							</div>
+						
+
+					</div>
+
+					<div class="info-general-impressum">
+
+						<h2 class="sub-headline">Allgemeiner Text zum Impressum</h2>
+
+						<p class="sub-headline">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+
+					</div>
+
 				</div>
 			</div>
 
 			<footer>
-				<div class="footer-text-wrapper">
-					<!-- Text hier-->
-					<span><span class="footer-text footer-words-left">Mediathek:</span> <a class="footer-text footer-link footer-words-center" href="Mediathek_Sendungen.html">Sendungen</a> <a class="footer-text footer-link footer-words-center" href="Mediathek_Beitraege.html">Beiträge</a> <span class="footer-words-center">|</span> <span class="footer-words-center">Dein GLF:</span> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Themen.html">Themen</a> <a class="footer-text footer-link footer-words-center" href="DeinGLF_Mitmachen.html">Jobs</a> <span class="footer-words-center">|</span> <span class="footer-text footer-words-center">Über GLF:</span> <a class="footer-text footer-link footer-words-center" href="">Team</a> <a class="footer-text footer-link footer-words-center" href="">Information</a> <span class="footer-words-center">|</span> <a class="footer-text footer-link footer-words-center" href="">Kontakt</a> <a class="footer-text footer-link footer-words-right" href="">Impressum</a> </span>
-					<!-- Text hier-->
+				
+				<div class="footer-content-wrapper">
+				<div class="footer-top-wrapper clearfix">
+					
+				<span>
+				<div class="footer-element startseite-footer-element">
+					<a class="footer-link" href="">Startseite</a>
+					<a class="footer-link" href="">Live</a>
 				</div>
+				
+				
+				<div class="footer-element mediathek-footer-element">
+					<span class="footer-link-label">Mediathek:</span>
+					<a class="footer-link" href="">Sendungen</a>
+					<a class="footer-link" href="">Beiträge</a>
+				</div>	
+				
+				
+				<div class="footer-element dein-glf-footer-element">
+					<span class="footer-link-label">Dein GLF:</span>
+					<a class="footer-link" href="">Themen</a>
+					<a class="footer-link" href="">Jobs</a>
+				</div>
+				
+				
+				<div class="footer-element ueber-glf-footer-element">
+					<span class="footer-link-label">Über GLF:</span>
+					<a class="footer-link" href="">Team</a>
+					<a class="footer-link" href="">Info</a>
+				</div>	
+				
+				
+				<div class="footer-element impressum-footer-element">
+					<a class="footer-link" href="">Impressum</a>
+					<a class="footer-link" href="">Kontakt</a>
+					<a class="footer-link" href="">Datenschutz</a>
+				</div>
+				
+				
 
+				</span>
+				</div>
+				
+				
+				
 				<div class="footer-sub-wrapper clearfix">
-
-					<span class="footer-sub-wrapper-left"> <span class="footer-text-left">GLFtv folgen:</span> <span class="footer-icon-follow"> <a href="https://www.facebook.com/"><img id="footer_fb"></a> </span> <span class="footer-icon-follow"> <a href="https://twitter.com"><img id="footer_twitter"></a> </span> </span>
-
-					<span class="footer-text-right">&copy; GLFtv Alle Rechte vorbehalten</span>
-
+					
+					
+					<div class="footer-social-links-wrapper">
+						<span class="footer-social-links-label">GLFtv folgen:</span>
+						<span class="footer-social-links-fb-icon"><a class="footer-social-links-fb"></a></span>
+						<span class="footer-social-links-twitter-icon"><a class="footer-social-links-twitter"></a></span>
+						
+					</div>
+					
+					
+					<div class="footer-copyright-wrapper">
+					<span class="footer-copyright">&copy;GLFtv Alle Rechte Vorbehalten</span>
+					</div>
+				
+				
+				</div>
+				
 				</div>
 			</footer>
 
