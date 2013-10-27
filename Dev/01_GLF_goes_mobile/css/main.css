@@ -1600,6 +1600,7 @@ img {
 .video-wrapper {
 	margin: 3.5px;
 	float: left;
+	background-color: #000000;
 }
 .info-wrapper {
 	width: 821px;
@@ -2021,6 +2022,9 @@ h1.search-item-headline {
 .landingpage_content .text-wrapper {
 	margin: 3.5px;
 	padding: 0 0 40px 0;
+}
+.landingpage_content .video-wrapper{
+	margin: 3.5px 3.5px 20px 3.5px;
 }
 /*
  *********************** #page_landing Styles End

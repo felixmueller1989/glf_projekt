@@ -6,7 +6,24 @@ var expandItem;
 var expandTimeout;
 
 $(document).ready(function() {
-
+	/*************Video Player Functions *********/
+	var contentWdth = $('.content').width();
+	$('video').css('width', contentWdth+'px');
+	console.log($('.projekktor').width());
+	projekktor('video', {
+		volume : 0.8,
+		controls : true,
+		autoplay : false,
+		thereCanBeOnlyOne : true, //stop all other player instances but the one the user clicked play
+		ratio : 16 / 9,
+		leaveFullscreen : true, //player will try to leave fullscreen once the "done" event has been fired
+		disallowSkip : false,
+		showOnStart : true,
+		addplugins : ['controlbar'],
+		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
+		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
+	});
+	/*************Video Player Functions End*********/
 	/************ Nav Functions *************/
 	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 	$(navMain).find('ul > .collapsible').hover(function() {
@@ -54,21 +71,6 @@ $(document).ready(function() {
 		});
 	});
 	/************** Only for Testing Functions End*****************/
-	/*************Video Player Functions *********/
-	projekktor('.video', {
-		volume : 0.8,
-		controls : true,
-		autoplay : false,
-		thereCanBeOnlyOne : true, //stop all other player instances but the one the user clicked play
-		ratio : 16 / 9,
-		leaveFullscreen : true, //player will try to leave fullscreen once the "done" event has been fired
-		disallowSkip : false,
-		showOnStart : true,
-		addplugins : ['controlbar'],
-		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
-		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
-	});
-	/*************Video Player Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
@@ -138,10 +140,13 @@ $(document).ready(function() {
 
 /**************** WINDOW RESIZE *********************/
 $(window).resize(function() {
+	/*resize video player*/
+	var contentWdth = $('.content').width();
+	$('.projekktor').css('width', contentWdth+'px');
 	/*call functions */
 	sliderSize();
 	resizeInfoWrapper();
-});
+	});
 /***********************WINDOW RESIZE END ********************/
 /*************Nav Accordion Toggle Functions *****************/
 /* expand hovered Item and collapse former activeItem */
