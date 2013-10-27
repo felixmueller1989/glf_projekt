@@ -123,6 +123,10 @@ a {
 a, p, span, h2, h3 {
 	color: #7f7f7f;
 }
+.mobile-data {
+	display: none;
+	visibility: hidden;
+}
 /*
  *********************** General Styles End
  */
@@ -141,7 +145,7 @@ header {
 }
 .nav-home-btn-wrapper {
 	width: 150px;
-	height: 120px;
+	height: 78px;
 	float: left;
 	position: relative;
 }
@@ -173,7 +177,7 @@ nav.nav-main {
 .nav-btn-wrapper.active {
 	width: 379px;
 }
-#liveBtn.nav-btn-wrapper.active {
+#live_btn.nav-btn-wrapper.active {
 	width: 126px;
 }
 .nav-btn-wrapper {
@@ -199,13 +203,11 @@ nav.nav-main {
 .nav-accordion-header {
 	border-right: 1px dashed #7F7F7F;
 }
-#searchBtn {
+#nav_btn_search {
 	border-right: 1px dashed #7F7F7F;
-}
-.nav-btn-wrapper#searchBtn {
 	width: 73px;
 }
-#searchBtn .subnav {
+#nav_btn_search .subnav {
 	left: 73px;
 	width: 253px;
 }
@@ -216,10 +218,10 @@ nav.nav-main {
 	border-right: none;
 	width: 73px;
 }
-#searchBtn:hover #searchIcon {
+#nav_btn_search:hover #searchIcon {
 	background-image: url('../img/icons/search_icon_green.png');
 }
-#searchBtn .subnav input {
+#nav_btn_search .subnav input {
 	margin: 21px 0 0 0;
 	line-height: 1.9em;
 	font-size: 1em;
@@ -228,11 +230,11 @@ nav.nav-main {
 	background-color: #E9E9E9;
 	border: none;
 }
-#liveBtn {
+#live_btn {
 	position: relative;
 	cursor: pointer;
 }
-#liveBtn:before {
+#live_btn:before {
 	content: "";
 	position: absolute;
 	top: 21px;
@@ -292,6 +294,37 @@ nav.nav-main {
 .subnav-btn.visited:hover, .subnav-btn.visited:active {
 	color: #4a4a4a;
 }
+.search-results-layer {
+	padding: 0 15px;
+	background: #434343;
+	z-index: 999;
+	position: relative;
+}
+.search-results-layer.no-results {
+	display: none;
+	visibility: hidden;
+}
+.search-result-teaser-img {
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin: 0 11px 0 0;
+}
+.search-result {
+	padding: 10px 0 20px 0;
+	border-bottom: 1px solid #e9e9e9;
+}
+.search-result:last-of-type {
+	border-bottom: 0px;
+}
+.search-result .text {
+	margin: 0;
+	color: #E9E9E9;
+	font-size: 0.9em;
+}
+.search-result .search-result-title {
+	font-size: 1.2em;
+}
 /*
  *********************** Header Styles End
  */
@@ -304,6 +337,7 @@ nav.nav-main {
 	margin: auto;
 	background: #E9E9E9;
 	height: auto;
+	z-index: 0;
 }
 .content {
 	width: 100%;
@@ -378,6 +412,9 @@ nav.nav-main {
 .text-link:hover.text-link:before {
 	border-left-color: #70EA46;
 }
+.text {
+	text-transform: none;
+}
 /*
  * ******************************* Overlay Styles
  */
@@ -398,7 +435,7 @@ nav.nav-main {
 	background: #434343;
 	width: 50%;
 	padding: 25px;
-	margin: 78px auto 0 auto;
+	margin: 78px auto 40px auto;
 	color: #E9E9E9;
 	position: relative;
 }
@@ -493,7 +530,7 @@ input:focus, textarea:focus {
 .identification-field, .topic-data-field textarea {
 	float: left;
 }
-.topic-data-field, .check-field, .job-applic-motiv-field {
+.topic-data-field, .check-field, .job-applic-motiv-field, .message-field {
 	width: 100%;
 }
 textarea.topic-description {
@@ -758,7 +795,7 @@ h2.filter-headline {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
 }
 
-.jobs-teaser-tile-wrapper {
+.jobs-teaser-tile-wrapper, .team-teaser-tile-wrapper {
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
 .teaser-tile:after {
@@ -825,6 +862,12 @@ h2.filter-headline {
 	-o-transition: all 0.2s ease-in;
 	/* Standard */
 	transition: all 0.2s ease-in;
+}
+.teaser-tile-text-layer .text {
+	color: #E9E9E9;
+	margin: 0;
+	font-size: 0.8em;
+	margin: 0 0 0 7px;
 }
 .teaser-tile-headline {
 	font-size: 1em;
@@ -1034,6 +1077,44 @@ h2.filter-headline {
  *********************** #page_jobs Styles End
  */
 /*
+ *********************** #contact_layer Styles End
+ */
+.contact-form {
+	padding: 0 0 40px 0;
+}
+.contact-data-wrapper {
+	padding: 15px 0;
+	border-top: 1px solid #E9E9E9;
+}
+.contact-section-wrapper {
+	width: 48%;
+	float: left;
+}
+.contact-section-wrapper:first-of-type {
+	padding: 0 2% 0 0;
+}
+.contact-img {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 0 11px 0 0;
+}
+.contact-data-headline {
+	margin: 0 0 7px 0;
+	color: #70EA46;
+}
+.contact-data-text {
+	font-size: 0.8em;
+	margin: 5px 0;
+	line-height: 0.9em;
+}
+.mail-link {
+	display: inline-block;
+}
+/*
+ *********************** #contact_layer Styles End
+ */
+/*
  *********************** Home Teaser Tile Styles
  */
 .wrapper-six-tiles {
@@ -1150,11 +1231,6 @@ h2.filter-headline {
 	float: right;
 	width: 100%;
 	margin: 20px 0 60px 0;
-}
-
-.sub-headline-wrapper {
-
-	margin-top: 60px;
 }
 
 .table-impressum-wrapper {
@@ -1696,7 +1772,7 @@ img {
  *********************** #page_live Styles End
  */
 /*
- *********************** No Live page Styles
+ ***********************  #page_live_no_stream Styles
  */
 .glf-live-banner-wrapper {
 	width: 100%;
@@ -1776,26 +1852,26 @@ img {
 }
 
 /*
- *********************** No Live page Styles End
+ *********************** #page_live_no_stream Styles End
  */
 /*
- *********************** Search page Styles
+ *********************** #page_search Styles
  */
 .search-nores-headline-wrapper {
 	margin: 5px 0 42px 0;
 }
 .search-nores-headline-wrapper .search-headline {
+	display: inline-block;
 	color: #9a0758;
 }
 .search-headline-wrapper {
 	margin: 0 0 30px 3.5px;
 }
 
-h1.search-headline {
-	display: inline-block;
+h1.search-headline, .phrase-headline {
 	text-transform: none !important;
 	font-size: 1.9em;
-	margin: 0 0 0 3.5px;
+	margin: 0 0 20px 3.5px;
 }
 h1.search-item-headline {
 	margin: 0px 0px 0px 0px;
@@ -1925,9 +2001,52 @@ h1.search-item-headline {
 }
 
 /*
- *********************** Search page Styles End
+ *********************** #page_search Styles End
  */
-
+/*
+ *********************** #page_landing Styles
+ */
+.landingpage_content .sub-headline-wrapper {
+	display: inline-table;
+	margin: 3.5px;
+}
+.landingpage_content .sub-headline {
+	display: inline;
+	font-size: 1.3em;
+}
+.landingpage_content .share-wrapper {
+	float: right;
+	margin: 3.5px;
+}
+.landingpage_content .text-wrapper {
+	margin: 3.5px;
+	padding: 0 0 40px 0;
+}
+/*
+ *********************** #page_landing Styles End
+ */
+/*
+ *********************** 404 page Styles
+ */
+#page_error .left-section {
+	float: left;
+	height: 200px;
+	background: #434343;
+}
+#page_error .right-section {
+	display: inline-block;
+}
+.error-text-highlighted {
+	color: #9A0758;
+	margin: 0 0 30px 30px;
+}
+#page_error .text-link {
+	display: block;
+	margin: 0 0 0 60px;
+}
+/*
+ *********************** 404 page Styles End
+ */
 /*
  *********************** Pagination Styles
  */

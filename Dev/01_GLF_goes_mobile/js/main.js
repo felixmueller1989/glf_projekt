@@ -1,64 +1,18 @@
+/*Define global vars */
+var activeItem;
+var navMain = $('#navMain');
+var navAccordion = $('#navAccordion');
+var expandItem;
+var expandTimeout;
+
 $(document).ready(function() {
 
 	/************ Nav Functions *************/
-	/*Define global vars */
-	var activeItem;
-	var navMain = $('#navMain');
-	var expandItem;
-	var expandTimeout;
-
 	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 	$(navMain).find('ul > .collapsible').hover(function() {
 		expandItem = $(this);
 		expandTimeout = setTimeout(accordionToggle, 300);
 	}, stopAnimation);
-
-	/* expand hovered Item and collapse former activeItem */
-	function accordionToggle() {
-		activeItem = $(navMain).find('ul > .active');
-		if ($(activeItem).hasClass('search-btn')) {
-			$(activeItem).animate({
-				width : "73px"
-			}, {
-				duration : 300,
-				queue : false
-			});
-		} else {
-			$(activeItem).animate({
-				width : "126px"
-			}, {
-				duration : 300,
-				queue : false
-			});
-		}
-		if ($(expandItem).hasClass('search-btn')) {
-			$(expandItem).animate({
-				width : "326px"
-			}, {
-				duration : 300,
-				queue : false
-			});
-		} else {
-			$(expandItem).animate({
-				width : "379px"
-			}, {
-				duration : 300,
-				queue : false
-			});
-		}
-		$(activeItem).removeClass('active');
-		activeItem = expandItem;
-		$(activeItem).addClass('active');
-		/*set focus on search input if search is active element*/
-		if ($(activeItem).hasClass('search-btn')) {
-			$(activeItem).find('#searchInput').focus();
-		}
-	}
-
-	function stopAnimation() {
-		clearTimeout(expandTimeout);
-	}
-
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
 		$('.nav-btn-wrapper').each(function(index, elem) {
@@ -97,12 +51,11 @@ $(document).ready(function() {
 		$(this).click(function() {
 			$(overlayForm).toggleClass('visible').toggleClass('hidden');
 			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-
 		});
 	});
 	/************** Only for Testing Functions End*****************/
 	/*************Video Player Functions *********/
-	projekktor('.video-clip', {
+	projekktor('.video', {
 		volume : 0.8,
 		controls : true,
 		autoplay : false,
@@ -190,6 +143,80 @@ $(window).resize(function() {
 	resizeInfoWrapper();
 });
 /***********************WINDOW RESIZE END ********************/
+/*************Nav Accordion Toggle Functions *****************/
+/* expand hovered Item and collapse former activeItem */
+function accordionToggle() {
+	activeItem = $(navMain).find('ul > .active');
+	if ($(activeItem).hasClass('search-btn')) {
+		var searchResLayer = $('#search_results_layer');
+		$(searchResLayer).removeClass('has-results').addClass('no-results');
+		$(navAccordion).css('overflow', 'hidden');
+		$(activeItem).animate({
+			width : "73px"
+		}, {
+			duration : 300,
+			queue : false
+		});
+	} else {
+		$(activeItem).animate({
+			width : "126px"
+		}, {
+			duration : 300,
+			queue : false
+		});
+	}
+	if ($(expandItem).hasClass('search-btn')) {
+		$(expandItem).animate({
+			width : "326px"
+		}, {
+			duration : 300,
+			queue : false
+		});
+	} else {
+		$(expandItem).animate({
+			width : "379px"
+		}, {
+			duration : 300,
+			queue : false
+		});
+	}
+	$(activeItem).removeClass('active');
+	activeItem = expandItem;
+	$(activeItem).addClass('active');
+	/*set focus on search input if search is active element*/
+	if ($(activeItem).hasClass('search-btn')) {
+		var searchInput = $(activeItem).find('#search_input');
+		$(searchInput).focus();
+		searchLayerToggle(searchInput);
+	}
+}
+
+function stopAnimation() {
+	clearTimeout(expandTimeout);
+}
+
+/*************Nav Accordion Toggle Functions End *****************/
+/*************Search Layer Functions *****************/
+function searchLayerToggle(searchInput) {
+	var searchResLayer = $('#search_results_layer');
+	$(searchInput).bind("change paste keyup", function() {
+		if ($(searchInput).val() == '') {
+			console.log('no val');
+			if ($(searchResLayer).hasClass('has-results')) {
+				$(searchResLayer).removeClass('has-results').addClass('no-results');
+				$(navAccordion).css('overflow', 'hidden');
+			}
+		} else {
+			console.log('val');
+			if ($(searchResLayer).hasClass('no-results')) {
+				$(searchResLayer).removeClass('no-results').addClass('has-results');
+				$(navAccordion).css('overflow', 'visible');
+			}
+		}
+	});
+}
+
+/*************Search Layer Functions End *****************/
 /*************Search Page Functions *****************/
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');

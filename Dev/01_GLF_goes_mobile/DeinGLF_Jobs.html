@@ -30,53 +30,84 @@
 		<![endif]-->
 		<div id="page_jobs" class="page-wrapper">
 			<header>
-				<div class="header-content">
+				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
 					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper">
-							<a href="Live.html" class="nav-header">Live</a>
+						<div id="live_btn" class="nav-btn-wrapper">
+							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
+										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper active visited">
+							<li id="nav_btn_your" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="jobs" href="DeinGLF_Jobs.html" class="subnav-btn  visited">Jobs</a>
+										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn visited">Jobs</a>
 									</li>
 								</ul>
 							</li>
-							<li id="3" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" class="subnav-btn">Team</a>
+										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
 									</li>
 									<li>
-										<a id="infos" class="subnav-btn">Infos</a>
+										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
 									</li>
 								</ul>
 							</li>
-							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..."/>
+							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
+								<div class="search-input-wrapper clearfix">
+									<span id="searchIcon" class="nav-header nav-accordion-header"></span>
+									<div class="subnav">
+										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
+									</div>
 								</div>
+								<ul id="search_results_layer" class="search-results-layer no-results">
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</nav>
@@ -154,47 +185,61 @@
 					</div>
 					<div id="job_001_overlay" class="job-overlay overlay">
 						<div class="overlay-content jobs-overlay-content">
-							<img src="" alt="Jobbezeichnung" title="Jobbezeichnung" class="tile overlay-tile"/>
-							<h3 class="overlay-headline">Job xy</h3>
-							<p class="overlay-subheadline">
-								Was es hier zu tun gibt
-							</p>
-							<div class="overlay-close-btn">
-								<span class="overlay-close-icon"></span>
-							</div>
-							<p class="text">
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
-							</p>
-							<form id="job_applic_form" class="overlay-form job-applic-form clearfix" method="post" action="" autocomplete="on">
-								<p class="text form-title">
-									Gleich hier bewerben!
+							<div class="overlay-form-content visible">
+								<img src="" alt="Jobbezeichnung" title="Jobbezeichnung" class="tile overlay-tile"/>
+								<h3 class="overlay-headline">Job xy</h3>
+								<p class="overlay-subheadline">
+									Was es hier zu tun gibt
 								</p>
-								<fieldset class="identification-field left-section">
-									<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
-									<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
-								</fieldset>
-								<fieldset class="identification-field right-section">
-									<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
-									<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
-								</fieldset>
-								<fieldset class="job-applic-motiv-field">
-									<textarea placeholder="Deine Motivation" class="job-applic-motiv req" name="message" required></textarea>
-								</fieldset>
-								<div id="math" class="math-task-wrapper">
-									<p class="math-info">
-										Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
-									</p>
-									<p class="math-task">
-										4 + 5 =
-									</p>
-									<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+								<div class="overlay-close-btn">
+									<span class="overlay-close-icon"></span>
 								</div>
-								<input type="submit" value="Abschicken" class="submit-btn"/>
-							</form>
+								<p class="text">
+									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
+								</p>
+								<form id="job_applic_form" class="overlay-form job-applic-form clearfix" method="post" action="" autocomplete="on">
+									<p class="text form-title">
+										Gleich hier bewerben!
+									</p>
+									<fieldset class="identification-field left-section">
+										<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+										<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+									</fieldset>
+									<fieldset class="identification-field right-section">
+										<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+										<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
+									</fieldset>
+									<fieldset class="job-applic-motiv-field">
+										<textarea placeholder="Deine Motivation" class="job-applic-motiv req" name="message" required></textarea>
+									</fieldset>
+									<div id="math" class="math-task-wrapper">
+										<p class="math-info">
+											Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+										</p>
+										<p class="math-task">
+											4 + 5 =
+										</p>
+										<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+									</div>
+									<input type="submit" value="Abschicken" class="submit-btn"/>
+								</form>
+							</div>
+							<div class="overlay-form-submitted-content hidden clearfix">
+								<h3 class="overlay-headline">Du hast dich erfolgreich als Jobtitel beworben</h3>
+								<div class="overlay-close-btn">
+									<span class="overlay-close-icon"></span>
+								</div>
+								<p class="text">
+									Die Redaktion prüft deine Bewerbung und meldet sich so schnell wie möglich bei dir.
+									<div class="overlay-form-action-wrapper">
+								</p>
+								<input type="button" value="zurück zu den Jobs" class="submit-btn close-overlay-btn"/>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
