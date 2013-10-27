@@ -30,53 +30,84 @@
 		<![endif]-->
 		<div id="page_team" class="page-wrapper">
 			<header>
-				<div class="header-content">
+				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
 					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper">
-							<a href="Live.html" class="nav-header">Live</a>
+						<div id="live_btn" class="nav-btn-wrapper">
+							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
 								<ul class="subnav">
 									<li>
-										<a id="mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
 									</li>
 									<li>
-										<a id="mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
+										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
 									</li>
 								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
 									</li>
 									<li>
-										<a id="jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
+										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
 									</li>
 								</ul>
 							</li>
-							<li id="3" class="collapsible nav-btn-wrapper active visited">
+							<li id="nav_btn_about" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="team" class="subnav-btn visited">Team</a>
+										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn visited">Team</a>
 									</li>
 									<li>
-										<a id="infos" class="subnav-btn">Infos</a>
+										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
 									</li>
 								</ul>
 							</li>
-							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="subnav">
-									<input id="searchInput" type="search" placeholder="Mediathek durchsuchen..."/>
+							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
+								<div class="search-input-wrapper clearfix">
+									<span id="searchIcon" class="nav-header nav-accordion-header"></span>
+									<div class="subnav">
+										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
+									</div>
 								</div>
+								<ul id="search_results_layer" class="search-results-layer no-results">
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</nav>
@@ -84,90 +115,83 @@
 			</header>
 			<div class="content-wrapper">
 				<div class="content clearfix">
-					<div class="slider-wrapper clearfix">
-						<div class="slider"></div>
+					<h1 class="headline">Team</h1>
+					<div class="sub-headline-wrapper">
+						<p class="sub-headline">
+							Das gesamte GLF Team des aktuellen Semesters
+						</p>
 					</div>
-
-					<div class="teaser-tile-wrapper clearfix">
-
-						<div class="wrapper-six-tiles">
-
-							<div id="video-teaser-0001" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Grillparty</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0002" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Kaffee - Das schwarze Gold</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0003" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Twike Marathon</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0004" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Sommer-Freizeit-Check</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0005" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Brend Spezial</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
-							</div>
-							<div id="video-teaser-0006" class="teaser-tile">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">International</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
+					<div class="teaser-tile-wrapper team-teaser-tile-wrapper clearfix">
+						<div id="team_member_001" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
 							</div>
 						</div>
-						<div class="wrapper-big-tile">
-							<div id="video-teaser-0007" class="teaser-tile-big">
-								<span class="teaser-tile-play-icon"></span>
-								<div class="teaser-tile-text-layer">
-									<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
-									<p class="teaser-tile-subline">
-										26. April 2013
-									</p>
-								</div>
+						<div id="team_member_002" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_003" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_004" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_005" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_006" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_007" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_008" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_009" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							</div>
+						</div>
+						<div id="team_member_001" class="tile teaser-tile team-teaser-tile">
+							<div class="teaser-tile-text-layer teaser-tile-text-layer-team">
+								<p class="text">Position(en)</p>
+								<h3 class="teaser-tile-headline">Vorname Name</h3>
 							</div>
 						</div>
 					</div>
+					<p class="text">
+						Du möchtest selbst mitmachen? Dann sieh Dir die Jobs von GLF an und bewirb dich gleich!
+					</p>
+					<a href="DeinGLF_Jobs.html" title="Zu den Jobs" class="text-link">zu den Jobs</a>
 				</div>
 			</div>
 		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
-		</script>
-		<script src="js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
+
