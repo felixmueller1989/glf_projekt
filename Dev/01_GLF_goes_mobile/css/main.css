@@ -889,9 +889,12 @@ html {
  ******Slider Styles
  */
  .slider-wrapper {
- 	width: 100%; /*1035px*/
+ 	width: 100%;
  	max-height: 422px;
  	margin: 20px 0 0 0;
+ 	position: relative;
+ 	padding: 3.5px;
+ 	box-sizing: border-box;
  }
  .teaser-slider img {
  	height: auto !important;
@@ -900,7 +903,77 @@ html {
  	height: 407px;
  	overflow: hidden;
  }
-
+ .nivo-controlNav {
+ 	text-align: center;
+ 	padding: 0;
+ 	position: absolute;
+ 	bottom: 10px;
+ 	left: 50%;
+ 	z-index: 100;
+ 	margin: 0 0 0 -50px;
+ }
+ .nivo-directionNav a {
+ 	width: 54px;
+ 	height: 53px;
+ 	top: 35%;
+ 	background-image: url('../img/icons/slider_icons.png');
+ 	background-repeat: no-repeat;
+ }
+ .nivo-nextNav {
+ 	background-position: -147px -1px;
+ 	right: 15px;
+ }
+ .nivo-nextNav:hover {
+ 	background-position: -203px -1px;
+ }
+ .nivo-prevNav {
+ 	background-position: -35px -1px;
+ 	left: 15px;
+ }
+ .nivo-prevNav:hover {
+ 	background-position: -91px -1px;
+ }
+ .nivo-controlNav a {
+ 	background-image: url('../img/icons/slider_icons.png');
+ 	background-repeat: no-repeat;
+ 	background-position: 0px 0;
+ 	width: 16px;
+ 	height: 16px;
+ 	display: inline-block;
+ 	margin: 0 4px;
+ }
+ .nivo-controlNav a.active, .nivo-controlNav a:hover {
+ 	background-position: -18px 0;
+ }
+ .nivo-caption {
+ 	bottom: 35px;
+ 	background-color: #70EA46;
+ 	opacity: 0.9;
+ 	color: #434343;
+ 	width: auto;
+ 	min-width: 40%;
+ 	padding: 5px 20px;
+ }
+ .slider-subheadline, .slider-headline, .slider-capt-link {
+ 	color: #434343;
+ }
+ .slider-headline {
+ 	margin: 15px 0 0 0;
+ }
+ .slider-subheadline, .nivo-caption p {
+ 	padding: 0;
+ 	margin: 0;
+ }
+ .slider-capt-link {
+ 	display: block;
+ 	float: right;
+ }
+ .slider-capt-link:hover {
+ 	color: #434343;
+ }
+ .slider-capt-link:before, .slider-capt-link:hover.slider-capt-link:before{
+ 	border-left-color:#434343;
+ }
 /*
  ******Slider Styles End
  /*
@@ -1059,152 +1132,91 @@ html {
 /*
  * ***********************Impressum page style
  */
- .sub-headline-wrapper{
+
+ .tile-impressum {
+ 	width: 200px;
+ 	height: 200px;
+ 	float: left;
+ 	margin: 3.5px;
+ 	position: relative;
+ 	background: #DFDFDF;
+ 	color: #7f7f7f;
  }
- .sub-headline {
+
+ .tiles-impressum-wrapper {
+
+ 	margin: 60px 0 60px 0;
  }
- .impressum-sub-headline{
- 	font-size: 1.25em;
+
+ .tiles-impressum-left {
+
+ 	margin-right: 20px;
  }
- .text {
+
+ .tiles-impressum-right {
+
+ 	margin-left: 20px;
  }
- .impressum-text{
+
+ .info-general-impressum {
+
+ 	float: right;
+ 	width: 100%;
+ 	margin: 20px 0 60px 0;
  }
- .legal-wrapper{
+
+ .table-impressum-wrapper {
+
+ 	color: #7f7f7f;
+ 	margin-top: 40px;
  }
- .legal-info-wrapper {
+
+ .name-impressum {
+
+ 	margin: 30px 0 10px 0;
  }
- .label-legal-info{
- 	font-weight: bold;
+
+ .tile-impressum.leute {
+
+ 	position: relative;
  }
- .text-legal-info{
+
+ .phone-impressum.leute {
+
+ 	position: absolute;
+ 	bottom: 3pc;
  }
- #page_imprint .contact-data-wrapper{
+
+ .email-impressum.leute {
+ 	position: absolute;
+ 	bottom: 6px;
  }
- .headline-contact-data{
- 	font-size: 1.25em;
+
+ #impressum-tile-ada {
+
+ 	background-image: url('../img/team/Ada_Rhode_2013_9.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
  }
- #page_imprint .contact-data-headline{
- 	color:#7f7f7f;
+
+ #impressum-tile-leute {
+
+ 	background-image: url('../img/team/SCH-SCH_01.jpg');
+ 	background-size: cover;
+ 	background-position: 50% 0;
  }
- #page_imprint .contact-section-wrapper{
+
+ @media only all and (max-width: 930px) {
+
+ 	.tiles-impressum-wrapper {
+
+ 		width: 420px;
+ 	}
+
  }
- #page_imprint .contact-left-section-wrapper{
- }
- #page_imprint .contact-right-section-wrapper{
- }
- #page_imprint .contact-img{
- }
- #page_imprint .contact-data-headline{
- }
- #page_imprint .phone-link{
- }
- #page_imprint .mail-link{
- }
- #page_imprint .contact-data-text{
- 	font-size:1em;
- 	display:block;
- }
- .impressum-text-wrapper{
- }
- .impressum-text-headline{
- 	font-size: 1.25em;
- }
+
 /*
  *********************** Impressum page styles end
- */
-
-/*
- *********************** Footer Styles
- */
-
- footer {
- 	width: 100%;
- 	font-size: 0.9em;
- 	max-width: 1035px;
- 	margin: 0 auto 0 auto;
- }
- .footer-content-wrapper {
- 	display: inline-block;
- 	width: auto;
- 	margin: 0 auto 0 auto;
- }
- .footer-top-wrapper {
- 	
- 	line-height: 1.8em;
- 	margin: 0 auto 19px auto;
- }
-
- .footer-element {
- 	float: left;
- }
- .startseite-footer-element {
- }
- .footer-link {
- 	margin: 0 10px 0 10px;
- }
- .footer-link:hover {
- 	color: #70ea46;
- }
- .mediathek-footer-element {
- }
- .footer-link-label {
- 	color: #4a4a4a;
- 	margin: 0 10px 0 10px;
- }
- .dein-glf-footer-element {
- }
- .ueber-glf-footer-element {
- }
- .impressum-footer-element {
- }
- .footer-sub-wrapper {
- 	
- 	margin: 0 auto 0 auto;
- }
- .footer-social-links-wrapper {
- 	float: left;
- 	margin: 0 10px 0 10px;
- }
- .footer-social-links-label {
- }
- .footer-social-links-fb-icon {
- 	margin: 0 15px 0 15px;
- 	display: inline-block;
- 	width: 9px;
- 	height: 17px;
- 	background-image: url('../img/icons/FBFooter.png');
- 	background-repeat: no-repeat;
- 	background-size: cover;
- 	background-position: 50% 50%;
- }
- .footer-social-links-fb-icon:hover {
- 	background-image: url('../img/icons/FBFooterHover.png');
- 	background-size: cover;
- 	background-position: 50% 50%;
- }
- .footer-social-links-twitter-icon {
- 	display: inline-block;
- 	width: 21px;
- 	height: 17px;
- 	background-image: url('../img/icons/Twitter_Footer.png');
- 	background-size: cover;
- 	background-position: 50% 50%;
- }
- .footer-social-links-twitter-icon:hover {
- 	background-image: url('../img/icons/Twitter_Footer_Hover.png');
- 	background-size: cover;
- 	background-position: 50% 50%;
- }
- .footer-copyright-wrapper {
- 	float: right;
- 	margin: 0 10px 0 10px;
- }
- .footer-copyright {
-
- }
-/*
- *********************** Footer Styles End
  */
 /*
  *********************** #page_themen Styles
@@ -1326,6 +1338,7 @@ html {
 /*
  *********************** Themen Teaser Tile Styles End
  */
+
 /*
  *********************** #page_themenDetail Styles
  */
@@ -1772,23 +1785,23 @@ html {
 /*
  *********************** #page_landing Styles
  */
- .landingpage_content .sub-headline-wrapper {
+ .landingpage-content .sub-headline-wrapper {
  	display: inline-table;
  	margin: 3.5px;
  }
- .landingpage_content .sub-headline {
+ .landingpage-content .sub-headline {
  	display: inline;
  	font-size: 1.3em;
  }
- .landingpage_content .share-wrapper {
+ .landingpage-content .share-wrapper {
  	float: right;
  	margin: 3.5px;
  }
- .landingpage_content .text-wrapper {
+ .landingpage-content .text-wrapper {
  	margin: 3.5px;
  	padding: 0 0 40px 0;
  }
- .landingpage_content .video-wrapper, .landingpage_content .img-wrapper {
+ .landingpage-content .video-wrapper, .landingpage-content .img-wrapper {
  	margin: 3.5px 3.5px 20px 3.5px;
  }
  .full-size-img {
@@ -1863,7 +1876,98 @@ html {
 /*
  *********************** Pagination Styles End
  */
+/*
+ *********************** Footer Styles
+ */
 
+ footer {
+ 	width: 100%;
+ 	font-size: 0.9em;
+ 	max-width: 1035px;
+ 	margin: 0 auto 0 auto;
+ }
+ .footer-content-wrapper {
+ 	display: inline-block;
+ 	width: auto;
+ 	margin: 0 auto 0 auto;
+ }
+ .footer-top-wrapper {
+
+ 	line-height: 1.8em;
+ 	margin: 0 auto 19px auto;
+ }
+
+ .footer-element {
+ 	float: left;
+ }
+ .startseite-footer-element {
+ }
+ .footer-link {
+ 	margin: 0 10px 0 10px;
+ }
+ .footer-link:hover {
+ 	color: #70ea46;
+ }
+ .mediathek-footer-element {
+ }
+ .footer-link-label {
+ 	color: #4a4a4a;
+ 	margin: 0 10px 0 10px;
+ }
+ .dein-glf-footer-element {
+ }
+ .ueber-glf-footer-element {
+ }
+ .impressum-footer-element {
+ }
+ .footer-sub-wrapper {
+
+ 	margin: 0 auto 0 auto;
+ }
+ .footer-social-links-wrapper {
+ 	float: left;
+ 	margin: 0 10px 0 10px;
+ }
+ .footer-social-links-label {
+ }
+ .footer-social-links-fb-icon {
+ 	margin: 0 15px 0 15px;
+ 	display: inline-block;
+ 	width: 9px;
+ 	height: 17px;
+ 	background-image: url('../img/icons/FBFooter.png');
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	background-position: 50% 50%;
+ }
+ .footer-social-links-fb-icon:hover {
+ 	background-image: url('../img/icons/FBFooterHover.png');
+ 	background-size: cover;
+ 	background-position: 50% 50%;
+ }
+ .footer-social-links-twitter-icon {
+ 	display: inline-block;
+ 	width: 21px;
+ 	height: 17px;
+ 	background-image: url('../img/icons/Twitter_Footer.png');
+ 	background-size: cover;
+ 	background-position: 50% 50%;
+ }
+ .footer-social-links-twitter-icon:hover {
+ 	background-image: url('../img/icons/Twitter_Footer_Hover.png');
+ 	background-size: cover;
+ 	background-position: 50% 50%;
+ }
+ .footer-copyright-wrapper {
+ 	float: right;
+ 	margin: 0 10px 0 10px;
+ }
+ .footer-copyright {
+
+ }
+/*
+ *********************** Footer Styles End
+ */
 /* ==========================================================================
  Media Queries
  ========================================================================== */
