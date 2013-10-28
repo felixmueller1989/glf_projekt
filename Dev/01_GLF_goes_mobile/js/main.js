@@ -2,6 +2,7 @@
 var activeItem;
 var navMain = $('#navMain');
 var navAccordion = $('#navAccordion');
+var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
 
@@ -9,7 +10,7 @@ $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
 		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
 		animSpeed : 200, // Slide transition speed
-		pauseTime : 3500, // How long each slide will show
+		pauseTime : 35000, // How long each slide will show
 		startSlide : 0, // Set starting Slide (0 index)
 		directionNav : true, // Next & Prev navigation
 		controlNav : true, // 1,2,3... navigation
@@ -58,6 +59,9 @@ $(document).ready(function() {
 	}, stopAnimation);
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
+		if ($(navMain).hasClass('no-active-btn')) {
+			hasActiveBtn = false;
+		}
 		$('.nav-btn-wrapper').each(function(index, elem) {
 			if ($(elem).hasClass('visited')) {
 				expandItem = elem;
@@ -99,11 +103,11 @@ $(document).ready(function() {
 	/************** Only for Testing Functions End*****************/
 	/*************Home Page Functions*********/
 	var slider = $('.teaser-slider');
-	setTimeout(function(){
-	var contrlElem = $('.nivo-control');
-	$(contrlElem).text('');	
+	setTimeout(function() {
+		var contrlElem = $('.nivo-control');
+		$(contrlElem).text('');
 	}, 400);
-	
+
 	/*************Home Page Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
@@ -201,31 +205,28 @@ function accordionToggle() {
 			queue : false
 		});
 	}
-	if ($(expandItem).hasClass('search-btn')) {
-		$(expandItem).animate({
-			width : "326px"
-		}, {
-			duration : 300,
-			queue : false
-		});
-	} else if ($(expandItem).hasClass('live-btn')) {
-		$(expandItem).animate({
-			width : "126px"
-		}, {
-			duration : 300,
-			queue : false
-		});
-	} else {
-		$(expandItem).animate({
-			width : "379px"
-		}, {
-			duration : 300,
-			queue : false
-		});
+	if (hasActiveBtn == true) {
+		if ($(expandItem).hasClass('search-btn')) {
+			$(expandItem).animate({
+				width : "326px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		} else {
+			$(expandItem).animate({
+				width : "379px"
+			}, {
+				duration : 300,
+				queue : false
+			});
+		}
 	}
+
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
 	$(activeItem).addClass('active');
+	hasActiveBtn = true;
 	/*set focus on search input if search is active element*/
 	if ($(activeItem).hasClass('search-btn')) {
 		var searchInput = $(activeItem).find('#search_input');
