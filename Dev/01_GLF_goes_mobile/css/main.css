@@ -906,170 +906,7 @@ html {
  /*
  *********************** #page_home Styles End
  */
-/*
- *********************** #page_themen Styles
- */
-/*
- *********************** Themen Teaser Tile Styles
- */
 
- .teaser-tile-wrapper.topic-teaser-tile-wrapper {
- 	margin: 0 0 0 0px;
- }
-
- #topic-teaser-0001 {
- 	background-image: url('../img/video_teaser/1.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0002 {
- 	background-image: url('../img/video_teaser/2.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0003 {
- 	background-image: url('../img/video_teaser/3.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0004 {
- 	background-image: url('../img/video_teaser/4.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0005 {
- 	background-image: url('../img/video_teaser/5.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0006 {
- 	background-image: url('../img/video_teaser/6.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0007 {
- 	background-image: url('../img/video_teaser/7.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0008 {
- 	background-image: url('../img/video_teaser/8.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
- #topic-teaser-0009 {
- 	background-image: url('../img/video_teaser/9.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
- }
-
- #add-topic-tile {
- }
-
- /*Cross*/
- #add-topic-tile-cross {
- 	background: #e9e9e9;
- 	width: 20px;
- 	height: 100px;
- 	position: relative;
- 	margin: 50px 0 0 90px;
- 	transform: rotate(45deg);
- 	-moz-transition: all 0.2s ease-in;
- 	/* WebKit */
- 	-webkit-transition: all 0.2s ease-in;
- 	/* Opera */
- 	-o-transition: all 0.2s ease-in;
- 	/* Standard */
- 	transition: all 0.2s ease-in;
- }
-
- #add-topic-tile-cross:before {
- 	background: #e9e9e9;
- 	content: "";
- 	width: 100px;
- 	height: 20px;
- 	position: absolute;
- 	top: 40px;
- 	left: -40px;
- 	-moz-transition: all 0.2s ease-in;
- 	/* WebKit */
- 	-webkit-transition: all 0.2s ease-in;
- 	/* Opera */
- 	-o-transition: all 0.2s ease-in;
- 	/* Standard */
- 	transition: all 0.2s ease-in;
- }
-
- #add-topic-tile .teaser-tile-text-layer {
- 	background: none;
- }
-
- /*Hover Styles: cross becomes green if the user hovers over the tile*/
- #add-topic-tile:hover #add-topic-tile-cross {
- 	background: #70ea46;
- 	-moz-transition: all 0.2s ease-in;
- 	/* WebKit */
- 	-webkit-transition: all 0.2s ease-in;
- 	/* Opera */
- 	-o-transition: all 0.2s ease-in;
- 	/* Standard */
- 	transition: all 0.2s ease-in;
- }
- #add-topic-tile:hover #add-topic-tile-cross#add-topic-tile-cross:before {
- 	background: #70ea46;
- 	-moz-transition: all 0.2s ease-in;
- 	/* WebKit */
- 	-webkit-transition: all 0.2s ease-in;
- 	/* Opera */
- 	-o-transition: all 0.2s ease-in;
- 	/* Standard */
- 	transition: all 0.2s ease-in;
- }
-/*
- *********************** Themen Teaser Tile Styles End
- */
-
-/*
- *********************** #page_themenDetail Styles
- */
- .topic-img-fb-wrapper {
- 	text-align: center;
- }
- .topic-img {
- 	width: 612px;
- 	height: 200px;
- 	margin: 3.5px;
- 	float: left;
- 	background-image: url('../img/video_teaser/11.jpg');
- 	background-position: 50% 50%;
- 	background-repeat: no-repeat;
- 	background-size: 100% auto;
- }
- .topic-fb-tile {
- 	background-color: #dfdfdf;
- }
- .fb-likes-counter-wrapper {
- 	margin: 15px 0px;
- }
- .fb-likes-text {
- 	margin: 0;
- }
- .topic-fb-tile-text {
- 	margin: 0 10px;
- }
- .topic-fb-tile .fb-likes {
- 	margin: 15px auto 0px auto;
- 	float: none;
- }
- #fb_likes_count {
- 	font-size: 1.3em;
- }
-/*
- *********************** #page_themenDetail Styles End
- */
-/*
- *********************** #page_themen Styles End
- */
 /*
  *********************** #page_jobs Styles
  */
@@ -1430,13 +1267,12 @@ html {
  }
 
  /*Cross*/
- #add-topic-tile-cross {
- 	background: #e9e9e9;
- 	width: 20px;
+
+ .add-topic-tile-cross {
+ 	width: 100px;
  	height: 100px;
  	position: relative;
- 	margin: 50px 0 0 90px;
- 	transform: rotate(45deg);
+ 	margin: 50px;
  	-moz-transition: all 0.2s ease-in;
  	/* WebKit */
  	-webkit-transition: all 0.2s ease-in;
@@ -1446,14 +1282,10 @@ html {
  	transition: all 0.2s ease-in;
  }
 
- #add-topic-tile-cross:before {
- 	background: #e9e9e9;
+ .add-topic-tile-cross:before, .add-topic-tile-cross:after {
  	content: "";
- 	width: 100px;
- 	height: 20px;
  	position: absolute;
- 	top: 40px;
- 	left: -40px;
+ 	background: #7F7F7F;
  	-moz-transition: all 0.2s ease-in;
  	/* WebKit */
  	-webkit-transition: all 0.2s ease-in;
@@ -1463,35 +1295,37 @@ html {
  	transition: all 0.2s ease-in;
  }
 
- #add-topic-tile .teaser-tile-text-layer {
- 	background: none;
+ .add-topic-tile-cross:before {
+ 	left: 50%;
+ 	width: 20%;
+ 	margin-left: -10%;
+ 	height: 100%;
  }
 
+ .add-topic-tile-cross:after {
+ 	top: 50%;
+ 	height: 20%;
+ 	margin-top: -10%;
+ 	width: 100%;
+ }
+
+ .add-topic-tile .teaser-tile-text-layer {
+ 	background-color: rgba(0,0,0,0);
+ }
+ .add-topic-tile .teaser-tile-headline {
+ 	color:#9A0758;
+ 	text-align: center;
+ 	font-size: 0.9em;
+ 	padding:10px 0;
+ }
  /*Hover Styles: cross becomes green if the user hovers over the tile*/
- #add-topic-tile:hover #add-topic-tile-cross {
+ .add-topic-tile:hover .add-topic-tile-cross:before, .add-topic-tile:hover .add-topic-tile-cross:after{
  	background: #70ea46;
- 	-moz-transition: all 0.2s ease-in;
- 	/* WebKit */
- 	-webkit-transition: all 0.2s ease-in;
- 	/* Opera */
- 	-o-transition: all 0.2s ease-in;
- 	/* Standard */
- 	transition: all 0.2s ease-in;
  }
- #add-topic-tile:hover #add-topic-tile-cross#add-topic-tile-cross:before {
- 	background: #70ea46;
- 	-moz-transition: all 0.2s ease-in;
- 	/* WebKit */
- 	-webkit-transition: all 0.2s ease-in;
- 	/* Opera */
- 	-o-transition: all 0.2s ease-in;
- 	/* Standard */
- 	transition: all 0.2s ease-in;
- }
+
 /*
  *********************** Themen Teaser Tile Styles End
  */
-
 /*
  *********************** #page_themenDetail Styles
  */
