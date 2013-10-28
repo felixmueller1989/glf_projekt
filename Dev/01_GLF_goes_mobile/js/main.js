@@ -5,11 +5,37 @@ var navAccordion = $('#navAccordion');
 var expandItem;
 var expandTimeout;
 
+$(window).load(function() {
+	$('#teaser_slider').nivoSlider({
+		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
+		animSpeed : 500, // Slide transition speed
+		pauseTime : 3000, // How long each slide will show
+		startSlide : 0, // Set starting Slide (0 index)
+		directionNav : true, // Next & Prev navigation
+		controlNav : true, // 1,2,3... navigation
+		controlNavThumbs : false, // Use thumbnails for Control Nav
+		pauseOnHover : true, // Stop animation while hovering
+		manualAdvance : false, // Force manual transitions
+		prevText : 'Prev', // Prev directionNav text
+		nextText : 'Next', // Next directionNav text
+		randomStart : false, // Start on a random slide
+		beforeChange : function() {
+		}, // Triggers before a slide transition
+		afterChange : function() {
+		}, // Triggers after a slide transition
+		slideshowEnd : function() {
+		}, // Triggers after all slides have been shown
+		lastSlide : function() {
+		}, // Triggers when last slide is shown
+		afterLoad : function() {
+		} // Triggers when slider has loaded
+	});
+});
+
 $(document).ready(function() {
 	/*************Video Player Functions *********/
 	var contentWdth = $('.content').width();
-	$('video').css('width', contentWdth+'px');
-	console.log($('.projekktor').width());
+	$('video').css('width', contentWdth + 'px');
 	projekktor('video', {
 		volume : 0.8,
 		controls : true,
@@ -116,7 +142,6 @@ $(document).ready(function() {
 		$(this).click(function() {
 			var jobId = $(this).attr('id');
 			var jobApplyOverlay = $('#' + jobId + '_overlay');
-			console.log(jobApplyOverlay);
 			overlayToggle(jobApplyOverlay);
 		});
 	});
@@ -142,11 +167,11 @@ $(document).ready(function() {
 $(window).resize(function() {
 	/*resize video player*/
 	var contentWdth = $('.content').width();
-	$('.projekktor').css('width', contentWdth+'px');
+	$('.projekktor').css('width', contentWdth + 'px');
 	/*call functions */
 	sliderSize();
 	resizeInfoWrapper();
-	});
+});
 /***********************WINDOW RESIZE END ********************/
 /*************Nav Accordion Toggle Functions *****************/
 /* expand hovered Item and collapse former activeItem */
@@ -173,6 +198,13 @@ function accordionToggle() {
 	if ($(expandItem).hasClass('search-btn')) {
 		$(expandItem).animate({
 			width : "326px"
+		}, {
+			duration : 300,
+			queue : false
+		});
+	} else if ($(expandItem).hasClass('live-btn')) {
+		$(expandItem).animate({
+			width : "126px"
 		}, {
 			duration : 300,
 			queue : false
@@ -206,13 +238,11 @@ function searchLayerToggle(searchInput) {
 	var searchResLayer = $('#search_results_layer');
 	$(searchInput).bind("change paste keyup", function() {
 		if ($(searchInput).val() == '') {
-			console.log('no val');
 			if ($(searchResLayer).hasClass('has-results')) {
 				$(searchResLayer).removeClass('has-results').addClass('no-results');
 				$(navAccordion).css('overflow', 'hidden');
 			}
 		} else {
-			console.log('val');
 			if ($(searchResLayer).hasClass('no-results')) {
 				$(searchResLayer).removeClass('no-results').addClass('has-results');
 				$(navAccordion).css('overflow', 'visible');
