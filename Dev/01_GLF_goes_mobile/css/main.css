@@ -905,9 +905,9 @@ h2.filter-headline {
 }
 .nivo-controlNav {
 	text-align: center;
-	padding: 15px 0;
+	padding: 0;
 	position: absolute;
-	bottom: 20px;
+	bottom: 10px;
 	left: 50%;
 	z-index: 100;
 	margin: 0 0 0 -50px;
@@ -915,6 +915,7 @@ h2.filter-headline {
 .nivo-directionNav a {
 	width: 54px;
 	height: 53px;
+	top: 35%;
 	background-image: url('../img/icons/slider_icons.png');
 	background-repeat: no-repeat;
 }
@@ -943,6 +944,35 @@ h2.filter-headline {
 }
 .nivo-controlNav a.active, .nivo-controlNav a:hover {
 	background-position: -18px 0;
+}
+.nivo-caption {
+	bottom: 35px;
+	background-color: #70EA46;
+	opacity: 0.9;
+	color: #434343;
+	width: auto;
+	min-width: 40%;
+	padding: 5px 20px;
+}
+.slider-subheadline, .slider-headline, .slider-capt-link {
+	color: #434343;
+}
+.slider-headline {
+	margin: 15px 0 0 0;
+}
+.slider-subheadline, .nivo-caption p {
+	padding: 0;
+	margin: 0;
+}
+.slider-capt-link {
+	display: block;
+	float: right;
+}
+.slider-capt-link:hover {
+	color: #434343;
+}
+.slider-capt-link:before, .slider-capt-link:hover.slider-capt-link:before{
+	border-left-color:#434343;
 }
 /*
  ******Slider Styles End
