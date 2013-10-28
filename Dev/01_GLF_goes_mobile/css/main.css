@@ -1351,133 +1351,6 @@ h2.filter-headline {
 /*
  *********************** Impressum page styles end
  */
-
-/*
- *********************** Footer Styles
- */
-footer {
-	width: 57.421875%;
-	max-width: 735px;
-	display: block;
-	text-align: center;
-	margin-top: 7.578125%;
-	margin-left: auto;
-	margin-right: auto;
-	/* margin:14px 419px 0 419px;*/
-}
-/* Obere Footer Hälfte*/
-.footer-text-wrapper {
-	/*margin-bottom:8px;*/
-	width: 100%;
-	text-align: center;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 12px;
-	color: black;
-}
-.footer-link {
-	color: #7f7f7f;
-	text-decoration: none;
-}
-.footer-link:hover {
-	color: #70ea46;
-}
-.footer-words-center {
-	margin: 0 0.98765432098765432098765432098765% 0 0.98765432098765432098765432098765%;
-}
-.footer-words-left {
-	margin: 0 0.98765432098765432098765432098765% 0 0;
-}
-.footer-words-right {
-	margin: 0 0 0 0.98765432098765432098765432098765%;
-}
-
-/* Obere Footer Hälfte Ende
-
- /*Untere Footer Häfte*/
-.footer-sub-wrapper {
-	width: 100%;
-	display: -webkit-inline-box;
-	/*padding-left:0.98765432098765432098765432098765%;
-	 padding-right:0.98765432098765432098765432098765%;*/
-	margin-top: 1.484375%;
-	/*text-align: left;*/
-	margin-bottom: 20px;
-	position: relative;
-}
-.footer-sub-wrapper-left {
-	/*margin-top:2.308626974483596597812879708384%;*/
-	text-align: left;
-	position: absolute;
-	left: 0;
-	width: 170px;
-}
-/*GLFTV Folgen*/
-.footer-text-left {
-	text-align: left;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 12px;
-	color: #7f7f7f;
-}
-.footer-wrapper-follow {
-	width: 100%;
-}
-.footer-icon-follow {
-	width: 21px;
-	height: 21px;
-}
-
-img {
-
-	width: 17px;
-	height: 15px;
-}
-#footer_fb {
-
-	margin-left: 3%;
-	width: 9px;
-	height: 17px;
-	background-image: url('../img/icons/FBFooter.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-}
-#footer_twitter {
-	margin-left: 4%;
-	width: 21px;
-	height: 17px;
-	background-image: url('../img/icons/Twitter_Footer.png');
-	background-size: cover;
-	background-position: 50% 50%;
-}
-#footer_fb:hover {
-	margin-left: 3%;
-	width: 9px;
-	height: 17px;
-	background-image: url('../img/icons/FBFooterHover.png');
-	background-size: cover;
-	background-position: 50% 50%;
-}
-#footer_twitter:hover {
-	margin-left: 4%;
-	width: 21px;
-	height: 17px;
-	background-image: url('../img/icons/Twitter_Footer_Hover.png');
-	background-size: cover;
-	background-position: 50% 50%;
-}
-/*Copyright*/
-.footer-text-right {
-	text-align: right;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 9px;
-	color: #7f7f7f;
-	position: absolute;
-	right: 0;
-}
-
-/*
- *********************** Footer Styles End
- */
 /*
  *********************** #page_themen Styles
  */
@@ -2138,7 +2011,98 @@ h1.search-item-headline {
 /*
  *********************** Pagination Styles End
  */
+/*
+ *********************** Footer Styles
+ */
 
+footer {
+	width: 100%;
+	font-size: 0.9em;
+	max-width: 1035px;
+	margin: 0 auto 0 auto;
+}
+.footer-content-wrapper {
+	display: inline-block;
+	width: auto;
+	margin: 0 auto 0 auto;
+}
+.footer-top-wrapper {
+
+	line-height: 1.8em;
+	margin: 0 auto 19px auto;
+}
+
+.footer-element {
+	float: left;
+}
+.startseite-footer-element {
+}
+.footer-link {
+	margin: 0 10px 0 10px;
+}
+.footer-link:hover {
+	color: #70ea46;
+}
+.mediathek-footer-element {
+}
+.footer-link-label {
+	color: #4a4a4a;
+	margin: 0 10px 0 10px;
+}
+.dein-glf-footer-element {
+}
+.ueber-glf-footer-element {
+}
+.impressum-footer-element {
+}
+.footer-sub-wrapper {
+
+	margin: 0 auto 0 auto;
+}
+.footer-social-links-wrapper {
+	float: left;
+	margin: 0 10px 0 10px;
+}
+.footer-social-links-label {
+}
+.footer-social-links-fb-icon {
+	margin: 0 15px 0 15px;
+	display: inline-block;
+	width: 9px;
+	height: 17px;
+	background-image: url('../img/icons/FBFooter.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.footer-social-links-fb-icon:hover {
+	background-image: url('../img/icons/FBFooterHover.png');
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.footer-social-links-twitter-icon {
+	display: inline-block;
+	width: 21px;
+	height: 17px;
+	background-image: url('../img/icons/Twitter_Footer.png');
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.footer-social-links-twitter-icon:hover {
+	background-image: url('../img/icons/Twitter_Footer_Hover.png');
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.footer-copyright-wrapper {
+	float: right;
+	margin: 0 10px 0 10px;
+}
+.footer-copyright {
+
+}
+/*
+ *********************** Footer Styles End
+ */
 /* ==========================================================================
  Media Queries
  ========================================================================== */
