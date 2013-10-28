@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="nivo-slider/nivo-slider.css" type="text/css" />
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/tile_styles.css">
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script>
@@ -137,10 +138,10 @@
 							<a href="Videoplayer_Sendungen.html" class="slider-capt-link text-link" title="sendungstitle">Link text</a>
 						</div>
 					</div>
-					<div class="teaser-tile-wrapper home-teaser-tile-wrapper">
-						<div id="home-description" class="tile text-only-tile description-tile">
-							<h3 class="teaser-tile-headline">GLF TV -</h3>
-							<p class="teaser-tile-subline">
+					<div class="tile-wrapper home-tile-wrapper">
+						<div id="home-description" class="tile text-tile description-tile">
+							<h3 class="tile-title">GLF TV -</h3>
+							<p class="tile-subtitle">
 								Gute Laune Furtwangen TV
 							</p>
 							<p class="text">
@@ -151,57 +152,87 @@
 							</p>
 						</div>
 						<div class="tile teaser-tile redakt-teaser-tile">
-							<div class="teaser-tile-text-layer teaser-tile-text-layer-redakt">
-								<h3 class="teaser-tile-headline">Vorname Name</h3>
+							<a href="Landingpage_01.html"  class="tile-link" title="teasertiletitle"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<h3 class="tile-title">Redaktioneller Content Title</h3>
+							</div> </a>
+						</div>
+						<div class="tile fb-tile">
+							<a href="https://www.facebook.com/GLFCampusTV" id="fb_link_tile" class="tile-link some-tile-link" target="_blank" title="GLF tv auf Facebook besuchen"> </a>
+						</div>
+						<div class="tile tw-tile">
+							<a href="https://twitter.com/glftv" id="tw_link_tile" class="tile-link some-tile-link" target="_blank" title="GLF tv auf Twitter besuchen"> </a>
+						</div>
+						<div class="tile text-tile">
+							<div>
+								<h3 class="text-tile-text text">Text Tile Text blaaa</h3>
 							</div>
 						</div>
-						<a href="https://www.facebook.com/GLFCampusTV" id="fb_link_tile" class="tile teaser-tile some-teaser-tile" target="_blank" title="GLF tv auf Facebook besuchen"> </a>
-
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Twike Marathon</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
+						<div class="tile teaser-tile broadcast-teaser-tile">
+							<a href="Videoplayer_Sendungen.html"  class="tile-link" title="teasertiletitle"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<p class="text extra-info-text date-text">
+									Datum xx.xx.xx
+								</p>
+								<h3 class="tile-title">Sendungs Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link" title="teasertiletitle"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
+						</div>
+						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
+							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<h3 class="tile-title">Jobtitel</h3>
+							</div>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link" title="teasertiletitle"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div id="live_topic_title" class="tile teaser-tile live-rel-teaser-tile">
+							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Live Topic Titel</h3>
+							</div>
+						</div>
+						<div class="tile text-tile like-tile">
+							<div class="like-tile-counter-wrapper">
+								<p class="text like-tile-text">
+									Dieser Vorschlag hat
+								</p>
+								<p id="like_tile_count" class="text like-tile-text">
+									14 Likes
 								</p>
 							</div>
+							<p class="text like-tile-text like-tile-text-cta">
+								Bewerte dieses Thema positiv mit einem LIKE!
+							</p>
+							<div class="fb-like-btn"></div>
 						</div>
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
+						<div id="add_topic_tile" class="tile add-topic-tile">
+							<div class="add-topic-tile-cross"></div>
+							<div class="tile-text-layer">
+								<h3 class="tile-title">F&uuml;ge ein neues Thema hinzu!</h3>
+							</div>
+						</div>
+						<div class="tile teaser-tile team-teaser-tile">
+							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" title="teasertiletitle" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text">
+									Studiengang
 								</p>
-							</div>
-						</div>
-						<a href="https://twitter.com/glftv" id="tw_link_tile" class="tile teaser-tile some-teaser-tile" target="_blank" title="GLF tv auf Twitter besuchen"> </a>
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Twike Marathon</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
-								</p>
-							</div>
-						</div>
-						<div class="tile teaser-tile redakt-teaser-tile">
-							<div class="teaser-tile-text-layer teaser-tile-text-layer-redakt">
-								<h3 class="teaser-tile-headline">Vorname Name</h3>
-							</div>
-						</div>
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
-								</p>
-							</div>
-						</div>
-						<div class="tile teaser-tile redakt-teaser-tile">
-							<div class="teaser-tile-text-layer teaser-tile-text-layer-redakt">
-								<h3 class="teaser-tile-headline">Vorname Name</h3>
+								<h3 class="tile-title">Vorname Nachname</h3>
 							</div>
 						</div>
 					</div>
