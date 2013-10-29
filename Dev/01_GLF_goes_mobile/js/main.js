@@ -5,8 +5,30 @@ var navAccordion = $('#navAccordion');
 var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
+var label_left = $(document.createElement('span'));
+var label_right= $(document.createElement('span'));
+var semRangeValue = new Array();
+var semRangeText =['WS1','SoSe1','WS2','SoSe2','WS3','SoSe3','WS4','SoSe4','WS5','SoSe5','WS6','SoSe6'];
 
 $(window).load(function() {
+
+	/*Set Filter Range Slider*/
+
+	$('#filter-range-slider').noUiSlider({
+		start: [5, 10]
+		,range: [0, 11]
+		,step: 1
+		,connect: true
+		,handles: 2
+		,slide: function(){
+			semRangeValue = $(this).val();
+			createLabels(semRangeValue);
+		}
+		
+	});
+	filterRangeInit();
+
+
 	$('#teaser_slider').nivoSlider({
 		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
 		animSpeed : 200, // Slide transition speed
@@ -306,3 +328,45 @@ function resizeInfoWrapper() {
 }
 
 /*************Detail Pages Info-Wrapper Functions End*********/
+
+/*************Filter Range Slider Functions *****************/
+function createLabels(semRangeValue){
+	
+	$(label_left).appendTo('.noUi-handle-lower');
+	$(label_right).appendTo('.noUi-handle-upper');
+
+	for (var i=0; i <= semRangeText.length;i++){
+		console.log(semRangeValue[0]);
+		console.log(semRangeText[i]);
+		if(semRangeValue[0] == i){
+			$(label_left).text(semRangeText[i]);
+		}
+		if(semRangeValue[1] == i){
+			$(label_right).text(semRangeText[i]);
+		}
+	}
+}
+function filterRangeInit(){
+	semRangeValue = $('#filter-range-slider').val();
+	
+	$(label_left).addClass('noUi-handle-lower-label');
+	$(label_right).addClass('noUi-handle-upper-label');
+
+	$(label_left).addClass('noUi-handle-label');
+	$(label_right).addClass('noUi-handle-label');
+
+	$(label_left).appendTo('.noUi-handle-lower');
+	$(label_right).appendTo('.noUi-handle-upper');
+
+	for (var i=0; i <= semRangeText.length;i++){
+		console.log(semRangeValue[0]);
+		console.log(semRangeText[i]);
+		if(semRangeValue[0] == i){
+			$(label_left).text(semRangeText[i]);
+		}
+		if(semRangeValue[1] == i){
+			$(label_right).text(semRangeText[i]);
+		}
+	}
+}
+/************Filter Range Slider Functions End*********/

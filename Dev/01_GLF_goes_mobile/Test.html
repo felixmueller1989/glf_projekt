@@ -13,31 +13,9 @@
   </script>
   <!-- include noUiSlider -->
   <script src="./nouislider/jquery.nouislider.min.js"></script>
-  <script>
-
-    // Wait until the document is ready
-    $(function(){
-
-      // Initialise noUiSlider
-      $("#filter-range-slider").noUiSlider({
-        start: [20, 80]
-        ,range: [0, 100]
-        ,connect: true
-        ,handles: 2
-        ,slide: function(){
-          var values = $(this).val();
-          $(this).next('span').text(
-            values[0] + " - " + values[1]
-            );
-        }
-      });
-    })
-
-  </script>
 </head>
 <body>
-  <div id="filter-range-slider"> </div>
-  <span></span>
+  <div id="filter-range-slider"></div>
   
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
