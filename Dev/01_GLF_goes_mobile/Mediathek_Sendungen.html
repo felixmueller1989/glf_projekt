@@ -11,11 +11,11 @@
 		<title></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<link href='http://fonts.googleapis.com/css?family=Asap|Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
+		<link href="./nouislider/jquery.nouislider.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -23,6 +23,25 @@
 			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
 		</script>
 		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
+		<script src="./nouislider/jquery.nouislider.min.js"></script>
+		<script>
+    	// Wait until the document is ready
+   		$(function(){
+      		// Initialise noUiSlider
+      		$("#filter-range-slider").noUiSlider({
+      			start: [20, 80]
+      			,range: [0, 100]
+      			,connect: true
+      			,handles: 2
+      			,slide: function(){
+      				var values = $(this).val();
+      				$(this).next('span').text(
+      				values[0] + " - " + values[1]
+      				);
+      			}
+      		});
+  		})
+		</script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
