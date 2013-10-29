@@ -130,7 +130,7 @@ $(document).ready(function() {
 	/*************Live Page Functions*****************/
 	/*************Overlay Functions *****************/
 	var pageLive = $('#page_live');
-	var showClipTeaserTiles = $(pageLive).find(".rel-teaser-tile");
+	var showClipTeaserTiles = $(pageLive).find(".live-rel-teaser-tile");
 	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
 	$(showClipTeaserTiles).each(function() {
 		$(this).click(function() {
@@ -148,7 +148,7 @@ $(document).ready(function() {
 	$(showInfoTile).click(function() {
 		overlayToggle(jobsInfoOverlay);
 	});
-	var jobTiles = $('.job-teaser-tile');
+	var jobTiles = $('.jobs-teaser-tile');
 	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
 	$(jobTiles).each(function() {
 		$(this).click(function() {
