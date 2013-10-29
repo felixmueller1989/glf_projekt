@@ -50,6 +50,13 @@ $(document).ready(function() {
 		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
+	// Initialise noUiSlider
+	$("#filter-range-slider").noUiSlider({
+		start : [20, 80],
+		range : [0, 100],
+		connect : true,
+		handles : 2
+	});
 	/*************Video Player Functions End*********/
 	/************ Nav Functions *************/
 	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
@@ -72,6 +79,13 @@ $(document).ready(function() {
 		}, 400);
 	});
 	/************* Nav Functions End ***********/
+	/*************Footer Functions *************/
+	$('#show_contact_layer').click(function() {
+		var contactLayer = $('#contact_layer');
+		overlayToggle(contactLayer);
+	});
+	/*************Footer Functions End*************/
+
 	/************** Only for Testing Functions *****************/
 	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
 	$(mediathekBTiles).click(function() {
@@ -102,12 +116,9 @@ $(document).ready(function() {
 	});
 	/************** Only for Testing Functions End*****************/
 	/*************Home Page Functions*********/
-	var slider = $('.teaser-slider');
-	setTimeout(function() {
-		var contrlElem = $('.nivo-control');
-		$(contrlElem).text('');
-	}, 400);
-
+	$('.nivo-control').livequery(function() {
+		$(this).text('');
+	});
 	/*************Home Page Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
@@ -120,9 +131,8 @@ $(document).ready(function() {
 	/*************Detail Pages Info-Wrapper Functions End*********/
 	/*************Topic Page Functions *****************/
 	/*************Overlay Functions *****************/
-	var addTopicTile = $("#add_topic_tile");
-	var addTopicOverlay = $('#add_topic_overlay');
-	$(addTopicTile).click(function() {
+	$("#add_topic_tile").click(function() {
+		var addTopicOverlay = $('#add_topic_overlay');
 		overlayToggle(addTopicOverlay);
 	});
 	/*************Overlay Functions End*****************/
@@ -143,14 +153,12 @@ $(document).ready(function() {
 	/*************Live Page Functions End*****************/
 	/*************Jobs Page Functions*****************/
 	/*************Overlay Functions *****************/
-	var showInfoTile = $("#show_jobs_info");
-	var jobsInfoOverlay = $('#jobs_info_overlay');
-	$(showInfoTile).click(function() {
+	$("#show_jobs_info").click(function() {
+		var jobsInfoOverlay = $('#jobs_info_overlay');
 		overlayToggle(jobsInfoOverlay);
 	});
-	var jobTiles = $('.jobs-teaser-tile');
 	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$(jobTiles).each(function() {
+	$('.jobs-teaser-tile').each(function() {
 		$(this).click(function() {
 			var jobId = $(this).attr('id');
 			var jobApplyOverlay = $('#' + jobId + '_overlay');
@@ -163,6 +171,7 @@ $(document).ready(function() {
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
 	filterBtn.push($('#filter_broadcasts_btn'));
+	filterBtn.push($('#filter_all_btn'));
 	$(filterBtn).each(function() {
 		$(this).click(function() {
 			toggleSearchFilters(this);
@@ -222,7 +231,6 @@ function accordionToggle() {
 			});
 		}
 	}
-
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
 	$(activeItem).addClass('active');
@@ -263,9 +271,19 @@ function searchLayerToggle(searchInput) {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
+	console.log(filterType);
+	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
+	if ($(filterWrapperId)) {
+		var filterWrapper = $(filterWrapperId);
+		$('.filter-toggle').addClass('hidden');
+		$(filterWrapper).removeClass('hidden');
+	}
+	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterBtn).addClass('active');
 }
 
 /*************Search Page Functions End*****************/
+
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
 	var closeOverlay = [];
