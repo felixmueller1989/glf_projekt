@@ -1123,14 +1123,27 @@ html {
  	float: left;
  	margin: 0 11px 0 0;
  }
+ #ada_rhode{
+ 	background-image: url('../img/team/Ada_Rhode_2013_9.jpg');
+ 	background-position: 50% 20%;
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
+ }
+ 
+ #schae_schoe{
+ 	background-image: url('../img/team/SCH-SCH_01.jpg');
+ 	background-position: 50% 20%;
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
+ }
  .contact-data-headline {
- 	margin: 0 0 7px 0;
+ 	margin: 20px 0 20px 0;
  	color: #70EA46;
  }
  .contact-data-text {
  	font-size: 0.8em;
  	margin: 5px 0;
- 	line-height: 0.9em;
+ 	
  }
  .mail-link {
  	display: inline-block;
@@ -1225,7 +1238,7 @@ html {
  * ***********************Impressum page style
  */
  .sub-headline-wrapper{
-
+	
  	margin:10px 0 40px 7px;
  }
  .sub-headline {
@@ -1248,6 +1261,7 @@ html {
  .text-legal-info{
  }
  .text-contact-data-wrapper{
+ 	position:relative;
  	width: 200px;
 	height: 200px;
 	display:inline-block;
@@ -1258,15 +1272,17 @@ html {
  	font-size: 1.25em;
  }
  #page_imprint .contact-data-headline{
- 	line-height: 4em;
+ 	
  	color:#7f7f7f;
  }
  #page_imprint .contact-section-wrapper{
  }
  #page_imprint .contact-left-section-wrapper{
+ 	min-width:414px;
  	float:left;
  }
  #page_imprint .contact-right-section-wrapper{
+ 	min-width:414px;
  	float:left;
  }
  #page_imprint .contact-img{
@@ -1278,9 +1294,14 @@ html {
  #page_imprint .mail-link{
  }
  #page_imprint .contact-data-text{
- 	line-height: 1.5em;
+ 	
+ 	margin-bottom:5px;
  	font-size:1em;
  	display:block;
+ }
+ .text-contact-data-only-wrapper{
+ 	position:absolute;
+ 	bottom:0;
  }
  .impressum-text-wrapper{
  	margin:0 0 50px 7px;
@@ -1298,10 +1319,11 @@ html {
  */
 
  footer {
- 	width: 100%;
+ 	/*width: 100%;*/
  	font-size: 0.9em;
- 	max-width: 1035px;
- 	margin: 0 auto 0 auto;
+ 	width: 90.859375%;
+max-width: 1035px;
+margin: auto;
  }
  .footer-content-wrapper {
  	display: inline-block;
@@ -1311,7 +1333,7 @@ html {
  .footer-top-wrapper {
  	
  	line-height: 1.8em;
- 	margin: 0 auto 19px auto;
+ 	margin: 0 auto 10px auto;
  }
 
  .footer-element {
