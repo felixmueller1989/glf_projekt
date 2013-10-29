@@ -1323,8 +1323,8 @@ html {
  	text-align: center;
  	font-size: 0.9em;
  	width: 90.859375%;
-max-width: 1035px;
-margin: auto;
+	max-width: 1035px;
+	margin: auto;
  }
  .footer-content-wrapper {
  	display: inline-block;
