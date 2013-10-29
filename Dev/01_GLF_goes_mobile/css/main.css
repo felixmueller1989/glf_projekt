@@ -1169,19 +1169,19 @@ html {
  	padding: 0 2% 0 0;
  }
  .contact-img {
- 	width: 100px;
- 	height: 100px;
+ 	width: 200px;
+ 	height: 200px;
  	float: left;
  	margin: 0 11px 0 0;
  }
- .contact-data-headline {
- 	margin: 0 0 7px 0;
+.contact-data-headline {
+ 	margin: 20px 0 20px 0;
  	color: #70EA46;
  }
  .contact-data-text {
  	font-size: 0.8em;
  	margin: 5px 0;
- 	line-height: 0.9em;
+ 	
  }
  .mail-link {
  	display: inline-block;
@@ -1193,89 +1193,93 @@ html {
 /*
  * ***********************Impressum page style
  */
-
- .tile-impressum {
+ .sub-headline-wrapper{
+	
+ 	margin:10px 0 40px 7px;
+ }
+ .sub-headline {
+ }
+ .impressum-sub-headline{
+ 	font-size: 1.25em;
+ }
+ .text {
+ }
+ .impressum-text{
+ }
+ .legal-wrapper{
+ 	margin:10px 0 22px 7px;
+ }
+ .legal-info-wrapper {
+ }
+ .label-legal-info{
+ 	font-weight: bold;
+ }
+ .text-legal-info{
+ }
+ .text-contact-data-wrapper{
+ 	position:relative;
  	width: 200px;
- 	height: 200px;
- 	float: left;
- 	margin: 3.5px;
- 	position: relative;
- 	background: #DFDFDF;
- 	color: #7f7f7f;
+	height: 200px;
+	display:inline-block;
+ }
+ #page_imprint .contact-data-wrapper{
+ }
+ .headline-contact-data{
+ 	font-size: 1.25em;
+ }
+ #page_imprint .contact-data-headline{
+ 	
+ 	color:#7f7f7f;
+ }
+ #page_imprint .contact-section-wrapper{
+ }
+ #page_imprint .contact-left-section-wrapper{
+ 	min-width:414px;
+ 	float:left;
+ }
+ #page_imprint .contact-right-section-wrapper{
+ 	min-width:414px;
+ 	float:left;
+ }
+ #page_imprint .contact-img{
+ }
+ #page_imprint .contact-data-headline{
+ }
+ #page_imprint .phone-link{
+ }
+ #page_imprint .mail-link{
+ }
+#page_imprint .contact-data-text{
+ 	
+ 	margin-bottom:5px;
+ 	font-size:1em;
+ 	display:block;
+ }
+ .text-contact-data-only-wrapper{
+ 	position:absolute;
+ 	bottom:0;
+ }
+ .impressum-text-wrapper{
+ 	margin:0 0 50px 7px;
+
+ }
+ .impressum-text-headline{
+ 	font-size: 1.25em;
  }
 
- .tiles-impressum-wrapper {
-
- 	margin: 60px 0 60px 0;
- }
-
- .tiles-impressum-left {
-
- 	margin-right: 20px;
- }
-
- .tiles-impressum-right {
-
- 	margin-left: 20px;
- }
-
- .info-general-impressum {
-
- 	float: right;
- 	width: 100%;
- 	margin: 20px 0 60px 0;
- }
-
- .table-impressum-wrapper {
-
- 	color: #7f7f7f;
- 	margin-top: 40px;
- }
-
- .name-impressum {
-
- 	margin: 30px 0 10px 0;
- }
-
- .tile-impressum.leute {
-
- 	position: relative;
- }
-
- .phone-impressum.leute {
-
- 	position: absolute;
- 	bottom: 3pc;
- }
-
- .email-impressum.leute {
- 	position: absolute;
- 	bottom: 6px;
- }
-
- #impressum-tile-ada {
-
+ #ada_rhode{
  	background-image: url('../img/team/Ada_Rhode_2013_9.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
+ 	background-position: 50% 20%;
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
  }
-
- #impressum-tile-leute {
-
+ 
+ #schae_schoe{
  	background-image: url('../img/team/SCH-SCH_01.jpg');
- 	background-size: cover;
- 	background-position: 50% 0;
+ 	background-position: 50% 20%;
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
  }
-
- @media only all and (max-width: 930px) {
-
- 	.tiles-impressum-wrapper {
-
- 		width: 420px;
- 	}
-
- }
-
 /*
  *********************** Impressum page styles end
  */
@@ -1710,10 +1714,12 @@ html {
  */
 
  footer {
- 	width: 100%;
+ 	/*width: 100%;*/
+ 	text-align: center;
  	font-size: 0.9em;
- 	max-width: 1035px;
- 	margin: 0 auto 0 auto;
+ 	width: 90.859375%;
+	max-width: 1035px;
+	margin: auto;
  }
  .footer-content-wrapper {
  	display: inline-block;
@@ -1721,15 +1727,16 @@ html {
  	margin: 0 auto 0 auto;
  }
  .footer-top-wrapper {
-
+ 	
  	line-height: 1.8em;
- 	margin: 0 auto 19px auto;
+ 	margin: 0 auto 10px auto;
  }
 
  .footer-element {
  	float: left;
  }
  .startseite-footer-element {
+ 	min-width:124px;
  }
  .footer-link {
  	margin: 0 10px 0 10px;
@@ -1738,22 +1745,27 @@ html {
  	color: #70ea46;
  }
  .mediathek-footer-element {
+ 	min-width:248px;
  }
  .footer-link-label {
  	color: #4a4a4a;
  	margin: 0 10px 0 10px;
  }
  .dein-glf-footer-element {
+ 	min-width:201px;
  }
  .ueber-glf-footer-element {
+ 	min-width:182px;
  }
  .impressum-footer-element {
+ 	min-width:257px;
  }
  .footer-sub-wrapper {
-
+ 	
  	margin: 0 auto 0 auto;
  }
  .footer-social-links-wrapper {
+ 	min-width:145px;
  	float: left;
  	margin: 0 10px 0 10px;
  }
@@ -1788,6 +1800,7 @@ html {
  	background-position: 50% 50%;
  }
  .footer-copyright-wrapper {
+ 	min-width:192px;
  	float: right;
  	margin: 0 10px 0 10px;
  }
