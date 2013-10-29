@@ -212,14 +212,14 @@ nav.nav-main {
 	width: 253px;
 }
 #searchIcon {
-	background-image: url('../img/icons/search_icon_grey.png');
+	background-image: url('../img/icons/custom_icons.png');
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-position: 0px 50%;
 	border-right: none;
-	width: 73px;
+	width: 27px;
 }
 #nav_btn_search:hover #searchIcon {
-	background-image: url('../img/icons/search_icon_green.png');
+	background-position: -30px 50%;
 }
 #nav_btn_search .subnav input {
 	margin: 21px 0 0 0;
@@ -444,7 +444,7 @@ nav.nav-main {
 	height: 34px;
 	top: 25px;
 	right: 25px;
-	cursor:pointer;
+	cursor: pointer;
 }
 .overlay-close-icon {
 	position: absolute;
@@ -903,6 +903,20 @@ h2.filter-headline {
 	vertical-align: middle;
 	text-align: center;
 }
+.some-tile {
+	background: url('../img/icons/some_tiles.png') no-repeat;
+}
+.fb-tile {
+	background-position: 0 0;
+}
+.tw-tile {
+	background-position: -203px 0;
+}
+.some-tile-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 .topic-fb-tile {
 	text-align: center;
 	padding: 20px;
@@ -1037,25 +1051,19 @@ h2.filter-headline {
 	margin: 0 0 0 -50px;
 }
 .nivo-directionNav a {
-	width: 54px;
-	height: 53px;
+	width: 17px;
+	height: 52px;
 	top: 35%;
 	background-image: url('../img/icons/slider_icons.png');
 	background-repeat: no-repeat;
 }
 .nivo-nextNav {
-	background-position: -147px -1px;
+	background-position: -55px 0px;
 	right: 15px;
 }
-.nivo-nextNav:hover {
-	background-position: -203px -1px;
-}
 .nivo-prevNav {
-	background-position: -35px -1px;
+	background-position: -35px 0px;
 	left: 15px;
-}
-.nivo-prevNav:hover {
-	background-position: -91px -1px;
 }
 .nivo-controlNav a {
 	background-image: url('../img/icons/slider_icons.png');
@@ -1298,19 +1306,20 @@ h2.filter-headline {
 	display: table-cell;
 	vertical-align: middle;
 }
+.some-icon {
+	background: url('../img/icons/soMe_icons.png') no-repeat;
+	cursor:default;
+}
 .share-fb {
-	background-image: url('../img/icons/fb-round.png');
+	background-position: -72px 0;
 }
 .share-tw {
-	background-image: url('../img/icons/tw-round.png');
+	background-position: -99px 0;
 }
 .share-fb, .share-tw {
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 	width: 26px;
-	height: 26px;
+	height: 25px;
 	display: table-cell;
-	padding: 0 2px;
 }
 .info-text {
 	margin: 0;
