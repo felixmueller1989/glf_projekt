@@ -1340,6 +1340,7 @@ margin: auto;
  	float: left;
  }
  .startseite-footer-element {
+ 	min-width:124px;
  }
  .footer-link {
  	margin: 0 10px 0 10px;
@@ -1348,16 +1349,20 @@ margin: auto;
  	color: #70ea46;
  }
  .mediathek-footer-element {
+ 	min-width:248px;
  }
  .footer-link-label {
  	color: #4a4a4a;
  	margin: 0 10px 0 10px;
  }
  .dein-glf-footer-element {
+ 	min-width:201px;
  }
  .ueber-glf-footer-element {
+ 	min-width:182px;
  }
  .impressum-footer-element {
+ 	min-width:257px;
  }
  .footer-sub-wrapper {
  	
