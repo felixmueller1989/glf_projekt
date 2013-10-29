@@ -336,8 +336,6 @@ function createLabels(semRangeValue){
 	$(label_right).appendTo('.noUi-handle-upper');
 
 	for (var i=0; i <= semRangeText.length;i++){
-		console.log(semRangeValue[0]);
-		console.log(semRangeText[i]);
 		if(semRangeValue[0] == i){
 			$(label_left).text(semRangeText[i]);
 		}
@@ -359,8 +357,6 @@ function filterRangeInit(){
 	$(label_right).appendTo('.noUi-handle-upper');
 
 	for (var i=0; i <= semRangeText.length;i++){
-		console.log(semRangeValue[0]);
-		console.log(semRangeText[i]);
 		if(semRangeValue[0] == i){
 			$(label_left).text(semRangeText[i]);
 		}
