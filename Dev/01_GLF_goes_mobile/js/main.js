@@ -5,30 +5,8 @@ var navAccordion = $('#navAccordion');
 var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
-var label_left = $(document.createElement('span'));
-var label_right= $(document.createElement('span'));
-var semRangeValue = new Array();
-var semRangeText =['WS1','SoSe1','WS2','SoSe2','WS3','SoSe3','WS4','SoSe4','WS5','SoSe5','WS6','SoSe6'];
 
 $(window).load(function() {
-
-	/*Set Filter Range Slider*/
-
-	$('#filter-range-slider').noUiSlider({
-		start: [5, 10]
-		,range: [0, 11]
-		,step: 1
-		,connect: true
-		,handles: 2
-		,slide: function(){
-			semRangeValue = $(this).val();
-			createLabels(semRangeValue);
-		}
-		
-	});
-	filterRangeInit();
-
-
 	$('#teaser_slider').nivoSlider({
 		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
 		animSpeed : 200, // Slide transition speed
@@ -72,6 +50,13 @@ $(document).ready(function() {
 		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
+	// Initialise noUiSlider
+	$("#filter-range-slider").noUiSlider({
+		start : [20, 80],
+		range : [0, 100],
+		connect : true,
+		handles : 2
+	});
 	/*************Video Player Functions End*********/
 	/************ Nav Functions *************/
 	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
@@ -94,6 +79,13 @@ $(document).ready(function() {
 		}, 400);
 	});
 	/************* Nav Functions End ***********/
+	/*************Footer Functions *************/
+	$('#show_contact_layer').click(function() {
+		var contactLayer = $('#contact_layer');
+		overlayToggle(contactLayer);
+	});
+	/*************Footer Functions End*************/
+
 	/************** Only for Testing Functions *****************/
 	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
 	$(mediathekBTiles).click(function() {
@@ -124,12 +116,9 @@ $(document).ready(function() {
 	});
 	/************** Only for Testing Functions End*****************/
 	/*************Home Page Functions*********/
-	var slider = $('.teaser-slider');
-	setTimeout(function() {
-		var contrlElem = $('.nivo-control');
-		$(contrlElem).text('');
-	}, 400);
-
+	$('.nivo-control').livequery(function() {
+		$(this).text('');
+	});
 	/*************Home Page Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
@@ -142,9 +131,8 @@ $(document).ready(function() {
 	/*************Detail Pages Info-Wrapper Functions End*********/
 	/*************Topic Page Functions *****************/
 	/*************Overlay Functions *****************/
-	var addTopicTile = $("#add_topic_tile");
-	var addTopicOverlay = $('#add_topic_overlay');
-	$(addTopicTile).click(function() {
+	$("#add_topic_tile").click(function() {
+		var addTopicOverlay = $('#add_topic_overlay');
 		overlayToggle(addTopicOverlay);
 	});
 	/*************Overlay Functions End*****************/
@@ -165,14 +153,12 @@ $(document).ready(function() {
 	/*************Live Page Functions End*****************/
 	/*************Jobs Page Functions*****************/
 	/*************Overlay Functions *****************/
-	var showInfoTile = $("#show_jobs_info");
-	var jobsInfoOverlay = $('#jobs_info_overlay');
-	$(showInfoTile).click(function() {
+	$("#show_jobs_info").click(function() {
+		var jobsInfoOverlay = $('#jobs_info_overlay');
 		overlayToggle(jobsInfoOverlay);
 	});
-	var jobTiles = $('.jobs-teaser-tile');
 	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$(jobTiles).each(function() {
+	$('.jobs-teaser-tile').each(function() {
 		$(this).click(function() {
 			var jobId = $(this).attr('id');
 			var jobApplyOverlay = $('#' + jobId + '_overlay');
@@ -185,6 +171,7 @@ $(document).ready(function() {
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
 	filterBtn.push($('#filter_broadcasts_btn'));
+	filterBtn.push($('#filter_all_btn'));
 	$(filterBtn).each(function() {
 		$(this).click(function() {
 			toggleSearchFilters(this);
@@ -244,7 +231,6 @@ function accordionToggle() {
 			});
 		}
 	}
-
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
 	$(activeItem).addClass('active');
@@ -285,9 +271,19 @@ function searchLayerToggle(searchInput) {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
+	console.log(filterType);
+	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
+	if ($(filterWrapperId)) {
+		var filterWrapper = $(filterWrapperId);
+		$('.filter-toggle').addClass('hidden');
+		$(filterWrapper).removeClass('hidden');
+	}
+	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterBtn).addClass('active');
 }
 
 /*************Search Page Functions End*****************/
+
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
 	var closeOverlay = [];
@@ -328,41 +324,3 @@ function resizeInfoWrapper() {
 }
 
 /*************Detail Pages Info-Wrapper Functions End*********/
-
-/*************Filter Range Slider Functions *****************/
-function createLabels(semRangeValue){
-	
-	$(label_left).appendTo('.noUi-handle-lower');
-	$(label_right).appendTo('.noUi-handle-upper');
-
-	for (var i=0; i <= semRangeText.length;i++){
-		if(semRangeValue[0] == i){
-			$(label_left).text(semRangeText[i]);
-		}
-		if(semRangeValue[1] == i){
-			$(label_right).text(semRangeText[i]);
-		}
-	}
-}
-function filterRangeInit(){
-	semRangeValue = $('#filter-range-slider').val();
-	
-	$(label_left).addClass('noUi-handle-lower-label');
-	$(label_right).addClass('noUi-handle-upper-label');
-
-	$(label_left).addClass('noUi-handle-label');
-	$(label_right).addClass('noUi-handle-label');
-
-	$(label_left).appendTo('.noUi-handle-lower');
-	$(label_right).appendTo('.noUi-handle-upper');
-
-	for (var i=0; i <= semRangeText.length;i++){
-		if(semRangeValue[0] == i){
-			$(label_left).text(semRangeText[i]);
-		}
-		if(semRangeValue[1] == i){
-			$(label_right).text(semRangeText[i]);
-		}
-	}
-}
-/************Filter Range Slider Functions End*********/
