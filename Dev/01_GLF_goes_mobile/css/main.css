@@ -211,15 +211,22 @@ nav.nav-main {
 	left: 73px;
 	width: 253px;
 }
+#nav_btn_search .nav-header {
+	border-right: none;
+	width: 73px;
+}
 #searchIcon {
 	background-image: url('../img/icons/custom_icons.png');
 	background-repeat: no-repeat;
-	background-position: 0px 50%;
+	background-position: 0px 0px;
 	border-right: none;
 	width: 27px;
+	height: 27px;
+	display: block;
+	margin: 23px auto 0 auto;
 }
 #nav_btn_search:hover #searchIcon {
-	background-position: -30px 50%;
+	background-position: -30px 0px;
 }
 #nav_btn_search .subnav input {
 	margin: 21px 0 0 0;
@@ -747,10 +754,10 @@ h2.filter-headline {
 	-ms-transition: border-left-color 0.2s;
 	transition: border-left-color 0.2s;
 }
-.filter-btn:hover .filter-text, .filter-btn:active .filter-text {
+.filter-btn:hover .filter-text, .filter-btn:active .filter-text, .filter-btn.active .filter-text {
 	background-color: #70ea46;
 }
-.filter-btn:hover .filter-text.filter-text:after, .filter-btn:active .filter-text.filter-text:after {
+.filter-btn:hover .filter-text.filter-text:after, .filter-btn:active .filter-text.filter-text:after, .filter-btn.active .filter-text.filter-text:after {
 	border-color: rgba(136, 183, 213, 0);
 	border-left-color: #70ea46;
 }
@@ -763,7 +770,7 @@ h2.filter-headline {
 .tile-wrapper {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
 }
-.jobs-tile-wrapper, .team-tile-wrapper, .home-tile-wrapper, .topic-tile-wrapper {
+.jobs-tile-wrapper, .team-tile-wrapper, .home-tile-wrapper, .topic-tile-wrapper, .info-tile-wrapper {
 	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
 }
 .related-tile-wrapper {
@@ -847,7 +854,7 @@ h2.filter-headline {
 }
 .tile-subtitle {
 	font-size: 0.8em;
-	margin: 0 0 0 7px;
+	margin: 7px 0 0 7px;
 	color: #E9E9E9;
 }
 .tile img {
@@ -922,6 +929,10 @@ h2.filter-headline {
 	padding: 20px;
 	box-sizing: border-box;
 	cursor: default;
+}
+.topic-fb-tile .fb-likes {
+	float: none;
+	margin: 15px auto 0 auto;
 }
 .fb-likes-counter-wrapper {
 	margin: 15px 0px;
@@ -1002,20 +1013,20 @@ h2.filter-headline {
 /*
  *********************** #page_home Styles
  */
-#home-description .text {
+.description-tile .text {
 	font-size: 0.8em;
 	margin: 10px 0 0 7px;
 }
-#home-description .tile-title, #home-description .tile-subtitle {
+.description-tile .tile-title, .description-tile .tile-subtitle {
 	color: #9A0758;
 	position: relative;
 	top: 0;
 }
-#home-description .text-link {
+.description-tile .text-link {
 	padding: 0 0 0 7px;
 	margin: 0 0 0 5px;
 }
-#home-description .text-link:before {
+.description-tile .text-link:before {
 	border-width: 5px;
 	margin: -5px 0 0 0px;
 }
@@ -1075,7 +1086,7 @@ h2.filter-headline {
 	margin: 0 4px;
 }
 .nivo-controlNav a.active, .nivo-controlNav a:hover {
-	background-position: -18px 0;
+	background-position: -17px 0;
 }
 .nivo-caption {
 	bottom: 35px;
@@ -1293,8 +1304,8 @@ h2.filter-headline {
 	width: 70px;
 	height: 26px;
 	display: table;
-	margin: 15px auto 0px auto;
-	float: none;
+	margin: 0 10px 0 0;
+	float: left;
 	cursor: pointer;
 }
 .share-wrapper {
@@ -1308,7 +1319,7 @@ h2.filter-headline {
 }
 .some-icon {
 	background: url('../img/icons/soMe_icons.png') no-repeat;
-	cursor:default;
+	cursor: default;
 }
 .share-fb {
 	background-position: -72px 0;
@@ -1319,7 +1330,8 @@ h2.filter-headline {
 .share-fb, .share-tw {
 	width: 26px;
 	height: 25px;
-	display: table-cell;
+	display: inline-block;
+	margin: 0 0 0 5px;
 }
 .info-text {
 	margin: 0;
@@ -1447,6 +1459,30 @@ h2.filter-headline {
  *********************** #page_themen Styles End
  */
 
+/*
+ *********************** #page_info Styles
+ */
+.about-info-content .phrase-headline {
+	margin: 25px 0 15px 0;
+}
+.about-info-content .sub-headline {
+	margin: 10px 0 0 0;
+}
+.about-info-content .text {
+	margin: 0 0 10px 0;
+}
+.about-info-content .text.link-label {
+	display: block;
+	margin: 10px 10px 0 0;
+}
+.about-info-content ul li {
+	list-style: square;
+	color: #7f7f7f;
+}
+
+/*
+ *********************** #page_info Styles End
+ */
 /*
  *********************** #page_search Styles
  */

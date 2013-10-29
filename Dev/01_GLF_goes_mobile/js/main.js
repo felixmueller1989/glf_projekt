@@ -102,12 +102,9 @@ $(document).ready(function() {
 	});
 	/************** Only for Testing Functions End*****************/
 	/*************Home Page Functions*********/
-	var slider = $('.teaser-slider');
-	setTimeout(function() {
-		var contrlElem = $('.nivo-control');
-		$(contrlElem).text('');
-	}, 400);
-
+	$('.nivo-control').livequery(function() {
+		$(this).text('');
+	});
 	/*************Home Page Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
@@ -163,6 +160,7 @@ $(document).ready(function() {
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
 	filterBtn.push($('#filter_broadcasts_btn'));
+	filterBtn.push($('#filter_all_btn'));
 	$(filterBtn).each(function() {
 		$(this).click(function() {
 			toggleSearchFilters(this);
@@ -263,9 +261,19 @@ function searchLayerToggle(searchInput) {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
+	console.log(filterType);
+	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
+	if ($(filterWrapperId)) {
+		var filterWrapper = $(filterWrapperId);
+		$('.filter-toggle').addClass('hidden');
+		$(filterWrapper).removeClass('hidden');
+	}
+	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterBtn).addClass('active');
 }
 
 /*************Search Page Functions End*****************/
+
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
 	var closeOverlay = [];
