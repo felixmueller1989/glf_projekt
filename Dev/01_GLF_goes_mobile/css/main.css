@@ -99,10 +99,10 @@ h3 {
 	display: inline-block;
 }
 /*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
-.sub-headline-wrapper {
+.page-copy-wrapper {
 	margin: 10px 0 40px 3.5px;
 }
-.sub-headline {
+.page-copy {
 	width: 75%;
 	/*margin:7px 160px 7px 0;*/
 	display: block;
@@ -1458,13 +1458,13 @@ input[type="file"]::-webkit-file-upload-button {
 /*
  *********************** #page_info Styles
  */
-#page_info .sub-headline-wrapper {
+#page_info .page-copy-wrapper {
 	margin-left: 0px;
 }
 .about-info-content .detail-page-headline {
 	margin: 25px 0 15px 0;
 }
-.about-info-content .sub-headline {
+.about-info-content .page-copy {
 	margin: 10px 0 0 0;
 }
 .about-info-content .text {
@@ -1581,11 +1581,11 @@ h1.search-item-headline {
 /*
  *********************** #page_landing Styles
  */
-.landingpage-content .sub-headline-wrapper {
+.landingpage-content .page-copy-wrapper {
 	display: inline-table;
 	margin: 3.5px;
 }
-.landingpage-content .sub-headline {
+.landingpage-content .page-copy {
 	display: inline;
 	font-size: 1.3em;
 }
