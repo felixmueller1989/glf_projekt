@@ -103,17 +103,6 @@ $(document).ready(function() {
 		$(location).attr('href', url);
 	});
 
-	var submitBtn = [];
-	var overlayForm = $('.overlay-form-content');
-	var overlaySubmitContent = $('.overlay-form-submitted-content');
-	submitBtn.push($('input[type="submit"]'));
-	submitBtn.push($('.reload-form'));
-	$(submitBtn).each(function() {
-		$(this).click(function() {
-			$(overlayForm).toggleClass('visible').toggleClass('hidden');
-			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-		});
-	});
 	/************** Only for Testing Functions End*****************/
 	/*************Home Page Functions*********/
 	$('.nivo-control').livequery(function() {
@@ -286,6 +275,19 @@ function toggleSearchFilters(filterBtn) {
 
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
+
+	var submitBtn = [];
+	var overlayForm = overlay.find('.overlay-form-content');
+	var overlaySubmitContent = overlay.find('.overlay-form-submitted-content');
+	submitBtn.push(overlay.find('input[type="submit"]'));
+	submitBtn.push(overlay.find('.reload-form'));
+	$(submitBtn).each(function() {
+		$(this).click(function() {
+			$(overlayForm).toggleClass('visible').toggleClass('hidden');
+			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+		});
+	});
+
 	var closeOverlay = [];
 	var overlayContent = overlay.find('.overlay-content');
 	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
@@ -299,9 +301,13 @@ function overlayToggle(overlay) {
 	$(overlay).addClass('active');
 	$('body').css('overflow', 'hidden');
 	$(closeOverlay).each(function() {
-		$(this).click(function() {
-			$(overlay).fadeOut(200);
-			$('body').css('overflow', 'auto');
+		$(this).click(200, function() {
+			$(overlay).fadeOut(function() {
+				$('body').css('overflow', 'auto');
+				$(overlay).removeClass('active');
+				$(overlayForm).toggleClass('visible').toggleClass('hidden');
+				$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+			});
 		});
 	});
 	$(overlayContent).click(function(event) {
