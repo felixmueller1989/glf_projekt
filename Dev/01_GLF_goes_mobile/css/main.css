@@ -199,7 +199,7 @@ nav.nav-main {
 }
 #nav_btn_search {
 	border-right: 1px dashed #7f7f7f;
-	width: 73px;
+	width: 72px;
 }
 #nav_btn_search .subnav {
 	left: 73px;
@@ -1478,7 +1478,7 @@ input[type="file"]::-webkit-file-upload-button {
 	list-style: square;
 	color: #4a4a4a;
 }
-#page_info .sub-headline{
+#page_info .sub-headline {
 	color: #9a0758;
 }
 
