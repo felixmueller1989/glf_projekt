@@ -1478,6 +1478,9 @@ input[type="file"]::-webkit-file-upload-button {
 	list-style: square;
 	color: #4a4a4a;
 }
+#page_info .sub-headline{
+	color: #9a0758;
+}
 
 /*
  *********************** #page_info Styles End
