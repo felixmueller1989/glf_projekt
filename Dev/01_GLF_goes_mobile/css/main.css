@@ -1290,6 +1290,7 @@ input[type="file"]::-webkit-file-upload-button {
 	position: absolute;
 	right: 0;
 	top: 0;
+	width: 200px;
 }
 .fb-likes {
 	background-image: url('../img/icons/fb-like-icon.png');
