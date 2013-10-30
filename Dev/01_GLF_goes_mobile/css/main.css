@@ -95,7 +95,9 @@ h3 {
 	line-height: 1.2em;
 	color: #7f7f7f;
 }
-
+.inline-headline {
+	display: inline-block;
+}
 /*Unterüberschrift als kleine Inhaltsangabe für die Seite*/
 .sub-headline-wrapper {
 	margin: 10px 0 40px 3.5px;
@@ -345,13 +347,14 @@ nav.nav-main {
 	width: 0;
 	position: absolute;
 	border-color: rgba(0,0,0, 0);
-	border-right-color: #DDDDDD;
-	border-width: 12px;
+	border-right-color: #7F7F7F;
+	border-width: 8px;
 	top: 50%;
-	margin: -10px 0 0 -12px;
+	margin: -6px 0 0 -8px;
 }
 .back-btn-text {
-	padding: 0 0 0 20px;
+	padding: 0 0 0 14px;
+	color: #7F7F7F;
 }
 .back-btn:hover .back-btn-arrow:before {
 	border-right-color: #70EA46;
@@ -672,11 +675,12 @@ input[type="file"]::-webkit-file-upload-button {
 	margin: 3.5px 3.5px 0 3.5px;
 	min-width: 200px;
 }
-h2.filter-headline {
-	color: #4a4a4a;
+.filter-label {
+	color: #7f7f7f;
 	font-size: 1em;
 	margin: 0 0 10px 0;
 	line-height: 1em;
+	font-weight: bold;
 }
 .filter-cat-wrapper {
 	width: 100%;
@@ -798,7 +802,7 @@ h2.filter-headline {
 	border-bottom: 1px solid #cdcdcd;
 	padding: 27px 0 27px 0;
 }
-.search-related-tile-headline {
+.search-related-headline {
 	text-align: left;
 	margin: 17px 0 30px 3.5px;
 }
@@ -913,7 +917,7 @@ h2.filter-headline {
 	width: 200px;
 	height: 200px;
 }
-.text-tile-text {
+.text-tile-headline {
 	color: #9A0758;
 	padding: 0 13px 0 13px;
 	display: table-cell;
@@ -1191,27 +1195,15 @@ h2.filter-headline {
 /*
  * ***********************Impressum page style
  */
-.text {
-}
-.impressum-text {
-}
 .legal-wrapper {
 	margin: 10px 0 22px 7px;
-}
-.legal-info-wrapper {
 }
 .label-legal-info {
 	font-weight: bold;
 }
-.text-legal-info {
-}
 .text-contact-data-wrapper {
-	position: relative;
 	width: 200px;
-	height: 200px;
 	display: inline-block;
-}
-#page_imprint .contact-data-wrapper {
 }
 .headline-contact-data {
 	font-size: 1.25em;
@@ -1232,10 +1224,6 @@ h2.filter-headline {
 	margin-bottom: 5px;
 	font-size: 1em;
 	display: block;
-}
-.text-contact-data-only-wrapper {
-	position: absolute;
-	bottom: 0;
 }
 .impressum-text-wrapper {
 	margin: 0 0 50px 7px;
@@ -1373,7 +1361,7 @@ h2.filter-headline {
 	margin: 15px 3.5px 3.5px 3.5px;
 }
 
-.related-tile-headline {
+.related-headline {
 	text-align: center;
 	font-size: 1.125em;
 	color: #9a0758;
@@ -1382,9 +1370,11 @@ h2.filter-headline {
 .broadcast-related-tile-wrapper {
 	border-bottom: 1px solid #CDCDCD;
 	padding: 37px 0 33px 0;
+	width: auto;
 }
 .clip-related-tile-wrapper {
 	padding: 14px 0 27px 0;
+	width: auto;
 }
 
 .live-chat-wrapper {
@@ -1398,9 +1388,10 @@ h2.filter-headline {
  *********************** #page_live Overlay Styles End
  */
 .overlay .cat-link {
-	color: #f9f9f9;
+	color: #cdcdcd;
 	text-transform: uppercase;
 	text-decoration: none;
+	line-height: 1em;
 }
 /*
  *********************** #page_live Overlay Styles End
@@ -1469,7 +1460,7 @@ h2.filter-headline {
 #page_info .sub-headline-wrapper {
 	margin-left: 0px;
 }
-.about-info-content .phrase-headline {
+.about-info-content .detail-page-headline {
 	margin: 25px 0 15px 0;
 }
 .about-info-content .sub-headline {
@@ -1503,7 +1494,7 @@ h2.filter-headline {
 .search-headline-wrapper {
 	margin: 0 0 30px 3.5px;
 }
-h1.search-headline, .phrase-headline {
+h1.search-headline, .detail-page-headline {
 	text-transform: none !important;
 	font-size: 1.9em;
 	margin: 0 0 20px 3.5px;
