@@ -494,21 +494,21 @@ html {
 /*
  *********************** Content Styles
  */
- .content-wrapper {
- 	width: 90.859375%; /*1035px*/
- 	max-width: 1035px;
- 	margin: auto;
- 	background: #E9E9E9;
- 	height: auto;
- 	z-index: 0;
- }
- .content {
- 	width: 100%;
- 	margin: 35px auto 0 auto;
- 	position: relative;
- 	height: auto;
- 	position: relative;
- }
+.content-wrapper {
+	width: 90.859375%; /*1035px*/
+	max-width: 1035px;
+	margin: auto;
+	background: #E9E9E9;
+	height: auto;
+	z-index: 0;
+}
+.content {
+	width: 100%;
+	margin: 35px auto 0 auto;
+	position: relative;
+	height: auto;
+	position: relative;
+}
  .back-btn-wrapper {
  	margin: 0 0 30px 3.5px; /*save 3.5px margin left to align at teaser-tile margin*/
  }
@@ -1989,43 +1989,64 @@ html {
 /* ==========================================================================
  Media Queries
  ========================================================================== */
- /* Smartphones ----------- */
- @media only screen and (max-width: 480px) {
- }
- /* 4 Columns Grid ----------- */
- @media all and (max-width: 1156px) {
- 	.content{
- 		width: 828px;
- 	}
- 	.info-comments-wrapper {
- 		width: 621px;
- 	}
- 	.info-wrapper {
- 		width: 612px;
- 	}
- 	.comments-wrapper, .live-chat-wrapper {
- 		width: 614px;
- 	}
- 	.info-so-me-wrapper {
- 		position: relative;
- 	}
- 	.slider-wrapper{
- 		max-width: 828px;
- 	}
+/* Smartphones ----------- */
+@media only screen and (max-width: 480px) {
+}
+/* 4 Columns Grid ----------- */
+@media all and (max-width: 1156px) {
+	.content-wrapper {
+		width: 100%;
+	}
+	.content {
+		max-width: 828px;
+	}
+	.info-comments-wrapper {
+		width: 621px;
+	}
+	.info-wrapper {
+		width: 612px;
+	}
+	.comments-wrapper, .live-chat-wrapper {
+		width: 614px;
+	}
+	.info-so-me-wrapper {
+		position: relative;
+	}
+}
+@media all and (max-width: 1035px) {
+	.small-screen-data {
+		display: block;
+		visibility: visible;
+	}
+}
+/* 3 Columns Grid ----------- */
+@media all and (max-width: 900px) {
 
- }
- /* 3 Columns Grid ----------- */
- @media all and (max-width: 929px) {
- 	.projekktor {
- 		width: 614px !important;
- 	}
- 	.related-tile-wrapper {
- 		width: 621px;
- 	}
- 	.topic-img {
- 		width: 407px;
- 	}
- }
+	.content {
+		max-width: 621px;
+	}
+	.slider-wrapper {
+		max-height: 351px;
+	}
+	.nivo-caption {
+		bottom: 110px;
+	}
+	.nivo-directionNav a {
+		top: 30%;
+	}
+	.projekktor {
+		width: 614px !important;
+	}
+	.related-tile-wrapper {
+		width: 621px;
+	}
+	.topic-img {
+		width: 407px;
+	}
+	.overlay-content {
+		width: 70%;
+	}
+}
 
 /* ==========================================================================
  Media Queries End
