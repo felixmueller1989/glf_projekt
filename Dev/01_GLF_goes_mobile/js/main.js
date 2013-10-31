@@ -62,13 +62,16 @@ $(document).ready(function() {
 	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 	$(navMain).find('ul > .collapsible').hover(function() {
 		expandItem = $(this);
+		//Call function if duration of hover state is more than 300ms
 		expandTimeout = setTimeout(accordionToggle, 300);
 	}, stopAnimation);
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
+		//if nav item of visited page isn't collapsible, it should be toggled to single width
 		if ($(navMain).hasClass('no-active-btn')) {
 			hasActiveBtn = false;
 		}
+		//Expand nav item of visited page
 		$('.nav-btn-wrapper').each(function(index, elem) {
 			if ($(elem).hasClass('visited')) {
 				expandItem = elem;
@@ -103,17 +106,6 @@ $(document).ready(function() {
 		$(location).attr('href', url);
 	});
 
-	var submitBtn = [];
-	var overlayForm = $('.overlay-form-content');
-	var overlaySubmitContent = $('.overlay-form-submitted-content');
-	submitBtn.push($('input[type="submit"]'));
-	submitBtn.push($('.reload-form'));
-	$(submitBtn).each(function() {
-		$(this).click(function() {
-			$(overlayForm).toggleClass('visible').toggleClass('hidden');
-			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-		});
-	});
 	/************** Only for Testing Functions End*****************/
 	/*************Home Page Functions*********/
 	$('.nivo-control').livequery(function() {
@@ -195,13 +187,12 @@ $(window).resize(function() {
 /*************Nav Accordion Toggle Functions *****************/
 /* expand hovered Item and collapse former activeItem */
 function accordionToggle() {
+	//active Item is the Nav Item which is expanded at the moment the nav hovered
 	activeItem = $(navMain).find('ul > .active');
 	if ($(activeItem).hasClass('search-btn')) {
 		var searchResLayer = $('#search_results_layer');
-		$(searchResLayer).removeClass('has-results').addClass('no-results');
-		$(navAccordion).css('overflow', 'hidden');
 		$(activeItem).animate({
-			width : "73px"
+			width : "72px"
 		}, {
 			duration : 300,
 			queue : false
@@ -220,14 +211,14 @@ function accordionToggle() {
 				width : "326px"
 			}, {
 				duration : 300,
-				queue : false
+				queue : false,
 			});
 		} else {
 			$(expandItem).animate({
 				width : "379px"
 			}, {
 				duration : 300,
-				queue : false
+				queue : false,
 			});
 		}
 	}
@@ -235,12 +226,7 @@ function accordionToggle() {
 	activeItem = expandItem;
 	$(activeItem).addClass('active');
 	hasActiveBtn = true;
-	/*set focus on search input if search is active element*/
-	if ($(activeItem).hasClass('search-btn')) {
-		var searchInput = $(activeItem).find('#search_input');
-		$(searchInput).focus();
-		searchLayerToggle(searchInput);
-	}
+	searchLayerToggle();
 }
 
 function stopAnimation() {
@@ -249,21 +235,33 @@ function stopAnimation() {
 
 /*************Nav Accordion Toggle Functions End *****************/
 /*************Search Layer Functions *****************/
-function searchLayerToggle(searchInput) {
+function searchLayerToggle() {
+	var searchInput = $('#search_input');
 	var searchResLayer = $('#search_results_layer');
-	$(searchInput).bind("change paste keyup", function() {
-		if ($(searchInput).val() == '') {
-			if ($(searchResLayer).hasClass('has-results')) {
-				$(searchResLayer).removeClass('has-results').addClass('no-results');
-				$(navAccordion).css('overflow', 'hidden');
+	var navBtnSearch = $('#nav_btn_search');
+	if ($(navBtnSearch).hasClass('active')) {
+		$(searchInput).focus();
+		$(searchInput).bind("change paste keyup", function() {
+			if ($(searchInput).val() == '') {
+				if ($(searchResLayer).hasClass('has-results')) {
+					$(searchResLayer).removeClass('has-results').addClass('no-results');
+				}
+			} else {
+				if ($(searchResLayer).hasClass('no-results')) {
+					$(searchResLayer).removeClass('no-results').addClass('has-results');
+				}
 			}
-		} else {
-			if ($(searchResLayer).hasClass('no-results')) {
-				$(searchResLayer).removeClass('no-results').addClass('has-results');
-				$(navAccordion).css('overflow', 'visible');
-			}
-		}
-	});
+		});
+		setTimeout(function() {
+			$(navAccordion).css('overflow', 'visible');
+			$(searchResLayer).removeClass('hidden');
+		}, 300);
+	} else {
+		$(navAccordion).css('overflow', 'hidden');
+		$(searchResLayer).addClass('hidden');
+		$(searchInput).blur();
+	}
+
 }
 
 /*************Search Layer Functions End *****************/
@@ -286,6 +284,19 @@ function toggleSearchFilters(filterBtn) {
 
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
+
+	var submitBtn = [];
+	var overlayForm = overlay.find('.overlay-form-content');
+	var overlaySubmitContent = overlay.find('.overlay-form-submitted-content');
+	submitBtn.push(overlay.find('input[type="submit"]'));
+	submitBtn.push(overlay.find('.reload-form'));
+	$(submitBtn).each(function() {
+		$(this).click(function() {
+			$(overlayForm).toggleClass('visible').toggleClass('hidden');
+			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+		});
+	});
+
 	var closeOverlay = [];
 	var overlayContent = overlay.find('.overlay-content');
 	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
@@ -299,9 +310,13 @@ function overlayToggle(overlay) {
 	$(overlay).addClass('active');
 	$('body').css('overflow', 'hidden');
 	$(closeOverlay).each(function() {
-		$(this).click(function() {
-			$(overlay).fadeOut(200);
-			$('body').css('overflow', 'auto');
+		$(this).click(200, function() {
+			$(overlay).fadeOut(function() {
+				$('body').css('overflow', 'auto');
+				$(overlay).removeClass('active');
+				$(overlayForm).toggleClass('visible').toggleClass('hidden');
+				$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+			});
 		});
 	});
 	$(overlayContent).click(function(event) {
