@@ -5,6 +5,7 @@ var navAccordion = $('#navAccordion');
 var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
+var mobileNav = false;
 
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
@@ -58,30 +59,7 @@ $(document).ready(function() {
 		handles : 2
 	});
 	/*************Video Player Functions End*********/
-	/************ Nav Functions *************/
-	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
-	$(navMain).find('ul > .collapsible').hover(function() {
-		expandItem = $(this);
-		//Call function if duration of hover state is more than 300ms
-		expandTimeout = setTimeout(accordionToggle, 300);
-	}, stopAnimation);
-	/* Collapse active Item with some timeout on mouseleave*/
-	$(navMain).mouseleave(function() {
-		//if nav item of visited page isn't collapsible, it should be toggled to single width
-		if ($(navMain).hasClass('no-active-btn')) {
-			hasActiveBtn = false;
-		}
-		//Expand nav item of visited page
-		$('.nav-btn-wrapper').each(function(index, elem) {
-			if ($(elem).hasClass('visited')) {
-				expandItem = elem;
-			}
-		});
-		setTimeout(function() {
-			accordionToggle();
-		}, 400);
-	});
-	/************* Nav Functions End ***********/
+
 	/*************Footer Functions *************/
 	$('#show_contact_layer').click(function() {
 		var contactLayer = $('#contact_layer');
@@ -172,6 +150,8 @@ $(document).ready(function() {
 	/*************Search Page Functions End*****************/
 	/*call functions */
 	resizeInfoWrapper();
+	detectWidth();
+	navFunctions();
 });
 /*document.ready end */
 
@@ -182,15 +162,120 @@ $(window).resize(function() {
 	$('.projekktor').css('width', contentWdth + 'px');
 	/*call functions */
 	resizeInfoWrapper();
+	detectWidth();
+	navFunctions();
 });
 /***********************WINDOW RESIZE END ********************/
+function detectWidth() {
+	var searchBtn = $('#nav_btn_search');
+	if ($(window).width() <= 1035) {
+		$(navMain).addClass('mobile-nav').addClass('off').css('right', '-322px');
+		$(searchBtn).removeClass('collapsible');
+		mobileNav = true;
+	} else {
+		$(navMain).removeClass('mobile-nav');
+		$(searchBtn).addClass('collapsible');
+		mobileNav = false;
+	}
+}
+
+function navFunctions() {
+	if (mobileNav == false) {
+		/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
+		$(navMain).find('.collapsible').hover(function() {
+			expandItem = $(this);
+			//Call function if duration of hover state is more than 300ms
+			expandTimeout = setTimeout(NavDesktopToggle, 300);
+		}, stopAnimation);
+		/* Collapse active Item with some timeout on mouseleave*/
+		$(navMain).mouseleave(function() {
+			//if nav item of visited page isn't collapsible, it should be toggled to single width
+			if ($(navMain).hasClass('no-active-btn')) {
+				hasActiveBtn = false;
+			}
+			//Expand nav item of visited page
+			$('.nav-btn-wrapper').each(function(index, elem) {
+				if ($(elem).hasClass('visited')) {
+					expandItem = elem;
+				}
+			});
+			setTimeout(function() {
+				NavDesktopToggle();
+			}, 400);
+		});
+	}
+	if (mobileNav == true) {
+		$(navMain).find('.collapsible').unbind('mouseenter mouseleave');
+		$(navMain).find('.nav-btn-wrapper').css('width','350px').unbind('mouseenter mouseleave');
+		$(navMain).css('position', 'absolute').css('right','0px');
+		
+		//Slide Nav in on click on Menu Button
+		$('#nav_menu_btn').click(function() {
+			var rightVal = '0px';
+			if ($(navMain).hasClass('off')) {
+				rightVal = '0px';
+				console.log(rightVal);
+			} else {
+				rightVal = '-322px';
+				console.log(rightVal);
+			}
+			$(navMain).animate({
+				right : rightVal
+			}, {
+				duration : 400,
+				queue : false
+			}).toggleClass('off');
+		});
+		$(navMain).find('.collapsible').click(function() {
+			expandItem = $(this);
+			NavMobileToggle();
+		});
+		console.log('call searchlayertoggle now');
+		searchLayerToggle();
+	}
+
+}
+
 /*************Nav Accordion Toggle Functions *****************/
+
 /* expand hovered Item and collapse former activeItem */
-function accordionToggle() {
+function NavMobileToggle() {
+
+	//active Item is the Nav Item which is expanded at the moment the nav clicked
+	activeItem = $(navMain).find('.collapsible.active');
+	var collapseAll = false;
+	if ($(activeItem).is(expandItem)) {
+		collapseAll = true;
+	}
+	$(activeItem).animate({
+		height : "41px"
+	}, {
+		duration : 300,
+		queue : false
+	});
+	if (collapseAll == false) {
+		$(expandItem).animate({
+			height : "127px"
+		}, {
+			duration : 300,
+			queue : false,
+		});
+	}
+	$(activeItem).removeClass('active');
+	activeItem = expandItem;
+	if (collapseAll == false) {
+		$(activeItem).addClass('active');
+	}
+	collapseAll = false;
+}
+
+/* expand hovered Item and collapse former activeItem */
+function NavDesktopToggle() {
 	//active Item is the Nav Item which is expanded at the moment the nav hovered
-	activeItem = $(navMain).find('ul > .active');
+	activeItem = $(navMain).find('.collapsible.active');
 	if ($(activeItem).hasClass('search-btn')) {
 		var searchResLayer = $('#search_results_layer');
+		$(activeItem).css('overflow', 'hidden');
 		$(activeItem).animate({
 			width : "72px"
 		}, {
@@ -236,10 +321,11 @@ function stopAnimation() {
 /*************Nav Accordion Toggle Functions End *****************/
 /*************Search Layer Functions *****************/
 function searchLayerToggle() {
+	console.log('searchLayer toggle');
 	var searchInput = $('#search_input');
 	var searchResLayer = $('#search_results_layer');
 	var navBtnSearch = $('#nav_btn_search');
-	if ($(navBtnSearch).hasClass('active')) {
+	if ($(navBtnSearch).hasClass('active') || $(navMain).hasClass('mobile-nav')) {
 		$(searchInput).focus();
 		$(searchInput).bind("change paste keyup", function() {
 			if ($(searchInput).val() == '') {
@@ -254,10 +340,12 @@ function searchLayerToggle() {
 		});
 		setTimeout(function() {
 			$(navAccordion).css('overflow', 'visible');
+			$(navBtnSearch).css('overflow', 'visible');
 			$(searchResLayer).removeClass('hidden');
 		}, 300);
 	} else {
 		$(navAccordion).css('overflow', 'hidden');
+		$(navBtnSearch).css('overflow', 'hidden !important');
 		$(searchResLayer).addClass('hidden');
 		$(searchInput).blur();
 	}
@@ -269,7 +357,6 @@ function searchLayerToggle() {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
-	console.log(filterType);
 	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
 	if ($(filterWrapperId)) {
 		var filterWrapper = $(filterWrapperId);
@@ -284,7 +371,6 @@ function toggleSearchFilters(filterBtn) {
 
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
-
 	var submitBtn = [];
 	var overlayForm = overlay.find('.overlay-form-content');
 	var overlaySubmitContent = overlay.find('.overlay-form-submitted-content');
