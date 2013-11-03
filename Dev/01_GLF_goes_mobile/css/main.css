@@ -1810,7 +1810,7 @@ nav.mobile-nav.nav-main.off {
 .nav-menu-btn {
 	position: absolute;
 	top: 0;
-	right: 310px;
+	right: 0px;
 	height: 78px;
 	width: 78px;
 	background: #ddd;

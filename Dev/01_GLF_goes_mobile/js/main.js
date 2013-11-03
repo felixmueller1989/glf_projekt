@@ -8,6 +8,8 @@ var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
 var mobileNav = false;
+var navDInitialized = false;
+var navMInitialized = false;
 
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
@@ -153,22 +155,27 @@ $(document).ready(function() {
 	/*call functions */
 	resizeInfoWrapper();
 	detectWidth();
-	navFunctions();
+	console.log('call detectwidth (dom ready)');
 });
 /*document.ready end */
 
 /**************** WINDOW RESIZE *********************/
-$(window).resize(function() {
+$(window).bind('resize', function(e) {
 	/*resize video player*/
 	var contentWdth = $('.content').width();
 	$('.projekktor').css('width', contentWdth + 'px');
 	/*call functions */
-	resizeInfoWrapper();
-	detectWidth();
-	navFunctions();
+	if (window.RT)
+		clearTimeout(window.RT);
+	window.RT = setTimeout(function() {
+		resizeInfoWrapper();
+		detectWidth();
+		console.log('call detectwidth (resize)')
+	}, 300);
 });
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
+	var initNav = false;
 	var searchBtn = $('.search-btn');
 	$(navMain).removeAttr('style');
 	$('.nav-btn-wrapper').removeAttr('style');
@@ -181,11 +188,15 @@ function detectWidth() {
 		$(mobNav).addClass('hidden');
 		mobileNav = false;
 	}
+	if (navMInitialized == false || navDInitialized == false) {
+		navFunctions();
+	}
 }
 
 function navFunctions() {
 	var DeskNavBtnWrapper = $(deskNav).find('.nav-btn-wrapper');
 	if (mobileNav == false) {
+		navDInitialized = true;
 		/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 		$(deskNav).find('.collapsible').hover(function() {
 			expandItem = $(this);
@@ -210,16 +221,17 @@ function navFunctions() {
 		});
 	}
 	if (mobileNav == true) {
+		navMInitialized = true;
 		var navWidth = '310px';
 		var menuBtn = $('#nav_menu_btn');
-		$(mobNav).css('position', 'absolute').css('right', '0px').removeClass('off');
 		//Slide Nav in on click on Menu Button
 		$(menuBtn).click(function() {
+			console.log('click');
 			var rightVal = '0px';
 			if ($(mobNav).hasClass('off')) {
 				rightVal = '0px';
 				$(menuBtn).animate({
-					right : '310px'
+					right : navWidth
 				}, {
 					duration : 400,
 					queue : false
