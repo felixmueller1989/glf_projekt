@@ -155,7 +155,6 @@ $(document).ready(function() {
 	/*call functions */
 	resizeInfoWrapper();
 	detectWidth();
-	console.log('call detectwidth (dom ready)');
 });
 /*document.ready end */
 
@@ -164,14 +163,13 @@ $(window).bind('resize', function(e) {
 	/*resize video player*/
 	var contentWdth = $('.content').width();
 	$('.projekktor').css('width', contentWdth + 'px');
-	/*call functions */
+	/*Set Timeout to wait for resize End*/
 	if (window.RT)
 		clearTimeout(window.RT);
 	window.RT = setTimeout(function() {
 		resizeInfoWrapper();
 		detectWidth();
-		console.log('call detectwidth (resize)')
-	}, 300);
+			}, 400);
 });
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
@@ -226,8 +224,7 @@ function navFunctions() {
 		var menuBtn = $('#nav_menu_btn');
 		//Slide Nav in on click on Menu Button
 		$(menuBtn).click(function() {
-			console.log('click');
-			var rightVal = '0px';
+					var rightVal = '0px';
 			if ($(mobNav).hasClass('off')) {
 				rightVal = '0px';
 				$(menuBtn).animate({

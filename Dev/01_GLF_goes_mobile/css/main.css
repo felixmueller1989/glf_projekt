@@ -163,7 +163,7 @@ nav.nav-main {
 .nav-pages-wrapper {
 	float: left;
 }
-#navAccordion {
+.nav-accordion {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -291,7 +291,7 @@ nav.nav-main {
 .search-result .search-result-title {
 	font-size: 1.2em;
 }
-.desktop-nav #navAccordion {
+.desktop-nav .nav-accordion {
 	height: 78px;
 	overflow: hidden;
 	float: left;
@@ -1707,7 +1707,7 @@ footer {
 	margin: 80px auto 0 auto;
 	padding: 20px 0 10px 0;
 	border-top: 2px solid #70ea46;
-	background: #4e4e4e;
+	background: #434343;
 }
 .footer-content-wrapper {
 	display: inline-block;
@@ -1834,7 +1834,7 @@ nav.mobile-nav.nav-main.off {
 	width: 280px;
 	padding: 0 0 0 30px;
 }
-.mobile-nav #navAccordion {
+.mobile-nav .nav-accordion{
 	overflow: visible;
 }
 .mobile-nav .nav-accordion-header, .mobile-nav .search-btn, .subnav li {
