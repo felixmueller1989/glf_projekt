@@ -31,13 +31,13 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_thema_detail" class="page-wrapper">
+		<div id="page_search_noRes" class="page-wrapper">
 			<header>
 				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
-					<nav id="navMain" class="nav-main clearfix">
+					<nav id="navMain" class="nav-main no-active-btn clearfix">
 						<div id="live_btn" class="nav-btn-wrapper">
 							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
@@ -53,11 +53,11 @@
 									</li>
 								</ul>
 							</li>
-							<li id="nav_btn_your" class="collapsible nav-btn-wrapper active visited">
+							<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
 								<ul class="subnav">
 									<li>
-										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn visited">Themen</a>
+										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
 									</li>
 									<li>
 										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
@@ -86,7 +86,7 @@
 								</div>
 								<ul id="search_results_layer" class="search-results-layer no-results">
 									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel"  >
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
 										<p class="text">
 											Kategorie oder Datum
 										</p>
@@ -95,7 +95,7 @@
 										</p> </a>
 									</li>
 									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel"  >
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
 										<p class="text">
 											Kategorie oder Datum
 										</p>
@@ -104,7 +104,7 @@
 										</p> </a>
 									</li>
 									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel"  >
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
 										<p class="text">
 											Kategorie oder Datum
 										</p>
@@ -123,118 +123,62 @@
 					<div class="back-btn-wrapper">
 						<a class="back-btn"><span class="back-btn-arrow"></span><span class="back-btn-text">zurück</span></a>
 					</div>
-					<div class="headline-wrapper">
-						<h1 class="headline detail-page-headline inline-headline">Thema xy</h1>
-						<p class="subline">vom 08. März 2013</p>
+					<div class="headline-wrapper search-headline-wrapper search-nores-headline-wrapper">
+						<h1 class="headline detail-page-headline search-headline">Deine Suche nach </h1>
+						<h1 id="search_item" class="headline detail-page-headline search-headline search-item-headline"> &quot;Suchbegriff&quot;</h1>
+						<h1 class="headline detail-page-headline search-headline">ergab leider keine Treffer. </h1>
 					</div>
-					<div class="topic-img-fb-wrapper">
-						<div class="topic-img"></div>
-						<div class="tile topic-fb-tile">
-							<div class="fb-likes-counter-wrapper">
-								<p class="like-tile-text">
-									Dieser Vorschlag hat
-								</p>
-								<p id="fb_likes_count" class="like-tile-text">
-									14 Likes
-								</p>
-							</div>
-							<p class="like-tile-text">
-								Bewerte dieses Thema positiv mit einem LIKE!
-							</p>
-							<div class="fb-likes"></div>
+					<div class="search-suggestion-wrapper">
+						<p class="search-suggestion-text">
+							Probier doch mal
+						</p>
+						<ul class="search-suggestion-list">
+							<li>
+								deine Anfrage allgemeiner zu formulieren
+							</li>
+							<li>
+								deine Eingabe auf Tippfehler zu prüfen
+							</li>
+							<li>
+								deinen Ellenbogen mit der Zunge zu berühren
+							</li>
+						</ul>
+					</div>
+					<div class="search-field-wrapper clearfix">
+						<input id="searchInput_2" type="text" placeholder="Neue Suche starten" alt="Neue Suche starten"/>
+						<div id="searchBtn_2" class="search-btn-onpage"></div>
+					</div>
+					<div class="related-tile-wrapper search-related-tile-wrapper clearfix">
+						<h2 class="related-headline search-related-headline">Empfehlungen, die dich auch interessieren könnten</h2>
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
 						</div>
 					</div>
-					<div class="info-comments-wrapper">
-						<div class="info-wrapper clearfix">
-							<div class="info-content">
-								<h2 class="info-headline">Thementitel xy</h2>
-								<div class="info-so-me-wrapper">
-									<div class="share-wrapper">
-										<p class="info-share-text">
-											Teilen:
-										</p>
-										<div class="share-fb some-icon"></div><div class="share-tw some-icon"></div>
-									</div>
-								</div>
-								<p class="info-text">
-									Veröffentlicht am 21.Oktober 13
-								</p>
-								<p class="info-text">
-									Was heute hip ist, ist morgen schon mainstream. Genau das ist das Problem der sogenannten Hipster. Sie gelten als urbane Subkultur und haben zum Beispiel den Jutebeutel oder das klapprige Fahrrad wieder salonfähig gemacht. Woran man einen Hipster erkennt, und ob es auch im Schwarzwald welche gibt, wollten die Redakteure der Hochschule Furtwangen wissen.
-								</p>
-							</div>
-						</div>
-
-						<div class="comments-wrapper"></div>
-					</div>
-					<div class="related-tile-wrapper clearfix">
-						<div class="tile text-tile">
-							<div>
-								<h3 class="text-tile-headline related-headline">Verwandte Beiträge zu diesem Thema</h3>
-							</div>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
-						</div>
-						<div class="tile teaser-tile clip-teaser-tile">
-							<a href="Videoplayer_Beitraege.html"  class="tile-link" ><img src="img/video_teaser/1.jpg" class="teaser-tile-img"  alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
-							<div class="tile-text-layer">
-								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
-								<h3 class="tile-title">Beitrags Titel</h3>
-							</div> </a>
+					<div class="mediathek-link-wrapper">
+						<p class="mediathek-link-text">
+							Durchstöbere doch unsere Mediathek
+						</p>
+						<div class="mediathek-link-links">
+							<a href="Mediathek_Beitraege.html" class="text-link mediathek-link-beitraege">Zu den Beiträgen</a>
+							<a href="Mediathek_Sendungen.html"class="text-link mediathek-link-sendungen">Zu den Sendungen</a>
 						</div>
 					</div>
 					<div class="back-btn-wrapper">

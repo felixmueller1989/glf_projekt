@@ -8,35 +8,36 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title></title>
-		<meta name="description" content="">
+		<title>GLF CampusTv Hochschule Furtwangen</title>
+		<meta name="description" content="GLF TV - Gute Laune Furtwangen TV ist dein Hochschulfernsehen für den Campus Furtwangen. Sieh Dir interessante Beiträge rund um das Hochschulleben an, entdecke Neues aus Kultur und Wissenschaft oder stöbere in unserem Sendungsarchiv.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link href='http://fonts.googleapis.com/css?family=Asap|Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Asap' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="nivo-slider/nivo-slider.css" type="text/css" />
+		<link rel="stylesheet" href="plugins/video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="plugins/nivo-slider/nivo-slider.css" type="text/css" />
+		<link href="plugins/nouislider/jquery.nouislider.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script>
 			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
 		</script>
-		<script type="text/javascript" src="video-player/projekktor-1.2.38r332.min.js"></script>
-		<script src="nivo-slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+		<script type="text/javascript" src="plugins/livequery.js"></script>
+		<script type="text/javascript" src="plugins/video-player/projekktor-1.2.38r332.min.js"></script>
+		<script src="plugins/nivo-slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+		<script src="plugins/nouislider/jquery.nouislider.min.js"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="page_home" class="page-wrapper">
+		<div id="page_glfTv" class="page-wrapper">
 			<header>
 				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
-					<nav id="navMain" class="nav-main clearfix">
+					<nav id="navMain" class="nav-main no-active-btn clearfix">
 						<div id="live_btn" class="nav-btn-wrapper">
 							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
@@ -76,14 +77,16 @@
 							</li>
 							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
 								<div class="search-input-wrapper clearfix">
-									<span id="searchIcon" class="nav-header nav-accordion-header"></span>
+									<div class="nav-header nav-accordion-header">
+										<span id="searchIcon" class="search-icon"></span>
+									</div>
 									<div class="subnav">
 										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
 									</div>
 								</div>
 								<ul id="search_results_layer" class="search-results-layer no-results">
 									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
 										<p class="text">
 											Kategorie oder Datum
 										</p>
@@ -92,7 +95,7 @@
 										</p> </a>
 									</li>
 									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
 										<p class="text">
 											Kategorie oder Datum
 										</p>
@@ -101,7 +104,7 @@
 										</p> </a>
 									</li>
 									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" title="Suchergebnistitel" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" title="Suchergebnistitel">
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
 										<p class="text">
 											Kategorie oder Datum
 										</p>
@@ -119,81 +122,96 @@
 				<div class="content clearfix">
 					<div class="slider-wrapper clearfix">
 						<div id="teaser_slider" class="teaser-slider nivoSlider">
-							<img src="img/video_teaser/13.jpg" alt="" />
-							<a href="http://dev7studios.com"><img src="img/video_teaser/15.jpg" alt="" title="#htmlcaption" /></a>
-							<img src="img/video_teaser/12.jpg" alt="" title="This is an example of a caption" />
-							<img src="img/video_teaser/11.jpg" alt="" />
+							<a href="Videoplayer_Beitraege.html" class="slider-link" alt="beitragstitle"><img src="img/video_teaser/15.jpg" alt="beitragstitle" title="#beitragstitle_capt" /></a>
+							<a href="Videoplayer_Sendungen.html" class="slider-link" alt="sendungsstitle"><img src="img/video_teaser/13.jpg" alt="sendungsstitle" title="#sendungstitle_capt" /></a>
 						</div>
-						<div id="htmlcaption" class="nivo-html-caption">
-							<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+						<div id="beitragstitle_capt" class="nivo-html-caption">
+							<h2 class="slider-headline">Slider Img 01 Headline</h2>
+							<p class="slider-subheadline">
+								Slider Img Subheadline
+							</p>
+							<a href="Videoplayer_Beitraege.html" class="slider-capt-link text-link" title="beitragstitle">Link text</a>
+						</div>
+						<div id="sendungstitle_capt" class="nivo-html-caption">
+							<h2 class="slider-headline">Slider Img 02 Headline</h2>
+							<p class="slider-subheadline">
+								Slider Img Subheadline
+							</p>
+							<a href="Videoplayer_Sendungen.html" class="slider-capt-link text-link" title="sendungstitle">Link text</a>
 						</div>
 					</div>
-					<div class="teaser-tile-wrapper home-teaser-tile-wrapper">
-						<div id="home-description" class="tile text-only-tile description-tile">
-							<h3 class="teaser-tile-headline">GLF TV -</h3>
-							<p class="teaser-tile-subline">
+					<div class="tile-wrapper home-tile-wrapper">
+						<div id="home-description" class="tile text-tile description-tile">
+							<h3 class="tile-title">GLF TV -</h3>
+							<p class="tile-subtitle">
 								Gute Laune Furtwangen TV
 							</p>
 							<p class="text">
 								ist dein Hochschulfernsehen für den Campus Furtwangen. Sieh Dir interessante
-								<a href="Mediathek_Beitraege.html" title="Zu den Beiträgen" class="text-link">Beiträge </a>
+								<a href="Mediathek_Beitraege.html" class="text-link">Beiträge </a>
 								rund um das Hochschulleben an, entdecke Neues aus Kultur und Wissenschaft oder stöbere in unserem
-								<a href="Mediathek_Beitraege.html" title="Zu den Beiträgen" class="text-link">Sendungsarchiv. </a>
+								<a href="Mediathek_Beitraege.html" class="text-link">Sendungsarchiv. </a>
 							</p>
 						</div>
 						<div class="tile teaser-tile redakt-teaser-tile">
-							<div class="teaser-tile-text-layer teaser-tile-text-layer-redakt">
-								<h3 class="teaser-tile-headline">Vorname Name</h3>
-							</div>
+							<a href="Landingpage_01.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<h3 class="tile-title">Redaktioneller Content Title</h3>
+							</div> </a>
 						</div>
-						<a href="https://www.facebook.com/GLFCampusTV" id="fb_link_tile" class="tile teaser-tile some-teaser-tile" target="_blank" title="GLF tv auf Facebook besuchen"> </a>
-
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Twike Marathon</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
-								</p>
-							</div>
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
 						</div>
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
-								</p>
-							</div>
+						<div class="tile fb-tile some-tile">
+							<a href="https://www.facebook.com/GLFCampusTV" id="fb_link_tile" class="tile-link some-tile-link" target="_blank" title="GLF tv auf Facebook besuchen"> </a>
 						</div>
-						<a href="https://twitter.com/glftv" id="tw_link_tile" class="tile teaser-tile some-teaser-tile" target="_blank" title="GLF tv auf Twitter besuchen"> </a>
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Twike Marathon</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile tw-tile some-tile">
+							<a href="https://twitter.com/glftv" id="tw_link_tile" class="tile-link some-tile-link" target="_blank" title="GLF tv auf Twitter besuchen"> </a>
+						</div>
+						<div class="tile teaser-tile broadcast-teaser-tile">
+							<a href="Videoplayer_Sendungen.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<p class="text extra-info-text date-text">
+									Datum xx.xx.xx
 								</p>
-							</div>
+								<h3 class="tile-title">Sendungs Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile text-tile description-tile">
+							<h3 class="tile-title">GLF TV - Live</h3>
+							<p class="text">
+								gibt es für dich mehrmals im Semester. Besuche
+							</p>
+							<p class="tile-subtitle">
+								Dienstags um 19 Uhr
+							</p>
+							<p class="text">
+								glftv.de und schau dir die Livesendung mit interessanten Gästen und Beiträgen an.
+							</p>
 						</div>
 						<div class="tile teaser-tile redakt-teaser-tile">
-							<div class="teaser-tile-text-layer teaser-tile-text-layer-redakt">
-								<h3 class="teaser-tile-headline">Vorname Name</h3>
-							</div>
+							<a href="Landingpage_01.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<h3 class="tile-title">Redaktioneller Content Title</h3>
+							</div> </a>
 						</div>
-						<div class="tile teaser-tile video-teaser-tile">
-							<span class="teaser-tile-play-icon"></span>
-							<div class="teaser-tile-text-layer">
-								<h3 class="teaser-tile-headline">Wie lerne ich richtig?</h3>
-								<p class="teaser-tile-subline">
-									26. April 2013
-								</p>
-							</div>
-						</div>
-						<div class="tile teaser-tile redakt-teaser-tile">
-							<div class="teaser-tile-text-layer teaser-tile-text-layer-redakt">
-								<h3 class="teaser-tile-headline">Vorname Name</h3>
-							</div>
+						<div class="tile teaser-tile clip-teaser-tile">
+							<a href="Videoplayer_Beitraege.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" /> <span class="teaser-tile-play-icon"></span>
+							<div class="tile-text-layer">
+								<a href="Mediathek_Beitraege.html" class="extra-info-text cat-link">Kategorie</a>
+								<h3 class="tile-title">Beitrags Titel</h3>
+							</div> </a>
 						</div>
 					</div>
 				</div>
@@ -235,7 +253,7 @@
 									Wir kümmern uns um dein Anliegen.
 								</p>
 								<div class="contact-section-wrapper contact-left-section-wrapper">
-									<img src="" class="contact-img" title="Name" alt="Name">
+									<img src="" class="contact-img" alt="Name">
 									<p class="contact-data-headline">
 										Ada Rhode
 									</p>
@@ -246,7 +264,7 @@
 									<a href="tel:0179-5117527" class="text phone-link mobile-data">0179-5117527</a>
 									<span class="text contact-data-text desktop-data">07723-920-2560 oder 0179-5117527</span><a href="mailto:rhode@hs-furtwangen.de" class="text contact-data-text mail-link">rhode@hs-furtwangen.de</a>
 								</div>
-								<div class="contact-section-wrapper contact-right-section-wrapper"><img src="" class="contact-img" title="Name" alt="Name">
+								<div class="contact-section-wrapper contact-right-section-wrapper"><img src="" class="contact-img" alt="Name">
 									<p class="contact-data-headline">
 										Prof.
 										Schäfer-Schönthal
@@ -271,15 +289,54 @@
 								Sieh dich doch in der Zwischenzeit in der Mediathek um.
 							</p>
 							<div class="overlay-form-action-wrapper">
-								<a href="Mediathek_Beitraege.html" title="zu den Beiträgen" class="text-link">zu den Beiträgen</a>
-								<a href="Mediathek_Sendungen.html" title="zu den Sendungen" class="text-link">zu den Sendungen</a>
+								<a href="Mediathek_Beitraege.html" class="text-link">zu den Beiträgen</a>
+								<a href="Mediathek_Sendungen.html" class="text-link">zu den Sendungen</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<footer>
+				<div class="footer-content-wrapper">
+					<div class="footer-top-wrapper clearfix">
+						<div class="footer-element startseite-footer-element">
+							<a class="footer-link" href="index.html">Startseite</a>
+							<a class="footer-link" href="Live.html">Live</a>
+						</div>
+						<div class="footer-element mediathek-footer-element">
+							<span class="footer-link-label">Mediathek:</span>
+							<a class="footer-link" href="Mediathek_Sendungen.html">Sendungen</a>
+							<a class="footer-link" href="Mediathek_Beitraege.html">Beiträge</a>
+						</div>
+						<div class="footer-element dein-glf-footer-element">
+							<span class="footer-link-label">Dein GLF:</span>
+							<a class="footer-link" href="DeinGLF_Themen.html">Themen</a>
+							<a class="footer-link" href="DeinGLF_Jobs.html">Jobs</a>
+						</div>
+						<div class="footer-element ueber-glf-footer-element">
+							<span class="footer-link-label">Über GLF:</span>
+							<a class="footer-link" href="UeberGLF_Team.html">Team</a>
+							<a class="footer-link" href="UeberGLF_Info.html">Info</a>
+						</div>
+						<div class="footer-element impressum-footer-element">
+							<a class="footer-link" href="impressum.html">Impressum</a>
+							<a id="show_contact_layer" class="footer-link" href="#contact_layer">Kontakt</a>
+							<a class="footer-link" href="datenschutz.html">Datenschutz</a>
+						</div>
+					</div>
+					<div class="footer-sub-wrapper clearfix">
+						<div class="footer-social-links-wrapper">
+							<span class="footer-social-links-label">GLFtv folgen:</span>
+							<span class="footer-social-links-fb-icon"><a class="footer-social-links-fb" href="https://www.facebook.com/GLFCampusTV" title="GLF Tv auf Facebook folgen"></a></span>
+							<span class="footer-social-links-twitter-icon"><a class="footer-social-links-twitter" href="https://twitter.com/glftv" title="GLF TV auf Twitter folgen"></a></span>
+						</div>
+						<div class="footer-copyright-wrapper">
+							<span class="footer-copyright">&copy;GLFtv Alle Rechte Vorbehalten</span>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
-		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

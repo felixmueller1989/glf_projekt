@@ -2,22 +2,23 @@
 var activeItem;
 var navMain = $('#navMain');
 var navAccordion = $('#navAccordion');
+var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
 
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
 		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
-		animSpeed : 500, // Slide transition speed
-		pauseTime : 3000, // How long each slide will show
+		animSpeed : 200, // Slide transition speed
+		pauseTime : 35000, // How long each slide will show
 		startSlide : 0, // Set starting Slide (0 index)
 		directionNav : true, // Next & Prev navigation
 		controlNav : true, // 1,2,3... navigation
 		controlNavThumbs : false, // Use thumbnails for Control Nav
 		pauseOnHover : true, // Stop animation while hovering
 		manualAdvance : false, // Force manual transitions
-		prevText : 'Prev', // Prev directionNav text
-		nextText : 'Next', // Next directionNav text
+		prevText : '', // Prev directionNav text
+		nextText : '', // Next directionNav text
 		randomStart : false, // Start on a random slide
 		beforeChange : function() {
 		}, // Triggers before a slide transition
@@ -49,15 +50,28 @@ $(document).ready(function() {
 		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
+	// Initialise noUiSlider
+	$("#filter-range-slider").noUiSlider({
+		start : [20, 80],
+		range : [0, 100],
+		connect : true,
+		handles : 2
+	});
 	/*************Video Player Functions End*********/
 	/************ Nav Functions *************/
 	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 	$(navMain).find('ul > .collapsible').hover(function() {
 		expandItem = $(this);
+		//Call function if duration of hover state is more than 300ms
 		expandTimeout = setTimeout(accordionToggle, 300);
 	}, stopAnimation);
 	/* Collapse active Item with some timeout on mouseleave*/
 	$(navMain).mouseleave(function() {
+		//if nav item of visited page isn't collapsible, it should be toggled to single width
+		if ($(navMain).hasClass('no-active-btn')) {
+			hasActiveBtn = false;
+		}
+		//Expand nav item of visited page
 		$('.nav-btn-wrapper').each(function(index, elem) {
 			if ($(elem).hasClass('visited')) {
 				expandItem = elem;
@@ -68,6 +82,13 @@ $(document).ready(function() {
 		}, 400);
 	});
 	/************* Nav Functions End ***********/
+	/*************Footer Functions *************/
+	$('#show_contact_layer').click(function() {
+		var contactLayer = $('#contact_layer');
+		overlayToggle(contactLayer);
+	});
+	/*************Footer Functions End*************/
+
 	/************** Only for Testing Functions *****************/
 	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
 	$(mediathekBTiles).click(function() {
@@ -85,18 +106,12 @@ $(document).ready(function() {
 		$(location).attr('href', url);
 	});
 
-	var submitBtn = [];
-	var overlayForm = $('.overlay-form-content');
-	var overlaySubmitContent = $('.overlay-form-submitted-content');
-	submitBtn.push($('input[type="submit"]'));
-	submitBtn.push($('.reload-form'));
-	$(submitBtn).each(function() {
-		$(this).click(function() {
-			$(overlayForm).toggleClass('visible').toggleClass('hidden');
-			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-		});
-	});
 	/************** Only for Testing Functions End*****************/
+	/*************Home Page Functions*********/
+	$('.nivo-control').livequery(function() {
+		$(this).text('');
+	});
+	/*************Home Page Functions End*********/
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
@@ -108,9 +123,8 @@ $(document).ready(function() {
 	/*************Detail Pages Info-Wrapper Functions End*********/
 	/*************Topic Page Functions *****************/
 	/*************Overlay Functions *****************/
-	var addTopicTile = $("#add_topic_tile");
-	var addTopicOverlay = $('#add_topic_overlay');
-	$(addTopicTile).click(function() {
+	$("#add_topic_tile").click(function() {
+		var addTopicOverlay = $('#add_topic_overlay');
 		overlayToggle(addTopicOverlay);
 	});
 	/*************Overlay Functions End*****************/
@@ -118,7 +132,7 @@ $(document).ready(function() {
 	/*************Live Page Functions*****************/
 	/*************Overlay Functions *****************/
 	var pageLive = $('#page_live');
-	var showClipTeaserTiles = $(pageLive).find(".rel-teaser-tile");
+	var showClipTeaserTiles = $(pageLive).find(".live-rel-teaser-tile");
 	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
 	$(showClipTeaserTiles).each(function() {
 		$(this).click(function() {
@@ -131,14 +145,12 @@ $(document).ready(function() {
 	/*************Live Page Functions End*****************/
 	/*************Jobs Page Functions*****************/
 	/*************Overlay Functions *****************/
-	var showInfoTile = $("#show_jobs_info");
-	var jobsInfoOverlay = $('#jobs_info_overlay');
-	$(showInfoTile).click(function() {
+	$("#show_jobs_info").click(function() {
+		var jobsInfoOverlay = $('#jobs_info_overlay');
 		overlayToggle(jobsInfoOverlay);
 	});
-	var jobTiles = $('.job-teaser-tile');
 	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$(jobTiles).each(function() {
+	$('.jobs-teaser-tile').each(function() {
 		$(this).click(function() {
 			var jobId = $(this).attr('id');
 			var jobApplyOverlay = $('#' + jobId + '_overlay');
@@ -151,6 +163,7 @@ $(document).ready(function() {
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
 	filterBtn.push($('#filter_broadcasts_btn'));
+	filterBtn.push($('#filter_all_btn'));
 	$(filterBtn).each(function() {
 		$(this).click(function() {
 			toggleSearchFilters(this);
@@ -158,7 +171,6 @@ $(document).ready(function() {
 	});
 	/*************Search Page Functions End*****************/
 	/*call functions */
-	sliderSize();
 	resizeInfoWrapper();
 });
 /*document.ready end */
@@ -169,20 +181,18 @@ $(window).resize(function() {
 	var contentWdth = $('.content').width();
 	$('.projekktor').css('width', contentWdth + 'px');
 	/*call functions */
-	sliderSize();
 	resizeInfoWrapper();
 });
 /***********************WINDOW RESIZE END ********************/
 /*************Nav Accordion Toggle Functions *****************/
 /* expand hovered Item and collapse former activeItem */
 function accordionToggle() {
+	//active Item is the Nav Item which is expanded at the moment the nav hovered
 	activeItem = $(navMain).find('ul > .active');
 	if ($(activeItem).hasClass('search-btn')) {
 		var searchResLayer = $('#search_results_layer');
-		$(searchResLayer).removeClass('has-results').addClass('no-results');
-		$(navAccordion).css('overflow', 'hidden');
 		$(activeItem).animate({
-			width : "73px"
+			width : "72px"
 		}, {
 			duration : 300,
 			queue : false
@@ -195,37 +205,28 @@ function accordionToggle() {
 			queue : false
 		});
 	}
-	if ($(expandItem).hasClass('search-btn')) {
-		$(expandItem).animate({
-			width : "326px"
-		}, {
-			duration : 300,
-			queue : false
-		});
-	} else if ($(expandItem).hasClass('live-btn')) {
-		$(expandItem).animate({
-			width : "126px"
-		}, {
-			duration : 300,
-			queue : false
-		});
-	} else {
-		$(expandItem).animate({
-			width : "379px"
-		}, {
-			duration : 300,
-			queue : false
-		});
+	if (hasActiveBtn == true) {
+		if ($(expandItem).hasClass('search-btn')) {
+			$(expandItem).animate({
+				width : "326px"
+			}, {
+				duration : 300,
+				queue : false,
+			});
+		} else {
+			$(expandItem).animate({
+				width : "379px"
+			}, {
+				duration : 300,
+				queue : false,
+			});
+		}
 	}
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
 	$(activeItem).addClass('active');
-	/*set focus on search input if search is active element*/
-	if ($(activeItem).hasClass('search-btn')) {
-		var searchInput = $(activeItem).find('#search_input');
-		$(searchInput).focus();
-		searchLayerToggle(searchInput);
-	}
+	hasActiveBtn = true;
+	searchLayerToggle();
 }
 
 function stopAnimation() {
@@ -234,21 +235,33 @@ function stopAnimation() {
 
 /*************Nav Accordion Toggle Functions End *****************/
 /*************Search Layer Functions *****************/
-function searchLayerToggle(searchInput) {
+function searchLayerToggle() {
+	var searchInput = $('#search_input');
 	var searchResLayer = $('#search_results_layer');
-	$(searchInput).bind("change paste keyup", function() {
-		if ($(searchInput).val() == '') {
-			if ($(searchResLayer).hasClass('has-results')) {
-				$(searchResLayer).removeClass('has-results').addClass('no-results');
-				$(navAccordion).css('overflow', 'hidden');
+	var navBtnSearch = $('#nav_btn_search');
+	if ($(navBtnSearch).hasClass('active')) {
+		$(searchInput).focus();
+		$(searchInput).bind("change paste keyup", function() {
+			if ($(searchInput).val() == '') {
+				if ($(searchResLayer).hasClass('has-results')) {
+					$(searchResLayer).removeClass('has-results').addClass('no-results');
+				}
+			} else {
+				if ($(searchResLayer).hasClass('no-results')) {
+					$(searchResLayer).removeClass('no-results').addClass('has-results');
+				}
 			}
-		} else {
-			if ($(searchResLayer).hasClass('no-results')) {
-				$(searchResLayer).removeClass('no-results').addClass('has-results');
-				$(navAccordion).css('overflow', 'visible');
-			}
-		}
-	});
+		});
+		setTimeout(function() {
+			$(navAccordion).css('overflow', 'visible');
+			$(searchResLayer).removeClass('hidden');
+		}, 300);
+	} else {
+		$(navAccordion).css('overflow', 'hidden');
+		$(searchResLayer).addClass('hidden');
+		$(searchInput).blur();
+	}
+
 }
 
 /*************Search Layer Functions End *****************/
@@ -256,11 +269,34 @@ function searchLayerToggle(searchInput) {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
+	console.log(filterType);
+	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
+	if ($(filterWrapperId)) {
+		var filterWrapper = $(filterWrapperId);
+		$('.filter-toggle').addClass('hidden');
+		$(filterWrapper).removeClass('hidden');
+	}
+	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterBtn).addClass('active');
 }
 
 /*************Search Page Functions End*****************/
+
 /***********************overlay functions********************/
 function overlayToggle(overlay) {
+
+	var submitBtn = [];
+	var overlayForm = overlay.find('.overlay-form-content');
+	var overlaySubmitContent = overlay.find('.overlay-form-submitted-content');
+	submitBtn.push(overlay.find('input[type="submit"]'));
+	submitBtn.push(overlay.find('.reload-form'));
+	$(submitBtn).each(function() {
+		$(this).click(function() {
+			$(overlayForm).toggleClass('visible').toggleClass('hidden');
+			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+		});
+	});
+
 	var closeOverlay = [];
 	var overlayContent = overlay.find('.overlay-content');
 	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
@@ -274,9 +310,13 @@ function overlayToggle(overlay) {
 	$(overlay).addClass('active');
 	$('body').css('overflow', 'hidden');
 	$(closeOverlay).each(function() {
-		$(this).click(function() {
-			$(overlay).fadeOut(200);
-			$('body').css('overflow', 'auto');
+		$(this).click(200, function() {
+			$(overlay).fadeOut(function() {
+				$('body').css('overflow', 'auto');
+				$(overlay).removeClass('active');
+				$(overlayForm).toggleClass('visible').toggleClass('hidden');
+				$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
+			});
 		});
 	});
 	$(overlayContent).click(function(event) {
@@ -299,24 +339,3 @@ function resizeInfoWrapper() {
 }
 
 /*************Detail Pages Info-Wrapper Functions End*********/
-/****************slider functions ********************/
-function sliderSize() {
-	// keep slider ratio depending on relative width (slider-wrapper )
-	var sliderWrapper = $('.slider-wrapper');
-	var sliderWrapperWdth = sliderWrapper.width();
-	var ratio = 16 / 9;
-	var sliderWrapperHgt = sliderWrapperWdth / ratio;
-	sliderWrapper.css({
-		'height' : sliderHgt + 'px'
-	});
-
-	// keep slider ratio depending on relative width (slider )
-	var slider = $('.slider');
-	var sliderWdth = slider.width();
-	var sliderHgt = sliderWdth / ratio;
-	slider.css({
-		'height' : sliderHgt + 'px'
-	});
-}
-
-/****************slider functions end********************/
