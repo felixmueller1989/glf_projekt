@@ -10,6 +10,7 @@ var expandTimeout;
 var mobileNav = false;
 var navDInitialized = false;
 var navMInitialized = false;
+var tabsInitialized = false;
 
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
@@ -169,7 +170,7 @@ $(window).bind('resize', function(e) {
 	window.RT = setTimeout(function() {
 		resizeInfoWrapper();
 		detectWidth();
-			}, 400);
+	}, 400);
 });
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
@@ -188,6 +189,9 @@ function detectWidth() {
 	}
 	if (navMInitialized == false || navDInitialized == false) {
 		navFunctions();
+	}
+	if ($(window).width() <= 640 && tabsInitialized == false) {
+		tabsFunction();
 	}
 }
 
@@ -224,7 +228,7 @@ function navFunctions() {
 		var menuBtn = $('#nav_menu_btn');
 		//Slide Nav in on click on Menu Button
 		$(menuBtn).click(function() {
-					var rightVal = '0px';
+			var rightVal = '0px';
 			if ($(mobNav).hasClass('off')) {
 				rightVal = '0px';
 				$(menuBtn).animate({
@@ -454,3 +458,33 @@ function resizeInfoWrapper() {
 }
 
 /*************Detail Pages Info-Wrapper Functions End*********/
+/*************Tabs on small Screen Functions*********/
+function tabsFunction() {
+	tabsInitialized = true;
+	var tabs = $('.tab-btn');
+	var tabActive = $('.tab-btn.active');
+	var tabTxt = $(tabs).find('.tab-text');
+	$(tabTxt).each(function() {
+		var refTo = $(this).attr('href');
+		$(refTo).addClass('hidden');
+	});
+	var tabContentActive = $(tabActive).find('.tab-text').attr('href');
+	$(tabContentActive).removeClass('hidden').addClass('active');
+	$(tabs).click(function(e) {
+		if ($(this).is(tabActive)) {
+			return;
+		} else {
+			$(tabActive).removeClass('active');
+			$(tabContentActive).removeClass('active').addClass('hidden');
+			tabActive = $(this);
+			$(tabActive).addClass('active');
+			var tabContent = $(tabActive).find('.tab-text').attr('href');
+			tabContentActive = $(tabContent);
+			$(tabContentActive).addClass('active').removeClass('hidden');
+			//Prevent scrolling on click
+			return false;
+		}
+	});
+}
+
+/*************Tabs on small Screen Functions End*********/

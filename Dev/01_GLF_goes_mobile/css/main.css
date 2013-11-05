@@ -119,7 +119,7 @@ a {
 a, p, span, h2, h3 {
 	color: #4a4a4a;
 }
-.mobile-data, .small-screen-data {
+.mobile-data, .small-screen-data, .two-grid-data {
 	display: none;
 	visibility: hidden;
 }
@@ -1961,24 +1961,42 @@ footer {
 	.overlay-content {
 		width: 70%;
 	}
+	.info-wrapper {
+		height: auto !important;
+	}
 }
 /* 2 Columns Grid - Big Tiles ----------- */
 @media all and (max-width: 640px) {
+	.two-grid-data {
+		display: block;
+		visibility: visible;
+	}
 	.content {
 		max-width: 414px;
 	}
 	.projekktor {
-		width: 407px !important;
+		width: 414px !important;
 	}
-	.info-wrapper {
-		width: 407px;
-		height: auto !important;
+	.description-tile {
+		text-align: center;
+		height: auto;
 	}
-	.related-tile-wrapper {
-		width: 414px;
+	.text-tile {
+		width: 100%;
+		height: auto;
+		padding: 7px 0;
 	}
-	.live-chat-wrapper, .comments-wrapper {
-		width: 414px;
+	.text-tile div {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	.text-tile-text {
+		color: #4A4A4A;
+		padding: 0 13px 0 13px;
+		display: block;
+		text-align: left;
+		font-size: 1em;
 	}
 	.topic-img {
 		width: 200px;
@@ -1992,6 +2010,27 @@ footer {
 	}
 	.contact-left-section-wrapper, .contact-right-section-wrapper {
 		min-width: 320px;
+	}
+	.tabs-wrapper {
+		margin: 0 3.5px;
+		padding: 0;
+		width: 100%;
+	}
+	.tab-btn {
+		list-style: none;
+		float: left;
+		margin: 0;
+		width: 33.33333333333333%;
+		background: #434343;
+	}
+	.tab-text {
+		color: #f9f9f9;
+	}
+	.tab-btn.active {
+		background: #70EA46;
+	}
+	.tab-btn.active .tab-text {
+		color: #434343;
 	}
 
 }
@@ -2011,43 +2050,30 @@ footer {
 		right: 0px;
 		top: 0;
 	}
-	.tile-text-layer > :first-child{
+	.tile-text-layer > :first-child {
 		padding: 13px 0 0 0;
 	}
-	.tile-title{
+	.tile-title {
 		top: 33px;
 	}
 	.tile img {
 		width: 50%;
 		height: 100%;
 	}
+	.description-tile {
+		height: auto;
+	}
+	.text-tile {
+		height: auto;
+	}
+
 	.teaser-tile:after {
 		display: none;
 	}
 	.teaser-tile-play-icon {
 		width: 50%;
 	}
-	.description-tile {
-		text-align: center;
-		height: auto;
-	}
-	.text-tile {
-		height: auto;
-		padding: 7px 0;
-	}
-	.text-tile div {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
-	.text-tile-text {
-		color: #4A4A4A;
-		padding: 0 13px 0 13px;
-		display: block;
-		text-align: left;
-		font-size: 1em;
-	}
-	
+
 }
 
 /* ==========================================================================
