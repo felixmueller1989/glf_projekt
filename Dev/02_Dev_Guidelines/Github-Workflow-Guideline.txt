@@ -1,0 +1,19 @@
+Github Workflow:
+
+Um zu gewährleisten, dass die bearbeiteten Dev Files bei jedem immer auf nem aktuellen Stand sind und kein Code verloren geht, werden wir wir folgt auf Github arbeiten:
+
+Definition Worksession: Eine Worksession beschreibt hier die Fertigstellung eines Moduls bzw. einer definierten Aufgabe (z.B. Ein Formular oder der Footer)
+
+1. Person x arbeitet generell nur auf der Github Branch Dev_Files_Personx
+2. Person x arbeitet innerhalb einer Worksession nicht an der selben .html Datei wie Person y
+3. Die main.css/main.js wird von Person x nur innerhalb der von Person x durch /**********xy Styles gekennzeichneten Section editiert
+	--> Person x arbeitet innerhalb einer Worksession nicht zeitgleich in der selben Section wie Person y 
+4. Person x verändert keine Styles außerhalb dieser Section, außer dies ist mit den anderen abgesprochen
+5. Falls Person x Styles oder die HTML Struktur, die auch andere Dateien beeinflussen könnten, verändern muss, wird dies zuerst mit den anderen besprochen (Bsp. <head>)
+6. Branch in Master mergen:
+6.1 Nach Beendigung einer Worksession kopiert Person x die Dateien, die sie editiert oder neu erstellt hat aus ihrer Branch auf ihr lokales Datensystem
+6.2 Person x wechselt nun in die master Branch und kopiert die lokalen Dateien in diese Branch
+	--> Hierbei ist darauf zu achten, dass von der main.css/main.js NUR die editierten Sections in die original Datei eingefügt werden und die Dateien nicht komplett überschrieben werden!
+6.3 Person x kopiert sich ALLE Dateien aus dem master auf ihr lokales Datensystem
+6.4 Person x wechselt in ihre eigene Branch und überschreibt dort ALLE Dateien mit den original Dateien aus dem Master
+7. Person x teilt den anderen mit, welche Worksession sie als nächstes bearbeitet und mit welchen .html Dateien sie hierfür arbeiten muss
