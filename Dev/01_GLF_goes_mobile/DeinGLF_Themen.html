@@ -8,69 +8,454 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title></title>
-		<meta name="description" content="">
+		<title>GLF CampusTv Hochschule Furtwangen</title>
+		<meta name="description" content="GLF TV - Gute Laune Furtwangen TV ist dein Hochschulfernsehen für den Campus Furtwangen. Sieh Dir interessante Beiträge rund um das Hochschulleben an, entdecke Neues aus Kultur und Wissenschaft oder stöbere in unserem Sendungsarchiv.">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Asap' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="plugins/video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="plugins/nivo-slider/nivo-slider.css" type="text/css" />
+		<link href="plugins/nouislider/jquery.nouislider.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css">
-		<link rel="stylesheet" href="video-js/video-js.min.css">
-		<script src="video-js/video.js"></script>
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
+		</script>
+		<script type="text/javascript" src="plugins/livequery.js"></script>
+		<script type="text/javascript" src="plugins/video-player/projekktor-1.2.38r332.min.js"></script>
+		<script src="plugins/nivo-slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+		<script src="plugins/nouislider/jquery.nouislider.min.js"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div id="themen" class="page-wrapper">
+		<div id="page_themen" class="page-wrapper">
 			<header>
-				<div class="header-content">
+				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
 					<nav id="navMain" class="nav-main clearfix">
-						<div id="liveBtn" class="nav-btn-wrapper">
-							<a href="Live.html" class="nav-header">Live</a>
+						<div id="live_btn" class="nav-btn-wrapper">
+							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
 						</div>
 						<ul id="navAccordion">
-							<li id="1" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<div class="nav-accordion-content">
-									<a href="Mediathek_Sendungen.html" alt="Sendungen" class="nav-accordion-content-btn">Sendungen</a><a href="Mediathek_Beitraege.html" alt="Beiträge" class="nav-accordion-content-btn">Beiträge</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+									</li>
+									<li>
+										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
+									</li>
+								</ul>
 							</li>
-							<li id="2" class="collapsible nav-btn-wrapper active">
+							<li id="nav_btn_your" class="collapsible nav-btn-wrapper active visited">
 								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<div class="nav-accordion-content">
-									<a href="DeinGLF_Mitmachen.html" alt="Themen" class="nav-accordion-content-btn">Themen</a><a href="DeinGLF_Mitmachen.html" alt="Mitmachen" class="nav-accordion-content-btn visited">Mitmachen</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn visited">Themen</a>
+									</li>
+									<li>
+										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
+									</li>
+								</ul>
 							</li>
-							<li id="3" class="collapsible nav-btn-wrapper">
+							<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
 								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<div class="nav-accordion-content">
-									<a alt="Ziele" class="nav-accordion-content-btn">Ziele</a><a alt="Geschichte" class="nav-accordion-content-btn">Geschichte</a>
-								</div>
+								<ul class="subnav">
+									<li>
+										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
+									</li>
+									<li>
+										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
+									</li>
+								</ul>
 							</li>
-							<li id="searchBtn" class="collapsible nav-btn-wrapper search-btn">
-								<span id="searchIcon" class="nav-header nav-accordion-header"></span>
-								<div class="nav-accordion-content">
-									<input id="searchInput" type="text" placeholder="Mediathek durchsuchen..." alt="Mediathek durchsuchen"/>
+							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
+								<div class="search-input-wrapper clearfix">
+									<div class="nav-header nav-accordion-header">
+										<span id="searchIcon" class="search-icon"></span>
+									</div>
+									<div class="subnav">
+										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
+									</div>
 								</div>
+								<ul id="search_results_layer" class="search-results-layer no-results">
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+									<li class="search-result">
+										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+										<p class="text">
+											Kategorie oder Datum
+										</p>
+										<p class="text search-result-title">
+											Beitrag / Sendung xy
+										</p> </a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</nav>
 				</div>
 			</header>
+			<div class="content-wrapper">
+				<div class="content clearfix">
+					<h1 class="headline">Themen</h1>
+					<div class="page-copy-wrapper">
+						<p class="page-copy">
+							Dein GLF – Deine Themen. Auf unserer Themenseite kannst du Dir Themenvorschläge von anderen Zuschauern ansehen, diese Bewerten und kommentieren oder einen eigenen Themenvorschlag einsenden.
+						</p>
+					</div>
+					<div class="tile-wrapper topic-tile-wrapper clearfix">
+						<div id="add_topic_tile" class="tile add-topic-tile">
+							<div class="add-topic-tile-cross"></div>
+							<div class="tile-text-layer">
+								<h3 class="tile-title">F&uuml;ge ein neues Thema hinzu!</h3>
+							</div>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+						<div class="tile teaser-tile topic-teaser-tile">
+							<a href="DeinGLF_Themen_Detail.html"  class="tile-link"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+							<div class="tile-text-layer">
+								<p class="text extra-info-text fb-likes-text">
+									xxx Likes
+								</p>
+								<h3 class="tile-title">Themen Titel</h3>
+							</div> </a>
+						</div>
+					</div>
+					<div id="add_topic_overlay" class="add-topic-overlay overlay">
+						<div class="overlay-content add-topic-overlay-content">
+							<div class="overlay-form-content visible">
+								<h3 class="overlay-headline">Thema hinzufügen - Was beschäftigt dich?</h3>
+								<div class="overlay-close-btn">
+									<span class="overlay-close-icon"></span>
+								</div>
+								<form id="add_topic_form" class="overlay-form add-topic-form clearfix" method="post" action="" autocomplete="on">
+									<fieldset class="identification-field left-section">
+										<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+										<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+									</fieldset>
+									<fieldset class="identification-field right-section">
+										<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+										<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
+									</fieldset>
+									<fieldset class="topic-data-field">
+										<textarea placeholder="Dein Thema und deine Idee" class="topic-description req" name="message" required></textarea>
+										<div class="file-upload-field">
+											<div class="file-upload-content">
+												<p class="file-upload-text">
+													Füge ein Bild hinzu
+												</p><span class="file-upload-cross"></span>
+												<p class="file-upload-text-s">
+													vorzugsweise Querformat
+												</p>
+											</div>
+											<input id="file-upload" class="file-upload" type="file" multiple="multiple" name="file-upload" />
+										</div>
+									</fieldset>
+									<fieldset class="check-field">
+										<input id="publishTopic" type="checkbox" name="publishTopic" value="dontPublishTopic" checked>
+										<label for="publishTopic">Ich bin damit einverstanden, dass mein Vorschlag auf der Website veröffentlich wird.</label>
+										<br/>
+										<input id="publishName" type="checkbox" name="publishName" value="dontPublishName">
+										<label for="publishName">Ich möchte nicht, dass mein Name veröffentlich wird.</label>
+									</fieldset>
+
+									<div id="math" class="math-task-wrapper">
+										<p class="math-info">
+											Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+										</p>
+										<p class="math-task">
+											4 + 5 =
+										</p>
+										<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+									</div>
+									<input type="submit" value="Abschicken" class="submit-btn"/>
+								</form>
+							</div>
+							<div class="overlay-form-submitted-content hidden clearfix">
+								<h3 class="overlay-headline">Dein Thema wurde erfolgreich verschickt</h3>
+								<div class="overlay-close-btn">
+									<span class="overlay-close-icon"></span>
+								</div>
+								<p class="text">
+									Danke für deine Nachricht.
+								</p>
+								<p class="text">
+									Die Redaktion prüft deinen Vorschlag und wird ihn dann in die Themengalerie aufnehmen. Du bekommst eine E-Mail sobald dein Thema geprüft wurde.
+								</p>
+								<div class="overlay-form-action-wrapper">
+									<a class="text-link reload-form">mache einen weiteren Themenvorschlag</a>
+									<input type="button" value="zurück zu den Themen" class="submit-btn close-overlay-btn"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pagination-wrapper clearfix">
+						<p class="pagination-btn page-back">
+							.
+						</p>
+						<p class="pagination-btn page-nr">
+							1
+						</p>
+						<p class="pagination-btn page-nr">
+							2
+						</p>
+						<p class="pagination-btn page-nr">
+							3
+						</p>
+						<p class="pagination-dots">
+							. . .
+						</p>
+						<p class="pagination-btn page-nr page-end">
+							20
+						</p>
+						<p class="pagination-btn page-fwd">
+							.
+						</p>
+					</div>
+				</div>
+				<div id="contact_layer" class="contact-overlay overlay">
+					<div class="overlay-content contact-overlay-content">
+						<div class="overlay-form-content visible">
+							<h3 class="overlay-headline">Dein Kontakt zu GLF</h3>
+							<div class="overlay-close-btn">
+								<span class="overlay-close-icon"></span>
+							</div>
+							<p class="text">
+								Du hast eine Frage zu GLF TV? Du möchtest Kritik äußern? Wir haben für Alles und Jeden offene Ohren. Schreibe uns einfach eine Nachricht oder rufe uns direkt an.
+							</p>
+							<form id="contact_form" class="overlay-form contact-form clearfix" method="post" action="" autocomplete="on">
+								<fieldset class="identification-field left-section">
+									<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+									<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+								</fieldset>
+								<fieldset class="identification-field right-section">
+									<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+									<input placeholder="Deine Telefonnummer" class="text-input" type="tel" name="phone">
+								</fieldset>
+								<fieldset class="message-field">
+									<textarea placeholder="Deine Nachricht an GLF" class="contact-message req" name="message" required></textarea>
+								</fieldset>
+								<div id="math" class="math-task-wrapper">
+									<p class="math-info">
+										Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+									</p>
+									<p class="math-task">
+										4 + 5 =
+									</p>
+									<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+								</div>
+								<input type="submit" value="Abschicken" class="submit-btn"/>
+							</form>
+							<div class="contact-data-wrapper clearfix">
+								<p class="text">
+									Wir kümmern uns um dein Anliegen.
+								</p>
+								<div class="contact-section-wrapper contact-left-section-wrapper">
+									<img src="" class="contact-img" alt="Name">
+									<p class="contact-data-headline">
+										Ada Rhode
+									</p>
+									<p class="text contact-data-text">
+										Akademische Mitarbeiterin, Chefredakteurin
+									</p>
+									<a href="tel:07723-920-2560" class="text phone-link mobile-data">07723-920-2560</a><span class="text mobile-data">&nbsp;oder&nbsp;</span>
+									<a href="tel:0179-5117527" class="text phone-link mobile-data">0179-5117527</a>
+									<span class="text contact-data-text desktop-data">07723-920-2560 oder 0179-5117527</span><a href="mailto:rhode@hs-furtwangen.de" class="text contact-data-text mail-link">rhode@hs-furtwangen.de</a>
+								</div>
+								<div class="contact-section-wrapper contact-right-section-wrapper"><img src="" class="contact-img" alt="Name">
+									<p class="contact-data-headline">
+										Prof.
+										Schäfer-Schönthal
+									</p>
+									<p class="text contact-data-text">
+										Leitender Professor
+									</p>
+									<a href="tel:07723-920-2560" class="text phone-link mobile-data">07723-920-2575</a>
+									<span class="text contact-data-text desktop-data">07723-920-2575</span><a href="mailto:schaefer@hs-furtwangen.de" class="text contact-data-text mail-link">schaefer@hs-furtwangen.de</a>
+								</div>
+							</div>
+						</div>
+						<div class="overlay-form-submitted-content hidden clearfix">
+							<h3 class="overlay-headline">Deine Nachricht wurde erfolgreich an GLF verschickt</h3>
+							<div class="overlay-close-btn">
+								<span class="overlay-close-icon"></span>
+							</div>
+							<p class="text">
+								Wir melden uns so schnell wie möglich bei Dir.
+							</p>
+							<p class="text">
+								Sieh dich doch in der Zwischenzeit in der Mediathek um.
+							</p>
+							<div class="overlay-form-action-wrapper">
+								<a href="Mediathek_Beitraege.html" class="text-link">zu den Beiträgen</a>
+								<a href="Mediathek_Sendungen.html" class="text-link">zu den Sendungen</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="footer-content-wrapper">
+					<div class="footer-top-wrapper clearfix">
+						<div class="footer-element startseite-footer-element">
+							<a class="footer-link" href="index.html">Startseite</a>
+							<a class="footer-link" href="Live.html">Live</a>
+						</div>
+						<div class="footer-element mediathek-footer-element">
+							<span class="footer-link-label">Mediathek:</span>
+							<a class="footer-link" href="Mediathek_Sendungen.html">Sendungen</a>
+							<a class="footer-link" href="Mediathek_Beitraege.html">Beiträge</a>
+						</div>
+						<div class="footer-element dein-glf-footer-element">
+							<span class="footer-link-label">Dein GLF:</span>
+							<a class="footer-link" href="DeinGLF_Themen.html">Themen</a>
+							<a class="footer-link" href="DeinGLF_Jobs.html">Jobs</a>
+						</div>
+						<div class="footer-element ueber-glf-footer-element">
+							<span class="footer-link-label">Über GLF:</span>
+							<a class="footer-link" href="UeberGLF_Team.html">Team</a>
+							<a class="footer-link" href="UeberGLF_Info.html">Info</a>
+						</div>
+						<div class="footer-element impressum-footer-element">
+							<a class="footer-link" href="impressum.html">Impressum</a>
+							<a id="show_contact_layer" class="footer-link" href="#contact_layer">Kontakt</a>
+							<a class="footer-link" href="datenschutz.html">Datenschutz</a>
+						</div>
+					</div>
+					<div class="footer-sub-wrapper clearfix">
+						<div class="footer-social-links-wrapper">
+							<span class="footer-social-links-label">GLFtv folgen:</span>
+							<span class="footer-social-links-fb-icon"><a class="footer-social-links-fb" href="https://www.facebook.com/GLFCampusTV" title="GLF Tv auf Facebook folgen"></a></span>
+							<span class="footer-social-links-twitter-icon"><a class="footer-social-links-twitter" href="https://twitter.com/glftv" title="GLF TV auf Twitter folgen"></a></span>
+						</div>
+						<div class="footer-copyright-wrapper">
+							<span class="footer-copyright">&copy;GLFtv Alle Rechte Vorbehalten</span>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
-		</script>
-		<script src="js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
