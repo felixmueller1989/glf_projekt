@@ -122,6 +122,10 @@ a, p, span, h2, h3 {
 	display: none;
 	visibility: hidden;
 }
+.info-comments-wrapper {
+	width: 824px;
+	float: left;
+}
 /*
  *********************** General Styles End
  */
@@ -2034,6 +2038,9 @@ footer {
 	}
 	.tab-btn.active .tab-text {
 		color: #434343;
+	}
+	.info-comments-wrapper {
+		float: none;
 	}
 	.related-tile-wrapper, .info-wrapper, .comments-wrapper, .live-chat-wrapper {
 		max-width: 414px;
