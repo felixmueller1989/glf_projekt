@@ -11,6 +11,8 @@ var mobileNav = false;
 var navDInitialized = false;
 var navMInitialized = false;
 var tabsInitialized = false;
+var filterInitialized = false;
+var filterHeight;
 
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
@@ -170,7 +172,7 @@ $(window).bind('resize', function(e) {
 	window.RT = setTimeout(function() {
 		resizeInfoWrapper();
 		detectWidth();
-	}, 400);
+	}, 300);
 });
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
@@ -190,8 +192,16 @@ function detectWidth() {
 	if (navMInitialized == false || navDInitialized == false) {
 		navFunctions();
 	}
-	if ($(window).width() <= 640 && tabsInitialized == false) {
-		tabsFunction();
+	if ($(window).width() <= 640) {
+		if (tabsInitialized == false) {
+			tabsFunction();
+		}
+		if (filterInitialized == false) {
+			filterToggle();
+		}
+	}
+	if ($(window).width() > 640 && tabsInitialized == true) {
+		removeTabsFunction();
 	}
 }
 
@@ -390,13 +400,21 @@ function searchLayerToggle() {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
-	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
-	if ($(filterWrapperId)) {
-		var filterWrapper = $(filterWrapperId);
+	var filterToggleId = '#filter_' + filterType[1] + '_wrapper';
+	var filterTypeWrapper = $('.filter-type-wrapper');
+	if ($(filterToggleId)) {
+		var filterToggle = $(filterToggleId);
+		var filterMargin = 100;
+		var filterWrapper = $('.filter-wrapper');
 		$('.filter-toggle').addClass('hidden');
-		$(filterWrapper).removeClass('hidden');
+		$(filterToggle).removeClass('hidden');
+		filterHeight = $(filterToggle).height() + $(filterTypeWrapper).height() + filterMargin;
+		//100 px margin bottom
+		$(filterWrapper).animate({
+			height :filterHeight
+		}, 200);
 	}
-	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterTypeWrapper).find('.filter-btn').removeClass('active');
 	$(filterBtn).addClass('active');
 }
 
@@ -487,4 +505,39 @@ function tabsFunction() {
 	});
 }
 
+function removeTabsFunction() {
+	tabsInitialized = false;
+	var tabs = $('.tab-btn');
+	var tabTxt = $(tabs).find('.tab-text');
+	$(tabTxt).each(function() {
+		var refTo = $(this).attr('href');
+		$(refTo).removeClass('hidden');
+	});
+}
+
 /*************Tabs on small Screen Functions End*********/
+/*************Filter Toggle small Screen Functions End*********/
+function filterToggle() {
+	filterInitialized = true;
+	var toggleTo;
+	var filterWrapper = $('.filter-wrapper');
+	var filterToggleBtn = $('.filter-toggle-btn');
+	filterHeight = $(filterWrapper).height();
+	$(filterWrapper).addClass('expanded');
+	$(filterToggleBtn).click(function() {
+		if ($(filterWrapper).hasClass('expanded')) {
+			console.log('expa');
+			toggleTo = '20px';
+		} else if ($(filterWrapper).not('.expanded')) {
+			console.log('not expa');
+			toggleTo = filterHeight;
+		}
+		$(filterWrapper).animate({
+			height : toggleTo
+		}, 200).toggleClass('expanded');
+	});
+
+}
+
+/*************Filter Toggle small Screen Functions End*********/
+
