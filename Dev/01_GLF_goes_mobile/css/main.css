@@ -2037,10 +2037,10 @@ footer {
 		padding: 0;
 		width: 100%;
 	}
-	.tabs-wrapper li:first-child {
+	.tabs-wrapper li:first-of-type {
 		border-right: 1px dashed #7f7f7f;
 	}
-	.tabs-wrapper li:last-child {
+	.tabs-wrapper li:last-of-type {
 		border-left: 1px dashed #7f7f7f;
 	}
 	.tab-btn {
