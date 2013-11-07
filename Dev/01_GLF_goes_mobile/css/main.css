@@ -1984,6 +1984,9 @@ footer {
 	.projekktor {
 		width: 414px !important;
 	}
+/*
+*********************** Tile Styles
+*/
 	.tile-wrapper {
 		margin: 0;
 	}
@@ -2012,6 +2015,9 @@ footer {
 		width: 200px;
 		background-size: cover;
 	}
+/*
+*********************** Tile Styles End
+*/
 	.overlay-content {
 		width: 80%;
 	}
@@ -2021,17 +2027,32 @@ footer {
 	.contact-left-section-wrapper, .contact-right-section-wrapper {
 		min-width: 320px;
 	}
+
+/*
+ *********************** Tab Styles
+*/
 	.tabs-wrapper {
-		margin: 0 3.5px;
+		margin: 7px 3.5px 0 3.5px;
 		padding: 0;
 		width: 100%;
+	}
+	.tabs-wrapper li:first-child {
+		border-right: 1px dashed #7f7f7f;
+	}
+	.tabs-wrapper li:last-child {
+		border-left: 1px dashed #7f7f7f;
 	}
 	.tab-btn {
 		list-style: none;
 		float: left;
 		margin: 0;
-		width: 33.33333333333333%;
+		width: 33.09178743961353%;
+		height: 50px;
 		background: #434343;
+		text-align: center;	
+	}
+	.tab-btn a {
+		margin: auto 0px; 
 	}
 	.tab-text {
 		color: #f9f9f9;
@@ -2042,12 +2063,30 @@ footer {
 	.tab-btn.active .tab-text {
 		color: #434343;
 	}
-	.info-comments-wrapper {
-		float: none;
-	}
 	.related-tile-wrapper, .info-wrapper, .comments-wrapper, .live-chat-wrapper {
 		max-width: 414px;
 	}
+	.info-comments-wrapper {
+		float: none;
+		max-width: 414px;
+		height: auto;
+	}
+	.info-wrapper{
+		margin: 0px 0px 0px 3.5px;
+	}
+	.info-headline{
+		margin: 13px 0 0 0;
+	}
+	.info-so-me-wrapper{
+		margin: 13px 0 0 0;
+	}
+	.info-text{
+		margin: 11px 0 0 0;
+	}
+
+/*
+*********************** Tab Styles End
+*/
 	.filter-wrapper {
 		overflow-y: hidden;
 		width: 100%;
