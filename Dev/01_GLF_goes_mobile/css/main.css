@@ -1995,12 +1995,13 @@ footer {
 		height: auto;
 	}
 	.text-tile {
-		width: 100%;
+		width: 98.30917874396135%;
 		height: auto;
 		padding: 7px 0;
+		margin: 0 3.5px 0 3.5px;
 	}
 	.text-tile div {
-		width: 100%;
+		width: 98.30917874396135%;
 		height: auto;
 		display: block;
 	}
@@ -2049,7 +2050,7 @@ footer {
 		width: 33.09178743961353%;
 		height: 50px;
 		background: #434343;
-		text-align: center;	
+		text-align: center;
 	}
 	.tab-btn a {
 		margin: auto 0px; 
@@ -2065,14 +2066,13 @@ footer {
 	}
 	.related-tile-wrapper, .info-wrapper, .comments-wrapper, .live-chat-wrapper {
 		max-width: 414px;
+		margin: 0 0 20px 0;
 	}
 	.info-comments-wrapper {
 		float: none;
 		max-width: 414px;
 		height: auto;
-	}
-	.info-wrapper{
-		margin: 0px 0px 0px 3.5px;
+		margin: 0 3.5px 20px 3.5px;
 	}
 	.info-headline{
 		margin: 13px 0 0 0;
@@ -2083,7 +2083,9 @@ footer {
 	.info-text{
 		margin: 11px 0 0 0;
 	}
-
+	.comments-wrapper, .live-chat-wrapper{
+		margin:20px 0 0 0;
+	}
 /*
 *********************** Tab Styles End
 */
