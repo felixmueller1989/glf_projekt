@@ -234,7 +234,7 @@ function navFunctions() {
 	}
 	if (mobileNav == true) {
 		navMInitialized = true;
-		var navWidth = '310px';
+		var navWidth = '270px';
 		var menuBtn = $('#nav_menu_btn');
 		//Slide Nav in on click on Menu Button
 		$(menuBtn).click(function() {
@@ -249,7 +249,7 @@ function navFunctions() {
 				});
 				$(mobNav).toggleClass('off');
 			} else {
-				rightVal = '-310px';
+				rightVal = '-270px';
 				$(menuBtn).animate({
 					right : '0px'
 				}, {
