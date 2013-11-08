@@ -2,6 +2,7 @@ html {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 1em; /*16px*/
 	line-height: 1.4;
+	overflow-x: hidden;
 }
 ::-moz-selection {
 	background: #0000ff;
@@ -110,7 +111,6 @@ h3 {
 }
 .page-copy {
 	width: 75%;
-	/*margin:7px 160px 7px 0;*/
 	display: block;
 	font-size: 1em;
 	font-weight: normal;
@@ -334,11 +334,11 @@ nav.nav-main {
 /*Mobile Nav Styles */
 nav.mobile-nav.nav-main {
 	position: absolute;
-	right: -282px;
+	right: -262px;
 	top: 0px;
 	z-index: 100;
 	height: 360px;
-	width: 270px;
+	width: 250px;
 }
 nav.mobile-nav.nav-main.off {
 	display: none;
@@ -364,7 +364,7 @@ nav.mobile-nav.nav-main.off {
 	z-index: 100;
 }
 .mobile-nav .nav-btn-wrapper {
-	width: 270px;
+	width: 250px;
 	background-color: #434343;
 }
 .mobile-nav .nav-header {
@@ -373,7 +373,7 @@ nav.mobile-nav.nav-main.off {
 	overflow: hidden;
 	border-bottom: 1px dashed #7f7f7f;
 	line-height: 40px;
-	width: 240px;
+	width: 220px;
 	padding: 0 0 0 30px;
 }
 .mobile-nav .nav-accordion {
@@ -383,7 +383,7 @@ nav.mobile-nav.nav-main.off {
 	border-bottom: 1px dashed #7f7f7f;
 }
 .mobile-nav .search-btn {
-	width: 270px;
+	width: 250px;
 	height: 68px;
 	position: absolute;
 	top: 0;
@@ -416,7 +416,7 @@ nav.mobile-nav.nav-main.off {
 .mobile-nav .search-btn .subnav {
 	left: 60px;
 	top: 10px;
-	width: 208px;
+	width: 188px;
 }
 .mobile-nav .search-btn .subnav input {
 	margin: 10px 0 0 0;
@@ -439,7 +439,7 @@ nav.mobile-nav.nav-main.off {
 }
 .content {
 	width: 100%;
-	margin: 35px auto 0 auto;
+	margin: 15px auto 0 auto;
 	position: relative;
 	height: auto;
 	position: relative;
@@ -717,7 +717,7 @@ input[type="file"]::-webkit-file-upload-button {
 	float: left;
 }
 .math-info {
-	margin: 1em 0 0 0;
+	margin: 20px 0 10px 0;
 	font-size: 0.8em;
 	color: #E9E9E9;
 }
@@ -849,6 +849,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 .filter-btn:hover .filter-text, .filter-btn:active .filter-text, .filter-btn.active .filter-text {
 	background-color: #70ea46;
+	color: #434343;
 }
 .filter-btn:hover .filter-text.filter-text:after, .filter-btn:active .filter-text.filter-text:after, .filter-btn.active .filter-text.filter-text:after {
 	border-color: rgba(136, 183, 213, 0);
@@ -934,10 +935,6 @@ input[type="file"]::-webkit-file-upload-button {
 .text-tile, .team-tile {
 	cursor: default;
 }
-.img-tile {
-	margin: 3.5px 10px 10px 3.5px;
-	cursor: default;
-}
 .teaser-tile:after {
 	content: " ";
 	height: 100%;
@@ -987,7 +984,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 .tile-subtitle {
 	font-size: 0.8em;
-	margin: 7px 0 0 7px;
+	margin: 0px 0 0 7px;
 	color: #f9f9f9;
 }
 .tile img {
@@ -1018,7 +1015,9 @@ input[type="file"]::-webkit-file-upload-button {
 }
 .teaser-tile:hover .tile-text-layer, .teaser-tile:active .tile-text-layer {
 	background: rgba(112,234,70,0.9);
-	color: #0B0B0B;
+}
+.teaser-tile:hover .tile-title, .teaser-tile:active .tile-title, .teaser-tile:hover .tile-text-layer .extra-info-text, .teaser-tile:active .tile-text-layer .extra-info-text {
+	color: #434343;
 }
 .teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
 	background-color: rgba(0,0,0,0);
@@ -1078,6 +1077,15 @@ input[type="file"]::-webkit-file-upload-button {
 .jobs-info-tile {
 	cursor: pointer;
 }
+.jobs-info-icon {
+	font-size: 8em;
+	margin: 0;
+	text-align: center;
+	font-weight: bold;
+}
+.jobs-info-tile:hover .jobs-info-icon {
+	color: #70EA46;
+}
 /*
  *** Themen Tile Styles
  */
@@ -1122,10 +1130,10 @@ input[type="file"]::-webkit-file-upload-button {
 	width: 100%;
 }
 
-.add-topic-tile .tile-text-layer {
+.cta-tile .tile-text-layer {
 	background-color: rgba(0,0,0,0);
 }
-.add-topic-tile .tile-title {
+.cta-tile .tile-title {
 	color: #9A0758;
 	text-align: center;
 	font-size: 0.9em;
@@ -1147,7 +1155,7 @@ input[type="file"]::-webkit-file-upload-button {
  */
 .description-tile .text {
 	font-size: 0.8em;
-	margin: 10px 0 0 7px;
+	margin: 3.5px 3.5px 0 3.5px;
 }
 .description-tile .tile-title, .description-tile .tile-subtitle {
 	color: #9A0758;
@@ -1310,11 +1318,8 @@ input[type="file"]::-webkit-file-upload-button {
 /*
  * ***********************Impressum page style
  */
-#page_imprint .page-copy-wrapper {
-	margin: 0 0 0 7px;
-}
 .legal-wrapper {
-	margin: 10px 0 22px 7px;
+	margin: 10px 0 22px 3.5px;
 }
 .label-legal-info {
 	font-weight: bold;
@@ -1326,18 +1331,21 @@ input[type="file"]::-webkit-file-upload-button {
 .contact-data-sub-headline {
 	font-size: 1.25em;
 }
-#page_imprint .contact-data-headline {
+.inpage-contact-data-wrapper {
+	margin: 3.5px;
+}
+.inpage-contact-data-wrapper .contact-data-headline {
 	color: #4a4a4a;
 }
-#page_imprint .contact-left-section-wrapper {
+.inpage-contact-data-wrapper .contact-left-section-wrapper {
 	min-width: 414px;
 	float: left;
 }
-#page_imprint .contact-right-section-wrapper {
+.inpage-contact-data-wrapper .contact-right-section-wrapper {
 	min-width: 414px;
 	float: left;
 }
-#page_imprint .contact-data-text {
+.inpage-contact-data-wrapper .contact-data-text {
 	margin-bottom: 5px;
 	font-size: 1em;
 	display: block;
@@ -1995,12 +2003,36 @@ footer {
 	}
 	.content {
 		max-width: 414px;
+		margin: 0 auto;
+	}
+	.back-btn-wrapper {
+		margin: 10px 0 20px 3.5px;
+	}
+	.headline-wrapper {
+		margin: 15px 3.5px 0 3.5px;
+	}
+	.headline {
+		font-size: 1.6em;
+		margin: 15px 3.5px 0px 3.5px;
+	}
+	.page-copy-wrapper {
+		margin: 0px 0 30px 3.5px;
+	}
+	.page-copy {
+		margin: 0;
+	}
+	.subline {
+		margin: 0 0 7px 0;
+		font-size: 0.9em;
 	}
 	.projekktor {
-		width: 414px !important;
+		width: 407px !important;
 	}
-	.overlay {
-		position: absolute;
+	.slider-wrapper {
+		margin: 0;
+	}
+	.tile-subtitle {
+		margin: 0;
 	}
 	/*
 	 *********************** Tile Styles
@@ -2015,8 +2047,6 @@ footer {
 	.text-tile {
 		width: 98.30917874396135%;
 		height: auto;
-		padding: 7px 0;
-		margin: 0 3.5px 0 3.5px;
 	}
 	.text-tile div {
 		width: 98.30917874396135%;
@@ -2033,6 +2063,13 @@ footer {
 	.topic-img {
 		width: 200px;
 		background-size: cover;
+	}
+	.related-tile-wrapper .text-tile {
+		padding: 10px 0;
+	}
+	.related-headline {
+		text-align: left;
+		font-size: 1em;
 	}
 	/*
 	 *********************** Tile Styles End
@@ -2053,7 +2090,6 @@ footer {
 	.tabs-wrapper {
 		margin: 7px 3.5px 0 3.5px;
 		padding: 0;
-		width: 100%;
 	}
 	.tabs-wrapper li:first-of-type {
 		border-right: 1px dashed #7f7f7f;
@@ -2082,18 +2118,23 @@ footer {
 	.tab-btn.active .tab-text {
 		color: #434343;
 	}
-	.related-tile-wrapper, .info-wrapper, .comments-wrapper, .live-chat-wrapper {
-		max-width: 414px;
-		margin: 0 0 20px 0;
+	.info-wrapper, .comments-wrapper, .live-chat-wrapper {
+		max-width: 407px;
+		margin: 0;
 	}
 	.info-comments-wrapper {
 		float: none;
-		max-width: 414px;
+		max-width: 407px;
 		height: auto;
-		margin: 0 3.5px 20px 3.5px;
+		margin: 3.5px 0 0 3.5px;
+	}
+	.related-tile-wrapper {
+		max-width: 414px;
+		margin: 0;
 	}
 	.info-headline {
 		margin: 13px 0 0 0;
+		font-size: 1.3em;
 	}
 	.info-so-me-wrapper {
 		margin: 13px 0 0 0;
@@ -2101,26 +2142,29 @@ footer {
 	.info-text {
 		margin: 11px 0 0 0;
 	}
-	.comments-wrapper, .live-chat-wrapper {
-		margin: 20px 0 0 0;
-	}
+
 	/*
 	 *********************** Tab Styles End
 	 */
+	/*
+	 *********************** Filter Styles
+	 */
 	.filter-wrapper {
 		overflow-y: hidden;
-		width: 100%;
+		width: 407px;
 		float: none;
-		padding: 0 3.5px;
-		margin: 0;
+		padding: 0;
+		margin: 0 3.5px;
+		background: #DDDDDD;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 	.filter-btn {
-		width: 33.33333333333333%;
+		width: 32.76003276003276%;
 		float: left;
+		margin: 1px;
 	}
 	.filter-text {
 		width: 100%;
@@ -2133,10 +2177,11 @@ footer {
 		display: none;
 	}
 	.filter-btn.active .filter-text {
-		color: #7F7F7F;
+		color: #434343;
 	}
 	.filter-toggle-btn {
 		cursor: pointer;
+		padding: 7px 0 7px 3.5px;
 	}
 	.filter-toggle-icon {
 		display: inline-block;
@@ -2152,6 +2197,40 @@ footer {
 		color: #7F7F7F;
 		font-size: 1.1em;
 	}
+	/*
+	 *********************** Filter Styles End
+	 */
+	/*
+	 *********************** Overlay Styles
+	 */
+	input {
+		line-height: 32px;
+	}
+	.left-section, .right-section {
+		width: 100%;
+	}
+	textarea.topic-description {
+		width: 100%;
+	}
+	.file-upload-field {
+		width: 100%;
+		margin: 2px 0 0 0;
+	}
+	.submit-btn {
+		width: 100%;
+	}
+	.overlay-form-action-wrapper .submit-btn {
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 20px 0 0 0;
+	}
+	.contact-left-section-wrapper {
+		min-width: 400px;
+	}
+	/*
+	 *********************** Overlay Styles End
+	 */
 }
 /* 2 Columns Grid - Smartphone 480px----------- */
 @media all and (max-width: 481px) {
@@ -2159,8 +2238,8 @@ footer {
 		max-width: 414px;
 	}
 	.tile {
-		width: 100%;
-		height: 207px;
+		width: 407px;
+		height: 200px;
 	}
 	.tile-text-layer {
 		width: 50%;
@@ -2173,11 +2252,19 @@ footer {
 		padding: 13px 0 0 0;
 	}
 	.tile-title {
-		top: 33px;
+		top: auto;
+		bottom: 10px;
+	}
+	.tile-text-layer .extra-info-text {
+		position: absolute;
+		bottom: 30px;
 	}
 	.tile img {
 		width: 50%;
 		height: 100%;
+	}
+	.some-tile {
+		width: 200px;
 	}
 	.description-tile {
 		height: auto;
@@ -2192,24 +2279,73 @@ footer {
 	.teaser-tile-play-icon {
 		width: 50%;
 	}
+	.cta-tile .tile-title {
+		position: absolute;
+		top: 50%;
+		margin: -40px 0 0 0;
+		font-size: 1.5em;
+	}
 	.topic-img {
-		width: 100%;
+		width: 407px;
 	}
 
 }
 /* 2 Columns Grid - Smartphone 320px----------- */
-@media all and (max-width: 415px) {
+@media all and (max-width: 440px) {
 	.content {
-		max-width: 300px;
+		max-width: 100%;
+	}
+	.about-info-content {
+		max-width: 97.8125%;
+		margin: 3.5px;
 	}
 	.projekktor {
 		width: 300px !important;
 		height: 250px !important;
 	}
-	.related-tile-wrapper, .info-wrapper, .comments-wrapper, .live-chat-wrapper, .info-comments-wrapper {
-		max-width: 300px;
+	.filter-wrapper {
+		width: 97.8125%;
 	}
-
+	.filter-btn {
+		width: 32.60416666666667%;
+		margin: 1.5px 0.46875%;
+	}
+	.filter-cat-wrapper .filter-btn {
+		min-width: 150px;
+	}
+	.info-comments-wrapper {
+		width: 97.8125%;
+	}
+	.related-tile-wrapper, .info-wrapper, .comments-wrapper, .live-chat-wrapper {
+		max-width: 100%;
+	}
+	.tile {
+		width: 97.8125%;
+	}
+	.some-tile {
+		width: 47.8125%;
+	}
+	.fb-tile {
+		margin: 3.5px 1.09375% 3.5px 3.5px;
+	}
+	.tw-tile {
+		margin: 3.5px 3.5px 3.5px 1.09375%;
+	}
+	.topic-img {
+		width: 97.8125%;
+	}
+	.jobs-info-icon-wrapper {
+		width: 50%;
+	}
+	.text-wrapper {
+		margin: 3.5px;
+	}
+	.add-topic-tile-cross {
+		margin: 50px 25px;
+	}
+	.inpage-contact-data-wrapper .contact-left-section-wrapper, .inpage-contact-data-wrapper .contact-right-section-wrapper {
+		min-width: 100%;
+	}
 }
 /* ==========================================================================
  Media Queries End

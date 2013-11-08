@@ -13,6 +13,7 @@ var navMInitialized = false;
 var tabsInitialized = false;
 var filterInitialized = false;
 var filterHeight;
+var tileHeightChanged = false;
 
 $(window).load(function() {
 	$('#teaser_slider').nivoSlider({
@@ -158,6 +159,7 @@ $(document).ready(function() {
 	/*call functions */
 	resizeInfoWrapper();
 	detectWidth();
+
 });
 /*document.ready end */
 
@@ -203,6 +205,12 @@ function detectWidth() {
 	if ($(window).width() > 640 && tabsInitialized == true) {
 		removeTabsFunction();
 	}
+	if ($(window).width() > 440 && tileHeightChanged == true) {
+		$('.tile').removeAttr('style');
+	}
+	if ($(window).width() <= 440) {
+		resizeTiles();
+	}
 }
 
 function navFunctions() {
@@ -234,7 +242,7 @@ function navFunctions() {
 	}
 	if (mobileNav == true) {
 		navMInitialized = true;
-		var navWidth = '270px';
+		var navWidth = '250px';
 		var menuBtn = $('#nav_menu_btn');
 		//Slide Nav in on click on Menu Button
 		$(menuBtn).click(function() {
@@ -249,7 +257,7 @@ function navFunctions() {
 				});
 				$(mobNav).toggleClass('off');
 			} else {
-				rightVal = '-270px';
+				rightVal = '-250px';
 				$(menuBtn).animate({
 					right : '0px'
 				}, {
@@ -411,7 +419,7 @@ function toggleSearchFilters(filterBtn) {
 		filterHeight = $(filterToggle).height() + $(filterTypeWrapper).height() + filterMargin;
 		//100 px margin bottom
 		$(filterWrapper).animate({
-			height :filterHeight
+			height : filterHeight
 		}, 200);
 	}
 	$(filterTypeWrapper).find('.filter-btn').removeClass('active');
@@ -499,6 +507,9 @@ function tabsFunction() {
 			var tabContent = $(tabActive).find('.tab-text').attr('href');
 			tabContentActive = $(tabContent);
 			$(tabContentActive).addClass('active').removeClass('hidden');
+			if ($(window).width() <= 440 && $(tabContentActive).is('.related-tile-wrapper')) {
+				resizeTiles();
+			}
 			//Prevent scrolling on click
 			return false;
 		}
@@ -526,10 +537,8 @@ function filterToggle() {
 	$(filterWrapper).addClass('expanded');
 	$(filterToggleBtn).click(function() {
 		if ($(filterWrapper).hasClass('expanded')) {
-			console.log('expa');
-			toggleTo = '20px';
+			toggleTo = '39px';
 		} else if ($(filterWrapper).not('.expanded')) {
-			console.log('not expa');
 			toggleTo = filterHeight;
 		}
 		$(filterWrapper).animate({
@@ -540,4 +549,14 @@ function filterToggle() {
 }
 
 /*************Filter Toggle small Screen Functions End*********/
+/*************Resize Tile small Screen Functions*********/
+function resizeTiles() {
+	tileHeightChanged = true;
+	var tile = $('.tile.teaser-tile');
+	var tileWdth = $(tile).width();
+	var tileHght = tileWdth / 2;
+	$(tile).css('height', tileHght);
+}
+
+/*************Resize Tile small Screen Functions End*********/
 
