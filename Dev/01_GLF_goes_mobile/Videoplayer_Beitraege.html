@@ -37,84 +37,177 @@
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
-					<nav id="navMain" class="nav-main clearfix">
-						<div id="live_btn" class="nav-btn-wrapper">
-							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
+					<div id="nav_menu_btn" class="nav-menu-btn small-screen-data">
+						<span class="nav-menu-icon"></span>
+					</div>
+					<nav id="navDeskMain" class="nav-main no-active-btn desktop-nav clearfix">
+						<div class="nav-pages-wrapper">
+							<div id="home_btn" class="nav-btn-wrapper small-screen-data">
+								<a href="index.html" id="nav_btn_home" class="nav-header">Startseite</a>
+							</div>
+							<div class="nav-btn-wrapper live-btn">
+								<a href="Live.html" class="nav-header">Live</a>
+							</div>
+							<ul class="nav-accordion">
+								<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper active visited">
+									<h3 class="nav-header nav-accordion-header">Mediathek</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+										</li>
+										<li>
+											<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn visited">Beiträge</a>
+										</li>
+									</ul>
+								</li>
+								<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
+									<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+										</li>
+										<li>
+											<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
+										</li>
+									</ul>
+								</li>
+								<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
+									<h3 class="nav-header nav-accordion-header">Über GLF</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
+										</li>
+										<li>
+											<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</div>
-						<ul id="navAccordion">
-							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper active visited">
-								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<ul class="subnav">
-									<li>
-										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
-									</li>
-									<li>
-										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn visited">Beiträge</a>
-									</li>
-								</ul>
-							</li>
-							<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<ul class="subnav">
-									<li>
-										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
-									</li>
-									<li>
-										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
-									</li>
-								</ul>
-							</li>
-							<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<ul class="subnav">
-									<li>
-										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
-									</li>
-									<li>
-										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
-									</li>
-								</ul>
-							</li>
-							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
-								<div class="search-input-wrapper clearfix">
-									<div class="nav-header nav-accordion-header">
-										<span id="searchIcon" class="search-icon"></span>
-									</div>
-									<div class="subnav">
-										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
-									</div>
+						<div id="nav_btn_search_desk" class="collapsible nav-btn-wrapper search-btn desktop-search-btn">
+							<div class="search-input-wrapper clearfix">
+								<div class="nav-header nav-accordion-header">
+									<span class="search-icon"></span>
 								</div>
-								<ul id="search_results_layer" class="search-results-layer no-results">
-									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
-										<p class="text">
-											Kategorie oder Datum
-										</p>
-										<p class="text search-result-title">
-											Beitrag / Sendung xy
-										</p> </a>
-									</li>
-									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
-										<p class="text">
-											Kategorie oder Datum
-										</p>
-										<p class="text search-result-title">
-											Beitrag / Sendung xy
-										</p> </a>
-									</li>
-									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
-										<p class="text">
-											Kategorie oder Datum
-										</p>
-										<p class="text search-result-title">
-											Beitrag / Sendung xy
-										</p> </a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+								<div class="subnav">
+									<input id="search_input" class="search-input" type="text" placeholder="Mediathek durchsuchen..." />
+								</div>
+							</div>
+							<ul id="search_results_layer" class="search-results-layer no-results">
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+
+					<nav id="navMobileMain" class="nav-main no-active-btn mobile-nav hidden off clearfix">
+						<div class="nav-pages-wrapper">
+							<div id="home_btn" class="nav-btn-wrapper small-screen-data">
+								<a href="index.html" id="nav_btn_home" class="nav-header">Startseite</a>
+							</div>
+							<div class="nav-btn-wrapper live-btn">
+								<a href="Live.html" class="nav-header">Live</a>
+							</div>
+							<ul class="nav-accordion">
+								<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper active visited">
+									<h3 class="nav-header nav-accordion-header">Mediathek</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+										</li>
+										<li>
+											<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn visited">Beiträge</a>
+										</li>
+									</ul>
+								</li>
+								<li id="nav_btn_your" class="collapsible nav-btn-wrapper">
+									<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+										</li>
+										<li>
+											<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn">Jobs</a>
+										</li>
+									</ul>
+								</li>
+								<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
+									<h3 class="nav-header nav-accordion-header">Über GLF</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
+										</li>
+										<li>
+											<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div id="nav_btn_search_mobile" class="nav-btn-wrapper search-btn mobile-search-btn">
+							<div class="search-input-wrapper clearfix">
+								<div class="nav-header nav-accordion-header">
+									<span class="search-icon"></span>
+								</div>
+								<div class="subnav">
+									<input id="search_input" class="search-input" type="text" placeholder="Mediathek durchsuchen..." />
+								</div>
+							</div>
+							<ul id="search_results_layer" class="search-results-layer no-results">
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+							</ul>
+						</div>
 					</nav>
 				</div>
 			</header>
@@ -123,8 +216,8 @@
 					<div class="back-btn-wrapper">
 						<a class="back-btn"><span class="back-btn-arrow"></span><span class="back-btn-text">zurück</span></a>
 					</div>
-					<a class="cat-link">Hochschule &amp; Studium</a>
 					<div class="headline-wrapper">
+						<a class="cat-link">Hochschule &amp; Studium</a>
 						<h1 class="headline detail-page-headline">Beitrag xy</h1>
 					</div>
 					<div class="video-wrapper">
@@ -134,8 +227,19 @@
 							<source src="plugins/video-player/media/intro.ogv" />
 						</video>
 					</div>
-					<div class="info-comments-wrapper">
-						<div class="info-wrapper clearfix">
+					<ul class="tabs-wrapper two-grid-data clearfix">
+						<li class="tab-btn active">
+							<a href="#info_wrapper" class="tab-text">Info</a>
+						</li>
+						<li class="tab-btn">
+							<a href="#comments_wrapper" class="tab-text">Kommentare</a>
+						</li>
+						<li class="tab-btn">
+							<a href="#related_tile_wrapper" class="tab-text">Vorschläge</a>
+						</li>
+					</ul>
+					<div class="info-comments-wrapper clearfix">
+						<div id="info_wrapper" class="info-wrapper clearfix">
 							<div class="info-content">
 								<h2 class="info-headline">Dieser Beitrag geht über zwei zeilen und ich hab einfach kp wohin mit dem scheiß</h2>
 								<div class="info-so-me-wrapper">
@@ -155,9 +259,9 @@
 								</p>
 							</div>
 						</div>
-						<div class="comments-wrapper"></div>
+						<div id="comments_wrapper" class="comments-wrapper"></div>
 					</div>
-					<div class="related-tile-wrapper clearfix">
+					<div id="related_tile_wrapper" class="related-tile-wrapper clearfix">
 						<div class="tile text-tile">
 							<div>
 								<h3 class="text-tile-headline related-headline">Hier findest du verwandte Beiträge, die dich auch interessieren könnten</h3>

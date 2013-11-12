@@ -1,35 +1,27 @@
 /*Define global vars */
 var activeItem;
-var navMain = $('#navMain');
-var navAccordion = $('#navAccordion');
+var navMain = $('.nav-main');
+var deskNav = $('#navDeskMain');
+var mobNav = $('#navMobileMain');
+var navAccordion = $('.nav-accordion');
 var hasActiveBtn = true;
 var expandItem;
 var expandTimeout;
+var mobileNav = false;
+var navDInitialized = false;
+var navMInitialized = false;
+var tabsInitialized = false;
+var filterInitialized = false;
+var filterHeight;
+var tileHeightChanged = false;
 
 $(window).load(function() {
-	$('#teaser_slider').nivoSlider({
-		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
-		animSpeed : 200, // Slide transition speed
-		pauseTime : 35000, // How long each slide will show
-		startSlide : 0, // Set starting Slide (0 index)
-		directionNav : true, // Next & Prev navigation
-		controlNav : true, // 1,2,3... navigation
-		controlNavThumbs : false, // Use thumbnails for Control Nav
-		pauseOnHover : true, // Stop animation while hovering
-		manualAdvance : false, // Force manual transitions
-		prevText : '', // Prev directionNav text
-		nextText : '', // Next directionNav text
-		randomStart : false, // Start on a random slide
-		beforeChange : function() {
-		}, // Triggers before a slide transition
-		afterChange : function() {
-		}, // Triggers after a slide transition
-		slideshowEnd : function() {
-		}, // Triggers after all slides have been shown
-		lastSlide : function() {
-		}, // Triggers when last slide is shown
-		afterLoad : function() {
-		} // Triggers when slider has loaded
+	$('.flexslider').flexslider({
+		animation : "fade",
+		slideshowSpeed : 7000,
+		animationSpeed : 600,
+		prevText : " ",
+		nextText : " ",
 	});
 });
 
@@ -58,30 +50,7 @@ $(document).ready(function() {
 		handles : 2
 	});
 	/*************Video Player Functions End*********/
-	/************ Nav Functions *************/
-	/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
-	$(navMain).find('ul > .collapsible').hover(function() {
-		expandItem = $(this);
-		//Call function if duration of hover state is more than 300ms
-		expandTimeout = setTimeout(accordionToggle, 300);
-	}, stopAnimation);
-	/* Collapse active Item with some timeout on mouseleave*/
-	$(navMain).mouseleave(function() {
-		//if nav item of visited page isn't collapsible, it should be toggled to single width
-		if ($(navMain).hasClass('no-active-btn')) {
-			hasActiveBtn = false;
-		}
-		//Expand nav item of visited page
-		$('.nav-btn-wrapper').each(function(index, elem) {
-			if ($(elem).hasClass('visited')) {
-				expandItem = elem;
-			}
-		});
-		setTimeout(function() {
-			accordionToggle();
-		}, 400);
-	});
-	/************* Nav Functions End ***********/
+
 	/*************Footer Functions *************/
 	$('#show_contact_layer').click(function() {
 		var contactLayer = $('#contact_layer');
@@ -107,11 +76,7 @@ $(document).ready(function() {
 	});
 
 	/************** Only for Testing Functions End*****************/
-	/*************Home Page Functions*********/
-	$('.nivo-control').livequery(function() {
-		$(this).text('');
-	});
-	/*************Home Page Functions End*********/
+
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
@@ -121,44 +86,6 @@ $(document).ready(function() {
 		infoWrapper.css('height', '407px');
 	}
 	/*************Detail Pages Info-Wrapper Functions End*********/
-	/*************Topic Page Functions *****************/
-	/*************Overlay Functions *****************/
-	$("#add_topic_tile").click(function() {
-		var addTopicOverlay = $('#add_topic_overlay');
-		overlayToggle(addTopicOverlay);
-	});
-	/*************Overlay Functions End*****************/
-	/*************Topic Page Functions End*****************/
-	/*************Live Page Functions*****************/
-	/*************Overlay Functions *****************/
-	var pageLive = $('#page_live');
-	var showClipTeaserTiles = $(pageLive).find(".live-rel-teaser-tile");
-	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$(showClipTeaserTiles).each(function() {
-		$(this).click(function() {
-			var topicId = $(this).attr('id');
-			var clipTeaserOverlay = $('#' + topicId + '_overlay');
-			overlayToggle(clipTeaserOverlay);
-		});
-	});
-	/*************Overlay Functions End*****************/
-	/*************Live Page Functions End*****************/
-	/*************Jobs Page Functions*****************/
-	/*************Overlay Functions *****************/
-	$("#show_jobs_info").click(function() {
-		var jobsInfoOverlay = $('#jobs_info_overlay');
-		overlayToggle(jobsInfoOverlay);
-	});
-	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$('.jobs-teaser-tile').each(function() {
-		$(this).click(function() {
-			var jobId = $(this).attr('id');
-			var jobApplyOverlay = $('#' + jobId + '_overlay');
-			overlayToggle(jobApplyOverlay);
-		});
-	});
-	/*************Overlay Functions End*****************/
-	/*************Jobs Page Functions End*****************/
 	/*************Search Page Functions *****************/
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
@@ -172,25 +99,169 @@ $(document).ready(function() {
 	/*************Search Page Functions End*****************/
 	/*call functions */
 	resizeInfoWrapper();
+	detectWidth();
+
 });
 /*document.ready end */
 
 /**************** WINDOW RESIZE *********************/
-$(window).resize(function() {
+$(window).bind('resize', function(e) {
 	/*resize video player*/
 	var contentWdth = $('.content').width();
 	$('.projekktor').css('width', contentWdth + 'px');
-	/*call functions */
-	resizeInfoWrapper();
+	/*Set Timeout to wait for resize End*/
+	if (window.RT)
+		clearTimeout(window.RT);
+	window.RT = setTimeout(function() {
+		resizeInfoWrapper();
+		detectWidth();
+	}, 300);
 });
 /***********************WINDOW RESIZE END ********************/
+function detectWidth() {
+	var initNav = false;
+	var searchBtn = $('.search-btn');
+	$(navMain).removeAttr('style');
+	$('.nav-btn-wrapper').removeAttr('style');
+	if ($(window).width() <= 1035) {
+		$(deskNav).addClass('hidden');
+		$(mobNav).removeClass('hidden');
+		mobileNav = true;
+	} else {
+		$(deskNav).removeClass('hidden');
+		$(mobNav).addClass('hidden');
+		mobileNav = false;
+	}
+	if (navMInitialized == false || navDInitialized == false) {
+		navFunctions();
+	}
+	if ($(window).width() <= 640) {
+		if (tabsInitialized == false) {
+			tabsFunction();
+		}
+		if (filterInitialized == false) {
+			filterToggle();
+		}
+	}
+	if ($(window).width() > 640 && tabsInitialized == true) {
+		removeTabsFunction();
+	}
+	if ($(window).width() > 440 && tileHeightChanged == true) {
+		$('.tile').removeAttr('style');
+	}
+	if ($(window).width() <= 440) {
+		resizeTiles();
+	}
+}
+
+function navFunctions() {
+	var DeskNavBtnWrapper = $(deskNav).find('.nav-btn-wrapper');
+	if (mobileNav == false) {
+		navDInitialized = true;
+		/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
+		$(deskNav).find('.collapsible').hover(function() {
+			expandItem = $(this);
+			//Call function if duration of hover state is more than 300ms
+			expandTimeout = setTimeout(NavDesktopToggle, 300);
+		}, stopAnimation);
+		/* Collapse active Item with some timeout on mouseleave*/
+		$(deskNav).mouseleave(function() {
+			//if nav item of visited page isn't collapsible, it should be toggled to single width
+			if ($(deskNav).hasClass('no-active-btn')) {
+				hasActiveBtn = false;
+			}
+			//Expand nav item of visited page
+			$(DeskNavBtnWrapper).each(function(index, elem) {
+				if ($(elem).hasClass('visited')) {
+					expandItem = elem;
+				}
+			});
+			setTimeout(function() {
+				NavDesktopToggle();
+			}, 400);
+		});
+	}
+	if (mobileNav == true) {
+		navMInitialized = true;
+		var navWidth = '250px';
+		var menuBtn = $('#nav_menu_btn');
+		//Slide Nav in on click on Menu Button
+		$(menuBtn).click(function() {
+			var rightVal = '0px';
+			if ($(mobNav).hasClass('off')) {
+				rightVal = '0px';
+				$(menuBtn).animate({
+					right : navWidth
+				}, {
+					duration : 400,
+					queue : false
+				});
+				$(mobNav).toggleClass('off');
+			} else {
+				rightVal = '-250px';
+				$(menuBtn).animate({
+					right : '0px'
+				}, {
+					duration : 400,
+					queue : false,
+					complete : function() {
+						$(mobNav).toggleClass('off');
+					}
+				});
+			}
+			$(mobNav).animate({
+				right : rightVal
+			}, {
+				duration : 400,
+				queue : false
+			});
+		});
+		$(mobNav).find('.collapsible').click(function() {
+			expandItem = $(this);
+			NavMobileToggle();
+		});
+		searchLayerToggle();
+	}
+}
+
 /*************Nav Accordion Toggle Functions *****************/
+
 /* expand hovered Item and collapse former activeItem */
-function accordionToggle() {
+function NavMobileToggle() {
+	//active Item is the Nav Item which is expanded at the moment the nav clicked
+	activeItem = $(mobNav).find('.collapsible.active');
+	var collapseAll = false;
+	if ($(activeItem).is(expandItem)) {
+		collapseAll = true;
+	}
+	$(activeItem).animate({
+		height : "41px"
+	}, {
+		duration : 300,
+		queue : false
+	});
+	if (collapseAll == false) {
+		$(expandItem).animate({
+			height : "127px"
+		}, {
+			duration : 300,
+			queue : false,
+		});
+	}
+	$(activeItem).removeClass('active');
+	activeItem = expandItem;
+	if (collapseAll == false) {
+		$(activeItem).addClass('active');
+	}
+	collapseAll = false;
+}
+
+/* expand hovered Item and collapse former activeItem */
+function NavDesktopToggle() {
 	//active Item is the Nav Item which is expanded at the moment the nav hovered
-	activeItem = $(navMain).find('ul > .active');
+	activeItem = $(deskNav).find('.collapsible.active');
 	if ($(activeItem).hasClass('search-btn')) {
-		var searchResLayer = $('#search_results_layer');
+		$(activeItem).css('overflow', 'hidden');
 		$(activeItem).animate({
 			width : "72px"
 		}, {
@@ -236,10 +307,17 @@ function stopAnimation() {
 /*************Nav Accordion Toggle Functions End *****************/
 /*************Search Layer Functions *****************/
 function searchLayerToggle() {
-	var searchInput = $('#search_input');
-	var searchResLayer = $('#search_results_layer');
-	var navBtnSearch = $('#nav_btn_search');
-	if ($(navBtnSearch).hasClass('active')) {
+	var activeNav;
+	if (mobileNav == true) {
+		var activeNav = $(mobNav);
+	}
+	if (mobileNav == false) {
+		var activeNav = $(deskNav);
+	}
+	var searchInput = $(activeNav).find('.search-input');
+	var searchResLayer = $(activeNav).find('.search-results-layer');
+	var navBtnSearch = $(activeNav).find('.search-btn');
+	if ($(navBtnSearch).hasClass('active') || mobileNav == true) {
 		$(searchInput).focus();
 		$(searchInput).bind("change paste keyup", function() {
 			if ($(searchInput).val() == '') {
@@ -254,10 +332,12 @@ function searchLayerToggle() {
 		});
 		setTimeout(function() {
 			$(navAccordion).css('overflow', 'visible');
+			$(navBtnSearch).css('overflow', 'visible');
 			$(searchResLayer).removeClass('hidden');
 		}, 300);
 	} else {
 		$(navAccordion).css('overflow', 'hidden');
+		$(navBtnSearch).css('overflow', 'hidden !important');
 		$(searchResLayer).addClass('hidden');
 		$(searchInput).blur();
 	}
@@ -269,62 +349,26 @@ function searchLayerToggle() {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
-	console.log(filterType);
-	var filterWrapperId = '#filter_' + filterType[1] + '_wrapper';
-	if ($(filterWrapperId)) {
-		var filterWrapper = $(filterWrapperId);
+	var filterToggleId = '#filter_' + filterType[1] + '_wrapper';
+	var filterTypeWrapper = $('.filter-type-wrapper');
+	if ($(filterToggleId)) {
+		var filterToggle = $(filterToggleId);
+		var filterMargin = 100;
+		var filterWrapper = $('.filter-wrapper');
 		$('.filter-toggle').addClass('hidden');
-		$(filterWrapper).removeClass('hidden');
+		$(filterToggle).removeClass('hidden');
+		filterHeight = $(filterToggle).height() + $(filterTypeWrapper).height() + filterMargin;
+		//100 px margin bottom
+		$(filterWrapper).animate({
+			height : filterHeight
+		}, 200);
 	}
-	$('.filter-type-wrapper').find('.filter-btn').removeClass('active');
+	$(filterTypeWrapper).find('.filter-btn').removeClass('active');
 	$(filterBtn).addClass('active');
 }
 
 /*************Search Page Functions End*****************/
 
-/***********************overlay functions********************/
-function overlayToggle(overlay) {
-
-	var submitBtn = [];
-	var overlayForm = overlay.find('.overlay-form-content');
-	var overlaySubmitContent = overlay.find('.overlay-form-submitted-content');
-	submitBtn.push(overlay.find('input[type="submit"]'));
-	submitBtn.push(overlay.find('.reload-form'));
-	$(submitBtn).each(function() {
-		$(this).click(function() {
-			$(overlayForm).toggleClass('visible').toggleClass('hidden');
-			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-		});
-	});
-
-	var closeOverlay = [];
-	var overlayContent = overlay.find('.overlay-content');
-	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
-	if (overlayContent.find('.close-overlay-btn')) {
-		var overlayCloseBtn = overlayContent.find('.close-overlay-btn');
-		closeOverlay.push($(overlayCloseBtn));
-	}
-	closeOverlay.push($(overlay));
-	closeOverlay.push($(overlayCloseIcon));
-	$(overlay).fadeIn(300);
-	$(overlay).addClass('active');
-	$('body').css('overflow', 'hidden');
-	$(closeOverlay).each(function() {
-		$(this).click(200, function() {
-			$(overlay).fadeOut(function() {
-				$('body').css('overflow', 'auto');
-				$(overlay).removeClass('active');
-				$(overlayForm).toggleClass('visible').toggleClass('hidden');
-				$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-			});
-		});
-	});
-	$(overlayContent).click(function(event) {
-		event.stopPropagation();
-	});
-}
-
-/***********************overlay functions END ********************/
 /*************Detail Pages Info-Wrapper Functions*********/
 function resizeInfoWrapper() {
 	var infoWrapper = $('.info-wrapper');
@@ -339,3 +383,79 @@ function resizeInfoWrapper() {
 }
 
 /*************Detail Pages Info-Wrapper Functions End*********/
+/*************Tabs on small Screen Functions*********/
+function tabsFunction() {
+	tabsInitialized = true;
+	var tabs = $('.tab-btn');
+	var tabActive = $('.tab-btn.active');
+	var tabTxt = $(tabs).find('.tab-text');
+	$(tabTxt).each(function() {
+		var refTo = $(this).attr('href');
+		$(refTo).addClass('hidden');
+	});
+	var tabContentActive = $(tabActive).find('.tab-text').attr('href');
+	$(tabContentActive).removeClass('hidden').addClass('active');
+	$(tabs).click(function(e) {
+		if ($(this).is(tabActive)) {
+			return;
+		} else {
+			$(tabActive).removeClass('active');
+			$(tabContentActive).removeClass('active').addClass('hidden');
+			tabActive = $(this);
+			$(tabActive).addClass('active');
+			var tabContent = $(tabActive).find('.tab-text').attr('href');
+			tabContentActive = $(tabContent);
+			$(tabContentActive).addClass('active').removeClass('hidden');
+			if ($(window).width() <= 440 && $(tabContentActive).is('.related-tile-wrapper')) {
+				resizeTiles();
+			}
+			//Prevent scrolling on click
+			return false;
+		}
+	});
+}
+
+function removeTabsFunction() {
+	tabsInitialized = false;
+	var tabs = $('.tab-btn');
+	var tabTxt = $(tabs).find('.tab-text');
+	$(tabTxt).each(function() {
+		var refTo = $(this).attr('href');
+		$(refTo).removeClass('hidden');
+	});
+}
+
+/*************Tabs on small Screen Functions End*********/
+/*************Filter Toggle small Screen Functions End*********/
+function filterToggle() {
+	filterInitialized = true;
+	var toggleTo;
+	var filterWrapper = $('.filter-wrapper');
+	var filterToggleBtn = $('.filter-toggle-btn');
+	filterHeight = $(filterWrapper).height();
+	$(filterWrapper).addClass('expanded');
+	$(filterToggleBtn).click(function() {
+		if ($(filterWrapper).hasClass('expanded')) {
+			toggleTo = '39px';
+		} else if ($(filterWrapper).not('.expanded')) {
+			toggleTo = filterHeight;
+		}
+		$(filterWrapper).animate({
+			height : toggleTo
+		}, 200).toggleClass('expanded');
+	});
+
+}
+
+/*************Filter Toggle small Screen Functions End*********/
+/*************Resize Tile small Screen Functions*********/
+function resizeTiles() {
+	tileHeightChanged = true;
+	var tile = $('.tile.teaser-tile');
+	var tileWdth = $(tile).width();
+	var tileHght = tileWdth / 2;
+	$(tile).css('height', tileHght);
+}
+
+/*************Resize Tile small Screen Functions End*********/
+
