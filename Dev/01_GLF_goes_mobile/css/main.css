@@ -1933,35 +1933,24 @@ footer {
 /* ==========================================================================
  Media Queries
  ========================================================================== */
-/* Smartphones ----------- */
-@media only screen and (max-width: 480px) {
-}
-/* 4 Columns Grid ----------- */
-@media all and (max-width: 1156px) {
-	.content-wrapper {
-		width: 100%;
-	}
-	.content {
-		max-width: 828px;
-	}
-	.info-comments-wrapper {
-		width: 621px;
-	}
-	.info-wrapper {
-		width: 612px;
-	}
-	.comments-wrapper, .live-chat-wrapper {
-		width: 614px;
-	}
-	.info-so-me-wrapper {
-		position: relative;
-	}
-}
-@media all and (max-width: 1035px) {
-	.small-screen-data {
-		display: block;
-		visibility: visible;
-	}
+
+	/*
+ *********************** Footer Styles max-width 1035px
+ */
+ .footer-content-wrapper{
+ 	width:828px;
+ }
+ .footer-sub-wrapper{
+ 	padding-left: 20px;
+	padding-right: 50px;
+ }
+ .footer-top-wrapper{
+ 	padding-left: 20px;
+ }
+/*
+ *********************** Footer Styles max-width 1035px End
+ */
+
 }
 /* 3 Columns Grid ----------- */
 @media all and (max-width: 900px) {
@@ -2017,6 +2006,23 @@ footer {
 	.info-wrapper {
 		height: auto !important;
 	}
+		/*
+ *********************** Footer Styles max-width 900px
+ */
+.footer-content-wrapper{
+	width:650px;
+	padding:0 0 0 0;
+}
+.footer-top-wrapper{
+	padding-left: 40px;
+}
+.footer-sub-wrapper{
+	padding-left: 40px;
+	padding-right: 30px;
+}
+	/*
+ *********************** Footer Styles max-width 900px EnD
+ */
 }
 /* 2 Columns Grid - Big Tiles ----------- */
 @media all and (max-width: 640px) {
@@ -2254,7 +2260,87 @@ footer {
 	/*
 	 *********************** Overlay Styles End
 	 */
+	 	 	/*
+ *********************** Footer Styles max-width 640px
+ */
+.footer-content-wrapper{
+	width:512px;
+	padding:0 0 0 0;
 }
+.footer-top-wrapper{
+	
+}
+.footer-sub-wrapper{
+	padding-right:90.4px;
+}
+	/*
+ *********************** Footer Styles max-width 640px EnD
+ */
+}
+
+/* Smartphones ----------- */
+@media only screen and (max-width: 480px) {
+	/*
+ *********************** Footer Styles Smartphones
+ */
+footer{
+	max-width:100%;
+}
+.footer-content-wrapper{
+	width:95%;
+}
+.footer-copyright-wrapper{
+	margin-left: auto;
+	margin-right:auto;
+}
+.footer-element{
+	float:center;
+}
+.footer-social-links-wrapper{
+	float:center;
+}
+.footer-copyright-wrapper{
+	float:center;
+	line-height: 3em;
+}
+.footer-top-wrapper{
+	padding-right: 0;
+	padding-left: 0;
+}
+.footer-sub-wrapper{
+	padding-right: 0;
+	padding-left: 0;
+}
+/*
+ *********************** Footer Styles Smartphones End
+ */
+}
+/* 4 Columns Grid ----------- */
+@media all and (max-width: 1156px) {
+	.content-wrapper {
+		width: 100%;
+	}
+	.content {
+		max-width: 828px;
+	}
+	.info-comments-wrapper {
+		width: 621px;
+	}
+	.info-wrapper {
+		width: 612px;
+	}
+	.comments-wrapper, .live-chat-wrapper {
+		width: 614px;
+	}
+	.info-so-me-wrapper {
+		position: relative;
+	}
+}
+@media all and (max-width: 1035px) {
+	.small-screen-data {
+		display: block;
+		visibility: visible;
+	}
 /* 2 Columns Grid - Smartphone 480px----------- */
 @media all and (max-width: 481px) {
 	.content {
