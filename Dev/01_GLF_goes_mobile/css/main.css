@@ -170,7 +170,6 @@ header {
 	height: 78px;
 }
 nav.nav-main {
-	float: right;
 	text-transform: uppercase;
 }
 .nav-pages-wrapper {
@@ -254,6 +253,7 @@ nav.nav-main {
 }
 .subnav-btn.visited {
 	background-color: #70ea46;
+	color: #4a4a4a;
 }
 .subnav li:first-of-type {
 	-webkit-box-sizing: border-box;
@@ -300,6 +300,9 @@ nav.nav-main {
 	font-size: 1.2em;
 }
 /*Desktop Nav Styles */
+.desktop-nav {
+	float: right;
+}
 .desktop-nav .nav-btn-wrapper.search-btn {
 	width: 72px;
 	height: 78px;

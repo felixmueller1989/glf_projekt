@@ -98,17 +98,18 @@ $(window).bind('resize', function(e) {
 function detectWidth() {
 	var winW = $(window).width();
 	var searchBtn = $('.search-btn');
+	var pageWrapper = $('.page-wrapper');
 	$(navMain).removeAttr('style');
 	$('.nav-btn-wrapper').removeAttr('style');
 	if (winW <= 1035) {
 		$(deskNav).addClass('hidden');
 		$(mobNav).removeClass('hidden');
-		$('.page-wrapper').addClass('mobile');
+		$(pageWrapper).addClass('mobile');
 		mobileNav = true;
 	} else if (winW > 1035) {
 		$(deskNav).removeClass('hidden');
 		$(mobNav).addClass('hidden').removeClass('pushy-open').addClass('pushy-left').removeAttr('style');
-		$('.page-wrapper').removeClass('mobile');
+		$(pageWrapper).removeClass('mobile');
 		$('body').removeClass('pushy-active').removeAttr('style');
 		$('.content-wrapper').removeClass('container-push').removeAttr('style');
 		$('header').removeClass('push-push').removeAttr('style');
