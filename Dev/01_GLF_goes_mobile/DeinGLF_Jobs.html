@@ -14,111 +14,206 @@
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Asap' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="plugins/video-player/theme/maccaco/projekktor.style.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="plugins/nivo-slider/nivo-slider.css" type="text/css" />
+		<link rel="stylesheet" href="plugins/flexslider/flexslider.css" type="text/css" />
 		<link href="plugins/nouislider/jquery.nouislider.min.css" rel="stylesheet">
+		<link href="plugins/css-modal/download/modal.css" rel="stylesheet">
+		<link href="plugins/pushy-master/css/pushy.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script>
 			window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')
 		</script>
-		<script type="text/javascript" src="plugins/livequery.js"></script>
 		<script type="text/javascript" src="plugins/video-player/projekktor-1.2.38r332.min.js"></script>
-		<script src="plugins/nivo-slider/jquery.nivo.slider.pack.js" type="text/javascript"></script>
-		<script src="plugins/nouislider/jquery.nouislider.min.js"></script>
+		<script src="plugins/flexslider/jquery.flexslider-min.js" type="text/javascript"></script>
+		<script src="plugins/nouislider/jquery.nouislider.min.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<div id="page_jobs" class="page-wrapper">
-			<header>
+			<nav id="navMobileMain" class="nav-main no-active-btn mobile-nav pushy pushy-left hidden clearfix">
+				<div class="nav-pages-wrapper">
+					<div id="home_btn" class="nav-btn-wrapper small-screen-data">
+						<a href="index.html" id="nav_btn_home" class="nav-header">Startseite</a>
+					</div>
+					<div class="nav-btn-wrapper live-btn">
+						<a href="Live.html" class="nav-header">Live</a>
+					</div>
+					<ul class="nav-accordion">
+						<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
+							<h3 class="nav-header nav-accordion-header">Mediathek</h3>
+							<ul class="subnav">
+								<li>
+									<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+								</li>
+								<li>
+									<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
+								</li>
+							</ul>
+						</li>
+						<li id="nav_btn_your" class="collapsible nav-btn-wrapper active visited">
+							<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
+							<ul class="subnav">
+								<li>
+									<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+								</li>
+								<li>
+									<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn visited">Jobs</a>
+								</li>
+							</ul>
+						</li>
+						<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
+							<h3 class="nav-header nav-accordion-header">Über GLF</h3>
+							<ul class="subnav">
+								<li>
+									<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
+								</li>
+								<li>
+									<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="nav_btn_search_mobile" class="nav-btn-wrapper search-btn mobile-search-btn">
+					<div class="search-input-wrapper clearfix">
+						<div class="nav-header nav-accordion-header">
+							<span class="search-icon"></span>
+						</div>
+						<div class="subnav">
+							<input id="search_input" class="search-input" type="text" placeholder="Mediathek durchsuchen..." />
+						</div>
+					</div>
+					<ul id="search_results_layer" class="search-results-layer no-results">
+						<li class="search-result">
+							<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+							<p class="text">
+								Kategorie oder Datum
+							</p>
+							<p class="text search-result-title">
+								Beitrag / Sendung xy
+							</p> </a>
+						</li>
+						<li class="search-result">
+							<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+							<p class="text">
+								Kategorie oder Datum
+							</p>
+							<p class="text search-result-title">
+								Beitrag / Sendung xy
+							</p> </a>
+						</li>
+						<li class="search-result">
+							<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+							<p class="text">
+								Kategorie oder Datum
+							</p>
+							<p class="text search-result-title">
+								Beitrag / Sendung xy
+							</p> </a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<header class="push">
 				<div class="header-content clearfix">
 					<div class="nav-home-btn-wrapper">
 						<a href="index.html" class="nav-home-btn"></a>
 					</div>
-					<nav id="navMain" class="nav-main clearfix">
-						<div id="live_btn" class="nav-btn-wrapper">
-							<a href="Live.html" id="nav_btn_live" class="nav-header">Live</a>
+					<div id="nav_menu_btn" class="nav-menu-btn menu-btn small-screen-data">
+						<span class="nav-menu-icon"></span>
+					</div>
+					<nav id="navDeskMain" class="nav-main no-active-btn desktop-nav clearfix">
+						<div class="nav-pages-wrapper">
+							<div id="home_btn" class="nav-btn-wrapper small-screen-data">
+								<a href="index.html" id="nav_btn_home" class="nav-header">Startseite</a>
+							</div>
+							<div class="nav-btn-wrapper live-btn">
+								<a href="Live.html" class="nav-header">Live</a>
+							</div>
+							<ul class="nav-accordion">
+								<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
+									<h3 class="nav-header nav-accordion-header">Mediathek</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
+										</li>
+										<li>
+											<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
+										</li>
+									</ul>
+								</li>
+								<li id="nav_btn_your" class="collapsible nav-btn-wrapper active visited">
+									<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
+										</li>
+										<li>
+											<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn visited">Jobs</a>
+										</li>
+									</ul>
+								</li>
+								<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
+									<h3 class="nav-header nav-accordion-header">Über GLF</h3>
+									<ul class="subnav">
+										<li>
+											<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
+										</li>
+										<li>
+											<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</div>
-						<ul id="navAccordion">
-							<li id="nav_btn_mediathek" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Mediathek</h3>
-								<ul class="subnav">
-									<li>
-										<a id="nav_btn_mediathekS" href="Mediathek_Sendungen.html" class="subnav-btn">Sendungen</a>
-									</li>
-									<li>
-										<a id="nav_btn_mediathekB" href="Mediathek_Beitraege.html" class="subnav-btn">Beiträge</a>
-									</li>
-								</ul>
-							</li>
-							<li id="nav_btn_your" class="collapsible nav-btn-wrapper active visited">
-								<h3 class="nav-header nav-accordion-header">Dein GLF</h3>
-								<ul class="subnav">
-									<li>
-										<a id="nav_btn_themen" href="DeinGLF_Themen.html" class="subnav-btn">Themen</a>
-									</li>
-									<li>
-										<a id="nav_btn_jobs" href="DeinGLF_Jobs.html" class="subnav-btn visited">Jobs</a>
-									</li>
-								</ul>
-							</li>
-							<li id="nav_btn_about" class="collapsible nav-btn-wrapper">
-								<h3 class="nav-header nav-accordion-header">Über GLF</h3>
-								<ul class="subnav">
-									<li>
-										<a id="nav_btn_team" href="UeberGLF_Team.html" class="subnav-btn">Team</a>
-									</li>
-									<li>
-										<a id="nav_btn_infos" href="UeberGLF_Info.html" class="subnav-btn">Infos</a>
-									</li>
-								</ul>
-							</li>
-							<li id="nav_btn_search" class="collapsible nav-btn-wrapper search-btn">
-								<div class="search-input-wrapper clearfix">
-									<div class="nav-header nav-accordion-header">
-										<span id="searchIcon" class="search-icon"></span>
-									</div>
-									<div class="subnav">
-										<input id="search_input" type="text" placeholder="Mediathek durchsuchen..." />
-									</div>
+						<div id="nav_btn_search_desk" class="collapsible nav-btn-wrapper search-btn desktop-search-btn">
+							<div class="search-input-wrapper clearfix">
+								<div class="nav-header nav-accordion-header">
+									<span class="search-icon"></span>
 								</div>
-								<ul id="search_results_layer" class="search-results-layer no-results">
-									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" >
-										<p class="text">
-											Kategorie oder Datum
-										</p>
-										<p class="text search-result-title">
-											Beitrag / Sendung xy
-										</p> </a>
-									</li>
-									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" >
-										<p class="text">
-											Kategorie oder Datum
-										</p>
-										<p class="text search-result-title">
-											Beitrag / Sendung xy
-										</p> </a>
-									</li>
-									<li class="search-result">
-										<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel" >
-										<p class="text">
-											Kategorie oder Datum
-										</p>
-										<p class="text search-result-title">
-											Beitrag / Sendung xy
-										</p> </a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+								<div class="subnav">
+									<input id="search_input" class="search-input" type="text" placeholder="Mediathek durchsuchen..." />
+								</div>
+							</div>
+							<ul id="search_results_layer" class="search-results-layer no-results">
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+								<li class="search-result">
+									<a href="Videoplayer_Beitraege.html" class="clearfix"> <img class="search-result-teaser-img" src="" alt="Suchergebnistitel">
+									<p class="text">
+										Kategorie oder Datum
+									</p>
+									<p class="text search-result-title">
+										Beitrag / Sendung xy
+									</p> </a>
+								</li>
+							</ul>
+						</div>
 					</nav>
 				</div>
 			</header>
-			<div class="content-wrapper">
+			<div class="site-overlay"></div>
+			<div id="container" class="content-wrapper">
 				<div class="content clearfix">
 					<h1 class="headline">Jobs</h1>
 					<div class="page-copy-wrapper">
@@ -127,251 +222,242 @@
 						</p>
 					</div>
 					<div class="tile-wrapper jobs-tile-wrapper clearfix">
-						<div id="show_jobs_info"  class="tile text-tile jobs-info-tile">
-							<div>
-								<h3 class="text-tile-headline related-headline">Infos zu den Jobs bei GLF</h3>
-							</div>
-						</div>
-						<div id="job_titel_001" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-						<div id="job_titel" class="tile teaser-tile jobs-teaser-tile">
-							<img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
-							<div class="tile-text-layer">
-								<h3 class="tile-title">Jobtitel</h3>
-							</div>
-						</div>
-					</div>
-					<div id="jobs_info_overlay" class="jobs-info-overlay overlay">
-						<div class="overlay-content jobs-info-overlay-content">
-							<h3 class="overlay-headline">Infos zu den Jobs bei GLF</h3>
-							<div class="overlay-close-btn">
-								<span class="overlay-close-icon"></span>
-							</div>
-							<p class="text">
-								Wir suchen engagierte und motivierte Mitarbeiter, die gerne im Team arbeiten und wie wir das Ziel haben, GLF Campus TV zu dem Campus Sender der Hochschule Furtwangen zu machen.
-								Wir bieten ein kreatives Arbeitsumfeld, in dem Du selbständig und eigenverantwortlich arbeiten sowie praktische Erfahrungen im Bereich der Medienproduktion sammeln kannst.
-								Wir erwarten Engagement, Teamfähigkeit und Zuverlässigkeit. Praktische Erfahrungen sind wünschenswert aber keine Bedingung. Deine Mitarbeit bei GLF Campus wird mit 6 ECTS auf Note oder Schein entlohnt. Die Wahlpflichtveranstaltung Campus TV / Web TV wird von Prof. Schäfer-Schönthal in der Fakultät Digitale Medien angeboten. Ob die WPV auch in anderen Fakultäten anerkannt wird, könnt Ihr bei Eurer jeweiligen Studiengangsleitung bzw. Eurem Dekanat erfragen.
+						<a href="#jobs_info_overlay" id="show_jobs_info"  class="tile cta-tile jobs-info-tile call-modal">
+						<div class="jobs-info-icon-wrapper">
+							<p class="jobs-info-icon">
+								i
 							</p>
 						</div>
-					</div>
-					<div id="job_titel_001_overlay" class="job-overlay overlay">
-						<div class="overlay-content jobs-overlay-content">
-							<div class="overlay-form-content visible">
-								<img src="" alt="Jobbezeichnung" class="tile img-tile"/>
-								<h3 class="overlay-headline">Job xy</h3>
-								<p class="overlay-subheadline">
-									Was es hier zu tun gibt
-								</p>
-								<div class="overlay-close-btn">
-									<span class="overlay-close-icon"></span>
-								</div>
-								<p class="text">
-									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
-								</p>
-								<form id="job_applic_form" class="overlay-form job-applic-form clearfix" method="post" action="" autocomplete="on">
-									<p class="text form-title">
-										Gleich hier bewerben!
-									</p>
-									<fieldset class="identification-field left-section">
-										<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
-										<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
-									</fieldset>
-									<fieldset class="identification-field right-section">
-										<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
-										<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
-									</fieldset>
-									<fieldset class="job-applic-motiv-field">
-										<textarea placeholder="Deine Motivation" class="job-applic-motiv req" name="message" required></textarea>
-									</fieldset>
-									<div id="math" class="math-task-wrapper">
-										<p class="math-info">
-											Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
-										</p>
-										<p class="math-task">
-											4 + 5 =
-										</p>
-										<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
-									</div>
-									<input type="submit" value="Abschicken" class="submit-btn"/>
-								</form>
-							</div>
-							<div class="overlay-form-submitted-content hidden clearfix">
-								<h3 class="overlay-headline">Du hast dich erfolgreich als Jobtitel beworben</h3>
-								<div class="overlay-close-btn">
-									<span class="overlay-close-icon"></span>
-								</div>
-								<p class="text">
-									Die Redaktion prüft deine Bewerbung und meldet sich so schnell wie möglich bei dir.
-									<div class="overlay-form-action-wrapper">
-								</p>
-								<input type="button" value="zurück zu den Jobs" class="submit-btn close-overlay-btn"/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="contact_layer" class="contact-overlay overlay">
-					<div class="overlay-content contact-overlay-content">
-						<div class="overlay-form-content visible">
-							<h3 class="overlay-headline">Dein Kontakt zu GLF</h3>
-							<div class="overlay-close-btn">
-								<span class="overlay-close-icon"></span>
-							</div>
-							<p class="text">
-								Du hast eine Frage zu GLF TV? Du möchtest Kritik äußern? Wir haben für Alles und Jeden offene Ohren. Schreibe uns einfach eine Nachricht oder rufe uns direkt an.
-							</p>
-							<form id="contact_form" class="overlay-form contact-form clearfix" method="post" action="" autocomplete="on">
-								<fieldset class="identification-field left-section">
-									<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
-									<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
-								</fieldset>
-								<fieldset class="identification-field right-section">
-									<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
-									<input placeholder="Deine Telefonnummer" class="text-input" type="tel" name="phone">
-								</fieldset>
-								<fieldset class="message-field">
-									<textarea placeholder="Deine Nachricht an GLF" class="contact-message req" name="message" required></textarea>
-								</fieldset>
-								<div id="math" class="math-task-wrapper">
-									<p class="math-info">
-										Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
-									</p>
-									<p class="math-task">
-										4 + 5 =
-									</p>
-									<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
-								</div>
-								<input type="submit" value="Abschicken" class="submit-btn"/>
-							</form>
-							<div class="contact-data-wrapper clearfix">
-								<p class="text">
-									Wir kümmern uns um dein Anliegen.
-								</p>
-								<div class="contact-section-wrapper contact-left-section-wrapper">
-									<img src="" class="contact-img" alt="Name">
-									<p class="contact-data-headline">
-										Ada Rhode
-									</p>
-									<p class="text contact-data-text">
-										Akademische Mitarbeiterin, Chefredakteurin
-									</p>
-									<a href="tel:07723-920-2560" class="text phone-link mobile-data">07723-920-2560</a><span class="text mobile-data">&nbsp;oder&nbsp;</span>
-									<a href="tel:0179-5117527" class="text phone-link mobile-data">0179-5117527</a>
-									<span class="text contact-data-text desktop-data">07723-920-2560 oder 0179-5117527</span><a href="mailto:rhode@hs-furtwangen.de" class="text contact-data-text mail-link">rhode@hs-furtwangen.de</a>
-								</div>
-								<div class="contact-section-wrapper contact-right-section-wrapper"><img src="" class="contact-img" alt="Name">
-									<p class="contact-data-headline">
-										Prof.
-										Schäfer-Schönthal
-									</p>
-									<p class="text contact-data-text">
-										Leitender Professor
-									</p>
-									<a href="tel:07723-920-2560" class="text phone-link mobile-data">07723-920-2575</a>
-									<span class="text contact-data-text desktop-data">07723-920-2575</span><a href="mailto:schaefer@hs-furtwangen.de" class="text contact-data-text mail-link">schaefer@hs-furtwangen.de</a>
-								</div>
-							</div>
-						</div>
-						<div class="overlay-form-submitted-content hidden clearfix">
-							<h3 class="overlay-headline">Deine Nachricht wurde erfolgreich an GLF verschickt</h3>
-							<div class="overlay-close-btn">
-								<span class="overlay-close-icon"></span>
-							</div>
-							<p class="text">
-								Wir melden uns so schnell wie möglich bei Dir.
-							</p>
-							<p class="text">
-								Sieh dich doch in der Zwischenzeit in der Mediathek um.
-							</p>
-							<div class="overlay-form-action-wrapper">
-								<a href="Mediathek_Beitraege.html" class="text-link">zu den Beiträgen</a>
-								<a href="Mediathek_Sendungen.html" class="text-link">zu den Sendungen</a>
-							</div>
-						</div>
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Infos zu den Jobs bei GLF</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
+						<a href="#job_titel_overlay" class="tile teaser-tile jobs-teaser-tile call-modal"> <img src="img/video_teaser/1.jpg" class="teaser-tile-img" alt="teasertiletitle" />
+						<div class="tile-text-layer">
+							<h3 class="tile-title">Jobtitel</h3>
+						</div> </a>
 					</div>
 				</div>
 			</div>
-		</div>
-		<footer>
-			<div class="footer-content-wrapper">
-				<div class="footer-top-wrapper clearfix">
-					<div class="footer-element startseite-footer-element">
-						<a class="footer-link" href="index.html">Startseite</a>
-						<a class="footer-link" href="Live.html">Live</a>
-					</div>
-					<div class="footer-element mediathek-footer-element">
-						<span class="footer-link-label">Mediathek:</span>
-						<a class="footer-link" href="Mediathek_Sendungen.html">Sendungen</a>
-						<a class="footer-link" href="Mediathek_Beitraege.html">Beiträge</a>
-					</div>
-					<div class="footer-element dein-glf-footer-element">
-						<span class="footer-link-label">Dein GLF:</span>
-						<a class="footer-link" href="DeinGLF_Themen.html">Themen</a>
-						<a class="footer-link" href="DeinGLF_Jobs.html">Jobs</a>
-					</div>
-					<div class="footer-element ueber-glf-footer-element">
-						<span class="footer-link-label">Über GLF:</span>
-						<a class="footer-link" href="UeberGLF_Team.html">Team</a>
-						<a class="footer-link" href="UeberGLF_Info.html">Info</a>
-					</div>
-					<div class="footer-element impressum-footer-element">
-						<a class="footer-link" href="impressum.html">Impressum</a>
-						<a id="show_contact_layer" class="footer-link" href="#contact_layer">Kontakt</a>
-						<a class="footer-link" href="datenschutz.html">Datenschutz</a>
+			<section id="jobs_info_overlay" class="jobs-info-overlay overlay semantic-content" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="overlay-content jobs-info-overlay-content modal-inner">
+					<div class="modal-content">
+						<h3 class="overlay-headline">Infos zu den Jobs bei GLF</h3>
+						<div class="overlay-close-btn">
+							<a href="#!" class="modal-close overlay-close-icon" title="Close this modal" data-close="Close" data-dismiss="modal"></a>
+						</div>
+						<p class="text">
+							Wir suchen engagierte und motivierte Mitarbeiter, die gerne im Team arbeiten und wie wir das Ziel haben, GLF Campus TV zu dem Campus Sender der Hochschule Furtwangen zu machen.
+							Wir bieten ein kreatives Arbeitsumfeld, in dem Du selbständig und eigenverantwortlich arbeiten sowie praktische Erfahrungen im Bereich der Medienproduktion sammeln kannst.
+							Wir erwarten Engagement, Teamfähigkeit und Zuverlässigkeit. Praktische Erfahrungen sind wünschenswert aber keine Bedingung. Deine Mitarbeit bei GLF Campus wird mit 6 ECTS auf Note oder Schein entlohnt. Die Wahlpflichtveranstaltung Campus TV / Web TV wird von Prof. Schäfer-Schönthal in der Fakultät Digitale Medien angeboten. Ob die WPV auch in anderen Fakultäten anerkannt wird, könnt Ihr bei Eurer jeweiligen Studiengangsleitung bzw. Eurem Dekanat erfragen.
+						</p>
 					</div>
 				</div>
-				<div class="footer-sub-wrapper clearfix">
-					<div class="footer-social-links-wrapper">
-						<span class="footer-social-links-label">GLFtv folgen:</span>
-						<span class="footer-social-links-fb-icon"><a class="footer-social-links-fb" href="https://www.facebook.com/GLFCampusTV" title="GLF Tv auf Facebook folgen"></a></span>
-						<span class="footer-social-links-twitter-icon"><a class="footer-social-links-twitter" href="https://twitter.com/glftv" title="GLF TV auf Twitter folgen"></a></span>
+			</section>
+			<section id="job_titel_overlay" class="job-overlay overlay semantic-content" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="overlay-content jobs-overlay-content  modal-inner">
+					<div class="overlay-form-content modal-content visible">
+						<h3 class="overlay-headline">Job xy</h3>
+						<p class="overlay-subheadline">
+							Was es hier zu tun gibt
+						</p>
+						<div class="overlay-close-btn">
+							<a href="#!" class="modal-close overlay-close-icon" title="Close this modal" data-close="Close" data-dismiss="modal"></a>
+						</div>
+						<p class="text">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
+						</p>
+						<form id="job_applic_form" class="overlay-form job-applic-form clearfix" method="post" action="" autocomplete="on">
+							<p class="text form-title">
+								Gleich hier bewerben!
+							</p>
+							<fieldset class="identification-field left-section">
+								<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+								<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+							</fieldset>
+							<fieldset class="identification-field right-section">
+								<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+								<input placeholder="Dein Studiengang" class="text-input req-text-input req" type="text" name="studies" required>
+							</fieldset>
+							<fieldset class="job-applic-motiv-field">
+								<textarea placeholder="Deine Motivation" class="job-applic-motiv req" name="message" required></textarea>
+							</fieldset>
+							<div id="math" class="math-task-wrapper">
+								<p class="math-info">
+									Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+								</p>
+								<p class="math-task">
+									4 + 5 =
+								</p>
+								<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+							</div>
+							<input type="submit" value="Abschicken" class="submit-btn"/>
+						</form>
 					</div>
-					<div class="footer-copyright-wrapper">
-						<span class="footer-copyright">&copy;GLFtv Alle Rechte Vorbehalten</span>
+					<div class="overlay-form-submitted-content modal-inner hidden clearfix">
+						<h3 class="overlay-headline">Du hast dich erfolgreich als Jobtitel beworben</h3>
+						<div class="overlay-close-btn">
+							<a href="#!" class="modal-close overlay-close-icon" title="Close this modal" data-close="Close" data-dismiss="modal"></a>
+						</div>
+						<p class="text">
+							Die Redaktion prüft deine Bewerbung und meldet sich so schnell wie möglich bei dir.
+						</p>
+						<div class="overlay-form-action-wrapper">
+							<input type="button" value="zurück zu den Jobs" class="submit-btn close-overlay-btn"/>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
+			</section>
+			<section id="contact_layer" class="contact-overlay overlay semantic-content" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="overlay-content contact-overlay-content modal-inner">
+					<div class="overlay-form-content modal-content visible">
+						<h3 class="overlay-headline">Dein Kontakt zu GLF</h3>
+						<div class="overlay-close-btn">
+							<a href="#!" class="modal-close overlay-close-icon" title="Close this modal" data-close="Close" data-dismiss="modal"></a>
+						</div>
+						<p class="text">
+							Du hast eine Frage zu GLF TV? Du möchtest Kritik äußern? Wir haben für Alles und Jeden offene Ohren. Schreibe uns einfach eine Nachricht oder rufe uns direkt an.
+						</p>
+						<form id="contact_form" class="overlay-form contact-form clearfix" method="post" action="" autocomplete="on">
+							<fieldset class="identification-field left-section">
+								<input placeholder="Dein Name" class="text-input req-text-input req" type="text" name="lastname" required autofocus="">
+								<input placeholder="Dein Vorname" class="text-input req-text-input req" type="text" name="firstname" required>
+							</fieldset>
+							<fieldset class="identification-field right-section">
+								<input placeholder="Deine Emailadresse" class="text-input req-text-input req email-input" type="email" name="email" required>
+								<input placeholder="Deine Telefonnummer" class="text-input" type="tel" name="phone">
+							</fieldset>
+							<fieldset class="message-field">
+								<textarea placeholder="Deine Nachricht an GLF" class="contact-message req" name="message" required></textarea>
+							</fieldset>
+							<div id="math" class="math-task-wrapper">
+								<p class="math-info">
+									Damit wir wissen, dass du keine Maschine bist, löse bitte folgende Aufgabe:
+								</p>
+								<p class="math-task">
+									4 + 5 =
+								</p>
+								<input id="mathInput" class="math-input" type="text" maxlength="2" size="2" onkeypress="if(event.keyCode&lt;43||event.keyCode&gt;57 ||(event.keyCode&gt;42 &amp;&amp; event.keyCode&lt;48)) event.returnValue=false;">
+							</div>
+							<input type="submit" value="Abschicken" class="submit-btn"/>
+						</form>
+						<div class="contact-data-wrapper clearfix">
+							<p class="text">
+								Wir kümmern uns um dein Anliegen.
+							</p>
+							<div class="contact-section-wrapper contact-left-section-wrapper">
+								<img src="" class="contact-img" alt="Name">
+								<p class="contact-data-headline">
+									Ada Rhode
+								</p>
+								<p class="text contact-data-text">
+									Akademische Mitarbeiterin, Chefredakteurin
+								</p>
+								<a href="tel:07723-920-2560" class="text phone-link mobile-data">07723-920-2560</a><span class="text mobile-data">&nbsp;oder&nbsp;</span>
+								<a href="tel:0179-5117527" class="text phone-link mobile-data">0179-5117527</a>
+								<span class="text contact-data-text desktop-data">07723-920-2560 oder 0179-5117527</span><a href="mailto:rhode@hs-furtwangen.de" class="text contact-data-text mail-link">rhode@hs-furtwangen.de</a>
+							</div>
+							<div class="contact-section-wrapper contact-right-section-wrapper"><img src="" class="contact-img" alt="Name">
+								<p class="contact-data-headline">
+									Prof.
+									Schäfer-Schönthal
+								</p>
+								<p class="text contact-data-text">
+									Leitender Professor
+								</p>
+								<a href="tel:07723-920-2560" class="text phone-link mobile-data">07723-920-2575</a>
+								<span class="text contact-data-text desktop-data">07723-920-2575</span><a href="mailto:schaefer@hs-furtwangen.de" class="text contact-data-text mail-link">schaefer@hs-furtwangen.de</a>
+							</div>
+						</div>
+					</div>
+					<div class="overlay-form-submitted-content modal-content hidden clearfix">
+						<h3 class="overlay-headline">Deine Nachricht wurde erfolgreich an GLF verschickt</h3>
+						<div class="overlay-close-btn">
+							<span class="overlay-close-icon"></span>
+						</div>
+						<p class="text">
+							Wir melden uns so schnell wie möglich bei Dir.
+						</p>
+						<p class="text">
+							Sieh dich doch in der Zwischenzeit in der Mediathek um.
+						</p>
+						<div class="overlay-form-action-wrapper">
+							<a href="Mediathek_Beitraege.html" class="text-link">zu den Beiträgen</a>
+							<a href="Mediathek_Sendungen.html" class="text-link">zu den Sendungen</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer>
+				<div class="footer-content-wrapper">
+					<div class="footer-top-wrapper clearfix">
+						<div class="footer-element startseite-footer-element">
+							<a class="footer-link" href="index.html">Startseite</a>
+							<a class="footer-link" href="Live.html">Live</a>
+						</div>
+						<div class="footer-element mediathek-footer-element">
+							<span class="footer-link-label">Mediathek:</span>
+							<a class="footer-link" href="Mediathek_Sendungen.html">Sendungen</a>
+							<a class="footer-link" href="Mediathek_Beitraege.html">Beiträge</a>
+						</div>
+						<div class="footer-element dein-glf-footer-element">
+							<span class="footer-link-label">Dein GLF:</span>
+							<a class="footer-link" href="DeinGLF_Themen.html">Themen</a>
+							<a class="footer-link" href="DeinGLF_Jobs.html">Jobs</a>
+						</div>
+						<div class="footer-element ueber-glf-footer-element">
+							<span class="footer-link-label">Über GLF:</span>
+							<a class="footer-link" href="UeberGLF_Team.html">Team</a>
+							<a class="footer-link" href="UeberGLF_Info.html">Info</a>
+						</div>
+						<div class="footer-element impressum-footer-element">
+							<a class="footer-link" href="impressum.html">Impressum</a>
+							<a  href="#contact_layer" id="show_contact_layer" class="footer-link call-modal">Kontakt</a>
+							<a class="footer-link" href="datenschutz.html">Datenschutz</a>
+						</div>
+					</div>
+					<div class="footer-sub-wrapper clearfix">
+						<div class="footer-social-links-wrapper">
+							<span class="footer-social-links-label">GLFtv folgen:</span>
+							<span class="footer-social-links-fb-icon"><a class="footer-social-links-fb" href="https://www.facebook.com/GLFCampusTV" title="GLF Tv auf Facebook folgen"></a></span>
+							<span class="footer-social-links-twitter-icon"><a class="footer-social-links-twitter" href="https://twitter.com/glftv" title="GLF TV auf Twitter folgen"></a></span>
+						</div>
+						<div class="footer-copyright-wrapper">
+							<span class="footer-copyright">&copy;GLFtv Alle Rechte Vorbehalten</span>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
+		<script src="plugins/pushy-master/js/pushy.min.js" type="text/javascript"></script>
+		<script src="plugins/css-modal/download/modal.js" type="text/javascript"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

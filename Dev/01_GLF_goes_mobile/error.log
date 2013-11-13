@@ -1,0 +1,489 @@
+[Mon Oct 21 16:02:25 2013] [error] [client 141.28.135.200] File does not exist: /var/www/mobile.glftv.de/video-js, referer: http://www.glftv.de:8080/Live.html
+[Mon Oct 21 16:02:25 2013] [error] [client 141.28.135.200] File does not exist: /var/www/mobile.glftv.de/video-js, referer: http://www.glftv.de:8080/Live.html
+[Tue Oct 22 04:25:53 2013] [error] [client 61.147.103.134] File does not exist: /var/www/mobile.glftv.de/manager
+[Tue Oct 22 08:26:40 2013] [error] [client 222.186.31.226] File does not exist: /var/www/mobile.glftv.de/manager
+[Tue Oct 22 08:45:09 2013] [error] [client 222.186.31.226] File does not exist: /var/www/mobile.glftv.de/manager
+[Tue Oct 22 10:03:31 2013] [error] [client 93.174.93.67] request failed: error reading the headers
+[Tue Oct 22 13:17:49 2013] [error] [client 89.248.172.53] File does not exist: /var/www/mobile.glftv.de/invoker
+[Tue Oct 22 18:50:12 2013] [error] [client 198.13.110.101] File does not exist: /var/www/mobile.glftv.de/manager
+[Wed Oct 23 13:41:09 2013] [error] [client 89.248.172.53] File does not exist: /var/www/mobile.glftv.de/web-console
+[Wed Oct 23 17:05:34 2013] [error] [client 61.161.164.77] File does not exist: /var/www/mobile.glftv.de/manager
+[Thu Oct 24 15:26:08 2013] [error] [client 203.91.121.77] File does not exist: /var/www/mobile.glftv.de/redhat.test0:)
+[Thu Oct 24 15:26:08 2013] [error] [client 203.91.121.77] File does not exist: /var/www/mobile.glftv.de/jmx-console
+[Thu Oct 24 15:26:09 2013] [error] [client 203.91.121.77] File does not exist: /var/www/mobile.glftv.de/jmx-console
+[Thu Oct 24 21:42:53 2013] [error] [client 218.22.57.157] File does not exist: /var/www/mobile.glftv.de/intl
+[Fri Oct 25 15:16:41 2013] [error] [client 171.221.106.39] File does not exist: /var/www/mobile.glftv.de/intl
+[Fri Oct 25 15:23:44 2013] [error] [client 58.215.43.234] File does not exist: /var/www/mobile.glftv.de/intl
+[Sat Oct 26 01:02:48 2013] [error] [client 111.42.0.249] File does not exist: /var/www/mobile.glftv.de/manager
+[Sat Oct 26 08:53:19 2013] [error] [client 111.73.45.118] File does not exist: /var/www/mobile.glftv.de/proxy.txt
+[Sat Oct 26 12:25:12 2013] [error] [client 141.28.133.186] File does not exist: /var/www/mobile.glftv.de/img/video_teaser/kameramann.jpg, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Sat Oct 26 12:27:06 2013] [error] [client 141.28.133.186] File does not exist: /var/www/mobile.glftv.de/img/video_teaser/kameramann.jpg, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Sat Oct 26 13:10:26 2013] [error] [client 141.28.133.186] File does not exist: /var/www/mobile.glftv.de/img/video_teaser/kameramann.jpg, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Sat Oct 26 16:38:59 2013] [error] [client 141.28.132.101] File does not exist: /var/www/mobile.glftv.de/img/video_teaser/kameramann.jpg, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Sun Oct 27 11:58:06 2013] [error] [client 111.42.0.249] File does not exist: /var/www/mobile.glftv.de/manager
+[Mon Oct 28 03:12:43 2013] [error] [client 37.59.73.93] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /w00tw00t.at.ISC.SANS.DFind:)
+[Mon Oct 28 15:40:01 2013] [error] [client 112.13.232.96] File does not exist: /var/www/mobile.glftv.de/science
+[Tue Oct 29 10:14:04 2013] [error] [client 187.58.65.187] File does not exist: /var/www/mobile.glftv.de/manager
+[Tue Oct 29 12:49:28 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/nivo-slider, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:28 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:29 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/img/video_teaser, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:29 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/nivo-slider, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:29 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/img/video_teaser, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:29 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/img/video_teaser, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/video-player, referer: http://www.glftv.de:8080/DeinGLF_Themen_Detail.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/nivo-slider, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/js, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/video-player, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/js, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/js, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:49:44 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/nivo-slider, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 12:50:37 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 13:14:05 2013] [error] [client 61.161.164.77] File does not exist: /var/www/mobile.glftv.de/manager
+[Tue Oct 29 13:17:06 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 13:31:33 2013] [error] [client 92.230.130.118] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 13:37:08 2013] [error] [client 134.3.192.95] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 13:37:44 2013] [error] [client 141.28.132.78] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 13:38:40 2013] [error] [client 134.3.192.95] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 13:38:42 2013] [error] [client 141.28.132.78] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 13:46:03 2013] [error] [client 134.3.192.95] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 14:12:06 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/UeberGLF_Info.html, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Oct 29 14:28:00 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/impressum.html
+[Tue Oct 29 14:28:00 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/impressum.html
+[Tue Oct 29 14:29:12 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 14:34:32 2013] [error] [client 141.28.123.79] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 14:44:24 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 14:44:52 2013] [error] [client 141.28.123.79] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 14:44:57 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 14:45:54 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 15:12:14 2013] [error] [client 141.28.132.78] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 15:13:07 2013] [error] [client 141.28.135.189] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 15:13:27 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 15:54:34 2013] [error] [client 141.28.132.78] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 16:57:50 2013] [error] [client 141.28.135.10] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 17:01:54 2013] [error] [client 141.28.135.10] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 17:22:22 2013] [error] [client 141.28.134.150] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 17:39:59 2013] [error] [client 141.28.135.10] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 17:40:31 2013] [error] [client 141.28.135.10] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/index.html
+[Tue Oct 29 20:00:16 2013] [error] [client 141.28.128.39] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Tue Oct 29 23:40:21 2013] [error] [client 91.226.212.41] script '/var/www/mobile.glftv.de/remote.php' not found or unable to stat
+[Wed Oct 30 12:03:15 2013] [error] [client 91.226.212.41] script '/var/www/mobile.glftv.de/remote.php' not found or unable to stat
+[Thu Oct 31 10:04:25 2013] [error] [client 134.3.192.95] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Thu Oct 31 10:13:35 2013] [error] [client 91.89.187.25] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Thu Oct 31 10:32:15 2013] [error] [client 91.89.187.25] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Thu Oct 31 10:32:18 2013] [error] [client 91.89.187.25] File does not exist: /var/www/mobile.glftv.de/UeberGLF_Info.html, referer: http://www.glftv.de:8080/
+[Thu Oct 31 10:32:26 2013] [error] [client 91.89.187.25] File does not exist: /var/www/mobile.glftv.de/UeberGLF_Suchergebnisseite.html
+[Thu Oct 31 11:03:20 2013] [error] [client 134.3.192.95] File does not exist: /var/www/mobile.glftv.de/UeberGLF_Info.html, referer: http://www.glftv.de:8080/
+[Thu Oct 31 11:03:22 2013] [error] [client 134.3.192.95] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Thu Oct 31 11:16:10 2013] [error] [client 141.28.134.156] File does not exist: /var/www/mobile.glftv.de/css/tile_styles.css, referer: http://www.glftv.de:8080/
+[Thu Oct 31 11:17:48 2013] [error] [client 141.28.134.156] File does not exist: /var/www/mobile.glftv.de/UeberGLF_Info.html, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Thu Oct 31 17:15:47 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 17:15:47 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 17:16:01 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 17:16:01 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 17:16:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:16:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:16:10 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:16:10 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:23:34 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:23:34 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:23:39 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:23:39 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:23:42 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:42 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:48 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer_Hover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:48 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer_Hover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer_Hover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:51 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:51 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:23:55 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:23:55 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:25:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:25:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:26:37 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:26:37 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:27:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:09 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Landingpage_01.html
+[Thu Oct 31 17:27:09 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Landingpage_01.html
+[Thu Oct 31 17:27:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:15 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Landingpage_01.html
+[Thu Oct 31 17:27:15 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Landingpage_01.html
+[Thu Oct 31 17:27:16 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:16 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:17 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:27:17 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:27:19 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:19 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 17:27:24 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:27:24 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Thu Oct 31 17:28:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:28:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:28:42 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:28:42 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:28:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Sendungen.html
+[Thu Oct 31 17:28:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Sendungen.html
+[Thu Oct 31 17:28:59 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/Dein_GLF_Themen
+[Thu Oct 31 17:29:03 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/Dein_GLF_Themen.html
+[Thu Oct 31 17:29:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:29:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:29:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen_Detail.html
+[Thu Oct 31 17:29:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen_Detail.html
+[Thu Oct 31 17:29:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:29:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:29:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Thu Oct 31 17:29:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Thu Oct 31 17:29:58 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:29:58 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:30:00 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:30:00 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:30:02 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Thu Oct 31 17:30:02 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Thu Oct 31 17:30:05 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Thu Oct 31 17:30:05 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Thu Oct 31 17:30:06 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Thu Oct 31 17:30:06 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Thu Oct 31 17:30:10 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Thu Oct 31 17:30:10 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Thu Oct 31 17:30:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Thu Oct 31 17:30:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Thu Oct 31 17:30:16 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:16 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:23 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/datenschutz.html, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:25 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:25 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:27 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:27 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:30 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:30:30 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 17:30:33 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:30:33 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/impressum.html
+[Thu Oct 31 17:34:06 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:06 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:14 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:14 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:20 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:20 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:22 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:34:22 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:02 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/datenschutz.html, referer: http://glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:37:05 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:05 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:14 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:14 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:19 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:19 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:28 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:37:28 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:38:22 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:38:22 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 17:38:43 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:38:43 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:38:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/Live.html
+[Thu Oct 31 17:38:46 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/Live.html
+[Thu Oct 31 17:38:53 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:38:53 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:40:17 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:40:17 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 17:40:24 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:40:24 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 17:40:33 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:40:33 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:40:45 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 17:40:45 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://glftv.de:8080/css/main.css
+[Thu Oct 31 18:03:07 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/live.html
+[Thu Oct 31 18:11:53 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/live.html
+[Thu Oct 31 18:11:58 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/live.html
+[Thu Oct 31 18:12:12 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 18:12:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 18:12:15 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 18:12:15 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 18:35:57 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:35:57 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:36:09 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 18:36:09 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Oct 31 18:36:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 18:36:13 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Thu Oct 31 18:36:15 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 18:36:15 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Thu Oct 31 18:36:20 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen_Detail.html
+[Thu Oct 31 18:36:20 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen_Detail.html
+[Thu Oct 31 18:36:29 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 18:36:29 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Oct 31 18:36:42 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:36:42 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:02 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:02 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:09 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:09 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:14 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:14 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:39 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:39 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:39:50 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Oct 31 18:40:40 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:40:40 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:40:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:40:49 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:40:55 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:40:55 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:03 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:03 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:08 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:08 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:12 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:12 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:16 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:16 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:26 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:26 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:29 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:29 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:33 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Oct 31 18:41:33 2013] [error] [client 78.51.161.162] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Fri Nov 01 07:48:21 2013] [error] [client 91.226.212.41] script '/var/www/mobile.glftv.de/remote.php' not found or unable to stat
+[Fri Nov 01 08:44:40 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/zmeu
+[Fri Nov 01 08:44:40 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/iddqd
+[Fri Nov 01 08:44:40 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/iesvc
+[Fri Nov 01 08:44:40 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/wstats
+[Fri Nov 01 08:44:40 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/zecmd
+[Fri Nov 01 08:44:41 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/idsvc
+[Fri Nov 01 08:44:41 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/wincfg
+[Fri Nov 01 08:44:41 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/srl
+[Fri Nov 01 08:44:41 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/andal
+[Fri Nov 01 08:44:41 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/randy
+[Fri Nov 01 08:44:42 2013] [error] [client 95.253.16.189] File does not exist: /var/www/mobile.glftv.de/sPBWmvCl
+[Fri Nov 01 14:45:53 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Fri Nov 01 14:45:53 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Fri Nov 01 14:46:20 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Fri Nov 01 14:46:20 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Fri Nov 01 14:46:30 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Fri Nov 01 14:46:30 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Fri Nov 01 14:46:34 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Fri Nov 01 14:46:34 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Fri Nov 01 14:46:37 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Fri Nov 01 14:46:37 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Fri Nov 01 14:46:39 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Fri Nov 01 14:46:39 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Fri Nov 01 14:46:49 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Fri Nov 01 14:46:49 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Fri Nov 01 14:47:02 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Fri Nov 01 14:47:02 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Fri Nov 01 14:47:04 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Fri Nov 01 14:47:04 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Fri Nov 01 14:47:06 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Fri Nov 01 14:47:06 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Fri Nov 01 14:47:20 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Fri Nov 01 14:47:21 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Fri Nov 01 14:47:22 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Fri Nov 01 14:47:22 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Fri Nov 01 14:47:24 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Fri Nov 01 14:47:24 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Fri Nov 01 14:47:26 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Fri Nov 01 14:47:26 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Fri Nov 01 14:47:27 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Fri Nov 01 14:47:27 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Fri Nov 01 14:47:31 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Fri Nov 01 14:47:31 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Fri Nov 01 14:49:40 2013] [error] [client 93.216.193.160] File does not exist: /var/www/mobile.glftv.de/datenschutz.html, referer: http://www.glftv.de:8080/UeberGLF_Info.html
+[Sat Nov 02 21:51:06 2013] [error] [client 78.51.6.12] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Sat Nov 02 21:51:06 2013] [error] [client 78.51.6.12] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Sat Nov 02 21:51:24 2013] [error] [client 78.51.6.12] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Sat Nov 02 21:51:24 2013] [error] [client 78.51.6.12] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Sat Nov 02 21:51:37 2013] [error] [client 78.51.6.12] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Sat Nov 02 21:51:37 2013] [error] [client 78.51.6.12] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Sun Nov 03 05:48:48 2013] [error] [client 1.163.198.123] File does not exist: /var/www/mobile.glftv.de/intl
+[Sun Nov 03 18:54:15 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Sun Nov 03 18:54:15 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Sun Nov 03 18:54:15 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Sun Nov 03 18:54:16 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Sun Nov 03 18:54:16 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Sun Nov 03 18:54:16 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Sun Nov 03 18:54:16 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Sun Nov 03 18:57:29 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Sun Nov 03 18:57:29 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Sun Nov 03 18:57:29 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Sun Nov 03 18:57:29 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Sun Nov 03 18:57:29 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Sun Nov 03 18:57:30 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Sun Nov 03 18:57:30 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Sun Nov 03 18:59:06 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Sun Nov 03 18:59:07 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Sun Nov 03 18:59:07 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Sun Nov 03 18:59:07 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Sun Nov 03 18:59:07 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Sun Nov 03 18:59:07 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Sun Nov 03 18:59:08 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Sun Nov 03 18:59:32 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Sun Nov 03 18:59:32 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Sun Nov 03 18:59:33 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Sun Nov 03 18:59:33 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Sun Nov 03 18:59:33 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Sun Nov 03 18:59:33 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Sun Nov 03 18:59:34 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Sun Nov 03 19:03:35 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Sun Nov 03 19:03:35 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Sun Nov 03 19:03:35 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Sun Nov 03 19:03:35 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Sun Nov 03 19:03:36 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Sun Nov 03 19:03:36 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Sun Nov 03 19:03:36 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Sun Nov 03 19:10:57 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Sun Nov 03 19:10:58 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Sun Nov 03 19:10:58 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Sun Nov 03 19:10:58 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Sun Nov 03 19:10:58 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Sun Nov 03 19:10:58 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Sun Nov 03 19:10:59 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Mon Nov 04 09:47:53 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Mon Nov 04 09:47:53 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Mon Nov 04 09:47:54 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Mon Nov 04 09:47:54 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Mon Nov 04 09:47:54 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Mon Nov 04 09:47:54 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Mon Nov 04 09:47:54 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-114x114.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-72x72.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-144x144.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-60x60.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-120x120.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-76x76.png
+[Mon Nov 04 10:03:13 2013] [error] [client 91.236.239.25] File does not exist: /var/www/mobile.glftv.de/apple-touch-icon-152x152.png
+[Mon Nov 04 11:33:03 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 11:33:03 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 11:34:13 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 11:34:13 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 11:34:15 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Mon Nov 04 11:34:15 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Mon Nov 04 11:34:16 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 11:34:16 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 11:34:18 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 11:34:18 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 11:34:19 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 11:34:19 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 11:34:23 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 11:34:23 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 13:26:26 2013] [error] [client 61.161.164.77] File does not exist: /var/www/mobile.glftv.de/manager
+[Mon Nov 04 18:28:55 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 18:28:55 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 18:28:59 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/impressum.html
+[Mon Nov 04 18:28:59 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/impressum.html
+[Mon Nov 04 19:13:18 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 19:13:18 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 19:13:22 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:13:22 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:15:59 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer_Hover.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:15:59 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooterHover.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:17:55 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Mon Nov 04 19:17:55 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Mon Nov 04 19:23:09 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Mon Nov 04 19:23:09 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Mon Nov 04 19:23:10 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 19:23:10 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 19:23:11 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Mon Nov 04 19:23:11 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Mon Nov 04 19:23:14 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:23:14 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:23:15 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 19:23:15 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 19:23:16 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:23:16 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:23:17 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 19:23:17 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 19:23:40 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Mon Nov 04 19:23:40 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/UeberGLF_Team.html
+[Mon Nov 04 19:23:45 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:23:45 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 19:23:49 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 19:23:49 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Mon Nov 04 20:23:26 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 20:23:26 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Mon Nov 04 20:23:30 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 20:23:30 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 20:26:49 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 20:26:49 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Mon Nov 04 20:31:22 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Mon Nov 04 20:31:22 2013] [error] [client 84.154.140.245] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 11:24:38 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Tue Nov 05 11:24:38 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Tue Nov 05 11:51:00 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Tue Nov 05 11:51:00 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Tue Nov 05 11:51:02 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:51:02 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:51:03 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 11:51:03 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 11:51:04 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:51:04 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:51:10 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Tue Nov 05 11:51:10 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Tue Nov 05 11:53:05 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Tue Nov 05 11:53:05 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Tue Nov 05 11:53:06 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Tue Nov 05 11:53:06 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Beitraege.html
+[Tue Nov 05 11:53:14 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:53:14 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:53:15 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 11:53:15 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 11:53:15 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:53:15 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Themen.html
+[Tue Nov 05 11:53:16 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 11:53:16 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/DeinGLF_Jobs.html
+[Tue Nov 05 13:38:07 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Tue Nov 05 13:38:07 2013] [error] [client 141.28.129.105] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Tue Nov 05 16:39:59 2013] [error] [client 112.101.64.213] File does not exist: /var/www/mobile.glftv.de/manager
+[Wed Nov 06 15:14:14 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Wed Nov 06 15:14:14 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Wed Nov 06 15:14:17 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Wed Nov 06 15:14:17 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Wed Nov 06 19:28:36 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Wed Nov 06 19:28:36 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Wed Nov 06 19:35:45 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Wed Nov 06 19:35:45 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Wed Nov 06 19:35:48 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Wed Nov 06 19:35:48 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Wed Nov 06 19:35:50 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Wed Nov 06 19:35:50 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Wed Nov 06 19:35:51 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Wed Nov 06 19:35:51 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Wed Nov 06 19:38:32 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Sendungen.html
+[Wed Nov 06 19:38:32 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Sendungen.html
+[Wed Nov 06 19:40:55 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Wed Nov 06 19:40:55 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Wed Nov 06 19:40:57 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Wed Nov 06 19:40:57 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Beitraege.html
+[Wed Nov 06 19:40:59 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Wed Nov 06 19:40:59 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Wed Nov 06 20:39:56 2013] [error] [client 84.154.141.90] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Live.html
+[Wed Nov 06 20:39:56 2013] [error] [client 84.154.141.90] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Live.html
+[Thu Nov 07 10:34:35 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 10:34:35 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 11:12:45 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 11:12:45 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 11:12:54 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Nov 07 11:12:54 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Mediathek_Sendungen.html
+[Thu Nov 07 11:12:55 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/Videoplayer_Sendungen.html
+[Thu Nov 07 11:12:55 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/Videoplayer_Sendungen.html
+[Thu Nov 07 15:58:12 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 15:58:12 2013] [error] [client 141.28.128.91] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 15:59:00 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 15:59:00 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/
+[Thu Nov 07 15:59:08 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/FBFooter.png, referer: http://www.glftv.de:8080/index.html
+[Thu Nov 07 15:59:08 2013] [error] [client 141.28.129.252] File does not exist: /var/www/mobile.glftv.de/img/icons/Twitter_Footer.png, referer: http://www.glftv.de:8080/index.html
+[Thu Nov 07 16:10:04 2013] [error] [client 89.204.135.223] File does not exist: /var/www/mobile.glftv.de/datenschutz.html, referer: http://glftv.de:8080/Videoplayer_Sendungen.html
+[Fri Nov 08 08:54:55 2013] [error] [client 199.223.116.4] File does not exist: /var/www/mobile.glftv.de/science
+[Fri Nov 08 09:54:07 2013] [error] [client 218.19.163.117] File does not exist: /var/www/mobile.glftv.de/bbs
+[Fri Nov 08 11:17:41 2013] [error] [client 61.161.164.77] File does not exist: /var/www/mobile.glftv.de/manager
+[Fri Nov 08 11:30:23 2013] [error] [client 222.186.56.18] File does not exist: /var/www/mobile.glftv.de/manager
