@@ -18,16 +18,6 @@
 
 .pushy a{
     display: block;
-    color: #b3b3b1;
-    padding: 15px 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    text-decoration: none;
-}
-
-.pushy a:hover{
-    background: #00b4ff;
-    color: #FFF;
 }
 
 /* Menu Movement */
@@ -82,12 +72,4 @@
     bottom: 0;
     right: 250px;
     z-index: 9999;
-}
-
-/* Example Media Query */
-
-@media screen and (max-width: 768px){
-    .pushy{
-        font-size: 1.0em;
-    }
 }
