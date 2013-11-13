@@ -126,10 +126,15 @@ function detectWidth() {
 	if ($(window).width() <= 1035) {
 		$(deskNav).addClass('hidden');
 		$(mobNav).removeClass('hidden');
+		$('.page-wrapper').addClass('mobile');
 		mobileNav = true;
 	} else {
 		$(deskNav).removeClass('hidden');
-		$(mobNav).addClass('hidden');
+		$(mobNav).addClass('hidden').removeClass('pushy-open').addClass('pushy-left');
+		$('.page-wrapper').removeClass('mobile');
+		$('body').removeClass('pushy-active');
+		$('.content-wrapper').removeClass('container-push');
+		$('header').removeClass('push-push');
 		mobileNav = false;
 	}
 	if (navMInitialized == false || navDInitialized == false) {
@@ -181,81 +186,81 @@ function navFunctions() {
 			}, 400);
 		});
 	}
-	if (mobileNav == true) {
-		navMInitialized = true;
-		var navWidth = '250px';
-		var menuBtn = $('#nav_menu_btn');
-		//Slide Nav in on click on Menu Button
-		$(menuBtn).click(function() {
-			var rightVal = '0px';
-			if ($(mobNav).hasClass('off')) {
-				rightVal = '0px';
-				$(menuBtn).animate({
-					right : navWidth
-				}, {
-					duration : 400,
-					queue : false
-				});
-				$(mobNav).toggleClass('off');
-			} else {
-				rightVal = '-250px';
-				$(menuBtn).animate({
-					right : '0px'
-				}, {
-					duration : 400,
-					queue : false,
-					complete : function() {
-						$(mobNav).toggleClass('off');
-					}
-				});
-			}
-			$(mobNav).animate({
-				right : rightVal
-			}, {
-				duration : 400,
-				queue : false
-			});
-		});
-		$(mobNav).find('.collapsible').click(function() {
-			expandItem = $(this);
-			NavMobileToggle();
-		});
-		searchLayerToggle();
-	}
+	/*if (mobileNav == true) {
+	 navMInitialized = true;
+	 var navWidth = '250px';
+	 var menuBtn = $('#nav_menu_btn');
+	 //Slide Nav in on click on Menu Button
+	 $(menuBtn).click(function() {
+	 var rightVal = '0px';
+	 if ($(mobNav).hasClass('off')) {
+	 rightVal = '0px';
+	 $(menuBtn).animate({
+	 right : navWidth
+	 }, {
+	 duration : 400,
+	 queue : false
+	 });
+	 $(mobNav).toggleClass('off');
+	 } else {
+	 rightVal = '-250px';
+	 $(menuBtn).animate({
+	 right : '0px'
+	 }, {
+	 duration : 400,
+	 queue : false,
+	 complete : function() {
+	 $(mobNav).toggleClass('off');
+	 }
+	 });
+	 }
+	 $(mobNav).animate({
+	 right : rightVal
+	 }, {
+	 duration : 400,
+	 queue : false
+	 });
+	 });
+	 $(mobNav).find('.collapsible').click(function() {
+	 expandItem = $(this);
+	 NavMobileToggle();
+	 });
+	 searchLayerToggle();
+	 }*/
 }
 
 /*************Nav Accordion Toggle Functions *****************/
 
-/* expand hovered Item and collapse former activeItem */
-function NavMobileToggle() {
-	//active Item is the Nav Item which is expanded at the moment the nav clicked
-	activeItem = $(mobNav).find('.collapsible.active');
-	var collapseAll = false;
-	if ($(activeItem).is(expandItem)) {
-		collapseAll = true;
-	}
-	$(activeItem).animate({
-		height : "41px"
-	}, {
-		duration : 300,
-		queue : false
-	});
-	if (collapseAll == false) {
-		$(expandItem).animate({
-			height : "127px"
-		}, {
-			duration : 300,
-			queue : false,
-		});
-	}
-	$(activeItem).removeClass('active');
-	activeItem = expandItem;
-	if (collapseAll == false) {
-		$(activeItem).addClass('active');
-	}
-	collapseAll = false;
-}
-
+/* expand hovered Item and collapse former activeItem
+ function NavMobileToggle() {
+ //active Item is the Nav Item which is expanded at the moment the nav clicked
+ activeItem = $(mobNav).find('.collapsible.active');
+ var collapseAll = false;
+ if ($(activeItem).is(expandItem)) {
+ collapseAll = true;
+ }
+ $(activeItem).animate({
+ height : "41px"
+ }, {
+ duration : 300,
+ queue : false
+ });
+ if (collapseAll == false) {
+ $(expandItem).animate({
+ height : "127px"
+ }, {
+ duration : 300,
+ queue : false,
+ });
+ }
+ $(activeItem).removeClass('active');
+ activeItem = expandItem;
+ if (collapseAll == false) {
+ $(activeItem).addClass('active');
+ }
+ collapseAll = false;
+ }
+ */
 /* expand hovered Item and collapse former activeItem */
 function NavDesktopToggle() {
 	//active Item is the Nav Item which is expanded at the moment the nav hovered
