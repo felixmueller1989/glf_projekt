@@ -123,7 +123,7 @@ a {
 }
 a, p, span, h2, h3 {
 	color: #4a4a4a;
-	font-weight:normal;
+	font-weight: normal;
 }
 .mobile-data, .small-screen-data, .two-grid-data {
 	display: none;
@@ -351,13 +351,22 @@ nav.mobile-nav.nav-main.off {
 	left: 0px;
 	height: 78px;
 	width: 78px;
-	background: #ddd;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 .nav-menu-btn:focus {
 	outline: 0;
 	border: none;
 	color: rgba(0, 0, 0, 0);
+}
+.nav-menu-icon {
+	background: url('../img/icons/menu_icons.png') no-repeat 0 -1px;
+	width: 27px;
+	height: 22px;
+	display: block;
+	margin: 28px auto;
+}
+.pushy-active .nav-menu-icon {
+	background-position: -60px -1px;
 }
 .mobile-nav .nav-pages-wrapper {
 	position: absolute;
