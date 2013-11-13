@@ -1035,13 +1035,15 @@ input[type="file"]::-webkit-file-upload-button {
 	text-align: center;
 }
 .some-tile {
-	background: url('../img/icons/some_tiles.png') no-repeat;
+	background: url('../img/icons/some_tiles_l.png') no-repeat;
 }
 .fb-tile {
 	background-position: 0 0;
+	background-color: #3B5998;
 }
 .tw-tile {
-	background-position: -203px 0;
+	background-position: -69px 0;
+	background-color: #4099FF;
 }
 .some-tile-link {
 	display: block;
@@ -1280,6 +1282,10 @@ input[type="file"]::-webkit-file-upload-button {
 /*
  *********************** #contact_layer Styles End
  */
+.contact-overlay {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	border: none;
+}
 .contact-form {
 	padding: 0 0 40px 0;
 }

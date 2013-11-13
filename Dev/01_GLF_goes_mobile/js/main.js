@@ -28,7 +28,9 @@ $(window).load(function() {
 $(document).ready(function() {
 	/*************Video Player Functions *********/
 	var contentWdth = $('.content').width();
+	//set width of video = width of content area
 	$('video').css('width', contentWdth + 'px');
+	//init video player plugin
 	projekktor('video', {
 		volume : 0.8,
 		controls : true,
@@ -51,37 +53,12 @@ $(document).ready(function() {
 	});
 	/*************Video Player Functions End*********/
 
-	/*************Footer Functions *************/
-	$('#show_contact_layer').click(function() {
-		var contactLayer = $('#contact_layer');
-		overlayToggle(contactLayer);
-	});
-	/*************Footer Functions End*************/
-
-	/************** Only for Testing Functions *****************/
-	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
-	$(mediathekBTiles).click(function() {
-		var url = "Videoplayer_Beitraege.html";
-		$(location).attr('href', url);
-	});
-	var mediathekSTiles = $('#page_mediathekS').find('.teaser-tile');
-	$(mediathekSTiles).click(function() {
-		var url = "Videoplayer_Sendungen.html";
-		$(location).attr('href', url);
-	});
-	var themenTiles = $('#page_themen').find('.teaser-tile');
-	$(themenTiles).click(function() {
-		var url = "DeinGLF_Themen_Detail.html";
-		$(location).attr('href', url);
-	});
-
-	/************** Only for Testing Functions End*****************/
-
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
 	var infoWrapperH = $(infoWrapper).height();
 	var infoContentH = $(infoContent).height();
+	//set height of contentwrapper depending on the amount of content
 	if (infoWrapperH < infoContentH) {
 		infoWrapper.css('height', '407px');
 	}
@@ -100,7 +77,7 @@ $(document).ready(function() {
 	/*call functions */
 	resizeInfoWrapper();
 	detectWidth();
-
+	testing();
 });
 /*document.ready end */
 
@@ -119,16 +96,16 @@ $(window).bind('resize', function(e) {
 });
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
-	var initNav = false;
+	var winW = $(window).width();
 	var searchBtn = $('.search-btn');
 	$(navMain).removeAttr('style');
 	$('.nav-btn-wrapper').removeAttr('style');
-	if ($(window).width() <= 1035) {
+	if (winW <= 1035) {
 		$(deskNav).addClass('hidden');
 		$(mobNav).removeClass('hidden');
 		$('.page-wrapper').addClass('mobile');
 		mobileNav = true;
-	} else if ($(window).width() > 1035) {
+	} else if (winW > 1035) {
 		$(deskNav).removeClass('hidden');
 		$(mobNav).addClass('hidden').removeClass('pushy-open').addClass('pushy-left').removeAttr('style');
 		$('.page-wrapper').removeClass('mobile');
@@ -137,31 +114,31 @@ function detectWidth() {
 		$('header').removeClass('push-push').removeAttr('style');
 		mobileNav = false;
 	}
-	if (navMInitialized == false || navDInitialized == false) {
+	if (!navMInitialized || !navDInitialized) {
 		navFunctions();
 	}
-	if ($(window).width() <= 640) {
-		if (tabsInitialized == false) {
+	if (winW <= 640) {
+		if (!tabsInitialized) {
 			tabsFunction();
 		}
-		if (filterInitialized == false) {
+		if (!filterInitialized) {
 			filterToggle();
 		}
 	}
-	if ($(window).width() > 640 && tabsInitialized == true) {
+	if (winW > 640 && tabsInitialized) {
 		removeTabsFunction();
 	}
-	if ($(window).width() > 440 && tileHeightChanged == true) {
+	if (winW > 440 && tileHeightChanged) {
 		$('.tile').removeAttr('style');
 	}
-	if ($(window).width() <= 440) {
+	if (winW <= 440) {
 		resizeTiles();
 	}
 }
 
 function navFunctions() {
 	var DeskNavBtnWrapper = $(deskNav).find('.nav-btn-wrapper');
-	if (mobileNav == false) {
+	if (!mobileNav) {
 		navDInitialized = true;
 		/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 		$(deskNav).find('.collapsible').hover(function() {
@@ -186,7 +163,7 @@ function navFunctions() {
 			}, 400);
 		});
 	}
-	if (mobileNav == true) {
+	if (mobileNav) {
 		navMInitialized = true;
 		$(mobNav).find('.collapsible').click(function() {
 			expandItem = $(this);
@@ -212,7 +189,7 @@ function NavMobileToggle() {
 		duration : 300,
 		queue : false
 	});
-	if (collapseAll == false) {
+	if (!collapseAll) {
 		$(expandItem).animate({
 			height : "126px"
 		}, {
@@ -222,7 +199,7 @@ function NavMobileToggle() {
 	}
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
-	if (collapseAll == false) {
+	if (!collapseAll) {
 		$(activeItem).addClass('active');
 	}
 	collapseAll = false;
@@ -248,7 +225,7 @@ function NavDesktopToggle() {
 			queue : false
 		});
 	}
-	if (hasActiveBtn == true) {
+	if (hasActiveBtn) {
 		if ($(expandItem).hasClass('search-btn')) {
 			$(expandItem).animate({
 				width : "326px"
@@ -280,16 +257,16 @@ function stopAnimation() {
 /*************Search Layer Functions *****************/
 function searchLayerToggle() {
 	var activeNav;
-	if (mobileNav == true) {
+	if (mobileNav) {
 		var activeNav = $(mobNav);
 	}
-	if (mobileNav == false) {
+	if (!mobileNav) {
 		var activeNav = $(deskNav);
 	}
 	var searchInput = $(activeNav).find('.search-input');
 	var searchResLayer = $(activeNav).find('.search-results-layer');
 	var navBtnSearch = $(activeNav).find('.search-btn');
-	if ($(navBtnSearch).hasClass('active') || mobileNav == true) {
+	if ($(navBtnSearch).hasClass('active') || mobileNav) {
 		$(searchInput).focus();
 		$(searchInput).bind("change paste keyup", function() {
 			if ($(searchInput).val() == '') {
@@ -430,4 +407,23 @@ function resizeTiles() {
 }
 
 /*************Resize Tile small Screen Functions End*********/
+/************** Only for Testing Functions *****************/
+function testing() {
+	var mediathekBTiles = $('#page_mediathekB').find('.teaser-tile');
+	$(mediathekBTiles).click(function() {
+		var url = "Videoplayer_Beitraege.html";
+		$(location).attr('href', url);
+	});
+	var mediathekSTiles = $('#page_mediathekS').find('.teaser-tile');
+	$(mediathekSTiles).click(function() {
+		var url = "Videoplayer_Sendungen.html";
+		$(location).attr('href', url);
+	});
+	var themenTiles = $('#page_themen').find('.teaser-tile');
+	$(themenTiles).click(function() {
+		var url = "DeinGLF_Themen_Detail.html";
+		$(location).attr('href', url);
+	});
+}
 
+/************** Only for Testing Functions End*****************/
