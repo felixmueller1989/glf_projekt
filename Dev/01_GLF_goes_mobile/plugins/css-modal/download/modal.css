@@ -86,7 +86,7 @@ html {
 	margin: 0.5em 0;
 }
 .semantic-content .modal-content {
-	position:relative;
+	position: relative;
 	padding: 25px 1.8em;
 	overflow-x: hidden;
 	background: #434343;
@@ -107,30 +107,7 @@ html {
 	text-indent: -100px;
 	overflow: hidden;
 }
-/*.semantic-content .modal-close:before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- z-index: 10;
- background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AAAAAMwA0QDNTiUx4gAAAABJRU5ErkJggg==");
- }
- .semantic-content .modal-close:after {
- content: '\00d7';
- position: absolute;
- top: 25px;
- left: 50%;
- z-index: 20;
- margin-left: 285px;
- background: #fff;
- border-radius: 2px;
- padding: 2px 8px;
- font-size: 1.2em;
- text-decoration: none;
- text-indent: 0;
- }*/
+
 @media screen and (max-width: 690px) {
 	.semantic-content .modal-inner {
 		width: auto;
@@ -148,6 +125,9 @@ html {
 	}
 }
 @media screen and (max-width: 30em) {
+	.is-active.semantic-content {
+		overflow-y: hidden;
+	}
 	.semantic-content {
 		-webkit-transform: translate(0, 400px);
 		-webkit-transform: translate3d(0, 100%, 0);
@@ -169,19 +149,20 @@ html {
 		transition: transform .25s ease-in-out;
 	}
 
-	.semantic-content .modal-inner {
+	.semantic-content .modal-inner.overlay-content {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		top: 0;
 		left: 0;
 		right: 0;
-		padding-top: 3em;
 		height: 100%;
-		overflow: hidden;
+		overflow: scroll;
 		-webkit-box-shadow: none;
 		box-shadow: none;
+		padding: 0;
 	}
+
 	.semantic-content .modal-content {
 		max-height: none;
 	}

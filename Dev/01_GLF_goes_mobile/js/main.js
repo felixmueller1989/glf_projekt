@@ -138,9 +138,13 @@ function detectWidth() {
 }
 
 function navFunctions() {
-	var DeskNavBtnWrapper = $(deskNav).find('.nav-btn-wrapper');
+	//if nav item of visited page isn't collapsible, it should be toggled to single width
+	if ($(navMain).hasClass('no-active-btn')) {
+		hasActiveBtn = false;
+	}
 	if (!mobileNav) {
 		navDInitialized = true;
+		var DeskNavBtnWrapper = $(deskNav).find('.nav-btn-wrapper');
 		/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 		$(deskNav).find('.collapsible').hover(function() {
 			expandItem = $(this);
@@ -149,10 +153,6 @@ function navFunctions() {
 		}, stopAnimation);
 		/* Collapse active Item with some timeout on mouseleave*/
 		$(deskNav).mouseleave(function() {
-			//if nav item of visited page isn't collapsible, it should be toggled to single width
-			if ($(deskNav).hasClass('no-active-btn')) {
-				hasActiveBtn = false;
-			}
 			//Expand nav item of visited page
 			$(DeskNavBtnWrapper).each(function(index, elem) {
 				if ($(elem).hasClass('visited')) {
@@ -180,30 +180,21 @@ function navFunctions() {
 function NavMobileToggle() {
 	//active Item is the Nav Item which is expanded at the moment the nav clicked
 	activeItem = $(mobNav).find('.collapsible.active');
-	var collapseAll = false;
-	if ($(activeItem).is(expandItem)) {
-		collapseAll = true;
-	}
 	$(activeItem).animate({
-		height : "40px"
+		height : "50px"
 	}, {
 		duration : 300,
 		queue : false
 	});
-	if (!collapseAll) {
-		$(expandItem).animate({
-			height : "126px"
-		}, {
-			duration : 300,
-			queue : false,
-		});
-	}
+	$(expandItem).animate({
+		height : "146px"
+	}, {
+		duration : 300,
+		queue : false,
+	});
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
-	if (!collapseAll) {
-		$(activeItem).addClass('active');
-	}
-	collapseAll = false;
+	$(activeItem).addClass('active');
 }
 
 /* expand hovered Item and collapse former activeItem */
