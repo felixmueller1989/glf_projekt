@@ -16,29 +16,12 @@ var filterHeight;
 var tileHeightChanged = false;
 
 $(window).load(function() {
-	$('#teaser_slider').nivoSlider({
-		effect : 'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
-		animSpeed : 200, // Slide transition speed
-		pauseTime : 35000, // How long each slide will show
-		startSlide : 0, // Set starting Slide (0 index)
-		directionNav : true, // Next & Prev navigation
-		controlNav : true, // 1,2,3... navigation
-		controlNavThumbs : false, // Use thumbnails for Control Nav
-		pauseOnHover : true, // Stop animation while hovering
-		manualAdvance : false, // Force manual transitions
-		prevText : '', // Prev directionNav text
-		nextText : '', // Next directionNav text
-		randomStart : false, // Start on a random slide
-		beforeChange : function() {
-		}, // Triggers before a slide transition
-		afterChange : function() {
-		}, // Triggers after a slide transition
-		slideshowEnd : function() {
-		}, // Triggers after all slides have been shown
-		lastSlide : function() {
-		}, // Triggers when last slide is shown
-		afterLoad : function() {
-		} // Triggers when slider has loaded
+	$('.flexslider').flexslider({
+		animation : "fade",
+		slideshowSpeed : 7000,
+		animationSpeed : 600,
+		prevText : " ",
+		nextText : " ",
 	});
 });
 
@@ -93,11 +76,7 @@ $(document).ready(function() {
 	});
 
 	/************** Only for Testing Functions End*****************/
-	/*************Home Page Functions*********/
-	$('.nivo-control').livequery(function() {
-		$(this).text('');
-	});
-	/*************Home Page Functions End*********/
+
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
@@ -107,44 +86,6 @@ $(document).ready(function() {
 		infoWrapper.css('height', '407px');
 	}
 	/*************Detail Pages Info-Wrapper Functions End*********/
-	/*************Topic Page Functions *****************/
-	/*************Overlay Functions *****************/
-	$("#add_topic_tile").click(function() {
-		var addTopicOverlay = $('#add_topic_overlay');
-		overlayToggle(addTopicOverlay);
-	});
-	/*************Overlay Functions End*****************/
-	/*************Topic Page Functions End*****************/
-	/*************Live Page Functions*****************/
-	/*************Overlay Functions *****************/
-	var pageLive = $('#page_live');
-	var showClipTeaserTiles = $(pageLive).find(".live-rel-teaser-tile");
-	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$(showClipTeaserTiles).each(function() {
-		$(this).click(function() {
-			var topicId = $(this).attr('id');
-			var clipTeaserOverlay = $('#' + topicId + '_overlay');
-			overlayToggle(clipTeaserOverlay);
-		});
-	});
-	/*************Overlay Functions End*****************/
-	/*************Live Page Functions End*****************/
-	/*************Jobs Page Functions*****************/
-	/*************Overlay Functions *****************/
-	$("#show_jobs_info").click(function() {
-		var jobsInfoOverlay = $('#jobs_info_overlay');
-		overlayToggle(jobsInfoOverlay);
-	});
-	//Toggle Overlay depending on id of clicked tile and open the matching overlay by comparing the IDs
-	$('.jobs-teaser-tile').each(function() {
-		$(this).click(function() {
-			var jobId = $(this).attr('id');
-			var jobApplyOverlay = $('#' + jobId + '_overlay');
-			overlayToggle(jobApplyOverlay);
-		});
-	});
-	/*************Overlay Functions End*****************/
-	/*************Jobs Page Functions End*****************/
 	/*************Search Page Functions *****************/
 	var filterBtn = [];
 	filterBtn.push($('#filter_clips_btn'));
@@ -428,48 +369,6 @@ function toggleSearchFilters(filterBtn) {
 
 /*************Search Page Functions End*****************/
 
-/***********************overlay functions********************/
-function overlayToggle(overlay) {
-	var submitBtn = [];
-	var overlayForm = overlay.find('.overlay-form-content');
-	var overlaySubmitContent = overlay.find('.overlay-form-submitted-content');
-	submitBtn.push(overlay.find('input[type="submit"]'));
-	submitBtn.push(overlay.find('.reload-form'));
-	$(submitBtn).each(function() {
-		$(this).click(function() {
-			$(overlayForm).toggleClass('visible').toggleClass('hidden');
-			$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-		});
-	});
-
-	var closeOverlay = [];
-	var overlayContent = overlay.find('.overlay-content');
-	var overlayCloseIcon = overlayContent.find('.overlay-close-btn');
-	if (overlayContent.find('.close-overlay-btn')) {
-		var overlayCloseBtn = overlayContent.find('.close-overlay-btn');
-		closeOverlay.push($(overlayCloseBtn));
-	}
-	closeOverlay.push($(overlay));
-	closeOverlay.push($(overlayCloseIcon));
-	$(overlay).fadeIn(300);
-	$(overlay).addClass('active');
-	$('body').css('overflow', 'hidden');
-	$(closeOverlay).each(function() {
-		$(this).click(200, function() {
-			$(overlay).fadeOut(function() {
-				$('body').css('overflow', 'auto');
-				$(overlay).removeClass('active');
-				$(overlayForm).toggleClass('visible').toggleClass('hidden');
-				$(overlaySubmitContent).toggleClass('visible').toggleClass('hidden');
-			});
-		});
-	});
-	$(overlayContent).click(function(event) {
-		event.stopPropagation();
-	});
-}
-
-/***********************overlay functions END ********************/
 /*************Detail Pages Info-Wrapper Functions*********/
 function resizeInfoWrapper() {
 	var infoWrapper = $('.info-wrapper');
