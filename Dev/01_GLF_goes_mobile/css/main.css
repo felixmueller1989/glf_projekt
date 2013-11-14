@@ -913,7 +913,6 @@ html {
 /*
  *********************** Tile Styles
  */
-<<<<<<< HEAD
  .tile-wrapper {
  	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
  }
@@ -1102,6 +1101,7 @@ html {
  .jobs-info-tile:hover .jobs-info-icon {
  	color: #70EA46;
  }
+<<<<<<< HEAD
 =======
 .tile-wrapper {
 	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
@@ -2122,6 +2122,8 @@ input[type="file"]::-webkit-file-upload-button {
 >>>>>>> d5798ed7d15d2fce5d775181e7dc9332e85d59b4
 }
 >>>>>>> d5798ed7d15d2fce5d775181e7dc9332e85d59b4
+=======
+>>>>>>> parent of 6474c24... Ramonas commit
 /*
  *** Themen Tile Styles
  */
@@ -3365,7 +3367,6 @@ input[type="file"]::-webkit-file-upload-button {
 	}
 	/* 2 Columns Grid - Smartphone 480px----------- */
 
-<<<<<<< HEAD
 	@media only screen and (max-width: 480px) {
 		.content {
 			max-width: 414px;
@@ -3422,6 +3423,7 @@ input[type="file"]::-webkit-file-upload-button {
 			width: 407px;
 		}
 
+<<<<<<< HEAD
 =======
 	.teaser-tile:after {
 		display: none;
@@ -3445,6 +3447,8 @@ input[type="file"]::-webkit-file-upload-button {
 >>>>>>> d5798ed7d15d2fce5d775181e7dc9332e85d59b4
 =======
 >>>>>>> d5798ed7d15d2fce5d775181e7dc9332e85d59b4
+=======
+>>>>>>> parent of 6474c24... Ramonas commit
 	/*
 	 *********************** Footer Styles Smartphones
 	 */

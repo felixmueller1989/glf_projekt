@@ -86,10 +86,6 @@ $(document).ready(function() {
 			toggleSearchFilters(this);
 		});
 	});
-
-	$('.call-modal').click(function() {
-		console.log('click');
-	});
 	/*************Search Page Functions End*****************/
 	/*call functions */
 	resizeInfoWrapper();
