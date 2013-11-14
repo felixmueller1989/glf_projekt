@@ -15,11 +15,12 @@ var filterInitialized = false;
 var filterHeight;
 var tileHeightChanged = false;
 var label_left = $(document.createElement('span'));
-var label_right= $(document.createElement('span'));
+var label_right = $(document.createElement('span'));
 var semRangeValue = new Array();
-var semRangeText =['WS1','SoSe1','WS2','SoSe2','WS3','SoSe3','WS4','SoSe4','WS5','SoSe5','WS6','SoSe6'];
+var semRangeText = ['WS1', 'SoSe1', 'WS2', 'SoSe2', 'WS3', 'SoSe3', 'WS4', 'SoSe4', 'WS5', 'SoSe5', 'WS6', 'SoSe6'];
 
 $(window).load(function() {
+	var overlay = $('.overlay');
 	$('.flexslider').flexslider({
 		animation : "fade",
 		slideshowSpeed : 7000,
@@ -27,21 +28,24 @@ $(window).load(function() {
 		prevText : " ",
 		nextText : " ",
 	});
-
-	/*Set Filter Range Slider*/
-	$('#filter-range-slider').noUiSlider({
-		start: [5, 10]
-		,range: [0, 11]
-		,step: 1
-		,connect: true
-		,handles: 2
-		,slide: function(){
-			semRangeValue = $(this).val();
-			createLabels(semRangeValue);
-		}
-	});
-	filterRangeInit();
-	/*Set Filter Range Slider End*/
+	var pageWrapper = $('.page-wrapper');
+	var pageSendungen = $('#page_mediathekS');
+	if ($(pageWrapper).is($(pageSendungen))) {
+		/*Set Filter Range Slider*/
+		$('#filter-range-slider').noUiSlider({
+			start : [5, 10],
+			range : [0, 11],
+			step : 1,
+			connect : true,
+			handles : 2,
+			slide : function() {
+				semRangeValue = $(this).val();
+				createLabels(semRangeValue);
+			}
+		});
+		filterRangeInit();
+		/*Set Filter Range Slider End*/
+	}
 });
 
 $(document).ready(function() {
@@ -65,7 +69,6 @@ $(document).ready(function() {
 	});
 
 	/*************Video Player Functions End*********/
-
 	/*************Detail Pages Info-Wrapper Functions*********/
 	var infoWrapper = $('.info-wrapper');
 	var infoContent = $(infoWrapper).find('.info-content');
@@ -85,10 +88,6 @@ $(document).ready(function() {
 		$(this).click(function() {
 			toggleSearchFilters(this);
 		});
-	});
-
-	$('.call-modal').click(function() {
-		console.log('click');
 	});
 	/*************Search Page Functions End*****************/
 	/*call functions */
@@ -114,16 +113,17 @@ $(window).bind('resize', function(e) {
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
 	var winW = $(window).width();
+	var htmlTag = $('html');
 	var searchBtn = $('.search-btn');
 	var pageWrapper = $('.page-wrapper');
 	$(navMain).removeAttr('style');
 	$('.nav-btn-wrapper').removeAttr('style');
-	if (winW <= 1035) {
+	if (winW <= 1035 || $(htmlTag).not('.no-touch')) {
 		$(deskNav).addClass('hidden');
 		$(mobNav).removeClass('hidden');
 		$(pageWrapper).addClass('mobile');
 		mobileNav = true;
-	} else if (winW > 1035) {
+	} if (winW > 1035 && $(htmlTag).is('.no-touch')) {
 		$(deskNav).removeClass('hidden');
 		$(mobNav).addClass('hidden').removeClass('pushy-open').addClass('pushy-left').removeAttr('style');
 		$(pageWrapper).removeClass('mobile');
@@ -437,43 +437,45 @@ function testing() {
 
 /************** Only for Testing Functions End*****************/
 /*************Filter Range Slider Functions *****************/
-function createLabels(semRangeValue){
-        
-        $(label_left).appendTo('#filter-range-slider');
-        $(label_right).appendTo('#filter-range-slider');
+function createLabels(semRangeValue) {
 
-        for (var i=0; i <= semRangeText.length;i++){
-                console.log(semRangeValue[0]);
-                console.log(semRangeText[i]);
-                if(semRangeValue[0] == i){
-                        $(label_left).text(semRangeText[i]);
-                }
-                if(semRangeValue[1] == i){
-                        $(label_right).text(semRangeText[i]);
-                }
-        }
+	$(label_left).appendTo('#filter-range-slider');
+	$(label_right).appendTo('#filter-range-slider');
+
+	for (var i = 0; i <= semRangeText.length; i++) {
+		if (semRangeValue[0] == i) {
+			$(label_left).text(semRangeText[i]);
+		}
+		if (semRangeValue[1] == i) {
+			$(label_right).text(semRangeText[i]);
+		}
+	}
 }
-function filterRangeInit(){
-        semRangeValue = $('#filter-range-slider').val();
-        
-        $(label_left).addClass('noUi-handle-lower-label');
-        $(label_right).addClass('noUi-handle-upper-label');
 
-        $(label_left).addClass('noUi-handle-label');
-        $(label_right).addClass('noUi-handle-label');
+function filterRangeInit() {
+	semRangeValue = $('#filter-range-slider').val();
 
-        $(label_left).appendTo('#filter-range-slider');
-        $(label_right).appendTo('#filter-range-slider');
+	$(label_left).addClass('noUi-handle-lower-label');
+	$(label_right).addClass('noUi-handle-upper-label');
 
-        for (var i=0; i <= semRangeText.length;i++){
-                console.log(semRangeValue[0]);
-                console.log(semRangeText[i]);
-                if(semRangeValue[0] == i){
-                        $(label_left).text(semRangeText[i]);
-                }
-                if(semRangeValue[1] == i){
-                        $(label_right).text(semRangeText[i]);
-                }
-        }
+	$(label_left).addClass('noUi-handle-label');
+	$(label_right).addClass('noUi-handle-label');
+
+	$(label_left).appendTo('#filter-range-slider');
+	$(label_right).appendTo('#filter-range-slider');
+
+	for (var i = 0; i <= semRangeText.length; i++) {
+		if (semRangeValue[0] == i) {
+			$(label_left).text(semRangeText[i]);
+		}
+		if (semRangeValue[1] == i) {
+			$(label_right).text(semRangeText[i]);
+		}
+	}
 }
+
 /************Filter Range Slider Functions End*********/
+
+function hideFocus() {
+	$("input").blur();
+}
