@@ -14,6 +14,10 @@ var tabsInitialized = false;
 var filterInitialized = false;
 var filterHeight;
 var tileHeightChanged = false;
+var label_left = $(document.createElement('span'));
+var label_right= $(document.createElement('span'));
+var semRangeValue = new Array();
+var semRangeText =['WS1','SoSe1','WS2','SoSe2','WS3','SoSe3','WS4','SoSe4','WS5','SoSe5','WS6','SoSe6'];
 
 $(window).load(function() {
 	$('.flexslider').flexslider({
@@ -23,6 +27,21 @@ $(window).load(function() {
 		prevText : " ",
 		nextText : " ",
 	});
+
+	/*Set Filter Range Slider*/
+	$('#filter-range-slider').noUiSlider({
+		start: [5, 10]
+		,range: [0, 11]
+		,step: 1
+		,connect: true
+		,handles: 2
+		,slide: function(){
+			semRangeValue = $(this).val();
+			createLabels(semRangeValue);
+		}
+	});
+	filterRangeInit();
+	/*Set Filter Range Slider End*/
 });
 
 $(document).ready(function() {
@@ -44,13 +63,7 @@ $(document).ready(function() {
 		playerFlashMP4 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf',
 		playerFlashMP3 : 'http://www.glftv.de:8080/video-player/jarisplayer.swf'
 	});
-	// Initialise noUiSlider
-	$("#filter-range-slider").noUiSlider({
-		start : [20, 80],
-		range : [0, 100],
-		connect : true,
-		handles : 2
-	});
+
 	/*************Video Player Functions End*********/
 
 	/*************Detail Pages Info-Wrapper Functions*********/
@@ -423,3 +436,44 @@ function testing() {
 }
 
 /************** Only for Testing Functions End*****************/
+/*************Filter Range Slider Functions *****************/
+function createLabels(semRangeValue){
+        
+        $(label_left).appendTo('#filter-range-slider');
+        $(label_right).appendTo('#filter-range-slider');
+
+        for (var i=0; i <= semRangeText.length;i++){
+                console.log(semRangeValue[0]);
+                console.log(semRangeText[i]);
+                if(semRangeValue[0] == i){
+                        $(label_left).text(semRangeText[i]);
+                }
+                if(semRangeValue[1] == i){
+                        $(label_right).text(semRangeText[i]);
+                }
+        }
+}
+function filterRangeInit(){
+        semRangeValue = $('#filter-range-slider').val();
+        
+        $(label_left).addClass('noUi-handle-lower-label');
+        $(label_right).addClass('noUi-handle-upper-label');
+
+        $(label_left).addClass('noUi-handle-label');
+        $(label_right).addClass('noUi-handle-label');
+
+        $(label_left).appendTo('#filter-range-slider');
+        $(label_right).appendTo('#filter-range-slider');
+
+        for (var i=0; i <= semRangeText.length;i++){
+                console.log(semRangeValue[0]);
+                console.log(semRangeText[i]);
+                if(semRangeValue[0] == i){
+                        $(label_left).text(semRangeText[i]);
+                }
+                if(semRangeValue[1] == i){
+                        $(label_right).text(semRangeText[i]);
+                }
+        }
+}
+/************Filter Range Slider Functions End*********/
