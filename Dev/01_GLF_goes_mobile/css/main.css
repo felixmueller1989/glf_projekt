@@ -913,6 +913,7 @@ html {
 /*
  *********************** Tile Styles
  */
+<<<<<<< HEAD
  .tile-wrapper {
  	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
  }
@@ -1101,6 +1102,209 @@ html {
  .jobs-info-tile:hover .jobs-info-icon {
  	color: #70EA46;
  }
+=======
+.tile-wrapper {
+	margin: 0 0 0 207px; /*width of filter-wrapper + margin between tiles*/
+}
+.jobs-tile-wrapper, .team-tile-wrapper, .home-tile-wrapper, .topic-tile-wrapper, .info-tile-wrapper {
+	margin: 0 0 0 0px; /*width of filter-wrapper + margin between tiles*/
+}
+.related-tile-wrapper {
+	display: inline-block;
+	width: 207px;
+}
+.horizontal-related-tile-wrapper {
+	margin: 0 auto 0 auto;
+	display: block;
+	width: 100%;
+}
+.inner-tiles-wrapper {
+	display: table;
+	margin: 0 auto 0 auto;
+}
+.horizontal-related-headline {
+	text-align: center;
+}
+.tile {
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 3.5px;
+	position: relative;
+	cursor: pointer;
+	background: #DDDDDD;
+	color: #4a4a4a;
+}
+.text-tile, .team-tile {
+	cursor: default;
+}
+.teaser-tile:after {
+	content: " ";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: rgba(233,233,233,0.3);
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
+}
+.tile-text-layer {
+	background: rgba(67,67,67,0.9);
+	color: #f9f9f9;
+	width: 100%;
+	height: 58px;
+	padding: 5px 0 5px 0;
+	position: absolute;
+	bottom: 0px;
+	z-index: 50;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
+}
+.tile-text-layer .extra-info-text {
+	color: #f9f9f9;
+	margin: 0;
+	font-size: 0.8em;
+	margin: 0 0 0 7px;
+}
+.tile-title {
+	font-size: 1em;
+	margin: 0 0 0 7px;
+	padding: 0;
+	color: #f9f9f9;
+	position: absolute;
+	top: 23px;
+}
+.tile-subtitle {
+	font-size: 0.8em;
+	margin: 0px 0 0 7px;
+	color: #f9f9f9;
+}
+.tile img {
+	width: 100%;
+	height: 100%;
+}
+.teaser-tile-play-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/icons/play_white_s.png');
+	background-position: center 40px;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	z-index: 50;
+	-moz-transition: all 0.2s ease-in;
+	/* WebKit */
+	-webkit-transition: all 0.2s ease-in;
+	/* Opera */
+	-o-transition: all 0.2s ease-in;
+	/* Standard */
+	transition: all 0.2s ease-in;
+}
+.teaser-tile:hover .teaser-tile-play-icon, .teaser-tile:active .teaser-tile-play-icon {
+	opacity: 0.8;
+}
+.teaser-tile:hover .tile-text-layer, .teaser-tile:active .tile-text-layer {
+	background: rgba(112,234,70,0.9);
+}
+.teaser-tile:hover .tile-title, .teaser-tile:active .tile-title, .teaser-tile:hover .tile-text-layer .extra-info-text, .teaser-tile:active .tile-text-layer .extra-info-text {
+	color: #434343;
+}
+.teaser-tile:hover.teaser-tile:after, .teaser-tile:active.teaser-tile:after {
+	background-color: rgba(0,0,0,0);
+}
+.extra-info-text.cat-link {
+	margin: 0 0 0 7px;
+	text-decoration: none;
+}
+.text-tile div {
+	display: table;
+	width: 200px;
+	height: 200px;
+}
+.text-tile-headline {
+	color: #9A0758;
+	padding: 0 13px 0 13px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.some-tile-icon {
+	background: url('../img/icons/some_tiles_l.png') no-repeat;
+	width: 70px;
+	height: 130px;
+	display: block;
+	margin: -65px 0 0 -35px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.fb-tile {
+	background-color: #3B5998;
+}
+.fb-tile .some-tile-icon {
+	background-position: 0 0;
+}
+.tw-tile {
+	background-color: #4099FF;
+}
+.tw-tile .some-tile-icon {
+	margin: -50px 0 0  -50px;
+	width: 100px;
+	background-position: -69px 0;
+}
+.some-tile-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.topic-fb-tile {
+	text-align: center;
+	padding: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: default;
+}
+.topic-fb-tile .fb-likes {
+	float: none;
+	margin: 15px auto 0 auto;
+}
+.fb-likes-counter-wrapper {
+	margin: 15px 0px;
+}
+.like-tile-text {
+	margin: 0;
+}
+#fb_likes_count {
+	font-size: 1.3em;
+}
+.jobs-info-tile {
+	cursor: pointer;
+}
+.jobs-info-icon {
+	font-size: 8em;
+	margin: 0;
+	text-align: center;
+	font-weight: bold;
+}
+.jobs-info-tile:hover .jobs-info-icon {
+	color: #70EA46;
+}
+>>>>>>> d5798ed7d15d2fce5d775181e7dc9332e85d59b4
 /*
  *** Themen Tile Styles
  */
@@ -2344,6 +2548,7 @@ html {
 	}
 	/* 2 Columns Grid - Smartphone 480px----------- */
 
+<<<<<<< HEAD
 	@media only screen and (max-width: 480px) {
 		.content {
 			max-width: 414px;
@@ -2400,6 +2605,26 @@ html {
 			width: 407px;
 		}
 
+=======
+	.teaser-tile:after {
+		display: none;
+	}
+	.teaser-tile-play-icon {
+		width: 50%;
+	}
+	.cta-tile .tile-title {
+		position: absolute;
+		top: 50%;
+		margin: -40px 0 0 0;
+		font-size: 1.5em;
+	}
+	.topic-img {
+		width: 407px;
+	}
+	.overlay {
+		padding: 0;
+	}
+>>>>>>> d5798ed7d15d2fce5d775181e7dc9332e85d59b4
 	/*
 	 *********************** Footer Styles Smartphones
 	 */

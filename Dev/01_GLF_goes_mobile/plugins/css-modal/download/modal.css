@@ -127,6 +127,7 @@ html {
 @media screen and (max-width: 30em) {
 	.is-active.semantic-content {
 		overflow-y: hidden;
+		z-index: 999;
 	}
 	.semantic-content {
 		-webkit-transform: translate(0, 400px);
@@ -157,7 +158,7 @@ html {
 		left: 0;
 		right: 0;
 		height: 100%;
-		overflow: scroll;
+		overflow-y: scroll;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		padding: 0;
