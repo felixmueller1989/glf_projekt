@@ -123,6 +123,7 @@ a {
 }
 a, p, span, h2, h3 {
 	color: #4a4a4a;
+	font-weight: normal;
 }
 .mobile-data, .small-screen-data, .two-grid-data {
 	display: none;
@@ -156,6 +157,10 @@ header {
 	position: relative;
 	padding: 0 0 0 20px;
 }
+.mobile .nav-home-btn-wrapper {
+	position: absolute;
+	left: 78px;
+}
 .nav-home-btn {
 	position: absolute;
 	background-image: url('../img/icons/GLF_Typo.png');
@@ -165,7 +170,6 @@ header {
 	height: 78px;
 }
 nav.nav-main {
-	float: right;
 	text-transform: uppercase;
 }
 .nav-pages-wrapper {
@@ -249,6 +253,7 @@ nav.nav-main {
 }
 .subnav-btn.visited {
 	background-color: #70ea46;
+	color: #4a4a4a;
 }
 .subnav li:first-of-type {
 	-webkit-box-sizing: border-box;
@@ -295,6 +300,9 @@ nav.nav-main {
 	font-size: 1.2em;
 }
 /*Desktop Nav Styles */
+.desktop-nav {
+	float: right;
+}
 .desktop-nav .nav-btn-wrapper.search-btn {
 	width: 72px;
 	height: 78px;
@@ -333,12 +341,11 @@ nav.nav-main {
 /*Desktop Nav Styles End */
 /*Mobile Nav Styles */
 nav.mobile-nav.nav-main {
-	position: absolute;
-	right: -262px;
-	top: 0px;
-	z-index: 100;
-	height: 360px;
-	width: 250px;
+	height: 100%;
+	z-index: 500;
+	background: #434343;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 nav.mobile-nav.nav-main.off {
 	display: none;
@@ -346,16 +353,25 @@ nav.mobile-nav.nav-main.off {
 .nav-menu-btn {
 	position: absolute;
 	top: 0;
-	right: 0px;
+	left: 0px;
 	height: 78px;
 	width: 78px;
-	background: #ddd;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 .nav-menu-btn:focus {
 	outline: 0;
 	border: none;
 	color: rgba(0, 0, 0, 0);
+}
+.nav-menu-icon {
+	background: url('../img/icons/menu_icons.png') no-repeat 0 -1px;
+	width: 27px;
+	height: 22px;
+	display: block;
+	margin: 28px auto;
+}
+.pushy-active .nav-menu-icon {
+	background-position: -60px -1px;
 }
 .mobile-nav .nav-pages-wrapper {
 	position: absolute;
@@ -369,18 +385,17 @@ nav.mobile-nav.nav-main.off {
 }
 .mobile-nav .nav-header {
 	display: block;
-	height: 40px;
+	height: 50px;
 	overflow: hidden;
-	border-bottom: 1px dashed #7f7f7f;
-	line-height: 40px;
-	width: 220px;
-	padding: 0 0 0 30px;
+	line-height: 50px;
+	width: 100%;
+	padding: 0;
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: normal;
 }
 .mobile-nav .nav-accordion {
 	overflow: visible;
-}
-.mobile-nav .nav-accordion-header, .mobile-nav .search-btn, .subnav li {
-	border-bottom: 1px dashed #7f7f7f;
 }
 .mobile-nav .search-btn {
 	width: 250px;
@@ -404,14 +419,11 @@ nav.mobile-nav.nav-main.off {
 }
 .mobile-nav .subnav li {
 	width: 100%;
-	text-align: left;
-	padding: 0 0 0 30px;
-}
-.mobile-nav .subnav li:first-of-type {
-	border-bottom: 1px dashed #e9e9e9;
 }
 .mobile-nav .subnav-btn {
-	line-height: 40px;
+	line-height: 45px;
+	font-size: 1.3em;
+	font-weight: normal;
 }
 .mobile-nav .search-btn .subnav {
 	left: 60px;
@@ -530,7 +542,7 @@ nav.mobile-nav.nav-main.off {
 	width: 34px;
 	height: 34px;
 	top: 25px;
-	right: 0;
+	right: 25px;
 	cursor: pointer;
 }
 .overlay-close-icon {
@@ -847,39 +859,51 @@ input[type="file"]::-webkit-file-upload-button {
 /*
  *********************** Filter Range Styles
  */
-#filter-range-slider {
-	margin: 100px 0 0 0;
-}
-.noUi-base {
-	border: none;
-	height: 10px;
-}
-.noUi-handle {
-	border: none;
-	background: none;
-	height: 60px;
-	width: 60px;
-	margin: -30px 0 0 -30px;
-}
-.noUi-handle:after {
-	bottom: -10px;
-	left: -3px;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	border-color: rgba(145,240,22,0);
-	border-top-color: #91F016;
-	border-width: 18px;
-	margin: 0 -15px 5px -15px;
-}
-.noUi-connect {
-	background: #70EA46;
-}
-.noUi-background {
-	background: #4a4a4a;
-}
+ #filter-range-slider{
+ 	width:85%;
+ 	min-width:170px;
+ 	margin:60px 0px;
+ }
+ .noUi-base {
+ 	border:none;
+ 	height:7px;
+ }
+ .noUi-handle {
+ 	border:none;
+ 	background: none;
+ 	height: 60px;
+ 	width: 60px;
+ 	margin: -30px 0 0 -30px;
+ }
+ .noUi-handle:after {
+ 	bottom: -10px;
+ 	left: 0px;
+ 	border: solid transparent;
+ 	content: " ";
+ 	height: 0;
+ 	width: 0;
+ 	position: absolute;
+ 	border-top-color: #70EA46;
+ 	border-width: 15px;
+ 	margin: 0 -15px 5px -15px;
+ }        
+ .noUi-connect {
+ 	background: #70EA46;
+ }
+ .noUi-background {
+ 	background: #7f7f7f;
+ }
+
+ .noUi-handle-label{
+ 	font-size: 0.9em;
+ 	padding: 7px 0 0 0;
+ }
+ .noUi-handle-lower-label{
+ 	float:left;
+ }
+ .noUi-handle-upper-label{
+ 	float:right;
+ }
 /*
  *********************** Filter Range Styles End
  */
@@ -1027,14 +1051,29 @@ input[type="file"]::-webkit-file-upload-button {
 	vertical-align: middle;
 	text-align: center;
 }
-.some-tile {
-	background: url('../img/icons/some_tiles.png') no-repeat;
+.some-tile-icon {
+	background: url('../img/icons/some_tiles_l.png') no-repeat;
+	width: 70px;
+	height: 130px;
+	display: block;
+	margin: -65px 0 0 -35px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 .fb-tile {
+	background-color: #3B5998;
+}
+.fb-tile .some-tile-icon {
 	background-position: 0 0;
 }
 .tw-tile {
-	background-position: -203px 0;
+	background-color: #4099FF;
+}
+.tw-tile .some-tile-icon {
+	margin: -50px 0 0  -50px;
+	width: 100px;
+	background-position: -69px 0;
 }
 .some-tile-link {
 	display: block;
@@ -1273,6 +1312,10 @@ input[type="file"]::-webkit-file-upload-button {
 /*
  *********************** #contact_layer Styles End
  */
+.contact-overlay {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	border: none;
+}
 .contact-form {
 	padding: 0 0 40px 0;
 }
@@ -1933,9 +1976,7 @@ footer {
 /* ==========================================================================
  Media Queries
  ========================================================================== */
-/* Smartphones ----------- */
-@media only screen and (max-width: 480px) {
-}
+
 /* 4 Columns Grid ----------- */
 @media all and (max-width: 1156px) {
 	.content-wrapper {
@@ -1962,6 +2003,22 @@ footer {
 		display: block;
 		visibility: visible;
 	}
+	/*
+	 *********************** Footer Styles max-width 1035px
+	 */
+	.footer-content-wrapper {
+		width: 828px;
+	}
+	.footer-sub-wrapper {
+		padding-left: 20px;
+		padding-right: 50px;
+	}
+	.footer-top-wrapper {
+		padding-left: 20px;
+	}
+	/*
+	 *********************** Footer Styles max-width 1035px End
+	 */
 }
 /* 3 Columns Grid ----------- */
 @media all and (max-width: 900px) {
@@ -2017,6 +2074,23 @@ footer {
 	.info-wrapper {
 		height: auto !important;
 	}
+	/*
+	 *********************** Footer Styles max-width 900px
+	 */
+	.footer-content-wrapper {
+		width: 650px;
+		padding: 0 0 0 0;
+	}
+	.footer-top-wrapper {
+		padding-left: 40px;
+	}
+	.footer-sub-wrapper {
+		padding-left: 40px;
+		padding-right: 30px;
+	}
+	/*
+	 *********************** Footer Styles max-width 900px EnD
+	 */
 }
 /* 2 Columns Grid - Big Tiles ----------- */
 @media all and (max-width: 640px) {
@@ -2221,6 +2295,16 @@ footer {
 		font-size: 1.1em;
 	}
 	/*
+	 *********************** Filter Range Styles 
+	 */
+	#filter-range-slider{
+ 	width:98%;
+ 	margin:35px 0 40px 3.5px;
+ 	}
+ 	/*
+	 *********************** Filter Range Styles End
+	 */
+	/*
 	 *********************** Filter Styles End
 	 */
 	/*
@@ -2254,9 +2338,26 @@ footer {
 	/*
 	 *********************** Overlay Styles End
 	 */
+	/*
+	 *********************** Footer Styles max-width 640px
+	 */
+	.footer-content-wrapper {
+		width: 512px;
+		padding: 0 0 0 0;
+	}
+	.footer-top-wrapper {
+
+	}
+	.footer-sub-wrapper {
+		padding-right: 90.4px;
+	}
+	/*
+	 *********************** Footer Styles max-width 640px EnD
+	 */
 }
 /* 2 Columns Grid - Smartphone 480px----------- */
-@media all and (max-width: 481px) {
+
+@media only screen and (max-width: 480px) {
 	.content {
 		max-width: 414px;
 	}
@@ -2311,8 +2412,45 @@ footer {
 	.topic-img {
 		width: 407px;
 	}
-
+	.overlay {
+		padding: 0;
+	}
+	/*
+	 *********************** Footer Styles Smartphones
+	 */
+	footer {
+		max-width: 100%;
+	}
+	.footer-content-wrapper {
+		width: 95%;
+	}
+	.footer-copyright-wrapper {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.footer-element {
+		float: center;
+	}
+	.footer-social-links-wrapper {
+		float: center;
+	}
+	.footer-copyright-wrapper {
+		float: center;
+		line-height: 3em;
+	}
+	.footer-top-wrapper {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.footer-sub-wrapper {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	/*
+	 *********************** Footer Styles Smartphones End
+	 */
 }
+
 /* 2 Columns Grid - Smartphone 320px----------- */
 @media all and (max-width: 440px) {
 	.content {
