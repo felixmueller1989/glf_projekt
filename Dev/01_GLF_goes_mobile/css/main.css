@@ -2433,13 +2433,14 @@ footer {
 		margin-right: auto;
 	}
 	.footer-element {
-		float: center;
+		width:100%;
+		text-align: center;
 	}
 	.footer-social-links-wrapper {
-		float: center;
+		width: 100%;
 	}
 	.footer-copyright-wrapper {
-		float: center;
+		width: 100%;
 		line-height: 3em;
 	}
 	.footer-top-wrapper {
