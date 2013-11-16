@@ -808,7 +808,7 @@ input[type="file"]::-webkit-file-upload-button {
 	margin: 0 0 31px 0;
 }
 .filter-type-wrapper {
-	margin: 0 0 31px 0;
+	margin: 0;
 }
 .filter-btn {
 	width: 100%;
@@ -859,51 +859,51 @@ input[type="file"]::-webkit-file-upload-button {
 /*
  *********************** Filter Range Styles
  */
- #filter-range-slider{
- 	width:85%;
- 	min-width:170px;
- 	margin:60px 0px;
- }
- .noUi-base {
- 	border:none;
- 	height:7px;
- }
- .noUi-handle {
- 	border:none;
- 	background: none;
- 	height: 60px;
- 	width: 60px;
- 	margin: -30px 0 0 -30px;
- }
- .noUi-handle:after {
- 	bottom: -10px;
- 	left: 0px;
- 	border: solid transparent;
- 	content: " ";
- 	height: 0;
- 	width: 0;
- 	position: absolute;
- 	border-top-color: #70EA46;
- 	border-width: 15px;
- 	margin: 0 -15px 5px -15px;
- }        
- .noUi-connect {
- 	background: #70EA46;
- }
- .noUi-background {
- 	background: #434343;
- }
+#filter-range-slider {
+	width: 85%;
+	min-width: 170px;
+	margin: 60px 0px;
+}
+.noUi-base {
+	border: none;
+	height: 7px;
+}
+.noUi-handle {
+	border: none;
+	background: none;
+	height: 60px;
+	width: 60px;
+	margin: -30px 0 0 -30px;
+}
+.noUi-handle:after {
+	bottom: -10px;
+	left: 0px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	border-top-color: #70EA46;
+	border-width: 15px;
+	margin: 0 -15px 5px -15px;
+}
+.noUi-connect {
+	background: #70EA46;
+}
+.noUi-background {
+	background: #434343;
+}
 
- .noUi-handle-label{
- 	font-size: 0.9em;
- 	padding: 7px 0 0 0;
- }
- .noUi-handle-lower-label{
- 	float:left;
- }
- .noUi-handle-upper-label{
- 	float:right;
- }
+.noUi-handle-label {
+	font-size: 0.9em;
+	padding: 7px 0 0 0;
+}
+.noUi-handle-lower-label {
+	float: left;
+}
+.noUi-handle-upper-label {
+	float: right;
+}
 /*
  *********************** Filter Range Styles End
  */
@@ -1071,7 +1071,7 @@ input[type="file"]::-webkit-file-upload-button {
 	background-color: #4099FF;
 }
 .tw-tile .some-tile-icon {
-	margin: -50px 0 0  -50px;
+	margin: -50px 0 0 -50px;
 	width: 100px;
 	background-position: -69px 0;
 }
@@ -2250,7 +2250,7 @@ footer {
 		overflow-y: hidden;
 		width: 407px;
 		float: none;
-		padding: 0;
+		padding: 0 0 20px 0;
 		margin: 0 3.5px;
 		background: #DDDDDD;
 		-webkit-box-sizing: border-box;
@@ -2276,6 +2276,9 @@ footer {
 	.filter-btn.active .filter-text {
 		color: #434343;
 	}
+	.filter-toggle{
+		margin: 31px 0 0 0;
+	}
 	.filter-toggle-btn {
 		cursor: pointer;
 		padding: 7px 0 7px 3.5px;
@@ -2295,13 +2298,14 @@ footer {
 		font-size: 1.1em;
 	}
 	/*
-	 *********************** Filter Range Styles 
+	 *********************** Filter Range Styles
 	 */
-	#filter-range-slider{
- 	width:95%;
- 	margin:35px 0 40px 3.5px;
- 	}
- 	/*
+	#filter-range-slider {
+		width: 95%;
+		padding: 35px 0 40px 3.5px;
+		margin: 0;
+	}
+	/*
 	 *********************** Filter Range Styles End
 	 */
 	/*

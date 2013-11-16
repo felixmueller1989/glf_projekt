@@ -30,7 +30,8 @@ $(window).load(function() {
 	});
 	var pageWrapper = $('.page-wrapper');
 	var pageSendungen = $('#page_mediathekS');
-	if ($(pageWrapper).is($(pageSendungen))) {
+	var pageSearchRes = $('#page_search_res');
+	if ($(pageWrapper).is($(pageSendungen)) || $(pageWrapper).is($(pageSearchRes))) {
 		/*Set Filter Range Slider*/
 		$('#filter-range-slider').noUiSlider({
 			start : [5, 10],
@@ -123,7 +124,8 @@ function detectWidth() {
 		$(mobNav).removeClass('hidden');
 		$(pageWrapper).addClass('mobile');
 		mobileNav = true;
-	} if (winW > 1035 && $(htmlTag).is('.no-touch')) {
+	}
+	if (winW > 1035 && $(htmlTag).is('.no-touch')) {
 		$(deskNav).removeClass('hidden');
 		$(mobNav).addClass('hidden').removeClass('pushy-open').addClass('pushy-left').removeAttr('style');
 		$(pageWrapper).removeClass('mobile');
@@ -307,20 +309,23 @@ function searchLayerToggle() {
 function toggleSearchFilters(filterBtn) {
 	var filterType = $(filterBtn).attr('id');
 	filterType = filterType.split('_');
+	var filterWrapper = $('.filter-wrapper');
 	var filterToggleId = '#filter_' + filterType[1] + '_wrapper';
 	var filterTypeWrapper = $('.filter-type-wrapper');
-	if ($(filterToggleId)) {
+	var filterWrapperBox = parseInt($(filterWrapper).css('padding-bottom').replace(/[^-\d\.]/g, ''));
+	var filterToggleBtnHeight = $('.filter-toggle-wrapper').height();
+	$('.filter-toggle').addClass('hidden');
+	if ($(filterToggleId).length != 0) {
 		var filterToggle = $(filterToggleId);
-		var filterMargin = 100;
-		var filterWrapper = $('.filter-wrapper');
-		$('.filter-toggle').addClass('hidden');
 		$(filterToggle).removeClass('hidden');
-		filterHeight = $(filterToggle).height() + $(filterTypeWrapper).height() + filterMargin;
-		//100 px margin bottom
-		$(filterWrapper).animate({
-			height : filterHeight
-		}, 200);
+		var filterToggleBox = parseInt($(filterToggle).css('margin-top').replace(/[^-\d\.]/g, ''));
+		filterHeight = filterWrapperBox + filterToggleBtnHeight + $(filterToggle).height() + filterToggleBox + $(filterTypeWrapper).height();
+	} else {
+		filterHeight = filterWrapperBox + filterToggleBtnHeight + $(filterTypeWrapper).height();
 	}
+	$(filterWrapper).animate({
+		height : filterHeight
+	}, 200);
 	$(filterTypeWrapper).find('.filter-btn').removeClass('active');
 	$(filterBtn).addClass('active');
 }
@@ -389,12 +394,19 @@ function filterToggle() {
 	filterInitialized = true;
 	var toggleTo;
 	var filterWrapper = $('.filter-wrapper');
+	var filterWrapperBox = parseInt($(filterWrapper).css('padding-bottom').replace(/[^-\d\.]/g, ''));
 	var filterToggleBtn = $('.filter-toggle-btn');
-	filterHeight = $(filterWrapper).height();
+	var filterToggleBtnHeight = $(filterToggleBtn).height();
+	var filterToggleBox = parseInt($(filterToggleBtn).css('padding-top').replace(/[^-\d\.]/g, ''));
+	filterToggleBox = filterToggleBox + parseInt($(filterToggleBtn).css('padding-bottom').replace(/[^-\d\.]/g, ''));
+	filterToggleBtnHeight = filterToggleBox + parseInt(filterToggleBtnHeight);
+	filterWrapperBox = filterWrapperBox + parseInt($(filterWrapper).css('padding-top').replace(/[^-\d\.]/g, ''));
+	filterHeight = parseInt($(filterWrapper).height());
+	filterHeight = filterHeight + filterWrapperBox;
 	$(filterWrapper).addClass('expanded');
 	$(filterToggleBtn).click(function() {
 		if ($(filterWrapper).hasClass('expanded')) {
-			toggleTo = '39px';
+			toggleTo = filterToggleBtnHeight;
 		} else if ($(filterWrapper).not('.expanded')) {
 			toggleTo = filterHeight;
 		}
