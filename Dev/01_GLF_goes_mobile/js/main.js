@@ -114,18 +114,22 @@ $(window).bind('resize', function(e) {
 /***********************WINDOW RESIZE END ********************/
 function detectWidth() {
 	var winW = $(window).width();
+	console.log(winW);
 	var htmlTag = $('html');
 	var searchBtn = $('.search-btn');
 	var pageWrapper = $('.page-wrapper');
 	$(navMain).removeAttr('style');
 	$('.nav-btn-wrapper').removeAttr('style');
 	if (winW <= 1035 || $(htmlTag).not('.no-touch')) {
+		var tileAfter = $('.teaser-tile:after');
+		$(tileAfter).css('display','none');
 		$(deskNav).addClass('hidden');
 		$(mobNav).removeClass('hidden');
 		$(pageWrapper).addClass('mobile');
 		mobileNav = true;
 	}
 	if (winW > 1035 && $(htmlTag).is('.no-touch')) {
+		console.log(winW + '>1035');
 		$(deskNav).removeClass('hidden');
 		$(mobNav).addClass('hidden').removeClass('pushy-open').addClass('pushy-left').removeAttr('style');
 		$(pageWrapper).removeClass('mobile');
@@ -137,7 +141,12 @@ function detectWidth() {
 	if (!navMInitialized || !navDInitialized) {
 		navFunctions();
 	}
+	if (winW <= 440) {
+		console.log(winW + '<=440');
+		resizeTiles();
+	}
 	if (winW <= 640) {
+		console.log(winW + '<=640');
 		if (!tabsInitialized) {
 			tabsFunction();
 		}
@@ -146,32 +155,37 @@ function detectWidth() {
 		}
 	}
 	if (winW > 640 && tabsInitialized) {
+		console.log(winW + '>640');
 		removeTabsFunction();
 	}
 	if (winW > 440 && tileHeightChanged) {
+		console.log(winW + '>440');
 		$('.tile').removeAttr('style');
-	}
-	if (winW <= 440) {
-		resizeTiles();
 	}
 }
 
 function navFunctions() {
 	//if nav item of visited page isn't collapsible, it should be toggled to single width
 	if ($(navMain).hasClass('no-active-btn')) {
+		console.log('has no active btn boolean');
 		hasActiveBtn = false;
 	}
 	if (!mobileNav) {
 		navDInitialized = true;
+		var mouseLeave = false;
 		var DeskNavBtnWrapper = $(deskNav).find('.nav-btn-wrapper');
 		/* Call accordionToggle function if .collapsible is hovered for 300 millisecs */
 		$(deskNav).find('.collapsible').hover(function() {
+			mouseLeave = false;
 			expandItem = $(this);
 			//Call function if duration of hover state is more than 300ms
-			expandTimeout = setTimeout(NavDesktopToggle, 300);
+			expandTimeout = setTimeout(function() {
+				NavDesktopToggle(mouseLeave);
+			}, 300);
 		}, stopAnimation);
 		/* Collapse active Item with some timeout on mouseleave*/
 		$(deskNav).mouseleave(function() {
+			mouseLeave = true;
 			//Expand nav item of visited page
 			$(DeskNavBtnWrapper).each(function(index, elem) {
 				if ($(elem).hasClass('visited')) {
@@ -179,7 +193,7 @@ function navFunctions() {
 				}
 			});
 			setTimeout(function() {
-				NavDesktopToggle();
+				NavDesktopToggle(mouseLeave);
 			}, 400);
 		});
 	}
@@ -217,7 +231,8 @@ function NavMobileToggle() {
 }
 
 /* expand hovered Item and collapse former activeItem */
-function NavDesktopToggle() {
+function NavDesktopToggle(mLeave) {
+	console.log(mLeave);
 	//active Item is the Nav Item which is expanded at the moment the nav hovered
 	activeItem = $(deskNav).find('.collapsible.active');
 	if ($(activeItem).hasClass('search-btn')) {
@@ -236,7 +251,8 @@ function NavDesktopToggle() {
 			queue : false
 		});
 	}
-	if (hasActiveBtn) {
+	if (hasActiveBtn == true || mLeave == false) {
+		console.log('hasactivebtn');
 		if ($(expandItem).hasClass('search-btn')) {
 			$(expandItem).animate({
 				width : "326px"
@@ -256,7 +272,6 @@ function NavDesktopToggle() {
 	$(activeItem).removeClass('active');
 	activeItem = expandItem;
 	$(activeItem).addClass('active');
-	hasActiveBtn = true;
 	searchLayerToggle();
 }
 
@@ -421,7 +436,7 @@ function filterToggle() {
 /*************Resize Tile small Screen Functions*********/
 function resizeTiles() {
 	tileHeightChanged = true;
-	var tile = $('.tile.teaser-tile');
+	var tile = $('.tile');
 	var tileWdth = $(tile).width();
 	var tileHght = tileWdth / 2;
 	$(tile).css('height', tileHght);

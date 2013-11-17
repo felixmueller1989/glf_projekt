@@ -103,7 +103,6 @@ html {
 	border-radius: 2px;
 }
 .semantic-content .modal-close {
-	display: block;
 	text-indent: -100px;
 	overflow: hidden;
 }
@@ -114,14 +113,6 @@ html {
 		left: 20px;
 		right: 20px;
 		margin-left: 0;
-	}
-	.semantic-content .modal-close {
-		left: auto;
-		right: 33px;
-		margin-left: 0;
-	}
-	.semantic-content .modal-close:after {
-		margin-left: 40%;
 	}
 }
 @media screen and (max-width: 30em) {
@@ -166,22 +157,6 @@ html {
 
 	.semantic-content .modal-content {
 		max-height: none;
-	}
-	.semantic-content .modal-close {
-		right: auto;
-		text-decoration: none;
-	}
-	.semantic-content .modal-close:before {
-		display: none;
-	}
-	.semantic-content .modal-close:after {
-		content: attr(data-close);
-		top: 0.4em;
-		left: 1em;
-		z-index: 40;
-		margin-left: 0;
-		font-size: 1em;
-		padding: 0.5em 1em;
 	}
 }
 @media screen and (min-width: 30em) {
