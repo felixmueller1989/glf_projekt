@@ -466,8 +466,8 @@ function testing() {
 /*************Filter Range Slider Functions *****************/
 function createLabels(semRangeValue) {
 
-	$(label_left).appendTo('#filter-range-slider');
-	$(label_right).appendTo('#filter-range-slider');
+	$(label_left).appendTo('#filter-range-slider-label');
+	$(label_right).appendTo('#filter-range-slider-label');
 
 	for (var i = 0; i <= semRangeText.length; i++) {
 		if (semRangeValue[0] == i) {
@@ -488,8 +488,8 @@ function filterRangeInit() {
 	$(label_left).addClass('noUi-handle-label');
 	$(label_right).addClass('noUi-handle-label');
 
-	$(label_left).appendTo('#filter-range-slider');
-	$(label_right).appendTo('#filter-range-slider');
+	$(label_left).appendTo('#filter-range-slider-label');
+	$(label_right).appendTo('#filter-range-slider-label');
 
 	for (var i = 0; i <= semRangeText.length; i++) {
 		if (semRangeValue[0] == i) {

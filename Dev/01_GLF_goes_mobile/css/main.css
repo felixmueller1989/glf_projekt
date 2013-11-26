@@ -900,7 +900,7 @@ input[type="file"]::-webkit-file-upload-button {
 	padding: 7px 0 0 0;
 }
 .noUi-handle-lower-label {
-	float: left;
+	/*float: left;*/
 }
 .noUi-handle-upper-label {
 	float: right;
