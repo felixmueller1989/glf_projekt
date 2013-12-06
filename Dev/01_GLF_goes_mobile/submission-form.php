@@ -28,35 +28,33 @@ if (isset($authorName)) {
 		<?php if (isset($_GET['success']) && $_GET['success'] == '1') { ?>
 		<div id="usp-success-message"><?php echo $usp_options['success-message']; ?></div>
 		<?php } else { ?>
-
 		<?php if (($usp_options['usp_name'] == 'show') && ($usp_options['usp_use_author'] == false)) { ?>
-		<fieldset class="usp-name">
-			<label for="user-submitted-name"><?php _e('Your Name', 'usp'); ?></label>
-			<input name="user-submitted-name" type="text" value="" data-required="true" placeholder="<?php _e('Your Name', 'usp'); ?>" class="usp-input">
+		<fieldset class="usp-vorname">
+			<input name="user-submitted-vorname" type="text" value="" data-required="true" placeholder="<?php _e('Vorname', 'usp'); ?>" class="usp-input">
+		</fieldset>
+		<fieldset class="usp-nachname">
+			<input name="user-submitted-nachname" type="text" value="" data-required="true" placeholder="<?php _e('Nachname', 'usp'); ?>" class="usp-input">
+		</fieldset>
+		<fieldset class="usp-email">
+			<input name="user-submitted-email" type="email" value="" data-required="true" placeholder="<?php _e('Email-Adresse', 'usp'); ?>" class="usp-input">
+		</fieldset>
+		<fieldset class="usp-studiengang">
+			<input name="user-submitted-studiengang" type="text" value="" data-required="true" placeholder="<?php _e('Studiengang', 'usp'); ?>" class="usp-input">
 		</fieldset>
 		<?php } if (($usp_options['usp_url'] == 'show') && ($usp_options['usp_use_url'] == false)) { ?>
 		<fieldset class="usp-url">
-			<label for="user-submitted-url"><?php _e('Your URL', 'usp'); ?></label>
 			<input name="user-submitted-url" type="text" value="" data-required="true" data-type="url" placeholder="<?php _e('Your URL', 'usp'); ?>" class="usp-input">
 		</fieldset>
 		<?php } if ($usp_options['usp_title'] == 'show') { ?>
 		<fieldset class="usp-title">
-			<label for="user-submitted-title"><?php _e('Post Title', 'usp'); ?></label>
-			<input name="user-submitted-title" type="text" value="" data-required="true" placeholder="<?php _e('Post Title', 'usp'); ?>" class="usp-input">
+			<input name="user-submitted-title" type="text" value="" data-required="true" placeholder="<?php _e('Betreff', 'usp'); ?>" class="usp-input">
 		</fieldset>
 		<?php } if ($usp_options['usp_tags'] == 'show') { ?>
 		<fieldset class="usp-tags">
-			<label for="user-submitted-tags"><?php _e('Post Tags', 'usp'); ?></label>
 			<input name="user-submitted-tags" id="user-submitted-tags" data-required="true" type="text" value="" placeholder="<?php _e('Post Tags', 'usp'); ?>" class="usp-input">
-		</fieldset>
-		<?php } if ($usp_options['usp_captcha'] == 'show') { ?>
-		<fieldset class="usp-captcha">
-			<label for="user-submitted-captcha"><?php echo $usp_options['usp_question']; ?></label>
-			<input name="user-submitted-captcha" type="text" value="" data-required="true" placeholder="<?php _e('Antispam Question', 'usp'); ?>" class="usp-input" id="user-submitted-captcha">
 		</fieldset>
 		<?php } if (($usp_options['usp_category'] == 'show') && ($usp_options['usp_use_cat'] == false)) { ?>
 		<fieldset class="usp-category">
-			<label for="user-submitted-category"><?php _e('Post Category', 'usp'); ?></label>
 			<select name="user-submitted-category">
 				<?php foreach($usp_options['categories'] as $categoryId) { $category = get_category($categoryId); if(!$category) { continue; } ?>
 				<option value="<?php echo $categoryId; ?>"><?php $category = get_category($categoryId); echo htmlentities($category->name, ENT_QUOTES, 'UTF-8'); ?></option>
@@ -79,19 +77,18 @@ if (isset($authorName)) {
 					    'dfw'           => false, // replace fullscreen with DFW
 					    'tinymce'       => true,  // enable TinyMCE
 					    'quicktags'     => true,  // enable quicktags
-					);
-					wp_editor('', 'uspContent', $settings); 
+					    );
+				wp_editor('', 'uspContent', $settings); 
 				?>
 			</div>
 			<?php } else { ?>
-				<label for="user-submitted-content"><?php _e('Post Content', 'usp'); ?></label>
-				<textarea name="user-submitted-content" rows="5" data-required="true" placeholder="<?php _e('Post Content', 'usp'); ?>" class="usp-textarea"></textarea>
+			<textarea name="user-submitted-content" rows="5" data-required="true" placeholder="<?php _e('Dein Thema und deine Idee', 'usp'); ?>" class="usp-textarea"></textarea>
 			<?php } ?>
 		</fieldset>
 		<?php } if ($usp_options['usp_images'] == 'show') { ?>
 		<?php if ($usp_options['max-images'] !== 0) { ?>
 		<fieldset class="usp-images">
-			<label for="user-submitted-image"><?php _e('Upload an Image', 'usp'); ?></label>
+			<label for="user-submitted-image"><?php _e('', 'usp'); ?></label>
 			<div id="usp-upload-message"><?php echo $usp_options['upload-message']; ?></div>
 			<div id="user-submitted-image">
 				<?php if($usp_options['min-images'] < 1) {
@@ -105,6 +102,19 @@ if (isset($authorName)) {
 			</div>
 			<input class="hidden" type="hidden" name="usp-image-limit" id="usp-image-limit" value="<?php echo $usp_options['max-images']; ?>">
 			<input class="hidden" type="hidden" name="usp-image-count" id="usp-image-count" value="1">
+		</fieldset>
+		<?php } if ($usp_options['usp_captcha'] == 'show') { ?>
+		<fieldset class="usp-check-name">
+			<input id="user-submitted-check-name" type="checkbox" name="user-submitted-check-name" value="0">
+			<label for="user-submitted-check-name">Ich möchte nicht, dass mein Name veröffentlich wird.</label>
+		</fieldset>
+		<fieldset class="usp-check-topic">
+			<input id="user-submitted-check-topic" type="checkbox" name="user-submitted-check-topic" value="1" checked>
+			<label for="user-submitted-check-topic">Ich bin damit einverstanden, dass mein Vorschlag auf der Website veröffentlich wird.</label>
+		</fieldset>
+		<fieldset class="usp-captcha">
+			<label for="user-submitted-captcha"><?php echo $usp_options['usp_question']; ?></label>
+			<input name="user-submitted-captcha" type="text" value="" data-required="true" placeholder="<?php _e('Lösung', 'usp'); ?>" class="usp-input" id="user-submitted-captcha">
 		</fieldset>
 		<?php } ?>
 		<?php } ?>

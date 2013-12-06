@@ -36,6 +36,13 @@ $usp_post_meta_Submitter    = 'user_submit_name';
 $usp_post_meta_SubmitterUrl = 'user_submit_url';
 $usp_post_meta_Image        = 'user_submit_image';
 
+$usp_post_meta_vorname = 'vorname';
+$usp_post_meta_nachname = 'name';
+$usp_post_meta_email = 'email_adresse';
+$usp_post_meta_studiengang = 'studiengang';
+$usp_post_meta_check_name = 'check_name';
+$usp_post_meta_check_topic = 'check_topic';
+
 // include template functions
 include ('library/template-tags.php');
 
@@ -78,12 +85,12 @@ add_action ('parse_request', 'usp_checkForPublicSubmission');
 function usp_checkForPublicSubmission() {
 	global $usp_options;
 	if (isset($_POST['user-submitted-post']) && !empty($_POST['user-submitted-post'])) {
-
+		
 		if ($usp_options['usp_title'] == 'show') {
 			$title = stripslashes($_POST['user-submitted-title']);
 		} else {
 			$title = 'User Submitted Post';
-		}
+		}		
 		if (stripslashes($_POST['user-submitted-name']) && !empty($_POST['user-submitted-name'])) {
 			$author_submit = stripslashes($_POST['user-submitted-name']);
 			$author_info = get_user_by('login', $author_submit);
@@ -105,6 +112,13 @@ function usp_checkForPublicSubmission() {
 		$captcha   = stripslashes($_POST['user-submitted-captcha']);
 		$category  = intval($_POST['user-submitted-category']);
 		$content   = stripslashes($_POST['user-submitted-content']);
+		
+		$vorname = stripslashes($_POST['user-submitted-vorname']);
+		$nachname = stripslashes($_POST['user-submitted-nachname']);
+		$email = stripslashes($_POST['user-submitted-email']);
+		$studiengang = stripslashes($_POST['user-submitted-studiengang']);
+		$checkname = isset($_POST['user-submitted-check-name']);
+		$checktopic = isset($_POST['user-submitted-check-topic']);
 
 		if (isset($_FILES['user-submitted-image'])) {
 			$fileData = $_FILES['user-submitted-image'];
@@ -112,7 +126,7 @@ function usp_checkForPublicSubmission() {
 			$fileData = '';
 		}
 
-		$publicSubmission = usp_createPublicSubmission($title, $content, $authorName, $authorID, $authorUrl, $tags, $category, $fileData);
+		$publicSubmission = usp_createPublicSubmission($title, $content, $authorName, $authorID, $authorUrl, $tags, $category, $fileData, $vorname, $nachname, $email, $studiengang, $checkname, $checktopic);
 
 		if (false == ($publicSubmission)) {
 			$errorMessage = empty($usp_options['error-message']) ? __('An error occurred. Please go back and try again.', 'usp') : $usp_options['error-message'];
@@ -158,7 +172,7 @@ function usp_display_featured_image() {
 				'posts_per_page' => 0, 
 				'post_parent' => $post->ID, 
 				'order'=>'ASC'
-			));
+				));
 			if ($attachments) {
 				foreach ($attachments as $attachment) {
 					set_post_thumbnail($post->ID, $attachment->ID);
@@ -219,8 +233,8 @@ function load_custom_admin_css() {
 
 // add styles for WP rich text editor
 function usp_editor_style($mce_css){
-    $mce_css .= ', ' . plugins_url('resources/editor-style.css', __FILE__);
-    return $mce_css;
+	$mce_css .= ', ' . plugins_url('resources/editor-style.css', __FILE__);
+	return $mce_css;
 }
 add_filter('mce_css', 'usp_editor_style');
 
@@ -251,7 +265,7 @@ function user_submitted_posts() {
 add_action ('restrict_manage_posts', 'usp_outputUserSubmissionLink');
 function usp_outputUserSubmissionLink() {
 	global $pagenow;
-	if ($pagenow == 'edit.php') {
+	if ($pagenow == 'edit.php' && 'post_type' == 'themen') {
 		echo '<a id="usp_admin_filter_posts" class="button" href="' . admin_url('edit.php?post_status=pending&amp;user_submitted=1') . '">' . __('USP', 'usp') . '</a>';
 	}
 }
@@ -272,13 +286,20 @@ function usp_replaceAuthor($author) {
 }
 
 // create the form
-function usp_createPublicSubmission($title, $content, $authorName, $authorID, $authorUrl, $tags, $category, $fileData) {
+function usp_createPublicSubmission($title, $content, $authorName, $authorID, $authorUrl, $tags, $category, $fileData, $vorname, $nachname, $email, $studiengang, $checkname, $checktopic) {
 	global $usp_options, $usp_post_meta_IsSubmission, $usp_post_meta_SubmitterIp, $usp_post_meta_Submitter, $usp_post_meta_SubmitterUrl, $usp_post_meta_Image;
+	global $usp_post_meta_nachname,$usp_post_meta_vorname, $usp_post_meta_email, $usp_post_meta_studiengang, $usp_post_meta_check_name, $usp_post_meta_check_topic;
 	$authorName = strip_tags($authorName);
 	$authorUrl  = strip_tags($authorUrl);
+	$vorname  = strip_tags($vorname);
+	$nachname = strip_tags($nachname);
+	$email = strip_tags($email);
+	$studiengang  = strip_tags($studiengang);
 	if (isset($_SERVER['REMOTE_ADDR']))          $authorIp = stripslashes(trim($_SERVER['REMOTE_ADDR']));
 	if (isset($_POST['user-submitted-captcha'])) $captcha  = stripslashes(trim($_POST['user-submitted-captcha']));
 	if (isset($_POST['user-submitted-verify']))  $verify   = stripslashes(trim($_POST['user-submitted-verify']));
+	if (isset($_POST['user-submitted-check-name'])) {$check_name_value = 0;} else $check_name_value = 1;
+	if (isset($_POST['user-submitted-check-topic'])) {$check_topic_value = 1;} else $check_topic_value = 0;
 
 	if (!usp_validateTitle($title)) {
 		return false;
@@ -298,8 +319,9 @@ function usp_createPublicSubmission($title, $content, $authorName, $authorID, $a
 	$postData['post_title']   = $title;
 	$postData['post_content'] = $content;
 	$postData['post_status']  = 'pending';
-	$postData['post_author']  = $authorID;
-	$numberApproved           = $usp_options['number-approved'];
+	$postData['post_author']  = $vorname . $nachname;
+	$postData['post_type'] = 'themen';
+	$numberApproved = $usp_options['number-approved'];
 
 	if ($numberApproved < 0) {} elseif ($numberApproved == 0) {
 		$postData['post_status'] = 'publish';
@@ -307,8 +329,13 @@ function usp_createPublicSubmission($title, $content, $authorName, $authorID, $a
 		$posts = get_posts(array('post_status'=>'publish', 'meta_key'=>$usp_post_meta_Submitter, 'meta_value'=>$authorName));
 		$counter = 0;
 		foreach ($posts as $post) {
-			$submitterUrl = get_post_meta($post->ID, $usp_post_meta_SubmitterUrl, true);
-			$submitterIp  = get_post_meta($post->ID, $usp_post_meta_SubmitterIp, true);
+			$add_custom_field_vorname = add_post_meta($post->ID, $usp_post_meta_vorname);
+			$add_custom_field_nachname = add_post_meta($post->ID, $usp_post_meta_nachname);
+			$add_custom_field_email = add_post_meta($post->ID, $usp_post_meta_email);
+			$add_custom_field_studiengang = add_post_meta($post->ID, $usp_post_meta_studiengang);
+			$add_custom_field_checkname = add_post_meta($post->ID, $usp_post_meta_check_name);
+			$add_custom_field_checktopic = add_post_meta($post->ID, $usp_post_meta_check_topic);
+
 			if ($submitterUrl == $authorUrl && $submitterIp == $authorIp) {
 				$counter++;
 			}
@@ -326,160 +353,187 @@ function usp_createPublicSubmission($title, $content, $authorName, $authorID, $a
 		if ($usp_options['usp_email_alerts'] == true) {
 			$to = $usp_options['usp_email_address'];
 			if ($to !== '') {
-				$subject = 'New user-submitted post!';
-				$message = 'Hey, there is a new user-submitted post waiting for you.';
+				$subject = 'Neues Thema wurde vorgeschlagen!';
+				$message = 'Hallo Online-Redaktion. Es wurde soeben ein neues Thema vorgeschlagen. Ihr findet den Vorschlag als Entwurf unter "Themen".';
 				wp_mail($to, $subject, $message);
 			}
-		}
-		if (!function_exists('media_handle_upload')) {
-			require_once (ABSPATH . '/wp-admin/includes/media.php');
-			require_once (ABSPATH . '/wp-admin/includes/file.php');
-			require_once (ABSPATH . '/wp-admin/includes/image.php');
-		}
-		$attachmentIds = array();
-		$imageCounter = 0;
+			/*
+				$to_client = '"' . $email . '"';
+				$subject_client = 'Bestätigung: Dein Themenvorschlag für GLFtv';
+				$message_client = '<strong>Danke für deinen Input' . $vorname . $nachname;
+				$message_client . = ',</strong>die GLFtv Redaktion wird deinen Vorschlag diskutieren.';
+				$message_client . = 'Hier kannst du nochmal sehen, welche Angaben du an uns gesendet hast';
+				$message_client . = '<div style="border:1px solid #ddd; padding: 20px;">';
+				$message_client . = '<strong>Name:</strong> ' . $vorname . $nachname;
+				$message_client . = '<strong>Email:</strong> ' . $email;
+				$message_client . = '<strong>Studiengang:</strong> ' . $studiengang ;
+				$message_client . = '<strong>Titel deines Themas:</strong>' . $title;
+				$message_client . = '<strong>Beschreibung des Themas:</strong>' . $content;
+				$message_client . = '</div>';
+				$message_client . = 'Wir freuen uns auf deinen nächsten Besuch.';
+				$message_client . = '<strong>Dein GLFtv Hochschulfernsehen</strong>';
+				$message_client . = '___________________________________';
+				$message_client . = 'GLFtv';
+				$message_client . = 'Robert-Gerwig-Platz 1';
+				$message_client . = '78120 Furtwangen';
+				$message_client . = 'Telefon: +49 7723 920-2571';
+				$message_client . = 'Email: glftv.hochschulfernsehen@gmail.com';
+				$message_client . = 'http://www.glvtv.de';
+				wp_mail($to_client, $subject_client, $message_client);*/
 
-		if ($fileData !== '') {
-			for ($i = 0; $i < count($fileData['name']); $i++) {
-				$imageInfo = @getimagesize($fileData['tmp_name'][$i]);
-				if (false === $imageInfo || !usp_imageIsRightSize($imageInfo[0], $imageInfo[1])) {
-					continue;
-				}
-				$key = "public-submission-attachment-{$i}";
-	
-				$_FILES[$key] = array();
-				$_FILES[$key]['name']     = $fileData['name'][$i];
-				$_FILES[$key]['tmp_name'] = $fileData['tmp_name'][$i];
-				$_FILES[$key]['type']     = $fileData['type'][$i];
-				$_FILES[$key]['error']    = $fileData['error'][$i];
-				$_FILES[$key]['size']     = $fileData['size'][$i];
-	
-				$attachmentId = media_handle_upload($key, $newPost);
-		
-				if (!is_wp_error($attachmentId) && wp_attachment_is_image($attachmentId)) {
-					$attachmentIds[] = $attachmentId;
-					add_post_meta($newPost, $usp_post_meta_Image, wp_get_attachment_url($attachmentId));
-					$imageCounter++;
-				} else {
-					wp_delete_attachment($attachmentId);
-				}
-				if ($imageCounter == $usp_options['max-images']) {
-					break;
+			}
+			if (!function_exists('media_handle_upload')) {
+				require_once (ABSPATH . '/wp-admin/includes/media.php');
+				require_once (ABSPATH . '/wp-admin/includes/file.php');
+				require_once (ABSPATH . '/wp-admin/includes/image.php');
+			}
+			$attachmentIds = array();
+			$imageCounter = 0;
+
+			if ($fileData !== '') {
+				for ($i = 0; $i < count($fileData['name']); $i++) {
+					$imageInfo = @getimagesize($fileData['tmp_name'][$i]);
+					if (false === $imageInfo || !usp_imageIsRightSize($imageInfo[0], $imageInfo[1])) {
+						continue;
+					}
+					$key = "public-submission-attachment-{$i}";
+
+					$_FILES[$key] = array();
+					$_FILES[$key]['name']     = $fileData['name'][$i];
+					$_FILES[$key]['tmp_name'] = $fileData['tmp_name'][$i];
+					$_FILES[$key]['type']     = $fileData['type'][$i];
+					$_FILES[$key]['error']    = $fileData['error'][$i];
+					$_FILES[$key]['size']     = $fileData['size'][$i];
+
+					$attachmentId = media_handle_upload($key, $newPost);
+
+					if (!is_wp_error($attachmentId) && wp_attachment_is_image($attachmentId)) {
+						$attachmentIds[] = $attachmentId;
+						add_post_meta($newPost, $usp_post_meta_Image, wp_get_attachment_url($attachmentId));
+						$imageCounter++;
+					} else {
+						wp_delete_attachment($attachmentId);
+					}
+					if ($imageCounter == $usp_options['max-images']) {
+						break;
+					}
 				}
 			}
-		}
-		if (count($attachmentIds) < $usp_options['min-images']) {
-			foreach ($attachmentIds as $idToDelete) {
-				wp_delete_attachment($idToDelete);
+			if (count($attachmentIds) < $usp_options['min-images']) {
+				foreach ($attachmentIds as $idToDelete) {
+					wp_delete_attachment($idToDelete);
+				}
+				wp_delete_post($newPost);
+				return false;
 			}
-			wp_delete_post($newPost);
-			return false;
+			update_post_meta($newPost, $usp_post_meta_IsSubmission, true);
+			update_post_meta($newPost, $usp_post_meta_vorname, htmlentities($vorname, ENT_QUOTES, 'UTF-8'));
+			update_post_meta($newPost, $usp_post_meta_nachname, htmlentities($nachname, ENT_QUOTES, 'UTF-8'));
+			update_post_meta($newPost, $usp_post_meta_email, htmlentities($email, ENT_QUOTES, 'UTF-8'));
+			update_post_meta($newPost, $usp_post_meta_studiengang, htmlentities($studiengang, ENT_QUOTES, 'UTF-8'));
+			update_post_meta($newPost, $usp_post_meta_check_name, $check_name_value);
+			update_post_meta($newPost, $usp_post_meta_check_topic, $check_topic_value);
 		}
-		update_post_meta($newPost, $usp_post_meta_IsSubmission, true);
-		update_post_meta($newPost, $usp_post_meta_Submitter, htmlentities($authorName, ENT_QUOTES, 'UTF-8'));
-		update_post_meta($newPost, $usp_post_meta_SubmitterUrl, htmlentities($authorUrl, ENT_QUOTES, 'UTF-8'));
-		update_post_meta($newPost, $usp_post_meta_SubmitterIp, htmlentities($authorIp, ENT_QUOTES, 'UTF-8'));
+		return $newPost;
 	}
-	return $newPost;
-}
 
 // validate stuff
-function usp_imageIsRightSize($width, $height) {
-	global $usp_options;
-	$widthFits = ($width <= intval($usp_options['max-image-width'])) && ($width >= $usp_options['min-image-width']);
-	$heightFits = ($height <= $usp_options['max-image-height']) && ($height >= $usp_options['min-image-height']);
-	return $widthFits && $heightFits;
-}
-function usp_validateTags($tags) {
-	return true;
-}
-function usp_validateTitle($title) {
-	return !empty($title);
-}
+	function usp_imageIsRightSize($width, $height) {
+		global $usp_options;
+		$widthFits = ($width <= intval($usp_options['max-image-width'])) && ($width >= $usp_options['min-image-width']);
+		$heightFits = ($height <= $usp_options['max-image-height']) && ($height >= $usp_options['min-image-height']);
+		return $widthFits && $heightFits;
+	}
+	function usp_validateTags($tags) {
+		return true;
+	}
+	function usp_validateTitle($title) {
+		return !empty($title);
+	}
 
 // challenge question
-function usp_spam_question($input) {
-	global $usp_options;
-	$response = $usp_options['usp_response'];
-	$response = stripslashes(trim($response));
-	if ($usp_options['usp_casing'] == false) {
-		return (strtoupper($input) == strtoupper($response));
-	} else {
-		return ($input == $response);
+	function usp_spam_question($input) {
+		global $usp_options;
+		$response = $usp_options['usp_response'];
+		$response = stripslashes(trim($response));
+		if ($usp_options['usp_casing'] == false) {
+			return (strtoupper($input) == strtoupper($response));
+		} else {
+			return ($input == $response);
+		}
 	}
-}
 
 // current url
-function usp_currentPageURL() {
-	$pageURL = 'http';
-	if ($_SERVER["HTTPS"] == "on") {
-		$pageURL .= "s";
+	function usp_currentPageURL() {
+		$pageURL = 'http';
+		if ($_SERVER["HTTPS"] == "on") {
+			$pageURL .= "s";
+		}
+		$pageURL .= "://";
+		if ($_SERVER["SERVER_PORT"] != "80") {
+			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+		} else {
+			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		}
+		return $pageURL;
 	}
-	$pageURL .= "://";
-	if ($_SERVER["SERVER_PORT"] != "80") {
-		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	} else {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	}
-	return $pageURL;
-}
 
 // display settings link on plugin page
-add_filter ('plugin_action_links', 'usp_plugin_action_links', 10, 2);
-function usp_plugin_action_links($links, $file) {
-	global $usp_path;
-	if ($file == $usp_path) {
-		$usp_links = '<a href="' . get_admin_url() . 'options-general.php?page=' . $usp_path . '">' . __('Settings', 'usp') .'</a>';
-		array_unshift($links, $usp_links);
+	add_filter ('plugin_action_links', 'usp_plugin_action_links', 10, 2);
+	function usp_plugin_action_links($links, $file) {
+		global $usp_path;
+		if ($file == $usp_path) {
+			$usp_links = '<a href="' . get_admin_url() . 'options-general.php?page=' . $usp_path . '">' . __('Settings', 'usp') .'</a>';
+			array_unshift($links, $usp_links);
+		}
+		return $links;
 	}
-	return $links;
-}
 
 // rate plugin link
-function add_usp_links($links, $file) {
-	if ($file == plugin_basename(__FILE__)) {
-		$rate_url = 'http://wordpress.org/support/view/plugin-reviews/' . basename(dirname(__FILE__)) . '?rate=5#postform';
-		$links[] = '<a href="' . $rate_url . '" target="_blank" title="Click here to rate and review this plugin on WordPress.org">Rate this plugin</a>';
+	function add_usp_links($links, $file) {
+		if ($file == plugin_basename(__FILE__)) {
+			$rate_url = 'http://wordpress.org/support/view/plugin-reviews/' . basename(dirname(__FILE__)) . '?rate=5#postform';
+			$links[] = '<a href="' . $rate_url . '" target="_blank" title="Click here to rate and review this plugin on WordPress.org">Rate this plugin</a>';
+		}
+		return $links;
 	}
-	return $links;
-}
-add_filter('plugin_row_meta', 'add_usp_links', 10, 2);
+	add_filter('plugin_row_meta', 'add_usp_links', 10, 2);
 
 // delete plugin settings
-function usp_delete_plugin_options() {
-	delete_option('usp_options');
-}
-if ($usp_options['default_options'] == 1) {
-	register_uninstall_hook (__FILE__, 'usp_delete_plugin_options');
-}
+	function usp_delete_plugin_options() {
+		delete_option('usp_options');
+	}
+	if ($usp_options['default_options'] == 1) {
+		register_uninstall_hook (__FILE__, 'usp_delete_plugin_options');
+	}
 
 // define default settings
-register_activation_hook (__FILE__, 'usp_add_defaults');
-function usp_add_defaults() {
-	$currentUser = wp_get_current_user();
-	$admin_mail = get_bloginfo('admin_email');
-	$tmp = get_option('usp_options');
-	if(($tmp['default_options'] == '1') || (!is_array($tmp))) {
-		$arr = array(
-			'default_options' => 0,
-			'author' => $currentUser->ID,
-			'categories' => array(get_option('default_category')),
-			'number-approved' => -1,
-			'redirect-url' => '',
-			'error-message' => __('There was an error. Please ensure that you have added a title, some content, and that you have uploaded only images.', 'usp'),
-			'min-images' => 0,
-			'max-images' => 1,
-			'min-image-height' => 0,
-			'min-image-width' => 0,
-			'max-image-height' => 1500,
-			'max-image-width' => 1500,
-			'usp_name' => 'show',
-			'usp_url' => 'show',
-			'usp_title' => 'show',
-			'usp_tags' => 'show',
-			'usp_category' => 'show',
-			'usp_images' => 'hide',
-			'upload-message' => 'Please select your image(s) to upload.',
+	register_activation_hook (__FILE__, 'usp_add_defaults');
+	function usp_add_defaults() {
+		$currentUser = wp_get_current_user();
+		$admin_mail = get_bloginfo('admin_email');
+		$tmp = get_option('usp_options');
+		if(($tmp['default_options'] == '1') || (!is_array($tmp))) {
+			$arr = array(
+				'default_options' => 0,
+				'author' => $currentUser->ID,
+				'categories' => array(get_option('default_category')),
+				'number-approved' => -1,
+				'redirect-url' => '',
+				'error-message' => __('There was an error. Please ensure that you have added a title, some content, and that you have uploaded only images.', 'usp'),
+				'min-images' => 0,
+				'max-images' => 1,
+				'min-image-height' => 0,
+				'min-image-width' => 0,
+				'max-image-height' => 1500,
+				'max-image-width' => 1500,
+				'usp_name' => 'show',
+				'usp_url' => 'show',
+				'usp_title' => 'show',
+				'usp_tags' => 'show',
+				'usp_category' => 'show',
+				'usp_images' => 'hide',
+				'upload-message' => 'Please select your image(s) to upload.',
 			'usp_form_width' => '300', // in pixels (not used anywhere)
 			'usp_question' => '1 + 1 =',
 			'usp_response' => '2',
@@ -499,9 +553,9 @@ function usp_add_defaults() {
 			'usp_form_content' => '',
 			'usp_richtext_editor' => 0,
 			'usp_featured_images' => 0,
-		);
-		update_option('usp_options', $arr);
-	}	
+			);
+update_option('usp_options', $arr);
+}	
 }
 
 // define style options
@@ -509,16 +563,16 @@ $usp_form_version = array(
 	'classic' => array(
 		'value' => 'classic',
 		'label' => __('Classic form + styles (<small><em><strong>Note:</strong> the &ldquo;classic&rdquo; form is deprecated and will be removed in a future version.</em></small>)', 'usp')
-	),
+		),
 	'current' => array(
 		'value' => 'current',
 		'label' => __('HTML5 form + styles', 'usp')
-	),
+		),
 	'disable' => array(
 		'value' => 'disable',
 		'label' => __('Disable stylesheet', 'usp')
-	),
-);
+		),
+	);
 
 // whitelist settings
 add_action ('admin_init', 'usp_init');
@@ -692,77 +746,77 @@ function usp_render_form() {
 									<li><?php _e('For the shortcode and template tag, visit', 'usp'); ?> <a id="mm-panel-secondary-link" href="#mm-panel-secondary"><?php _e('Shortcode &amp; Template Tag', 'usp'); ?></a>.</li>
 									<li><?php _e('For more information check the', 'usp'); ?> <a href="<?php echo plugins_url(); ?>/user-submitted-posts/readme.txt">readme.txt</a> 
 										<?php _e('and', 'usp'); ?> <a href="<?php echo $usp_homeurl; ?>"><?php _e('USP Homepage', 'usp'); ?></a>.</li>
-									<li><?php _e('If you like this plugin, please', 'usp'); ?> 
-										<a href="http://wordpress.org/support/view/plugin-reviews/<?php echo basename(dirname(__FILE__)); ?>?rate=5#postform" title="<?php _e('Click here to rate and review this plugin on WordPress.org', 'usp'); ?>" target="_blank">
-											<?php _e('rate it at the Plugin Directory', 'usp'); ?>&nbsp;&raquo;
-										</a>
-									</li>
-								</ul>
+										<li><?php _e('If you like this plugin, please', 'usp'); ?> 
+											<a href="http://wordpress.org/support/view/plugin-reviews/<?php echo basename(dirname(__FILE__)); ?>?rate=5#postform" title="<?php _e('Click here to rate and review this plugin on WordPress.org', 'usp'); ?>" target="_blank">
+												<?php _e('rate it at the Plugin Directory', 'usp'); ?>&nbsp;&raquo;
+											</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div id="mm-panel-primary" class="postbox">
-						<h3><?php _e('Options', 'usp'); ?></h3>
-						<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
-							<p><?php _e('Here you may configure options for USP. See the <code>readme.txt</code> for more information.', 'usp'); ?></p>
-							<h4><?php _e('Show/hide the following form fields', 'usp'); ?></h4>
-							<ul class="mm-plain-list">
-								<li>
-									<select name="usp_options[usp_name]">
-										<option <?php if ($usp_options['usp_name'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_name'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('User Name', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_url]">
-										<option <?php if ($usp_options['usp_url'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_url'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Post URL', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_title]">
-										<option <?php if ($usp_options['usp_title'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_title'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Post Title', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_tags]">
-										<option <?php if ($usp_options['usp_tags'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_tags'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Post Tags', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_category]">
-										<option <?php if ($usp_options['usp_category'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_category'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Post Category', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_content]">
-										<option <?php if ($usp_options['usp_content'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_content'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Post Content', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_images]">
-										<option <?php if ($usp_options['usp_images'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_images'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Post Images', 'usp'); ?></span>
-								</li>
-								<li>
-									<select name="usp_options[usp_captcha]">
-										<option <?php if ($usp_options['usp_captcha'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
-										<option <?php if ($usp_options['usp_captcha'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
-									</select> <span><?php _e('Challenge question (Captcha)', 'usp'); ?></span>
-								</li>
-							</ul>
-							<h4><?php _e('Choose some general form options', 'usp'); ?></h4>
-							<div class="mm-table-wrap">
-								<table class="widefat mm-table">
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_form_version]"><?php _e('Form style', 'usp'); ?></label></th>
-										<td>
-											<?php if (!isset($checked)) $checked = '';
+						<div id="mm-panel-primary" class="postbox">
+							<h3><?php _e('Options', 'usp'); ?></h3>
+							<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
+								<p><?php _e('Here you may configure options for USP. See the <code>readme.txt</code> for more information.', 'usp'); ?></p>
+								<h4><?php _e('Show/hide the following form fields', 'usp'); ?></h4>
+								<ul class="mm-plain-list">
+									<li>
+										<select name="usp_options[usp_name]">
+											<option <?php if ($usp_options['usp_name'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_name'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('User Name', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_url]">
+											<option <?php if ($usp_options['usp_url'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_url'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Post URL', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_title]">
+											<option <?php if ($usp_options['usp_title'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_title'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Post Title', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_tags]">
+											<option <?php if ($usp_options['usp_tags'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_tags'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Post Tags', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_category]">
+											<option <?php if ($usp_options['usp_category'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_category'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Post Category', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_content]">
+											<option <?php if ($usp_options['usp_content'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_content'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Post Content', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_images]">
+											<option <?php if ($usp_options['usp_images'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_images'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Post Images', 'usp'); ?></span>
+									</li>
+									<li>
+										<select name="usp_options[usp_captcha]">
+											<option <?php if ($usp_options['usp_captcha'] == 'show') echo 'selected="selected"'; ?> value="show"><?php _e('Show', 'usp'); ?></option>
+											<option <?php if ($usp_options['usp_captcha'] == 'hide') echo 'selected="selected"'; ?> value="hide"><?php _e('Hide', 'usp'); ?></option>
+										</select> <span><?php _e('Challenge question (Captcha)', 'usp'); ?></span>
+									</li>
+								</ul>
+								<h4><?php _e('Choose some general form options', 'usp'); ?></h4>
+								<div class="mm-table-wrap">
+									<table class="widefat mm-table">
+										<tr>
+											<th scope="row"><label class="description" for="usp_options[usp_form_version]"><?php _e('Form style', 'usp'); ?></label></th>
+											<td>
+												<?php if (!isset($checked)) $checked = '';
 												foreach ($usp_form_version as $usp_form) {
 													$radio_setting = $usp_options['usp_form_version'];
 													if ('' != $radio_setting) {
@@ -776,264 +830,264 @@ function usp_render_form() {
 														<input type="radio" name="usp_options[usp_form_version]" value="<?php esc_attr_e($usp_form['value']); ?>" <?php echo $checked; ?> /> 
 														<?php echo $usp_form['label']; ?>
 													</div>
-											<?php } ?>
-											<div class="mm-item-caption">
-												<?php _e('HTML5 is recommended. If upgrading and the new form looks weird, choose the Classic version.', 'usp'); ?> 
-												<?php _e('To disable the plugin&rsquo;s stylesheet, choose Disable. Note: complete list of CSS hooks for the submission form at', 'usp'); ?> 
-												<a href="http://m0n.co/e" title="<?php _e('CSS Hooks for User Submitted Posts', 'usp'); ?>" target="_blank">http://m0n.co/e</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_include_js]"><?php _e('Include JavaScript?', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_include_js]" <?php if (isset($usp_options['usp_include_js'])) { checked('1', $usp_options['usp_include_js']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to include the external JavaScript file. Note: if you&rsquo;re not allowing image uploads, leave this option unchecked.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_display_url]"><?php _e('Targeted Loading', 'usp'); ?></label></th>
-										<td><input type="text" size="45" maxlength="200" name="usp_options[usp_display_url]" value="<?php echo esc_attr($usp_options['usp_display_url']); ?>" />
-										<div class="mm-item-caption"><?php _e('When enabled, external CSS &amp; JavaScript files are loaded on every page. Here you may specify the URL of the USP form to load resources only on that page. Note: leave blank to load on all pages.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description"><?php _e('Categories', 'usp'); ?></label></th>
-										<td>
-											<?php $categories = get_categories(array('hide_empty'=> 0)); ?>
-											<?php foreach($categories as $category) { ?>
-											
-											<div class="mm-radio-inputs">
-												<label class="description">
-													<input <?php checked(true, in_array($category->term_id, $usp_options['categories'])); ?> type="checkbox" name="usp_options[categories][]" value="<?php echo $category->term_id; ?>" /> 
-													<span><?php echo htmlentities($category->name, ENT_QUOTES, 'UTF-8'); ?></span>
-												</label>
-											</div>
-											
-											<?php } ?>
-											<div class="mm-item-caption"><?php _e('Select which categories may be assigned to submitted posts.', 'usp'); ?></div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[author]"><?php _e('Assigned Author', 'usp'); ?></label></th>
-										<td>
-											<select id="usp_options[author]" name="usp_options[author]">
-											<?php global $wpdb; $allAuthors = $wpdb->get_results("SELECT ID, display_name FROM {$wpdb->users}");
-												foreach($allAuthors as $author) { ?>
-													<option <?php selected($usp_options['author'], $author->ID); ?> value="<?php echo $author->ID; ?>">
-														<?php echo $author->display_name; ?>
-													</option>
-												<?php } ?>
-											</select>
-											<div class="mm-item-caption"><?php _e('Specify the user that should be assigned as author for user-submitted posts.', 'usp'); ?></div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[number-approved]"><?php _e('Auto Publish?', 'usp'); ?></label></th>
-										<td>
-											<select name="usp_options[number-approved]">
-												<option <?php selected(-1, $usp_options['number-approved']); ?> value="-1"><?php _e('Always moderate', 'usp'); ?></option>
-												<option <?php selected( 0, $usp_options['number-approved']); ?> value="0"><?php _e('Always publish immediately', 'usp'); ?></option>
-												<?php foreach(range(1, 20) as $value) { ?>
-												<option <?php selected($value, $usp_options['number-approved']); ?> value="<?php echo $value; ?>"><?php echo $value; ?></option>
-												<?php } ?>
-											</select>
-											<div class="mm-item-caption"><?php _e('For submitted posts, you can always moderate (recommended), publish immediately, or publish after any number of approved posts.', 'usp'); ?></div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_email_alerts]"><?php _e('Receive Email Alert', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_email_alerts]" <?php if (isset($usp_options['usp_email_alerts'])) { checked('1', $usp_options['usp_email_alerts']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to be notified via email for new post submissions.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_richtext_editor]"><?php _e('Enable Rich Text Editor', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_richtext_editor]" <?php if (isset($usp_options['usp_richtext_editor'])) { checked('1', $usp_options['usp_richtext_editor']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to enable WP rich text editing for submitted posts.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_featured_images]"><?php _e('Set Uploaded Image as Featured Image', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_featured_images]" <?php if (isset($usp_options['usp_featured_images'])) { checked('1', $usp_options['usp_featured_images']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to set submitted images as Featured Images (aka Post Thumbnails) for posts. 
-											Note: your theme&rsquo;s single.php file must include', 'usp'); ?> <code>the_post_thumbnail()</code> <?php _e('to display Featured Images.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_email_address]"><?php _e('Email Address for Alerts', 'usp'); ?></label></th>
-										<td><input type="text" size="45" maxlength="200" name="usp_options[usp_email_address]" value="<?php echo esc_attr($usp_options['usp_email_address']); ?>" />
-										<div class="mm-item-caption"><?php _e('If you checked the box to receive email alerts, indicate here the address(es) to which the emails should be sent.', 'usp'); ?> 
-										<?php _e('Tip: multiple addresses may be included using a comma, like so:', 'usp'); ?> <code>email01@example.com</code>, <code>email02@example.com</code>, <code>email03@example.com</code></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[redirect-url]"><?php _e('Redirect URL', 'usp'); ?></label></th>
-										<td><input type="text" size="45" maxlength="200" name="usp_options[redirect-url]" value="<?php echo esc_attr($usp_options['redirect-url']); ?>" />
-										<div class="mm-item-caption"><?php _e('Specify a URL to redirect the user after post-submission. Note: leave blank to redirect back to current page.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[success-message]"><?php _e('Success Message', 'usp'); ?></label></th>
-										<td><textarea class="textarea" rows="3" cols="50" name="usp_options[success-message]"><?php echo esc_attr($usp_options['success-message']); ?></textarea> 
-										<div class="mm-item-caption"><?php _e('This is the success message that is displayed if post-submission is successful.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[error-message]"><?php _e('Error Message', 'usp'); ?></label></th>
-										<td><textarea class="textarea" rows="3" cols="50" name="usp_options[error-message]"><?php echo esc_attr($usp_options['error-message']); ?></textarea> 
-										<div class="mm-item-caption"><?php _e('This is the error message that is displayed if post-submission fails.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_form_content]"><?php _e('Custom Content', 'usp'); ?></label></th>
-										<td><textarea class="textarea" rows="3" cols="50" name="usp_options[usp_form_content]"><?php echo esc_attr($usp_options['usp_form_content']); ?></textarea> 
-										<div class="mm-item-caption"><?php _e('Here you may specify custom text/markup to be included before the submission form. Note: leave blank to disable.', 'usp'); ?></div></td>
-									</tr>
-								</table>
-							</div>
-							<h4><?php _e('Use registered user info', 'usp'); ?></h4>
-							<div class="mm-table-wrap">
-								<table class="widefat mm-table">
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_use_author]"><?php _e('Use registered username for author?', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_use_author]" <?php if (isset($usp_options['usp_use_author'])) { checked('1', $usp_options['usp_use_author']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to automatically use the registered username as the submitted-post author. Note: this really should only be used when requiring log-in for submissions.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_use_url]"><?php _e('Use registered URL for submitted URL?', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_use_url]" <?php if (isset($usp_options['usp_use_url'])) { checked('1', $usp_options['usp_use_url']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to automatically use the registered user&rsquo;s specified URL as the submitted-post URL. Note: this really should only be used when requiring log-in for submissions.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_use_cat]"><?php _e('Use a hidden field for submitted category?', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_use_cat]" <?php if (isset($usp_options['usp_use_cat'])) { checked('1', $usp_options['usp_use_cat']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want to use a hidden category field for the submitted category. Note: this may be used to specify a default category for submitted posts when the category field is hidden.', 'usp'); ?></span></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_use_cat_id]"><?php _e('Category ID for hidden field', 'usp'); ?></label></th>
-										<td><input type="text" size="45" maxlength="200" name="usp_options[usp_use_cat_id]" value="<?php echo esc_attr($usp_options['usp_use_cat_id']); ?>" />
-										<div class="mm-item-caption"><?php _e('Specify a cateogry (ID) to use as the default category when using the &ldquo;hidden field&rdquo; option.', 'usp'); ?></div></td>
-									</tr>
-								</table>
-							</div>
-							<h4><?php _e('Challenge question (captcha)', 'usp'); ?></h4>
-							<div class="mm-table-wrap">
-								<table class="widefat mm-table">
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_question]"><?php _e('Challenge Question', 'usp'); ?></label></th>
-										<td><input type="text" size="45" maxlength="200" name="usp_options[usp_question]" value="<?php echo esc_attr($usp_options['usp_question']); ?>" />
-										<div class="mm-item-caption"><?php _e('To prevent spam, enter a question that users must answer before submitting the form.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_response]"><?php _e('Challenge Response', 'usp'); ?></label></th>
-										<td><input type="text" size="45" maxlength="200" name="usp_options[usp_response]" value="<?php echo esc_attr($usp_options['usp_response']); ?>" />
-										<div class="mm-item-caption"><?php _e('Enter the <em>only</em> correct answer to the challenge question.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[usp_casing]"><?php _e('Case-sensitivity', 'usp'); ?></label></th>
-										<td><input type="checkbox" value="1" name="usp_options[usp_casing]" <?php if (isset($usp_options['usp_casing'])) { checked('1', $usp_options['usp_casing']); } ?> />
-										<span class="mm-item-caption"><?php _e('Check this box if you want the challenge response to be case-sensitive.', 'usp'); ?></span></td>
-									</tr>
-								</table>
-							</div>
-							<h4><?php _e('Options for image uploads', 'usp'); ?></h4>
-							<div class="mm-table-wrap">
-								<table class="widefat mm-table">
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[upload-message]"><?php _e('Upload Message', 'usp'); ?></label></th>
-										<td><textarea class="textarea" rows="3" cols="50" name="usp_options[upload-message]"><?php echo esc_attr($usp_options['upload-message']); ?></textarea>
-										<div class="mm-item-caption"><?php _e('This is the message that appears next to upload field. Useful to state your upload guidelines/rules/etc.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[min-images]"><?php _e('Minimum number of images', 'usp'); ?></label></th>
-										<td>
-											<select name="usp_options[min-images]">
-												<?php foreach(range(0, 20) as $number) { ?>
-												<option <?php selected($number, $usp_options['min-images']); ?> value="<?php echo $number; ?>">
-													<?php echo $number; ?>
-												</option>
-												<?php } ?>
-											</select>
-											<div class="mm-item-caption inline"><?php _e('Specify the <em>minimum</em> number of images.', 'usp'); ?></div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[max-images]"><?php _e('Maximum number of images', 'usp'); ?></label></th>
-										<td>
-											<select name="usp_options[max-images]">
-												<option value="-1"><?php _e('No Limit', 'usp'); ?></option>
-												<?php foreach(range(0, 20) as $number) { ?>
-												<option <?php selected($number, $usp_options['max-images']); ?> value="<?php echo $number; ?>">
-													<?php echo $number; ?>
-												</option>
-												<?php } ?>
-											</select>
-											<div class="mm-item-caption inline"><?php _e('Specify the <em>maximum</em> number of images.', 'usp'); ?></div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[min-image-width]"><?php _e('Minimum image width', 'usp'); ?></label></th>
-										<td><input type="text" size="5" maxlength="200" name="usp_options[min-image-width]" value="<?php echo esc_attr($usp_options['min-image-width']); ?>" />
-										<div class="mm-item-caption inline"><?php _e('Specify a <em>minimum width</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[min-image-height]"><?php _e('Minimum image height', 'usp'); ?></label></th>
-										<td><input type="text" size="5" maxlength="200" name="usp_options[min-image-height]" value="<?php echo esc_attr($usp_options['min-image-height']); ?>" />
-										<div class="mm-item-caption inline"><?php _e('Specify a <em>minimum height</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[max-image-width]"><?php _e('Maximum image width', 'usp'); ?></label></th>
-										<td><input type="text" size="5" maxlength="200" name="usp_options[max-image-width]" value="<?php echo esc_attr($usp_options['max-image-width']); ?>" />
-										<div class="mm-item-caption inline"><?php _e('Specify a <em>maximum width</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
-									</tr>
-									<tr>
-										<th scope="row"><label class="description" for="usp_options[max-image-height]"><?php _e('Maximum image height', 'usp'); ?></label></th>
-										<td><input type="text" size="5" maxlength="200" name="usp_options[max-image-height]" value="<?php echo esc_attr($usp_options['max-image-height']); ?>" />
-										<div class="mm-item-caption inline"><?php _e('Specify a <em>maximum height</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
-									</tr>
-								</table>
-							</div>
-							<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'usp'); ?>" />
-						</div>
-					</div>
-					<div id="mm-panel-secondary" class="postbox">
-						<h3><?php _e('Shortcode &amp; Template Tag', 'usp'); ?></h3>
-						<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
+													<?php } ?>
+													<div class="mm-item-caption">
+														<?php _e('HTML5 is recommended. If upgrading and the new form looks weird, choose the Classic version.', 'usp'); ?> 
+														<?php _e('To disable the plugin&rsquo;s stylesheet, choose Disable. Note: complete list of CSS hooks for the submission form at', 'usp'); ?> 
+														<a href="http://m0n.co/e" title="<?php _e('CSS Hooks for User Submitted Posts', 'usp'); ?>" target="_blank">http://m0n.co/e</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label class="description" for="usp_options[usp_include_js]"><?php _e('Include JavaScript?', 'usp'); ?></label></th>
+												<td><input type="checkbox" value="1" name="usp_options[usp_include_js]" <?php if (isset($usp_options['usp_include_js'])) { checked('1', $usp_options['usp_include_js']); } ?> />
+													<span class="mm-item-caption"><?php _e('Check this box if you want to include the external JavaScript file. Note: if you&rsquo;re not allowing image uploads, leave this option unchecked.', 'usp'); ?></span></td>
+												</tr>
+												<tr>
+													<th scope="row"><label class="description" for="usp_options[usp_display_url]"><?php _e('Targeted Loading', 'usp'); ?></label></th>
+													<td><input type="text" size="45" maxlength="200" name="usp_options[usp_display_url]" value="<?php echo esc_attr($usp_options['usp_display_url']); ?>" />
+														<div class="mm-item-caption"><?php _e('When enabled, external CSS &amp; JavaScript files are loaded on every page. Here you may specify the URL of the USP form to load resources only on that page. Note: leave blank to load on all pages.', 'usp'); ?></div></td>
+													</tr>
+													<tr>
+														<th scope="row"><label class="description"><?php _e('Categories', 'usp'); ?></label></th>
+														<td>
+															<?php $categories = get_categories(array('hide_empty'=> 0)); ?>
+															<?php foreach($categories as $category) { ?>
 
-							<h4><?php _e('Shortcode', 'usp'); ?></h4>
-							<p><?php _e('Use this shortcode to display the USP Form on any post or page:', 'usp'); ?></p>
-							<p><code class="mm-code">[user-submitted-posts]</code></p>
+															<div class="mm-radio-inputs">
+																<label class="description">
+																	<input <?php checked(true, in_array($category->term_id, $usp_options['categories'])); ?> type="checkbox" name="usp_options[categories][]" value="<?php echo $category->term_id; ?>" /> 
+																	<span><?php echo htmlentities($category->name, ENT_QUOTES, 'UTF-8'); ?></span>
+																</label>
+															</div>
 
-							<h4><?php _e('Template tag', 'usp'); ?></h4>
-							<p><?php _e('Use this template tag to display the USP Form anywhere in your theme template:', 'usp'); ?></p>
-							<p><code class="mm-code">&lt;?php if (function_exists('user_submitted_posts')) user_submitted_posts(); ?&gt;</code></p>
-						</div>
-					</div>
-					<div id="mm-restore-settings" class="postbox">
-						<h3><?php _e('Restore Default Options', 'usp'); ?></h3>
-						<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
-							<p>
-								<input name="usp_options[default_options]" type="checkbox" value="1" id="mm_restore_defaults" <?php if (isset($usp_options['default_options'])) { checked('1', $usp_options['default_options']); } ?> /> 
-								<label class="description" for="usp_options[default_options]"><?php _e('Restore default options upon plugin deactivation/reactivation.', 'usp'); ?></label>
-							</p>
-							<p>
-								<small>
-									<?php _e('<strong>Tip:</strong> leave this option unchecked to remember your settings. Or, to go ahead and restore all default options, check the box, save your settings, and then deactivate/reactivate the plugin.', 'usp'); ?>
-								</small>
-							</p>
-							<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'usp'); ?>" />
-						</div>
-					</div>
-					<div id="mm-panel-current" class="postbox">
-						<h3><?php _e('Updates &amp; Info', 'usp'); ?></h3>
-						<div class="toggle">
-							<div id="mm-iframe-wrap">
-								<iframe src="http://perishablepress.com/current/index-usp.html"></iframe>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="mm-credit-info">
-				<a target="_blank" href="<?php echo $usp_homeurl; ?>" title="<?php echo $usp_plugin; ?> Homepage"><?php echo $usp_plugin; ?></a> by 
-				<a target="_blank" href="http://twitter.com/perishable" title="Jeff Starr on Twitter">Jeff Starr</a> @ 
-				<a target="_blank" href="http://monzilla.biz/" title="Obsessive Web Design &amp; Development">Monzilla Media</a>
-			</div>
-		</form>
-	</div>
-	<script type="text/javascript">
-		jQuery(document).ready(function(){
+															<?php } ?>
+															<div class="mm-item-caption"><?php _e('Select which categories may be assigned to submitted posts.', 'usp'); ?></div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row"><label class="description" for="usp_options[author]"><?php _e('Assigned Author', 'usp'); ?></label></th>
+														<td>
+															<select id="usp_options[author]" name="usp_options[author]">
+																<?php global $wpdb; $allAuthors = $wpdb->get_results("SELECT ID, display_name FROM {$wpdb->users}");
+																foreach($allAuthors as $author) { ?>
+																<option <?php selected($usp_options['author'], $author->ID); ?> value="<?php echo $author->ID; ?>">
+																	<?php echo $author->display_name; ?>
+																</option>
+																<?php } ?>
+															</select>
+															<div class="mm-item-caption"><?php _e('Specify the user that should be assigned as author for user-submitted posts.', 'usp'); ?></div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row"><label class="description" for="usp_options[number-approved]"><?php _e('Auto Publish?', 'usp'); ?></label></th>
+														<td>
+															<select name="usp_options[number-approved]">
+																<option <?php selected(-1, $usp_options['number-approved']); ?> value="-1"><?php _e('Always moderate', 'usp'); ?></option>
+																<option <?php selected( 0, $usp_options['number-approved']); ?> value="0"><?php _e('Always publish immediately', 'usp'); ?></option>
+																<?php foreach(range(1, 20) as $value) { ?>
+																<option <?php selected($value, $usp_options['number-approved']); ?> value="<?php echo $value; ?>"><?php echo $value; ?></option>
+																<?php } ?>
+															</select>
+															<div class="mm-item-caption"><?php _e('For submitted posts, you can always moderate (recommended), publish immediately, or publish after any number of approved posts.', 'usp'); ?></div>
+														</td>
+													</tr>
+													<tr>
+														<th scope="row"><label class="description" for="usp_options[usp_email_alerts]"><?php _e('Receive Email Alert', 'usp'); ?></label></th>
+														<td><input type="checkbox" value="1" name="usp_options[usp_email_alerts]" <?php if (isset($usp_options['usp_email_alerts'])) { checked('1', $usp_options['usp_email_alerts']); } ?> />
+															<span class="mm-item-caption"><?php _e('Check this box if you want to be notified via email for new post submissions.', 'usp'); ?></span></td>
+														</tr>
+														<tr>
+															<th scope="row"><label class="description" for="usp_options[usp_richtext_editor]"><?php _e('Enable Rich Text Editor', 'usp'); ?></label></th>
+															<td><input type="checkbox" value="1" name="usp_options[usp_richtext_editor]" <?php if (isset($usp_options['usp_richtext_editor'])) { checked('1', $usp_options['usp_richtext_editor']); } ?> />
+																<span class="mm-item-caption"><?php _e('Check this box if you want to enable WP rich text editing for submitted posts.', 'usp'); ?></span></td>
+															</tr>
+															<tr>
+																<th scope="row"><label class="description" for="usp_options[usp_featured_images]"><?php _e('Set Uploaded Image as Featured Image', 'usp'); ?></label></th>
+																<td><input type="checkbox" value="1" name="usp_options[usp_featured_images]" <?php if (isset($usp_options['usp_featured_images'])) { checked('1', $usp_options['usp_featured_images']); } ?> />
+																	<span class="mm-item-caption"><?php _e('Check this box if you want to set submitted images as Featured Images (aka Post Thumbnails) for posts. 
+																		Note: your theme&rsquo;s single.php file must include', 'usp'); ?> <code>the_post_thumbnail()</code> <?php _e('to display Featured Images.', 'usp'); ?></span></td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><label class="description" for="usp_options[usp_email_address]"><?php _e('Email Address for Alerts', 'usp'); ?></label></th>
+																		<td><input type="text" size="45" maxlength="200" name="usp_options[usp_email_address]" value="<?php echo esc_attr($usp_options['usp_email_address']); ?>" />
+																			<div class="mm-item-caption"><?php _e('If you checked the box to receive email alerts, indicate here the address(es) to which the emails should be sent.', 'usp'); ?> 
+																				<?php _e('Tip: multiple addresses may be included using a comma, like so:', 'usp'); ?> <code>email01@example.com</code>, <code>email02@example.com</code>, <code>email03@example.com</code></div></td>
+																			</tr>
+																			<tr>
+																				<th scope="row"><label class="description" for="usp_options[redirect-url]"><?php _e('Redirect URL', 'usp'); ?></label></th>
+																				<td><input type="text" size="45" maxlength="200" name="usp_options[redirect-url]" value="<?php echo esc_attr($usp_options['redirect-url']); ?>" />
+																					<div class="mm-item-caption"><?php _e('Specify a URL to redirect the user after post-submission. Note: leave blank to redirect back to current page.', 'usp'); ?></div></td>
+																				</tr>
+																				<tr>
+																					<th scope="row"><label class="description" for="usp_options[success-message]"><?php _e('Success Message', 'usp'); ?></label></th>
+																					<td><textarea class="textarea" rows="3" cols="50" name="usp_options[success-message]"><?php echo esc_attr($usp_options['success-message']); ?></textarea> 
+																						<div class="mm-item-caption"><?php _e('This is the success message that is displayed if post-submission is successful.', 'usp'); ?></div></td>
+																					</tr>
+																					<tr>
+																						<th scope="row"><label class="description" for="usp_options[error-message]"><?php _e('Error Message', 'usp'); ?></label></th>
+																						<td><textarea class="textarea" rows="3" cols="50" name="usp_options[error-message]"><?php echo esc_attr($usp_options['error-message']); ?></textarea> 
+																							<div class="mm-item-caption"><?php _e('This is the error message that is displayed if post-submission fails.', 'usp'); ?></div></td>
+																						</tr>
+																						<tr>
+																							<th scope="row"><label class="description" for="usp_options[usp_form_content]"><?php _e('Custom Content', 'usp'); ?></label></th>
+																							<td><textarea class="textarea" rows="3" cols="50" name="usp_options[usp_form_content]"><?php echo esc_attr($usp_options['usp_form_content']); ?></textarea> 
+																								<div class="mm-item-caption"><?php _e('Here you may specify custom text/markup to be included before the submission form. Note: leave blank to disable.', 'usp'); ?></div></td>
+																							</tr>
+																						</table>
+																					</div>
+																					<h4><?php _e('Use registered user info', 'usp'); ?></h4>
+																					<div class="mm-table-wrap">
+																						<table class="widefat mm-table">
+																							<tr>
+																								<th scope="row"><label class="description" for="usp_options[usp_use_author]"><?php _e('Use registered username for author?', 'usp'); ?></label></th>
+																								<td><input type="checkbox" value="1" name="usp_options[usp_use_author]" <?php if (isset($usp_options['usp_use_author'])) { checked('1', $usp_options['usp_use_author']); } ?> />
+																									<span class="mm-item-caption"><?php _e('Check this box if you want to automatically use the registered username as the submitted-post author. Note: this really should only be used when requiring log-in for submissions.', 'usp'); ?></span></td>
+																								</tr>
+																								<tr>
+																									<th scope="row"><label class="description" for="usp_options[usp_use_url]"><?php _e('Use registered URL for submitted URL?', 'usp'); ?></label></th>
+																									<td><input type="checkbox" value="1" name="usp_options[usp_use_url]" <?php if (isset($usp_options['usp_use_url'])) { checked('1', $usp_options['usp_use_url']); } ?> />
+																										<span class="mm-item-caption"><?php _e('Check this box if you want to automatically use the registered user&rsquo;s specified URL as the submitted-post URL. Note: this really should only be used when requiring log-in for submissions.', 'usp'); ?></span></td>
+																									</tr>
+																									<tr>
+																										<th scope="row"><label class="description" for="usp_options[usp_use_cat]"><?php _e('Use a hidden field for submitted category?', 'usp'); ?></label></th>
+																										<td><input type="checkbox" value="1" name="usp_options[usp_use_cat]" <?php if (isset($usp_options['usp_use_cat'])) { checked('1', $usp_options['usp_use_cat']); } ?> />
+																											<span class="mm-item-caption"><?php _e('Check this box if you want to use a hidden category field for the submitted category. Note: this may be used to specify a default category for submitted posts when the category field is hidden.', 'usp'); ?></span></td>
+																										</tr>
+																										<tr>
+																											<th scope="row"><label class="description" for="usp_options[usp_use_cat_id]"><?php _e('Category ID for hidden field', 'usp'); ?></label></th>
+																											<td><input type="text" size="45" maxlength="200" name="usp_options[usp_use_cat_id]" value="<?php echo esc_attr($usp_options['usp_use_cat_id']); ?>" />
+																												<div class="mm-item-caption"><?php _e('Specify a cateogry (ID) to use as the default category when using the &ldquo;hidden field&rdquo; option.', 'usp'); ?></div></td>
+																											</tr>
+																										</table>
+																									</div>
+																									<h4><?php _e('Challenge question (captcha)', 'usp'); ?></h4>
+																									<div class="mm-table-wrap">
+																										<table class="widefat mm-table">
+																											<tr>
+																												<th scope="row"><label class="description" for="usp_options[usp_question]"><?php _e('Challenge Question', 'usp'); ?></label></th>
+																												<td><input type="text" size="45" maxlength="200" name="usp_options[usp_question]" value="<?php echo esc_attr($usp_options['usp_question']); ?>" />
+																													<div class="mm-item-caption"><?php _e('To prevent spam, enter a question that users must answer before submitting the form.', 'usp'); ?></div></td>
+																												</tr>
+																												<tr>
+																													<th scope="row"><label class="description" for="usp_options[usp_response]"><?php _e('Challenge Response', 'usp'); ?></label></th>
+																													<td><input type="text" size="45" maxlength="200" name="usp_options[usp_response]" value="<?php echo esc_attr($usp_options['usp_response']); ?>" />
+																														<div class="mm-item-caption"><?php _e('Enter the <em>only</em> correct answer to the challenge question.', 'usp'); ?></div></td>
+																													</tr>
+																													<tr>
+																														<th scope="row"><label class="description" for="usp_options[usp_casing]"><?php _e('Case-sensitivity', 'usp'); ?></label></th>
+																														<td><input type="checkbox" value="1" name="usp_options[usp_casing]" <?php if (isset($usp_options['usp_casing'])) { checked('1', $usp_options['usp_casing']); } ?> />
+																															<span class="mm-item-caption"><?php _e('Check this box if you want the challenge response to be case-sensitive.', 'usp'); ?></span></td>
+																														</tr>
+																													</table>
+																												</div>
+																												<h4><?php _e('Options for image uploads', 'usp'); ?></h4>
+																												<div class="mm-table-wrap">
+																													<table class="widefat mm-table">
+																														<tr>
+																															<th scope="row"><label class="description" for="usp_options[upload-message]"><?php _e('Upload Message', 'usp'); ?></label></th>
+																															<td><textarea class="textarea" rows="3" cols="50" name="usp_options[upload-message]"><?php echo esc_attr($usp_options['upload-message']); ?></textarea>
+																																<div class="mm-item-caption"><?php _e('This is the message that appears next to upload field. Useful to state your upload guidelines/rules/etc.', 'usp'); ?></div></td>
+																															</tr>
+																															<tr>
+																																<th scope="row"><label class="description" for="usp_options[min-images]"><?php _e('Minimum number of images', 'usp'); ?></label></th>
+																																<td>
+																																	<select name="usp_options[min-images]">
+																																		<?php foreach(range(0, 20) as $number) { ?>
+																																		<option <?php selected($number, $usp_options['min-images']); ?> value="<?php echo $number; ?>">
+																																			<?php echo $number; ?>
+																																		</option>
+																																		<?php } ?>
+																																	</select>
+																																	<div class="mm-item-caption inline"><?php _e('Specify the <em>minimum</em> number of images.', 'usp'); ?></div>
+																																</td>
+																															</tr>
+																															<tr>
+																																<th scope="row"><label class="description" for="usp_options[max-images]"><?php _e('Maximum number of images', 'usp'); ?></label></th>
+																																<td>
+																																	<select name="usp_options[max-images]">
+																																		<option value="-1"><?php _e('No Limit', 'usp'); ?></option>
+																																		<?php foreach(range(0, 20) as $number) { ?>
+																																		<option <?php selected($number, $usp_options['max-images']); ?> value="<?php echo $number; ?>">
+																																			<?php echo $number; ?>
+																																		</option>
+																																		<?php } ?>
+																																	</select>
+																																	<div class="mm-item-caption inline"><?php _e('Specify the <em>maximum</em> number of images.', 'usp'); ?></div>
+																																</td>
+																															</tr>
+																															<tr>
+																																<th scope="row"><label class="description" for="usp_options[min-image-width]"><?php _e('Minimum image width', 'usp'); ?></label></th>
+																																<td><input type="text" size="5" maxlength="200" name="usp_options[min-image-width]" value="<?php echo esc_attr($usp_options['min-image-width']); ?>" />
+																																	<div class="mm-item-caption inline"><?php _e('Specify a <em>minimum width</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
+																																</tr>
+																																<tr>
+																																	<th scope="row"><label class="description" for="usp_options[min-image-height]"><?php _e('Minimum image height', 'usp'); ?></label></th>
+																																	<td><input type="text" size="5" maxlength="200" name="usp_options[min-image-height]" value="<?php echo esc_attr($usp_options['min-image-height']); ?>" />
+																																		<div class="mm-item-caption inline"><?php _e('Specify a <em>minimum height</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
+																																	</tr>
+																																	<tr>
+																																		<th scope="row"><label class="description" for="usp_options[max-image-width]"><?php _e('Maximum image width', 'usp'); ?></label></th>
+																																		<td><input type="text" size="5" maxlength="200" name="usp_options[max-image-width]" value="<?php echo esc_attr($usp_options['max-image-width']); ?>" />
+																																			<div class="mm-item-caption inline"><?php _e('Specify a <em>maximum width</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
+																																		</tr>
+																																		<tr>
+																																			<th scope="row"><label class="description" for="usp_options[max-image-height]"><?php _e('Maximum image height', 'usp'); ?></label></th>
+																																			<td><input type="text" size="5" maxlength="200" name="usp_options[max-image-height]" value="<?php echo esc_attr($usp_options['max-image-height']); ?>" />
+																																				<div class="mm-item-caption inline"><?php _e('Specify a <em>maximum height</em> (in pixels) for uploaded images.', 'usp'); ?></div></td>
+																																			</tr>
+																																		</table>
+																																	</div>
+																																	<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'usp'); ?>" />
+																																</div>
+																															</div>
+																															<div id="mm-panel-secondary" class="postbox">
+																																<h3><?php _e('Shortcode &amp; Template Tag', 'usp'); ?></h3>
+																																<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
+
+																																	<h4><?php _e('Shortcode', 'usp'); ?></h4>
+																																	<p><?php _e('Use this shortcode to display the USP Form on any post or page:', 'usp'); ?></p>
+																																	<p><code class="mm-code">[user-submitted-posts]</code></p>
+
+																																	<h4><?php _e('Template tag', 'usp'); ?></h4>
+																																	<p><?php _e('Use this template tag to display the USP Form anywhere in your theme template:', 'usp'); ?></p>
+																																	<p><code class="mm-code">&lt;?php if (function_exists('user_submitted_posts')) user_submitted_posts(); ?&gt;</code></p>
+																																</div>
+																															</div>
+																															<div id="mm-restore-settings" class="postbox">
+																																<h3><?php _e('Restore Default Options', 'usp'); ?></h3>
+																																<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
+																																	<p>
+																																		<input name="usp_options[default_options]" type="checkbox" value="1" id="mm_restore_defaults" <?php if (isset($usp_options['default_options'])) { checked('1', $usp_options['default_options']); } ?> /> 
+																																		<label class="description" for="usp_options[default_options]"><?php _e('Restore default options upon plugin deactivation/reactivation.', 'usp'); ?></label>
+																																	</p>
+																																	<p>
+																																		<small>
+																																			<?php _e('<strong>Tip:</strong> leave this option unchecked to remember your settings. Or, to go ahead and restore all default options, check the box, save your settings, and then deactivate/reactivate the plugin.', 'usp'); ?>
+																																		</small>
+																																	</p>
+																																	<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'usp'); ?>" />
+																																</div>
+																															</div>
+																															<div id="mm-panel-current" class="postbox">
+																																<h3><?php _e('Updates &amp; Info', 'usp'); ?></h3>
+																																<div class="toggle">
+																																	<div id="mm-iframe-wrap">
+																																		<iframe src="http://perishablepress.com/current/index-usp.html"></iframe>
+																																	</div>
+																																</div>
+																															</div>
+																														</div>
+																													</div>
+																													<div id="mm-credit-info">
+																														<a target="_blank" href="<?php echo $usp_homeurl; ?>" title="<?php echo $usp_plugin; ?> Homepage"><?php echo $usp_plugin; ?></a> by 
+																														<a target="_blank" href="http://twitter.com/perishable" title="Jeff Starr on Twitter">Jeff Starr</a> @ 
+																														<a target="_blank" href="http://monzilla.biz/" title="Obsessive Web Design &amp; Development">Monzilla Media</a>
+																													</div>
+																												</form>
+																											</div>
+																											<script type="text/javascript">
+																												jQuery(document).ready(function(){
 			// toggle panels
 			jQuery('.default-hidden').hide();
 			jQuery('#mm-panel-toggle a').click(function(){
@@ -1065,6 +1119,6 @@ function usp_render_form() {
 				});
 			}
 		});
-	</script>
+</script>
 
 <?php }
